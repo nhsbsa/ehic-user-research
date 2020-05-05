@@ -1,10 +1,11 @@
-{% extends "layout.html" %}
+{% extends 'layout.html' %}
 
 {% block pageTitle %}
-  Who are you applying for?
+  Mark could get an EHIC
 {% endblock %}
 
 {% block beforeContent %}
+
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -23,31 +24,39 @@
 {% endblock %}
 
 {% block content %}
-
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-three-quarters">
 
-      <form action="/v1_0/whoFor" method="post">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        Mark could get an EHIC
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Based of the information you've told us, your partner Mark could get an EHIC but you will need to provide evidence.
+      </p>
+
+      <form action="addSomeoneElse" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Who are you applying for?",
+            text: "Do you want to add someone else to your application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
         {{ radios({
-          "idPrefix": "who-for",
-          "name": "who-for",
+          "idPrefix": "add-someone-else",
+          "name": "add-someone-else",
           "items": [
             {
-              "value": "Myself",
-              "text": "Myself"
+              "value": "Yes",
+              "text": "Yes, add my partner and/or children"
             },
             {
-              "value": "Someone else",
-              "text": "Someone else"
+              "value": "No",
+              "text": "No, start my application now"
             }
           ]
         }) }}
@@ -60,11 +69,13 @@
 
       </form>
 
-     <!--  {{ backLink({
-        "href": "/docs/how-tos",
-        "text": "Back to How to guides"
-      }) }} -->
+      
 
-    </div>
+<!-- <a href="/v1_0/start" class="nhsuk-button nhsuk-u-margin-bottom-8">
+        Version 1_0
+      </a> -->
+
+    </div>  
+
   </div>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  You're eligible to apply for an EHIC
+  You can get an EHIC
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,18 +29,20 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1>
-        You're eligible to apply for an EHIC
+        You can get an EHIC
       </h1>
 
       <p class="nhsuk-lede-text">
-        Based of the information you've told us, you can now apply for an EHIC.
+        Based on the answers you've given us, you can get an EHIC.
+     
+        You can apply as an individual or add your partner and children to your application.
       </p>
 
       <form action="/v1_0/addSomeoneElse" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Add someone else to your application?",
+            text: "Do you want to add someone else to your application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -52,11 +54,11 @@
           "items": [
             {
               "value": "Yes",
-              "text": "Yes"
+              "text": "Yes, add my partner and/or children"
             },
             {
               "value": "No",
-              "text": "No"
+              "text": "No, start my application now"
             }
           ]
         }) }}

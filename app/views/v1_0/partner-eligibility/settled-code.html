@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Who are you applying for?
+  What is your settled status code?
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,30 +27,25 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-      <form action="/v1_0/whoFor" method="post">
+      <form action="eligible" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Who are you applying for?",
+            text: "What is your settled status code?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        {{ radios({
-          "idPrefix": "who-for",
-          "name": "who-for",
-          "items": [
-            {
-              "value": "Myself",
-              "text": "Myself"
-            },
-            {
-              "value": "Someone else",
-              "text": "Someone else"
-            }
-          ]
+        {{ input({
+          "label": {
+            "text": "Enter your settled status code"
+          },
+          "id": "input-width-10",
+          "name": "test-width-10",
+          "classes": "nhsuk-input--width-10"
         }) }}
+
 
         {% endcall %}
 
@@ -60,10 +55,10 @@
 
       </form>
 
-     <!--  {{ backLink({
-        "href": "/docs/how-tos",
-        "text": "Back to How to guides"
-      }) }} -->
+     {{ backLink({
+        "href": "settled-status",
+        "text": "Change my previous answer"
+      }) }}
 
     </div>
   </div>
