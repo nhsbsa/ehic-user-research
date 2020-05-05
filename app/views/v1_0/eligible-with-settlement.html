@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  You could be eligible to apply for an EHIC
+{% endblock %}
+
+{% block beforeContent %}
+
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        You could be eligible for an EHIC
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Based of the information you've told us, you could be eligible for an EHIC but we need you to give us your settlement status code to prove it.
+      </p>
+
+      <form action="/v1_0/addSomeoneElse" method="post">
+
+        {% call fieldset({
+          legend: {
+            text: "Add someone else to your application?",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        {{ radios({
+          "idPrefix": "add-someone-else",
+          "name": "add-someone-else",
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No"
+            }
+          ]
+        }) }}
+
+        {% endcall %}
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+      
+
+<!-- <a href="/v1_0/start" class="nhsuk-button nhsuk-u-margin-bottom-8">
+        Version 1_0
+      </a> -->
+
+    </div>  
+
+  </div>
+{% endblock %}
