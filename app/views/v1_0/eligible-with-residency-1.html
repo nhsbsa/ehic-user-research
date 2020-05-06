@@ -35,11 +35,11 @@
         Based of the information you've told us, you could get an EHIC. You will be asked to upload your residency document later on.
       </p>
 
-      <form action="/v1_0/addSomeoneElse" method="post">
+      <form action="addSomeoneElse" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Add someone else to your application?",
+            text: "Do you want to add someone else to your application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -51,11 +51,11 @@
           "items": [
             {
               "value": "Yes",
-              "text": "Yes"
+              "text": "Yes, add my partner and/or children"
             },
             {
               "value": "No",
-              "text": "No"
+              "text": "No, start my application now"
             }
           ]
         }) }}
