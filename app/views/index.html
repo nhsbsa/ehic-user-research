@@ -1,57 +1,53 @@
-<!-- Use this page as the index for your project -->
-
-<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-
-<!-- Extends the layout from /views/layout.html -->
 {% extends 'layout.html' %}
-<!-- 
-  In /views/layout.html you can:
-    - change the header and footer 
-    - add custom CSS and JavaScript
--->
 
-<!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
-  Get health care cover for visiting the EU (EHIC)
+Get health care cover for visiting the EU (EHIC)
 {% endblock %}
 
-<!-- Breadcrumb goes inside the beforeContent block -->
 {% block beforeContent %}
 {% endblock %}
 
-<!-- Your page content goes inside the content block -->
-<!-- More info and code for the page layout can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
-
-      <!-- Change the page title here -->
+<div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-full">
       <h1>
-        Get health care cover for visiting the EU (EHIC)
-        <!-- <span class="nhsuk-caption-xl nhsuk-caption--bottom">Version {{version}}</span> -->
+         Get health care cover for visiting the EU (EHIC)
+         <span class="nhsuk-caption-xl nhsuk-caption--bottom">Apply for an EHIC</span>
       </h1>
 
       <p class="nhsuk-lede-text">
-        Apply for an EHIC prototype
+         Enable citizens to check if the UK will pay for their health care needs while they’re visiting an EU country and if eligible, provide them with proof that they are covered.
       </p>
 
-      <a href="/v1_0/start" class="nhsuk-button nhsuk-u-margin-bottom-8">
-        Version 1
-      </a>
+      <div class="nhsuk-expander-group">
+         <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary">
+               <span class="nhsuk-details__summary-text">
+               Alpha (Sprint 1)
+               </span>
+            </summary>
+            <div class="nhsuk-details__text">
+               <h3>Journeys</h3>
+               <ul>
+                  <li>Check eligibility for someone living in the UK, the EU or another country</li>
+                  <li>Check eligibility for the partner of an eligible person</li>
+                  <li>Start application (up to address page - work in progress)</li>
+               </ul>
+               {{ actionLink({
+               "text": "Get health care cover for visiting the EU (EHIC) (v1)",
+               "href": "/v1_0/start"
+               }) }}
+            </div>
+         </details>
+      </div>
 
-      <h3>Journeys</h3>
-      <ul>
-        <li>Check eligibility for someone living in the UK, the EU or another country</li>
-        <li>Check eligibility for the partner of an eligible person</li>
-      </ul>
+      <!--  <hr>
+         <h3>Example pages</h3>
+         <ul>
+           <li><a href="/docs/page-templates">Page templates</a></li>
+         </ul> -->
 
-      <hr>
+   </div>
+</div>
 
-      <h3>Example pages</h3>
-      <ul>
-        <li><a href="/docs/page-templates">Page templates</a></li>
-      </ul>
-
-    </div>
-  </div>
 {% endblock %}

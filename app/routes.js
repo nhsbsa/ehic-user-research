@@ -5,18 +5,18 @@ const router = express.Router();
 // Add your routes here - above the module.exports line
 
 
+// --------------------------------------- //
+// ------------- ELIGIBILITY ------------- //
+// --------- APPLICANT QUESTIONS --------- //
+// --------------------------------------- //
+
 // Have you applied for an EHIC before?
 router.post('/v1_0/previousEhic', function (req, res) {
-
-  // Make a variable and give it the value from 'know-nhs-number'
   var previousEhic = req.session.data['previous-ehic']
-
-  // Check whether the variable matches a condition
   if (previousEhic == "Yes"){
     res.redirect('')
   }
   else {
-    // Send user to ineligible page
     res.redirect('where-do-you-live')
   }
 
@@ -142,7 +142,7 @@ router.post('/v1_0/addSomeoneElse', function (req, res) {
     res.redirect('add-another')
   }
   else {
-    res.redirect('')
+    res.redirect('application/what-you-need')
   }
 })
 
@@ -159,6 +159,7 @@ router.post('/v1_0/addAnother', function (req, res) {
 
 
 // --------------------------------------- //
+// ------------- ELIGIBILITY ------------- //
 // ---------- PARTNER QUESTIONS ---------- //
 // --------------------------------------- //
 
@@ -263,5 +264,26 @@ router.post('/v1_0/partner-eligibility/euWorking', function (req, res) {
     res.redirect('ineligible')
   }
 })
+
+
+
+// --------------------------------------- //
+// ------------- APPLICATION ------------- //
+// ----------- MAIN APPLICANT ------------ //
+// --------------------------------------- //
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
