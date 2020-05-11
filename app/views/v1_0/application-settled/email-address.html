@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your home address?
+  What is your email address?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,43 +26,27 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="email-address" method="post">
+      <form action="dob" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your home address?",
+            text: "What is your email address?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <!-- <h3>Postcode</h3>
-        <p>SW1A 1AA</p> -->
-        <h3>Select an address</h3>
-
-        {{ select({
-          "id": "select-1",
-          "name": "select-1",
+        {{ input({
           "label": {
+            "text": "Enter your email address"
           },
-          "items": [
-            {
-              "value": 1,
-              "text": "1 address found",
-              "selected": true
-            },
-            {
-              "value": 2,
-              "text": "73 Roman Rd, Leeds LS2 5ZN"
-            }
-          ]
+          "id": "input-width-30",
+          "name": "test-width-30",
+          "classes": "nhsuk-input--width-30"
         }) }}
 
-        <p><a href="address-manual">I can't find my address in the list</a></p>
 
         {% endcall %}
-
-
 
         {{ button({
           "text": "Continue"
@@ -71,7 +55,7 @@
       </form>
 
      {{ backLink({
-        "href": "address-lookup",
+        "href": "settled-code",
         "text": "Change my previous answer"
       }) }}
 

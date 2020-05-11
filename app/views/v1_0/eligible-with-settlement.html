@@ -36,7 +36,7 @@
         Based of the information you've told us, you could get an EHIC but we need you to give us your settled status code to prove it.
       </p>
 
-      <form action="addSomeoneElse" method="post">
+      <form action="settledAddSomeoneElse" method="post">
 
         {% call fieldset({
           legend: {
@@ -47,8 +47,8 @@
         }) %}
 
         {{ radios({
-          "idPrefix": "add-someone-else",
-          "name": "add-someone-else",
+          "idPrefix": "settled-add-someone-else",
+          "name": "settled-add-someone-else",
           "items": [
             {
               "value": "Yes",

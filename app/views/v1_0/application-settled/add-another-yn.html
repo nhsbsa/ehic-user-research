@@ -1,10 +1,11 @@
-{% extends 'layout.html' %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
-  You could get an EHIC
+  Do you want to add someone else to your application?
 {% endblock %}
 
 {% block beforeContent %}
+
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -23,19 +24,11 @@
 {% endblock %}
 
 {% block content %}
+
   <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
 
-    <div class="nhsuk-grid-column-two-thirds">
-
-      <h1>
-        You could get an EHIC
-      </h1>
-
-      <p class="nhsuk-lede-text">
-        Based of the information you've told us, you could get an EHIC. You will be asked to upload your residency document later on.
-      </p>
-
-      <form action="residencyAddSomeoneElse" method="post">
+      <form action="/v1_0/application-settled/addAnother" method="post">
 
         {% call fieldset({
           legend: {
@@ -44,18 +37,22 @@
             isPageHeading: true
           }
         }) %}
+      
+      <p>
+        You can add your partner and up to [n] children.
+      </p>
 
         {{ radios({
-          "idPrefix": "residency-add-someone-else",
-          "name": "residency-add-someone-else",
+          "idPrefix": "add-another",
+          "name": "add-another",
           "items": [
             {
               "value": "Yes",
-              "text": "Yes, add my partner and/or children"
+              "text": "Yes"
             },
             {
               "value": "No",
-              "text": "No, start my application now"
+              "text": "No"
             }
           ]
         }) }}
@@ -68,13 +65,11 @@
 
       </form>
 
-      
+      {{ backLink({
+        "href": "nino",
+        "text": "Change my previous answer"
+      }) }}
 
-<!-- <a href="/v1_0/start" class="nhsuk-button nhsuk-u-margin-bottom-8">
-        Version 1_0
-      </a> -->
-
-    </div>  
-
+    </div>
   </div>
 {% endblock %}

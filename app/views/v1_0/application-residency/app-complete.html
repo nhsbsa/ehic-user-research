@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Application complete
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+          <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-bottom-4">
+
+            <h1 class="nhsuk-panel__title">
+                Application complete
+              </h1>
+
+              <div class="nhsuk-panel__body">
+                Your reference number
+                <br>
+                <strong>HDJ2123F</strong>
+              </div>
+
+            </div>
+
+            <p>You will receive your EHIC in 7-10 days. If you provided an email address, we will send you a confirmation email.</p>
+            <p>If you need to contact us about your application, email <a href="nhsbsa.ehicenquiries@nhs.net">nhsbsa.ehicenquiries@nhs.net</p>
+
+        </div>
+      </div>
+{% endblock %}

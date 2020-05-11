@@ -1,7 +1,7 @@
-{% extends 'layout.html' %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
-  You could get an EHIC
+  What is your home address?
 {% endblock %}
 
 {% block beforeContent %}
@@ -23,44 +23,46 @@
 {% endblock %}
 
 {% block content %}
+
   <div class="nhsuk-grid-row">
-
-    <div class="nhsuk-grid-column-two-thirds">
-
-      <h1>
-        You could get an EHIC
-      </h1>
-
-      <p class="nhsuk-lede-text">
-        Based of the information you've told us, you could get an EHIC. You will be asked to upload your residency document later on.
-      </p>
-
-      <form action="residencyAddSomeoneElse" method="post">
+    <div class="nhsuk-grid-column-three-quarters">
+      <form action="upload-evidence" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add someone else to your application?",
+            text: "What is your home address?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        {{ radios({
-          "idPrefix": "residency-add-someone-else",
-          "name": "residency-add-someone-else",
+        <!-- <h3>Postcode</h3>
+        <p>SW1A 1AA</p> -->
+        <h3>Select an address</h3>
+
+        {{ select({
+          "id": "select-1",
+          "name": "select-1",
+          "label": {
+          },
           "items": [
             {
-              "value": "Yes",
-              "text": "Yes, add my partner and/or children"
+              "value": 1,
+              "text": "1 address found",
+              "selected": true
             },
             {
-              "value": "No",
-              "text": "No, start my application now"
+              "value": 2,
+              "text": "73 Roman Rd, Leeds LS2 5ZN"
             }
           ]
         }) }}
 
+        <p><a href="address-manual">I can't find my address in the list</a></p>
+
         {% endcall %}
+
+
 
         {{ button({
           "text": "Continue"
@@ -68,13 +70,11 @@
 
       </form>
 
-      
+     {{ backLink({
+        "href": "address-lookup",
+        "text": "Change my previous answer"
+      }) }}
 
-<!-- <a href="/v1_0/start" class="nhsuk-button nhsuk-u-margin-bottom-8">
-        Version 1_0
-      </a> -->
-
-    </div>  
-
+    </div>
   </div>
 {% endblock %}

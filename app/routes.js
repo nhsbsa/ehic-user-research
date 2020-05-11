@@ -135,6 +135,12 @@ router.post('/v1_0/euWorking', function (req, res) {
   }
 })
 
+
+
+
+
+
+
 // Add someone else to your application?
 router.post('/v1_0/addSomeoneElse', function (req, res) {
   var addSomeoneElse = req.session.data['add-someone-else']
@@ -145,6 +151,32 @@ router.post('/v1_0/addSomeoneElse', function (req, res) {
     res.redirect('application/what-you-need')
   }
 })
+
+// Add someone else to your application? (if eligible-with-evidence)
+router.post('/v1_0/settledAddSomeoneElse', function (req, res) {
+  var settledAddSomeoneElse = req.session.data['settled-add-someone-else']
+  if (settledAddSomeoneElse == "Yes"){
+    res.redirect('add-another')
+  }
+  else {
+    res.redirect('application-settled/what-you-need')
+  }
+})
+
+// Add someone else to your application? (if eligible-with-residency)
+router.post('/v1_0/residencyAddSomeoneElse', function (req, res) {
+  var residencyAddSomeoneElse = req.session.data['residency-add-someone-else']
+  if (residencyAddSomeoneElse == "Yes"){
+    res.redirect('add-another')
+  }
+  else {
+    res.redirect('application-residency/what-you-need')
+  }
+})
+
+
+
+
 
 // Who do you want to add to your application?
 router.post('/v1_0/addAnother', function (req, res) {
@@ -283,7 +315,27 @@ router.post('/v1_0/application/addAnother', function (req, res) {
   }
 })
 
+// Do you want to add someone else to your application? (if eligible-with-settle)
+router.post('/v1_0/application-settled/addAnother', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('')
+  }
+  else {
+    res.redirect('cya-individual')
+  }
+})
 
+// Do you want to add someone else to your application? (if eligible-with-residency-1)
+router.post('/v1_0/application-residency/addAnother', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('')
+  }
+  else {
+    res.redirect('cya-individual')
+  }
+})
 
 
 
