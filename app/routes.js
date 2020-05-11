@@ -272,8 +272,16 @@ router.post('/v1_0/partner-eligibility/euWorking', function (req, res) {
 // ----------- MAIN APPLICANT ------------ //
 // --------------------------------------- //
 
-
-
+// Do you want to add someone else to your application?
+router.post('/v1_0/application/addAnother', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('')
+  }
+  else {
+    res.redirect('cya-individual')
+  }
+})
 
 
 

@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your home address?
+  Do you want to add someone else to your application?
 {% endblock %}
 
 {% block beforeContent %}
+
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -26,43 +27,37 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="email-address" method="post">
+
+      <form action="/v1_0/application/addAnother" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your home address?",
+            text: "Do you want to add someone else to your application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+      
+      <p>
+        You can add your partner and up to [n] children.
+      </p>
 
-        <!-- <h3>Postcode</h3>
-        <p>SW1A 1AA</p> -->
-        <h3>Select an address</h3>
-
-        {{ select({
-          "id": "select-1",
-          "name": "select-1",
-          "label": {
-          },
+        {{ radios({
+          "idPrefix": "add-another",
+          "name": "add-another",
           "items": [
             {
-              "value": 1,
-              "text": "1 address found",
-              "selected": true
+              "value": "Yes",
+              "text": "Yes"
             },
             {
-              "value": 2,
-              "text": "Buckingham Palace, LONDON SW1A 1AA"
+              "value": "No",
+              "text": "No"
             }
           ]
         }) }}
 
-        <p><a href="address-manual">I can't find my address in the list</a></p>
-
         {% endcall %}
-
-
 
         {{ button({
           "text": "Continue"
@@ -70,8 +65,8 @@
 
       </form>
 
-     {{ backLink({
-        "href": "address-lookup",
+      {{ backLink({
+        "href": "nino",
         "text": "Change my previous answer"
       }) }}
 
