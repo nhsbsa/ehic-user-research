@@ -73,7 +73,7 @@ router.post('/v1_0/euBornInUk', function (req, res) {
 router.post('/v1_0/ukSettled', function (req, res) {
   var ukSettled = req.session.data['uk-settled']
   if (ukSettled == "Yes"){
-    res.redirect('eligible')
+    res.redirect('eligible-with-settlement')
   }
   else {
     res.redirect('permanent-residency')
@@ -315,7 +315,7 @@ router.post('/v1_0/application/addAnother', function (req, res) {
   }
 })
 
-// Do you want to add someone else to your application? (if eligible-with-settle)
+// Do you want to add someone else to your application? (if eligible-with-settlement)
 router.post('/v1_0/application-settled/addAnother', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
