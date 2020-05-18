@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Who are you applying for?
+  Does Olivia have a permanent residency document?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,36 +26,33 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      
-      <form action="/v1_0/whoFor" method="post">
+      <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your child's eligibility</span>
+      <form action="permanentRes" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Who are you applying for?",
+            text: "Does Olivia have a permanent residency document?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
         {{ radios({
-          "idPrefix": "who-for",
-          "name": "who-for",
+          "idPrefix": "permanent-res",
+          "name": "permanent-res",
           "items": [
             {
-              "value": "Myself and members of my family",
-              "text": "Myself and members of my family"
+              "value": "Yes",
+              "text": "Yes"
             },
             {
-              "value": "Just myself",
-              "text": "Just myself"
+              "value": "No",
+              "text": "No"
             }
           ]
         }) }}
 
         {% endcall %}
-
-              <p><a href="#">I need to apply on behalf of someone else</a></p>
-
 
         {{ button({
           "text": "Continue"
@@ -63,11 +60,10 @@
 
       </form>
 
-
-     <!--  {{ backLink({
-        "href": "/docs/how-tos",
-        "text": "Back to How to guides"
-      }) }} -->
+     {{ backLink({
+        "href": "#",
+        "text": "Change my previous answer"
+      }) }}
 
     </div>
   </div>

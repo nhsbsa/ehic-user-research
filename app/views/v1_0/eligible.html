@@ -35,14 +35,14 @@
       <p class="nhsuk-lede-text">
         Based on the answers you've given us, you can get an EHIC.
      
-        You can apply as an individual or add your partner and children to your application.
+        You can apply as an individual or add your partner and up to [n] children up to the age of 16 to your application.
       </p>
 
       <form action="/v1_0/addSomeoneElse" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add someone else to your application?",
+            text: "Do you want to check the eligibility of someone else?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -54,7 +54,7 @@
           "items": [
             {
               "value": "Yes",
-              "text": "Yes, add my partner and/or children"
+              "text": "Yes, check my partner and/or children's eligibility"
             },
             {
               "value": "No",

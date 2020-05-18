@@ -25,7 +25,7 @@ router.post('/v1_0/previousEhic', function (req, res) {
 // Who is the application for?
 router.post('/v1_0/whoFor', function (req, res) {
   var whoFor = req.session.data['who-for']
-  if (whoFor == "Myself"){
+  if (whoFor == "Myself and members of my family"){
     res.redirect('previous-ehic')
   }
   else {
@@ -185,7 +185,7 @@ router.post('/v1_0/addAnother', function (req, res) {
     res.redirect('partner-eligibility/partner-name')
   }
   else {
-    res.redirect('')
+    res.redirect('child-eligibility/child-name')
   }
 })
 
