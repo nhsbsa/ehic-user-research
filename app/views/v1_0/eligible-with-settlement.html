@@ -33,18 +33,21 @@
       </h1>
 
       <p class="nhsuk-lede-text">
-        Based of the information you've told us, you could get an EHIC but we need you to give us your settled status code to prove it.
+        Based on the answers you've given us, you could get an EHIC. 
+        <!-- We will ask you to provide your UK settled or pre-status code during your application. -->
       </p>
 
       <form action="settledAddSomeoneElse" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add someone else to your application?",
+            text: "Do you want to check the eligibility of someone else?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+
+        <p>You can apply as an individual or add your partner and up to [n] children up to the age of 16 to your application.</p>
 
         {{ radios({
           "idPrefix": "settled-add-someone-else",
@@ -52,7 +55,7 @@
           "items": [
             {
               "value": "Yes",
-              "text": "Yes, add my partner and/or children"
+              "text": "Yes, check my partner and/or children's eligibility"
             },
             {
               "value": "No",

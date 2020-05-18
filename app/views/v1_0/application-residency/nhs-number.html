@@ -26,7 +26,8 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="address-lookup" method="post">
+      <!-- <form action="address-lookup" method="post"> -->
+      <form action="add-another-yn" method="post">
 
         {% call fieldset({
           legend: {
@@ -38,7 +39,10 @@
 
         {{ input({
           "label": {
-            "text": "Enter your NHS number"
+            "text": "NHS number"
+          },
+          hint: {
+            html: "Your NHS number is a 10 digit number that you find on any letter the NHS has sent you. For example, <span class=\"nhsuk-u-nowrap\">485 777 3456</span>."
           },
           "id": "input-width-10",
           "name": "test-width-10",
@@ -56,7 +60,7 @@
       </form>
 
      {{ backLink({
-        "href": "nino",
+        "href": "dob",
         "text": "Change my previous answer"
       }) }}
 

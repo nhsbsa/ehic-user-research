@@ -6,7 +6,6 @@
 
 {% block beforeContent %}
 
-
   <!-- Phase banner -->
   <div class="app-phase-banner">
     <div class="nhsuk-width-container app-phase-banner__container">
@@ -28,15 +27,12 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
-      <h1>
-        You can get an EHIC
-      </h1>
+      <h1>You can get an EHIC</h1>
 
       <p class="nhsuk-lede-text">
-        Based on the answers you've given us, you can get an EHIC.
-     
-        You can apply as an individual or add your partner and up to [n] children up to the age of 16 to your application.
+        Based on the answers you've given us, you can get an EHIC. 
       </p>
+
 
       <form action="/v1_0/addSomeoneElse" method="post">
 
@@ -47,6 +43,8 @@
             isPageHeading: true
           }
         }) %}
+
+        <p>You can apply as an individual or add your partner and up to [n] children up to the age of 16 to your application.</p>
 
         {{ radios({
           "idPrefix": "add-someone-else",

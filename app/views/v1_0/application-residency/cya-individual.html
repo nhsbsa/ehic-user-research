@@ -28,7 +28,7 @@
     <div class="nhsuk-grid-column-three-quarters">
       <form action="app-complete" method="post">
 
-        <h1>Check your answers</h1>
+        <h1>Check your answers before submitting your application</h1>
 
 
         {{ summaryList({
@@ -69,7 +69,7 @@
             },
             {
               key: {
-                text: "Evidence of residency"
+                text: "Evidence of UK residency"
               },
               value: {
                 html: "example-file-name.jpeg"
@@ -120,17 +120,34 @@
             },
             {
               key: {
-                text: "National Insurance number"
+                text: "NHS number"
               },
               value: {
-                text: "AA000000A"
+                text: "485 777 3456"
               },
               actions: {
                 items: [
                   {
-                    href: "nino",
+                    href: "nhs-number",
                     text: "Change",
-                    visuallyHiddenText: "national Insurance number"
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Add someone else to your application"
+              },
+              value: {
+                text: "No"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "add-another-yn",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
                   }
                 ]
               }
@@ -140,8 +157,11 @@
           ]
         }) }}
 
+        <h2>Now send your application</h2>
+        <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
         {{ button({
-          "text": "Submit application"
+          "text": "Accept and send"
         }) }}
 
       </form>
