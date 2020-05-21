@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Get health care cover for visiting the EU (EHIC)
+Get healthcare cover for visiting the EU (EHIC)
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,13 +11,36 @@ Get health care cover for visiting the EU (EHIC)
 <div class="nhsuk-grid-row">
    <div class="nhsuk-grid-column-full">
       <h1>
-         Get health care cover for visiting the EU (EHIC)
+         Get healthcare cover for visiting the EU (EHIC)
          <span class="nhsuk-caption-xl nhsuk-caption--bottom">Apply for an EHIC</span>
       </h1>
 
       <p class="nhsuk-lede-text">
-         Enable citizens to check if the UK will pay for their health care needs while they’re visiting an EU country and if eligible, provide them with proof that they are covered.
+         Enable citizens to check if the UK will pay for their healthcare needs while they’re visiting an EU/EEA country or Switzerland and if eligible, provide them with proof that they are covered.
       </p>
+
+      <div class="nhsuk-expander-group">
+         <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary">
+               <span class="nhsuk-details__summary-text">
+               Alpha (Sprint 2)
+               </span>
+            </summary>
+            <div class="nhsuk-details__text">
+               <h3>Journeys</h3>
+               <ul>
+                  <!-- <li>Check eligibility for someone living in the UK, the EU or another country</li> -->
+                  <!-- <li>Check eligibility for the partner of an eligible person</li> -->
+                  <li>Apply for an eligible individual living in the UK or the EU (success journey)</li>
+               </ul>
+               <hr>
+               {{ actionLink({
+               "text": "Get healthcare cover for visiting the EU (EHIC) (v2)",
+               "href": "/current/start"
+               }) }}
+            </div>
+         </details>
+      </div>
 
       <div class="nhsuk-expander-group">
          <details class="nhsuk-details nhsuk-expander">
@@ -35,12 +58,14 @@ Get health care cover for visiting the EU (EHIC)
                </ul>
                <hr>
                {{ actionLink({
-               "text": "Get health care cover for visiting the EU (EHIC) (v1)",
-               "href": "/v1_0/start"
+               "text": "Get healthcare cover for visiting the EU (EHIC) (v1)",
+               "href": "/sprint1/start"
                }) }}
             </div>
          </details>
       </div>
+
+
 
       <!--  <hr>
          <h3>Example pages</h3>
