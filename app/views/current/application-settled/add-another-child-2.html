@@ -1,10 +1,19 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to add your children to your application?
+  Do you want to add another dependant child to your application?
 {% endblock %}
 
 {% block beforeContent %}
+
+<style type="text/css">
+  span {
+    font-weight: bold;
+  }
+  .nhsuk-inset-text {
+    margin: 15px 0 30px 0;
+  }
+</style>
 
 
   <!-- Phase banner -->
@@ -32,11 +41,15 @@
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add another child to your application?",
+            text: "Do you want to add another dependant child to your application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+
+        {{ insetText({
+        "HTML": "<p><span>Child 1<br></span>Millie Francis</p>"
+      }) }}
       
       <!-- <p>
         You can add your partner and children.
