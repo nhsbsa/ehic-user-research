@@ -23,6 +23,8 @@ console.log('folder : ' + res.locals.folder + ', subfolder : ' + res.locals.subf
 // Start folder specific routes
 router.use('/sprint1', require('./views/sprint1/_routes'));
 
+router.use('/sprint2', require('./views/sprint2/_routes'));
+
 // current sprint, remember to add older sprint when adding a new folder!
 router.use('/current', require('./views/current/_routes'));
 

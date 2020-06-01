@@ -30,25 +30,11 @@
 
         <h1>Check your answers before sending your application</h1>
 
+        <h2>Your details</h2>
+
         {{ summaryList({
           rows: [
-            {
-              key: {
-                text: "NHS number"
-              },
-              value: {
-                text: "485 777 3456"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "nhs-number",
-                    text: "Change",
-                    visuallyHiddenText: "date of birth"
-                  }
-                ]
-              }
-            },
+            
             {
               key: {
                 text: "Full name"
@@ -100,6 +86,23 @@
                 ]
               }
             },
+            {
+              key: {
+                text: "NHS number"
+              },
+              value: {
+                text: "485 777 3456"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "nhs-number",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
             
             {
               key: {
@@ -135,11 +138,9 @@
                 ]
               }
             },
-            
-            
             {
               key: {
-                text: "Add someone else to your application"
+                text: "Add partner details"
               },
               value: {
                 text: "No"
@@ -147,7 +148,24 @@
               actions: {
                 items: [
                   {
-                    href: "add-another-yn",
+                    href: "add-partner",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Add child(ren) details"
+              },
+              value: {
+                text: "No"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "add-child-1",
                     text: "Change",
                     visuallyHiddenText: "date of birth"
                   }

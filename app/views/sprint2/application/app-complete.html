@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Application complete
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+          <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-bottom-4">
+            <h1 class="nhsuk-panel__title">
+                Application submitted
+              </h1>
+              <div class="nhsuk-panel__body">
+                Your reference number
+                <br>
+                <strong>HDJ2123F</strong>
+              </div>
+            </div>
+
+            <h2>What happens next</h2>
+
+            <p>We will now review your application. Once your application passes our checks, you will receive your EHIC by post in 7-10 days. We will send you a confirmation email which will contain your reference number.</p>
+
+            <p>If you need to contact us about your application or if you do not receive your card within 10 days, contact us.</p>
+
+            <h4>Email</h4>
+            <p>
+              <a href="nhsbsa.ehicenquiries@nhs.net">nhsbsa.ehicenquiries@nhs.net</a> <br>
+              We aim to respond within 2 working days
+            </p>
+
+            <h4>Telephone</h4>
+            <p>Have your reference number when you call.</p>
+            <p>
+              Telephone: 0123 112 223 3344 <br>
+              Monday to Saturday, 8am to 6pm (except public holidays)
+            </p>
+            
+        </div>
+      </div>
+{% endblock %}
