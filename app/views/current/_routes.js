@@ -317,7 +317,7 @@ router.post('/euWorking', function (req, res) {
 router.post('/application/addPartner', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('partner/full-name')
+    res.redirect('partner/partner-address')
   }
   else {
     res.redirect('add-child-1')
@@ -328,10 +328,10 @@ router.post('/application/addPartner', function (req, res) {
 router.post('/application/partner/partnerAddress', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('../add-child-2')
+    res.redirect('full-name')
   }
   else {
-    res.redirect('address-lookup')
+    res.redirect('')
   }
 })
 
@@ -339,10 +339,10 @@ router.post('/application/partner/partnerAddress', function (req, res) {
 router.post('/application/child-2/childAddress', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('../add-another-child-2')
+    res.redirect('full-name')
   }
   else {
-    res.redirect('address-lookup')
+    res.redirect('')
   }
 })
 
@@ -350,10 +350,10 @@ router.post('/application/child-2/childAddress', function (req, res) {
 router.post('/application/child-1/childAddress', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('../add-another-child-1')
+    res.redirect('full-name')
   }
   else {
-    res.redirect('address-lookup')
+    res.redirect('')
   }
 })
 
@@ -361,7 +361,7 @@ router.post('/application/child-1/childAddress', function (req, res) {
 router.post('/application-settled/addPartner', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('partner/full-name')
+    res.redirect('partner/partner-address')
   }
   else {
     res.redirect('add-child-1')
@@ -372,10 +372,10 @@ router.post('/application-settled/addPartner', function (req, res) {
 router.post('/application-settled/partner/partnerAddress', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('../add-child-2')
+    res.redirect('full-name')
   }
   else {
-    res.redirect('address-lookup')
+    res.redirect('')
   }
 })
 
@@ -383,7 +383,7 @@ router.post('/application-settled/partner/partnerAddress', function (req, res) {
 router.post('/application-settled/addChild', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('child-1/full-name')
+    res.redirect('child-1/child-address')
   }
   else {
     res.redirect('cya-individual')
@@ -394,10 +394,10 @@ router.post('/application-settled/addChild', function (req, res) {
 router.post('/application-settled/child-1/childAddress', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('../add-another-child-1')
+    res.redirect('full-name')
   }
   else {
-    res.redirect('address-lookup')
+    res.redirect('')
   }
 })
 
@@ -405,10 +405,10 @@ router.post('/application-settled/child-1/childAddress', function (req, res) {
 router.post('/application-settled/child-2/childAddress', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('../add-another-child-2')
+    res.redirect('full-name')
   }
   else {
-    res.redirect('address-lookup')
+    res.redirect('')
   }
 })
 
@@ -416,7 +416,7 @@ router.post('/application-settled/child-2/childAddress', function (req, res) {
 router.post('/application/addChild', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('child-1/full-name')
+    res.redirect('child-1/child-address')
   }
   else {
     res.redirect('cya-individual')
@@ -427,7 +427,7 @@ router.post('/application/addChild', function (req, res) {
 router.post('/application-settled/addChildAfterPartner', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('child-2/full-name')
+    res.redirect('child-2/child-address')
   }
   else {
     res.redirect('cya-couple')
@@ -438,7 +438,7 @@ router.post('/application-settled/addChildAfterPartner', function (req, res) {
 router.post('/application/addChildAfterPartner', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('child-2/full-name')
+    res.redirect('child-2/child-address')
   }
   else {
     res.redirect('cya-couple')
@@ -450,7 +450,7 @@ router.post('/application/addChildAfterPartner', function (req, res) {
 router.post('/application-settled/addAnotherChild', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('child-2/full-name')
+    res.redirect('child-2/child-address')
   }
   else {
     res.redirect('cya-family')
@@ -474,7 +474,7 @@ router.post('/application-settled/noPartnerAddAnotherChild', function (req, res)
 router.post('/application/addAnotherChild', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('child-2/full-name')
+    res.redirect('child-2/child-address')
   }
   else {
     res.redirect('cya-family')
