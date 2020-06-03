@@ -30,6 +30,7 @@
 
       <form action="partnerAddress" method="post">
 
+
         {% call fieldset({
           legend: {
             text: "Does your partner live with you?",
@@ -38,9 +39,7 @@
           }
         }) %}
       
-      <!-- <p>
-        You can add your partner and children.
-      </p> -->
+      <!-- <p>You and your partner must live in the same household.</p> -->
 
         {{ radios({
           "idPrefix": "add-another",

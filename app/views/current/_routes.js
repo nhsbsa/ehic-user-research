@@ -331,7 +331,7 @@ router.post('/application/partner/partnerAddress', function (req, res) {
     res.redirect('full-name')
   }
   else {
-    res.redirect('')
+    res.redirect('ineligible')
   }
 })
 
@@ -342,7 +342,7 @@ router.post('/application/child-2/childAddress', function (req, res) {
     res.redirect('full-name')
   }
   else {
-    res.redirect('')
+    res.redirect('ineligible')
   }
 })
 
@@ -353,7 +353,7 @@ router.post('/application/child-1/childAddress', function (req, res) {
     res.redirect('full-name')
   }
   else {
-    res.redirect('')
+    res.redirect('ineligible')
   }
 })
 
@@ -375,7 +375,7 @@ router.post('/application-settled/partner/partnerAddress', function (req, res) {
     res.redirect('full-name')
   }
   else {
-    res.redirect('')
+    res.redirect('ineligible')
   }
 })
 
@@ -397,7 +397,7 @@ router.post('/application-settled/child-1/childAddress', function (req, res) {
     res.redirect('full-name')
   }
   else {
-    res.redirect('')
+    res.redirect('ineligible')
   }
 })
 
@@ -408,7 +408,7 @@ router.post('/application-settled/child-2/childAddress', function (req, res) {
     res.redirect('full-name')
   }
   else {
-    res.redirect('')
+    res.redirect('ineligible')
   }
 })
 
