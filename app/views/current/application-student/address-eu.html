@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your home address?
+  What is your address?
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,11 +30,13 @@
 
         {% call fieldset({
           legend: {
-            text: "What is your home address?",
+            text: "What is your address?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+
+        <!-- <p>This is where we will send your EHIC. If you have already moved to the country you will be studying in, put your term time address.</p> -->
 
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="input-width-20">
