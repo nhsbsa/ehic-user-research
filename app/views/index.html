@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-Get healthcare cover for visiting the EU (EHIC)
+   Get healthcare cover for visiting the EU (EHIC)
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,22 +20,24 @@ Get healthcare cover for visiting the EU (EHIC)
       </p>
 
       <!-- <div class="nhsuk-expander-group">
-         <details class="nhsuk-details nhsuk-expander">
+         <details class="nhsuk-details nhsuk-expander" open>
             <summary class="nhsuk-details__summary">
                <span class="nhsuk-details__summary-text">
-               Alpha (Sprint 4)
+               Alpha (Sprint 4) - WORK IN PROGRESS
                </span>
             </summary>
             <div class="nhsuk-details__text">
                <p>Sprint commencing: 17/06/2020</p>
                <h3>Journeys</h3>
                <ul>
-                  <li>Apply for an eligible UK or EU national living in the UK (success journey)</li>
-                  <li>Add a partner and/or child to the application</li>
+                  <li>EU citizens living in the UK (Apply as an individual or add a child to the application)</li>
+                  <li>UK citizens living in the UK (Apply as an individual or add a child to the application)</li>
+                  <li>S1 holders</li>
+                  <li>Students studying in the EU/EEA or Switzerland</li>
                </ul>
                <hr>
                {{ actionLink({
-               "text": "Get healthcare cover for visiting the EU (EHIC) (v3)",
+               "text": "Get healthcare cover for visiting the EU (EHIC) (v4)",
                "href": "/current/start"
                }) }}
             </div>
@@ -59,7 +61,7 @@ Get healthcare cover for visiting the EU (EHIC)
                <hr>
                {{ actionLink({
                "text": "Get healthcare cover for visiting the EU (EHIC) (v3)",
-               "href": "/current/start"
+               "href": "/sprint3/start"
                }) }}
             </div>
          </details>
