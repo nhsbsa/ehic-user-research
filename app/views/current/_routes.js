@@ -92,7 +92,7 @@ router.post('/euStudying', function (req, res) {
     res.redirect('born-in-uk-study')
   }
   else {
-    res.redirect('ineligible')
+    res.redirect('eu-irish')
   }
 })
 

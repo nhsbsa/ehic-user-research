@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Are you a UK national
+  Are you a Northern Irish national with dual British and Irish citizenship?
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,19 +27,19 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="euStudyingBornInUk" method="post">
+      <form action="euIrish" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Are you a UK national",
+            text: "Are you a Northern Irish national with dual British and Irish citizenship?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
         {{ radios({
-          "idPrefix": "eu-born-in-uk",
-          "name": "eu-born-in-uk",
+          "idPrefix": "eu-irish",
+          "name": "eu-irish",
           "items": [
             {
               "value": "Yes",
@@ -60,10 +60,10 @@
 
       </form>
 
-     <!--  {{ backLink({
-        "href": "/docs/how-tos",
-        "text": "Back to How to guides"
-      }) }} -->
+     {{ backLink({
+        "href": "",
+        "text": "Change my previous answer"
+      }) }}
 
     </div>
   </div>
