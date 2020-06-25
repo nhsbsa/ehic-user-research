@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your mobile phone number?
+  What is your contact telephone number?
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,15 +30,17 @@
 
         {% call fieldset({
           legend: {
-            text: "What is your mobile phone number?",
+            text: "What is your contact telephone number?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
+        <p>We may need to contact you</p>
+
         {{ input({
           "label": {
-            "text": "Enter your mobile phone number (optional)"
+            "text": "Enter your contact telephone number (optional)"
           },
           "id": "input-width-30",
           "name": "test-width-30",

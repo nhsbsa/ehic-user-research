@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your child's name?
+  What is the child's name?
 {% endblock %}
 
 {% block beforeContent %}
@@ -31,7 +31,7 @@
 
         {% call fieldset({
           legend: {
-            text: "What is your child's name?",
+            text: "What is the child's name?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -46,14 +46,6 @@
           "classes": "nhsuk-input--width-30"
         }) }}
 
-        {{ input({
-          "label": {
-            "text": "Middle name(s) (optional)"
-          },
-          "id": "input-width-30",
-          "name": "test-width-30",
-          "classes": "nhsuk-input--width-30"
-        }) }}
 
         {{ input({
           "label": {
