@@ -22,10 +22,21 @@ router.post('/whereDoYouLive', function (req, res) {
 router.post('/bornInUk', function (req, res) {
   var bornInUk = req.session.data['born-in-uk']
   if (bornInUk == "Yes"){
-    res.redirect('application/full-name')
+    res.redirect('student')
   }
   else {
     res.redirect('settled-status')
+  }
+})
+
+// Do you intend to study in the EU, EEA or Switzerland?
+router.post('/student', function (req, res) {
+  var student = req.session.data['student']
+  if (student == "Yes"){
+    res.redirect('application-student/full-name')
+  }
+  else {
+    res.redirect('application/full-name')
   }
 })
 
@@ -44,7 +55,7 @@ router.post('/euBornInUk', function (req, res) {
 router.post('/ukSettled', function (req, res) {
   var ukSettled = req.session.data['uk-settled']
   if (ukSettled == "Yes"){
-    res.redirect('application-settled/full-name')
+    res.redirect('student')
   }
   else {
     res.redirect('ineligible')
