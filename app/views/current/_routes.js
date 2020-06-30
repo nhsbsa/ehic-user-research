@@ -33,7 +33,7 @@ router.post('/bornInUk', function (req, res) {
 router.post('/student', function (req, res) {
   var student = req.session.data['student']
   if (student == "Yes"){
-    res.redirect('application-student/full-name')
+    res.redirect('application-student/evidence-student')
   }
   else {
     res.redirect('application/full-name')
