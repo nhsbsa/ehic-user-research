@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your NHS number?
+  What is your home address?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,31 +26,44 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="address-lookup" method="post">
-      <!-- <form action="course-country" method="post"> -->
+      <form action="email-address" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your NHS number?",
+            text: "What is your home address?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        {{ input({
-          
-          hint: {
-            html: "Your NHS number is a 10 digit number. For example, <span class=\"nhsuk-u-nowrap\">485 777 3456</span>. <p>You can find it on any letter the NHS has sent you, on a prescription, or by logging in to a GP practice online service.</p>"
+        <!-- <h3>Postcode</h3>
+        <p>SW1A 1AA</p> -->
+        <h3>Select an address</h3>
+
+        {{ select({
+          "id": "select-1",
+          "name": "select-1",
+          "label": {
           },
-          "id": "input-width-10",
-          "name": "test-width-10",
-          "classes": "nhsuk-input--width-10"
+          "items": [
+            {
+              "value": 1,
+              "text": "1 address found",
+              "selected": true
+            },
+            {
+              "value": 2,
+              "text": "73 Roman Rd, Leeds LS2 5ZN"
+            }
+          ]
         }) }}
 
+        <p><a href="address-manual">I can't find my address in the list</a></p>
 
         {% endcall %}
-<!--         <p><a href="address-manual">I don't have a National Insurance number</a></p>
- -->
+
+
+
         {{ button({
           "text": "Continue"
         }) }}
@@ -58,7 +71,7 @@
       </form>
 
      {{ backLink({
-        "href": "",
+        "href": "address-lookup",
         "text": "Change my previous answer"
       }) }}
 

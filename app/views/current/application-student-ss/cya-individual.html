@@ -34,58 +34,7 @@
 
         {{ summaryList({
           rows: [
-            
-            {
-              key: {
-                text: "Name"
-              },
-              value: {
-                text: "Karen Francis"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "full-name",
-                    text: "Change",
-                    visuallyHiddenText: "full name"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Date of birth"
-              },
-              value: {
-                text: "15 March 1998"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "dob",
-                    text: "Change",
-                    visuallyHiddenText: "date of birth"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "NHS number"
-              },
-              value: {
-                text: "485 777 3456"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "nhs-number",
-                    text: "Change",
-                    visuallyHiddenText: "date of birth"
-                  }
-                ]
-              }
-            },
+
             {
               key: {
                 text: "Country of study"
@@ -139,20 +88,69 @@
             },
             {
               key: {
-                text: "Address"
+                text: "Name"
               },
               value: {
-                html: "
-                Campus Südseite<br>
-                        Baierbrunner Str. 50<br>
-                        81379<br>
-                        München<br>
-                        Germany"
+                text: "Karen Francis"
               },
               actions: {
                 items: [
                   {
-                    href: "address-eu",
+                    href: "full-name",
+                    text: "Change",
+                    visuallyHiddenText: "full name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                text: "15 March 1998"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "dob",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "NHS number"
+              },
+              value: {
+                text: "485 777 3456"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "nhs-number",
+                    text: "Change",
+                    visuallyHiddenText: "NHS number"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Address"
+              },
+              value: {
+                html: "
+                      73 Roman Rd<br>
+                      Leeds<br>
+                      LS2 5ZN<br>"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "address-lookup",
                     text: "Change",
                     visuallyHiddenText: "home address"
                   }
@@ -216,7 +214,7 @@
         }) }}
 
         <h2>Now send your application</h2>
-        <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+        <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct. We will tell you how to send evidence of your studies on the next page.</p>
 
         {{ button({
           "text": "Accept and send"

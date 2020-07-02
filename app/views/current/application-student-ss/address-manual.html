@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your NHS number?
+  What is your home address?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,21 +26,55 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="address-lookup" method="post">
-      <!-- <form action="course-country" method="post"> -->
+      <form action="email-address" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your NHS number?",
+            text: "What is your home address?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
         {{ input({
-          
-          hint: {
-            html: "Your NHS number is a 10 digit number. For example, <span class=\"nhsuk-u-nowrap\">485 777 3456</span>. <p>You can find it on any letter the NHS has sent you, on a prescription, or by logging in to a GP practice online service.</p>"
+          "label": {
+          "text": "Building and street"
+          },
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
+        }) }}
+
+        {{ input({
+          "label": {
+          "text": ""
+          },
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
+        }) }}
+
+        {{ input({
+          "label": {
+            "text": "Town or city"
+          },
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
+        }) }}
+
+        {{ input({
+          "label": {
+            "text": "County"
+          },
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
+        }) }}
+
+        {{ input({
+          "label": {
+            "text": "Postcode"
           },
           "id": "input-width-10",
           "name": "test-width-10",
@@ -49,8 +83,7 @@
 
 
         {% endcall %}
-<!--         <p><a href="address-manual">I don't have a National Insurance number</a></p>
- -->
+
         {{ button({
           "text": "Continue"
         }) }}
@@ -58,7 +91,7 @@
       </form>
 
      {{ backLink({
-        "href": "",
+        "href": "address-list",
         "text": "Change my previous answer"
       }) }}
 

@@ -40,6 +40,17 @@ router.post('/student', function (req, res) {
   }
 })
 
+// Do you intend to study in the EU, EEA or Switzerland? - EU Settled
+router.post('/eussStudent', function (req, res) {
+  var student = req.session.data['student']
+  if (student == "Yes"){
+    res.redirect('application-student-ss/evidence-student')
+  }
+  else {
+    res.redirect('application-settled/full-name')
+  }
+})
+
 // Were you born in the UK? (if RETIRED and living in the EU)
 router.post('/euBornInUk', function (req, res) {
   var euBornInUk = req.session.data['eu-born-in-uk']
@@ -55,7 +66,7 @@ router.post('/euBornInUk', function (req, res) {
 router.post('/ukSettled', function (req, res) {
   var ukSettled = req.session.data['uk-settled']
   if (ukSettled == "Yes"){
-    res.redirect('student')
+    res.redirect('student-ss')
   }
   else {
     res.redirect('ineligible')
