@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your NHS number?
+  What is your gender?
 {% endblock %}
 
 {% block beforeContent %}
+
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -26,42 +27,49 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <form action="address-lookup" method="post"> -->
-      <form action="gender" method="post">
+      <form action="email-address" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your NHS number?",
+            text: "What is your gender?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+      
+      <!-- <p>
+        You can add children to your EHIC application if they live with you. They will receive their own EHIC.
+      </p> -->
 
-        <p>Your NHS number is a 10 digit number. For example, <span class=\"nhsuk-u-nowrap\">485 777 3456</span>.</p>
-        <p>You can find it on any letter the NHS has sent you, on a prescription, or by logging in to a GP practice online service.</p>
-
-        {{ input({
-          
-          hint: {
-            html: "Enter your NHS number (optional)"
-          },
-          "id": "input-width-10",
-          "name": "test-width-10",
-          "classes": "nhsuk-input--width-10"
+        {{ radios({
+          "idPrefix": "add-another",
+          "name": "add-another",
+          "items": [
+            {
+              "value": "Female",
+              "text": "Female"
+            },
+            {
+              "value": "Male",
+              "text": "Male"
+            },
+            {
+              "value": "Prefer not to say",
+              "text": "Prefer not to say"
+            }
+          ]
         }) }}
 
-
         {% endcall %}
-<!--         <p><a href="address-manual">I don't have a National Insurance number</a></p>
- -->
+
         {{ button({
           "text": "Continue"
         }) }}
 
       </form>
 
-     {{ backLink({
-        "href": "",
+      {{ backLink({
+        "href": "nino",
         "text": "Change my previous answer"
       }) }}
 

@@ -122,6 +122,26 @@
             },
             {
               key: {
+                text: "Home address"
+              },
+              value: {
+                html: "
+                      73 Roman Rd<br>
+                      Leeds<br>
+                      LS2 5ZN<br>"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "address-lookup",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
                 text: "NHS number"
               },
               value: {
@@ -139,20 +159,17 @@
             },
             {
               key: {
-                text: "Home address"
+                text: "Gender"
               },
               value: {
-                html: "
-                      73 Roman Rd<br>
-                      Leeds<br>
-                      LS2 5ZN<br>"
+                text: "Female"
               },
               actions: {
                 items: [
                   {
-                    href: "address-lookup",
+                    href: "gender",
                     text: "Change",
-                    visuallyHiddenText: "home address"
+                    visuallyHiddenText: "gender"
                   }
                 ]
               }
