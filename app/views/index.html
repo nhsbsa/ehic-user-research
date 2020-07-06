@@ -1,12 +1,9 @@
 {% extends 'layout.html' %}
-
 {% block pageTitle %}
-   Get healthcare cover for visiting the EU (EHIC)
+Get healthcare cover for visiting the EU (EHIC)
 {% endblock %}
-
 {% block beforeContent %}
 {% endblock %}
-
 {% block content %}
 <div class="nhsuk-grid-row">
    <div class="nhsuk-grid-column-full">
@@ -14,37 +11,62 @@
          Get healthcare cover for visiting the EU (EHIC)
          <span class="nhsuk-caption-xl nhsuk-caption--bottom">Apply for an EHIC</span>
       </h1>
-
       <p class="nhsuk-lede-text">
          Enable citizens to check if the UK will pay for their healthcare needs while they’re visiting an EU/EEA country or Switzerland and if eligible, provide them with proof that they are covered.
       </p>
-
-         <div class="nhsuk-expander-group">
-            <details class="nhsuk-details nhsuk-expander">
-               <summary class="nhsuk-details__summary">
-                  <span class="nhsuk-details__summary-text">
-                  Alpha (Sprint 5)
-                  </span>
-               </summary>
-               <div class="nhsuk-details__text">
-                  <p>Sprint commencing: 01/07/2020</p>
-                  <h3>Journeys</h3>
-                  <ul>
-                     <li>EU citizens living in the UK (Apply as an individual or add a child to the application)</li>
-                     <li>UK citizens living in the UK (Apply as an individual or add a child to the application)</li>
-                     <li>S1 holders - Retired</li>
-                     <li>Students intending to study in the EU, EEA or Switzerland</li>
-                     <!-- <li>British-Irish dual nationals</li>
+      <!-- <div class="nhsuk-expander-group">
+         <details class="nhsuk-details nhsuk-expander" open>
+            <summary class="nhsuk-details__summary">
+               <span class="nhsuk-details__summary-text">
+               Alpha (Sprint 6)
+               </span>
+            </summary>
+            <div class="nhsuk-details__text">
+               <p>Sprint commencing: 15/07/2020</p>
+               <h3>Journeys</h3>
+               <ul>
+                  <li>S1 holders - Retired, pre-application</li> -->
+                  <!-- <li>EU citizens living in the UK (Apply as an individual or add a child to the application)</li>
+                  <li>UK citizens living in the UK (Apply as an individual or add a child to the application)</li>
+                  <li>S1 holders - Retired</li>
+                  <li>Students intending to study in the EU, EEA or Switzerland</li> -->
+                  <!-- <li>British-Irish dual nationals</li>
                      <li>S1 holders - Exportable benefits</li> -->
-                  </ul>
-                  <hr>
-                  {{ actionLink({
-                  "text": "Get healthcare cover for visiting the EU (EHIC) (v5)",
-                  "href": "/current/start"
-                  }) }}
-               </div>
-            </details>
-         </div>
+               <!-- </ul>
+               <hr>
+               {{ actionLink({
+               "text": "Get healthcare cover for visiting the EU (EHIC)",
+               "href": "/current/start"
+               }) }}
+            </div>
+         </details>
+      </div> -->
+      <div class="nhsuk-expander-group">
+         <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary">
+               <span class="nhsuk-details__summary-text">
+               Alpha (Sprint 5)
+               </span>
+            </summary>
+            <div class="nhsuk-details__text">
+               <p>Sprint commencing: 01/07/2020</p>
+               <h3>Journeys</h3>
+               <ul>
+                  <li>EU citizens living in the UK (Apply as an individual or add a child to the application)</li>
+                  <li>UK citizens living in the UK (Apply as an individual or add a child to the application)</li>
+                  <li>S1 holders - Retired</li>
+                  <li>Students intending to study in the EU, EEA or Switzerland</li>
+                  <!-- <li>British-Irish dual nationals</li>
+                     <li>S1 holders - Exportable benefits</li> -->
+               </ul>
+               <hr>
+               {{ actionLink({
+               "text": "Get healthcare cover for visiting the EU (EHIC)",
+               "href": "/sprint5/start"
+               }) }}
+            </div>
+         </details>
+      </div>
       <div class="nhsuk-expander-group">
          <details class="nhsuk-details nhsuk-expander">
             <summary class="nhsuk-details__summary">
@@ -63,13 +85,12 @@
                </ul>
                <hr>
                {{ actionLink({
-               "text": "Get healthcare cover for visiting the EU (EHIC) (v4)",
+               "text": "Get healthcare cover for visiting the EU (EHIC)",
                "href": "/sprint4/start"
                }) }}
             </div>
          </details>
       </div>
-
       <div class="nhsuk-expander-group">
          <details class="nhsuk-details nhsuk-expander">
             <summary class="nhsuk-details__summary">
@@ -86,13 +107,12 @@
                </ul>
                <hr>
                {{ actionLink({
-               "text": "Get healthcare cover for visiting the EU (EHIC) (v3)",
+               "text": "Get healthcare cover for visiting the EU (EHIC)",
                "href": "/sprint3/start"
                }) }}
             </div>
          </details>
       </div>
-
       <div class="nhsuk-expander-group">
          <details class="nhsuk-details nhsuk-expander">
             <summary class="nhsuk-details__summary">
@@ -108,13 +128,12 @@
                </ul>
                <hr>
                {{ actionLink({
-               "text": "Get healthcare cover for visiting the EU (EHIC) (v2)",
+               "text": "Get healthcare cover for visiting the EU (EHIC)",
                "href": "/sprint2/start"
                }) }}
             </div>
          </details>
       </div>
-
       <div class="nhsuk-expander-group">
          <details class="nhsuk-details nhsuk-expander">
             <summary class="nhsuk-details__summary">
@@ -132,22 +151,17 @@
                </ul>
                <hr>
                {{ actionLink({
-               "text": "Get healthcare cover for visiting the EU (EHIC) (v1)",
+               "text": "Get healthcare cover for visiting the EU (EHIC)",
                "href": "/sprint1/start"
                }) }}
             </div>
          </details>
       </div>
-
-
-
       <!--  <hr>
          <h3>Example pages</h3>
          <ul>
            <li><a href="/docs/page-templates">Page templates</a></li>
          </ul> -->
-
    </div>
 </div>
-
 {% endblock %}

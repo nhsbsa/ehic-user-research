@@ -8,7 +8,7 @@ const router = express.Router()
 router.post('/whereDoYouLive', function (req, res) {
   var whereDoYouLive = req.session.data['where-do-you-live']
   if (whereDoYouLive == "UK"){
-    res.redirect('born-in-uk-1')
+    res.redirect('old-ehic')
   }
   else if (whereDoYouLive == "EU"){
     res.redirect('eu-retired')
@@ -19,37 +19,37 @@ router.post('/whereDoYouLive', function (req, res) {
 })
 
 // Were you born in the UK? (living in the UK)
-router.post('/bornInUk', function (req, res) {
-  var bornInUk = req.session.data['born-in-uk']
-  if (bornInUk == "Yes"){
-    res.redirect('student')
-  }
-  else {
-    res.redirect('settled-status')
-  }
-})
+// router.post('/bornInUk', function (req, res) {
+//   var bornInUk = req.session.data['born-in-uk']
+//   if (bornInUk == "Yes"){
+//     res.redirect('student')
+//   }
+//   else {
+//     res.redirect('settled-status')
+//   }
+// })
 
 // Do you intend to study in the EU, EEA or Switzerland?
-router.post('/student', function (req, res) {
-  var student = req.session.data['student']
-  if (student == "Yes"){
-    res.redirect('application-student/evidence-student')
-  }
-  else {
-    res.redirect('application/full-name')
-  }
-})
+// router.post('/student', function (req, res) {
+//   var student = req.session.data['student']
+//   if (student == "Yes"){
+//     res.redirect('application-student/evidence-student')
+//   }
+//   else {
+//     res.redirect('application/full-name')
+//   }
+// })
 
 // Do you intend to study in the EU, EEA or Switzerland? - EU Settled
-router.post('/eussStudent', function (req, res) {
-  var student = req.session.data['student']
-  if (student == "Yes"){
-    res.redirect('application-student-ss/evidence-student')
-  }
-  else {
-    res.redirect('application-settled/full-name')
-  }
-})
+// router.post('/eussStudent', function (req, res) {
+//   var student = req.session.data['student']
+//   if (student == "Yes"){
+//     res.redirect('application-student-ss/evidence-student')
+//   }
+//   else {
+//     res.redirect('application-settled/full-name')
+//   }
+// })
 
 // Were you born in the UK? (if RETIRED and living in the EU)
 router.post('/euBornInUk', function (req, res) {
@@ -58,20 +58,20 @@ router.post('/euBornInUk', function (req, res) {
     res.redirect('application-s1/full-name')
   }
   else {
-    res.redirect('settled-status-2')
+    res.redirect('old-ehic')
   }
 })
 
 // Do you have UK settled status?
-router.post('/ukSettled', function (req, res) {
-  var ukSettled = req.session.data['uk-settled']
-  if (ukSettled == "Yes"){
-    res.redirect('student-ss')
-  }
-  else {
-    res.redirect('ineligible')
-  }
-})
+// router.post('/ukSettled', function (req, res) {
+//   var ukSettled = req.session.data['uk-settled']
+//   if (ukSettled == "Yes"){
+//     res.redirect('student-ss')
+//   }
+//   else {
+//     res.redirect('ineligible')
+//   }
+// })
 
 // Do you have UK settled status? (if RETIRED and living in the EU)
 router.post('/euUkSettled', function (req, res) {
@@ -85,15 +85,15 @@ router.post('/euUkSettled', function (req, res) {
 })
 
 // Do you have UK settled status? (if STUDYING and living in the EU)
-router.post('/euStudentUkSettled', function (req, res) {
-  var euUkSettled = req.session.data['eu-uk-settled']
-  if (euUkSettled == "Yes"){
-    res.redirect('application-student-ss/full-name')
-  }
-  else {
-    res.redirect('ineligible')
-  }
-})
+// router.post('/euStudentUkSettled', function (req, res) {
+//   var euUkSettled = req.session.data['eu-uk-settled']
+//   if (euUkSettled == "Yes"){
+//     res.redirect('application-student-ss/full-name')
+//   }
+//   else {
+//     res.redirect('ineligible')
+//   }
+// })
 
 
 // Are you retired and living in the EU?
@@ -103,7 +103,7 @@ router.post('/euRetired', function (req, res) {
     res.redirect('born-in-uk-s1')
   }
   else {
-    res.redirect('eu-studying')
+    res.redirect('old-ehic')
   }
 })
 
@@ -119,15 +119,15 @@ router.post('/euStudying', function (req, res) {
 })
 
 // Were you born in the UK? (if STUDYING and living in the EU)
-router.post('/euStudyingBornInUk', function (req, res) {
-  var euBornInUk = req.session.data['eu-born-in-uk']
-  if (euBornInUk == "Yes"){
-    res.redirect('application-student/full-name')
-  }
-  else {
-    res.redirect('settled-status-3')
-  }
-})
+// router.post('/euStudyingBornInUk', function (req, res) {
+//   var euBornInUk = req.session.data['eu-born-in-uk']
+//   if (euBornInUk == "Yes"){
+//     res.redirect('application-student/full-name')
+//   }
+//   else {
+//     res.redirect('settled-status-3')
+//   }
+// })
 
 
 
@@ -211,63 +211,63 @@ router.post('/euStudyingBornInUk', function (req, res) {
 
 // Do you want to add your CHILDREN to your application? 
 // EUSS 
-router.post('/application-settled/addChild', function (req, res) {
-  var addAnother = req.session.data['add-another']
-  if (addAnother == "Yes"){
-    res.redirect('child-1/full-name')
-  }
-  else {
-    res.redirect('cya-individual')
-  }
-})
+// router.post('/application-settled/addChild', function (req, res) {
+//   var addAnother = req.session.data['add-another']
+//   if (addAnother == "Yes"){
+//     res.redirect('child-1/full-name')
+//   }
+//   else {
+//     res.redirect('cya-individual')
+//   }
+// })
 
 // Do you want to add your CHILDREN to your application? 
 // (if RETIRED and living in EU)
-router.post('/application-s1/addChild', function (req, res) {
-  var addAnother = req.session.data['add-another']
-  if (addAnother == "Yes"){
-    res.redirect('child-1/full-name')
-  }
-  else {
-    res.redirect('cya-individual')
-  }
-})
+// router.post('/application-s1/addChild', function (req, res) {
+//   var addAnother = req.session.data['add-another']
+//   if (addAnother == "Yes"){
+//     res.redirect('child-1/full-name')
+//   }
+//   else {
+//     res.redirect('cya-individual')
+//   }
+// })
 
 // Do you want to add your CHILDREN to your application?
 // (if RETIRED and living in EU) - EUSS
-router.post('/application-s1-ss/addChild', function (req, res) {
-  var addAnother = req.session.data['add-another']
-  if (addAnother == "Yes"){
-    res.redirect('child-1/full-name')
-  }
-  else {
-    res.redirect('cya-individual')
-  }
-})
+// router.post('/application-s1-ss/addChild', function (req, res) {
+//   var addAnother = req.session.data['add-another']
+//   if (addAnother == "Yes"){
+//     res.redirect('child-1/full-name')
+//   }
+//   else {
+//     res.redirect('cya-individual')
+//   }
+// })
 
 // Do you want to add your CHILDREN to your application? 
 // (if STUDYING and living in EU, UK settled)
-router.post('/application-student/addChild', function (req, res) {
-  var addAnother = req.session.data['add-another']
-  if (addAnother == "Yes"){
-    res.redirect('child-1/full-name')
-  }
-  else {
-    res.redirect('cya-individual')
-  }
-})
+// router.post('/application-student/addChild', function (req, res) {
+//   var addAnother = req.session.data['add-another']
+//   if (addAnother == "Yes"){
+//     res.redirect('child-1/full-name')
+//   }
+//   else {
+//     res.redirect('cya-individual')
+//   }
+// })
 
 // Do you want to add your CHILDREN to your application? 
 // (if STUDYING and living in EU)
-router.post('/application-student-ss/addChild', function (req, res) {
-  var addAnother = req.session.data['add-another']
-  if (addAnother == "Yes"){
-    res.redirect('child-1/full-name')
-  }
-  else {
-    res.redirect('cya-individual')
-  }
-})
+// router.post('/application-student-ss/addChild', function (req, res) {
+//   var addAnother = req.session.data['add-another']
+//   if (addAnother == "Yes"){
+//     res.redirect('child-1/full-name')
+//   }
+//   else {
+//     res.redirect('cya-individual')
+//   }
+// })
 
 // Does your CHILD live with you? (if eligible-with-settlement)
 // router.post('/application-settled/child-1/childAddress', function (req, res) {
@@ -348,15 +348,15 @@ router.post('/application-student-ss/addChild', function (req, res) {
 
 // Do you want to add your CHILDREN to your application?
 // UK Citizen
-router.post('/application/addChild', function (req, res) {
-  var addAnother = req.session.data['add-another']
-  if (addAnother == "Yes"){
-    res.redirect('child-1/full-name')
-  }
-  else {
-    res.redirect('cya-individual')
-  }
-})
+// router.post('/application/addChild', function (req, res) {
+//   var addAnother = req.session.data['add-another']
+//   if (addAnother == "Yes"){
+//     res.redirect('child-1/full-name')
+//   }
+//   else {
+//     res.redirect('cya-individual')
+//   }
+// })
 
 // Do you want to add your CHILDREN to your application? (after adding partner) (if eligible-with-settlement)
 // router.post('/application-settled/addChildAfterPartner', function (req, res) {
@@ -394,15 +394,15 @@ router.post('/application/addChild', function (req, res) {
 
 // Do you want to add ANOTHER CHILD to your application?
 // EUSS
-router.post('/application-settled/noPartnerAddAnotherChild', function (req, res) {
-  var addAnother = req.session.data['add-another']
-  if (addAnother == "Yes"){
-    res.redirect('child-1/full-name')
-  }
-  else {
-    res.redirect('cya-children')
-  }
-})
+// router.post('/application-settled/noPartnerAddAnotherChild', function (req, res) {
+//   var addAnother = req.session.data['add-another']
+//   if (addAnother == "Yes"){
+//     res.redirect('child-1/full-name')
+//   }
+//   else {
+//     res.redirect('cya-children')
+//   }
+// })
 
 // Do you want to add ANOTHER CHILD to your application?
 // (after adding partner and one child) (if eligible-with-settlement)
@@ -418,63 +418,63 @@ router.post('/application-settled/noPartnerAddAnotherChild', function (req, res)
 
 // Do you want to add ANOTHER CHILD to your application?
 // UK Citizen
-router.post('/application/noPartnerAddAnotherChild', function (req, res) {
-  var addAnother = req.session.data['add-another']
-  if (addAnother == "Yes"){
-    res.redirect('child-1/full-name')
-  }
-  else {
-    res.redirect('cya-children')
-  }
-})
+// router.post('/application/noPartnerAddAnotherChild', function (req, res) {
+//   var addAnother = req.session.data['add-another']
+//   if (addAnother == "Yes"){
+//     res.redirect('child-1/full-name')
+//   }
+//   else {
+//     res.redirect('cya-children')
+//   }
+// })
 
 // Do you want to add ANOTHER CHILD to your application?
 // (if RETIRED and living in EU)
-router.post('/application-s1/noPartnerAddAnotherChild', function (req, res) {
-  var addAnother = req.session.data['add-another']
-  if (addAnother == "Yes"){
-    res.redirect('child-1/full-name')
-  }
-  else {
-    res.redirect('cya-children')
-  }
-})
+// router.post('/application-s1/noPartnerAddAnotherChild', function (req, res) {
+//   var addAnother = req.session.data['add-another']
+//   if (addAnother == "Yes"){
+//     res.redirect('child-1/full-name')
+//   }
+//   else {
+//     res.redirect('cya-children')
+//   }
+// })
 
 // Do you want to add ANOTHER CHILD to your application?
 // (if RETIRED and living in EU) - EUSS
-router.post('/application-s1-ss/noPartnerAddAnotherChild', function (req, res) {
-  var addAnother = req.session.data['add-another']
-  if (addAnother == "Yes"){
-    res.redirect('child-1/full-name')
-  }
-  else {
-    res.redirect('cya-children')
-  }
-})
+// router.post('/application-s1-ss/noPartnerAddAnotherChild', function (req, res) {
+//   var addAnother = req.session.data['add-another']
+//   if (addAnother == "Yes"){
+//     res.redirect('child-1/full-name')
+//   }
+//   else {
+//     res.redirect('cya-children')
+//   }
+// })
 
 // Do you want to add ANOTHER CHILD to your application?
 // (if STUDYING and living in EU)
-router.post('/application-student/noPartnerAddAnotherChild', function (req, res) {
-  var addAnother = req.session.data['add-another']
-  if (addAnother == "Yes"){
-    res.redirect('child-1/full-name')
-  }
-  else {
-    res.redirect('cya-children')
-  }
-})
+// router.post('/application-student/noPartnerAddAnotherChild', function (req, res) {
+//   var addAnother = req.session.data['add-another']
+//   if (addAnother == "Yes"){
+//     res.redirect('child-1/full-name')
+//   }
+//   else {
+//     res.redirect('cya-children')
+//   }
+// })
 
 // Do you want to add ANOTHER CHILD to your application?
 // (if STUDYING and living in EU) - EUSS
-router.post('/application-student-ss/noPartnerAddAnotherChild', function (req, res) {
-  var addAnother = req.session.data['add-another']
-  if (addAnother == "Yes"){
-    res.redirect('child-1/full-name')
-  }
-  else {
-    res.redirect('cya-children')
-  }
-})
+// router.post('/application-student-ss/noPartnerAddAnotherChild', function (req, res) {
+//   var addAnother = req.session.data['add-another']
+//   if (addAnother == "Yes"){
+//     res.redirect('child-1/full-name')
+//   }
+//   else {
+//     res.redirect('cya-children')
+//   }
+// })
 
 // Do you want to add someone else to your application? (if eligible-with-residency-1)
 // router.post('/application-residency/addAnother', function (req, res) {
