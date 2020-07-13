@@ -4,6 +4,18 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 
 
+// Do you need an EHIC before 1 January 2021?
+router.post('/ehicBeforeJan', function (req, res) {
+  var ehicBeforeJan = req.session.data['ehic-before-jan']
+  if (ehicBeforeJan == "Yes"){
+    res.redirect('old-ehic')
+  }
+  else {
+    res.redirect('where-do-you-live')
+  }
+})
+
+
 // Where do you live?
 router.post('/whereDoYouLive', function (req, res) {
   var whereDoYouLive = req.session.data['where-do-you-live']

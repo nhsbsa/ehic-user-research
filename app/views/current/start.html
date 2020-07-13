@@ -41,6 +41,7 @@
             <!-- (opens a new window) -->
           </span>
         </summary>
+
         <div class="nhsuk-details__text">
           <h5>EU countries</h5>
           <p>The EU countries are:</p>
@@ -70,11 +71,24 @@
         <li>you are a UK citizen studying in the EU, EEA or Switzerland</li>
       </ul> -->
 
-      {{ insetText({
+      <!-- {{ insetText({
         "HTML": "<p>This service is currently only available to retired UK citizens living in the EU. If you’re still eligible for an EHIC, you can apply for one using the <a href=\"https://www.ehic.org.uk/Internet/startApplication.do/\" title=\"External website\">current EHIC website</a>.</p>"
+      }) }} -->
+
+      {{ insetText({
+        "HTML": "<p>This service is currently only available to UK citizens who:</p>
+          <ul>
+            <li>receive payments from a UK state pension</li>
+            <li>live in the EU, EEA or Switzerland</li>
+            <li>have an active S1 certificate 
+            <!-- that has been registered with the relevant authorities in you country of residence -->
+          </li>
+          </ul>"
       }) }}
 
-      <a href="where-do-you-live" class="nhsuk-button nhsuk-u-margin-bottom-8">
+      <p>The application takes less that 5 minutes.</p>
+      <!-- <a href="where-do-you-live" class="nhsuk-button nhsuk-u-margin-bottom-8"> -->
+      <a href="ehic-before-jan" class="nhsuk-button nhsuk-u-margin-bottom-8">
         Start now
       </a>
 
