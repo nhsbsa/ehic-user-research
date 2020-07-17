@@ -8,7 +8,7 @@ const router = express.Router()
 router.post('/ehicBeforeJan', function (req, res) {
   var ehicBeforeJan = req.session.data['ehic-before-jan']
   if (ehicBeforeJan == "Yes"){
-    res.redirect('old-ehic')
+    res.redirect('cannot-apply')
   }
   else {
     res.redirect('where-do-you-live')
@@ -20,7 +20,7 @@ router.post('/ehicBeforeJan', function (req, res) {
 router.post('/whereDoYouLive', function (req, res) {
   var whereDoYouLive = req.session.data['where-do-you-live']
   if (whereDoYouLive == "UK"){
-    res.redirect('old-ehic')
+    res.redirect('cannot-apply')
   }
   else if (whereDoYouLive == "EU"){
     res.redirect('eu-retired')
@@ -70,7 +70,7 @@ router.post('/euBornInUk', function (req, res) {
     res.redirect('application-s1/full-name')
   }
   else {
-    res.redirect('old-ehic')
+    res.redirect('cannot-apply')
   }
 })
 
@@ -115,7 +115,7 @@ router.post('/euRetired', function (req, res) {
     res.redirect('born-in-uk-s1')
   }
   else {
-    res.redirect('old-ehic')
+    res.redirect('cannot-apply')
   }
 })
 
