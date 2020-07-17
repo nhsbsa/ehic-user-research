@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your email address?
+  What is the end date of your course?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,26 +26,46 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="phone-number" method="post">
+      <form action="full-name" method="post">
 
-        {% call fieldset({
+        <!-- {% call fieldset({
           legend: {
-            text: "What is your email address?",
+            text: "When will you be studying?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
-        }) %}
+        }) %} -->
 
-        <p>This is where we will send confirmation of your application.</p>
 
-        {{ input({
-          "label": {
-            "text": "Enter your email address"
-          },
-          "id": "input-width-30",
-          "name": "test-width-30",
-          "classes": "nhsuk-input--width-30"
-        }) }}
+        {{ dateInput({
+      "id": "example",
+      "namePrefix": "example",
+      "fieldset": {
+      "legend": {
+      "text": "What is the end date of your course?",
+      "classes": "nhsuk-label--l",
+      "isPageHeading": true
+        }
+      },
+      "hint": {
+        "text": "For example, 13 9 2019"
+      },
+      "items": [
+        {
+          "name": "day",
+          "classes": "nhsuk-input--width-2"
+        },
+        {
+          "name": "month",
+          "classes": "nhsuk-input--width-2"
+        },
+        {
+          "name": "year",
+          "classes": "nhsuk-input--width-4"
+        }
+      ]
+    }) }}
+
 
 
         {% endcall %}
@@ -57,7 +77,7 @@
       </form>
 
      {{ backLink({
-        "href": "address-list",
+        "href": "what-you-need",
         "text": "Change my previous answer"
       }) }}
 

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your email address?
+  What is your home address?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,38 +26,37 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="phone-number" method="post">
+      <form action="address-list" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your email address?",
+            text: "What is your home address?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>This is where we will send confirmation of your application.</p>
-
         {{ input({
           "label": {
-            "text": "Enter your email address"
+            "text": "Postcode",
+            "classes": "nhsuk-label--m"
           },
-          "id": "input-width-30",
-          "name": "test-width-30",
-          "classes": "nhsuk-input--width-30"
+          "id": "input-width-10",
+          "name": "test-width-10",
+          "classes": "nhsuk-input--width-10"
         }) }}
 
 
         {% endcall %}
 
         {{ button({
-          "text": "Continue"
+          "text": "Find address"
         }) }}
 
       </form>
 
      {{ backLink({
-        "href": "address-list",
+        "href": "full-name",
         "text": "Change my previous answer"
       }) }}
 

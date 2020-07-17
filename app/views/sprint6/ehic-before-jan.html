@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your email address?
+  Do you need an EHIC before 1 January 2021?
 {% endblock %}
 
 {% block beforeContent %}
+
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -26,27 +27,31 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="phone-number" method="post">
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
+      <form action="ehicBeforeJan" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your email address?",
+            text: "Do you need an EHIC before 1 January 2021?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>This is where we will send confirmation of your application.</p>
-
-        {{ input({
-          "label": {
-            "text": "Enter your email address"
-          },
-          "id": "input-width-30",
-          "name": "test-width-30",
-          "classes": "nhsuk-input--width-30"
+        {{ radios({
+          "idPrefix": "ehic-before-jan",
+          "name": "ehic-before-jan",
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No"
+            }
+          ]
         }) }}
-
 
         {% endcall %}
 
@@ -57,7 +62,7 @@
       </form>
 
      {{ backLink({
-        "href": "address-list",
+        "href": "start",
         "text": "Change my previous answer"
       }) }}
 

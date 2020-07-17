@@ -29,6 +29,8 @@ router.use('/sprint4', require('./views/sprint4/_routes'));
 
 router.use('/sprint5', require('./views/sprint5/_routes'));
 
+router.use('/sprint6', require('./views/sprint6/_routes'));
+
 // current sprint, remember to add older sprint when adding a new folder!
 router.use('/current', require('./views/current/_routes'));
 

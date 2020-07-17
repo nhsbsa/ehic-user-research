@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your email address?
+  What is your NHS number?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,30 +26,34 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="phone-number" method="post">
+      <form action="gender" method="post">
+      <!-- <form action="course-country" method="post"> -->
 
         {% call fieldset({
           legend: {
-            text: "What is your email address?",
+            text: "What is your NHS number?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>This is where we will send confirmation of your application.</p>
+        <p>Your NHS number is a 10 digit number. For example, <span class=\"nhsuk-u-nowrap\">485 777 3456</span>.</p>
+        <p>You can find it on any letter the NHS has sent you, on a prescription, or by logging in to a GP practice online service.</p>
 
         {{ input({
-          "label": {
-            "text": "Enter your email address"
+          
+          hint: {
+            html: "Enter your NHS number (optional)"
           },
-          "id": "input-width-30",
-          "name": "test-width-30",
-          "classes": "nhsuk-input--width-30"
+          "id": "input-width-10",
+          "name": "test-width-10",
+          "classes": "nhsuk-input--width-10"
         }) }}
 
 
         {% endcall %}
-
+<!--         <p><a href="address-manual">I don't have a National Insurance number</a></p>
+ -->
         {{ button({
           "text": "Continue"
         }) }}
@@ -57,7 +61,7 @@
       </form>
 
      {{ backLink({
-        "href": "address-list",
+        "href": "",
         "text": "Change my previous answer"
       }) }}
 

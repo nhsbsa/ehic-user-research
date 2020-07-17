@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your email address?
+  What is your name?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,21 +26,28 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="phone-number" method="post">
+      <form action="dob" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your email address?",
+            text: "What is your name?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>This is where we will send confirmation of your application.</p>
+        {{ input({
+          "label": {
+            "text": "First name"
+          },
+          "id": "input-width-30",
+          "name": "test-width-30",
+          "classes": "nhsuk-input--width-30"
+        }) }}
 
         {{ input({
           "label": {
-            "text": "Enter your email address"
+            "text": "Last name"
           },
           "id": "input-width-30",
           "name": "test-width-30",
@@ -57,7 +64,7 @@
       </form>
 
      {{ backLink({
-        "href": "address-list",
+        "href": "what-you-need",
         "text": "Change my previous answer"
       }) }}
 

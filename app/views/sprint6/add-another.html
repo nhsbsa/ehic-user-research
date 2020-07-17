@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your email address?
+  Who do you want to add to your application?
 {% endblock %}
 
 {% block beforeContent %}
+
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -26,27 +27,35 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="phone-number" method="post">
+
+      <form action="addAnother" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your email address?",
+            text: "Who do you want to check eligibilty for?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+      
+      <!-- <p>
+        You can add your partner and up to [n] children.
+      </p> -->
 
-        <p>This is where we will send confirmation of your application.</p>
-
-        {{ input({
-          "label": {
-            "text": "Enter your email address"
-          },
-          "id": "input-width-30",
-          "name": "test-width-30",
-          "classes": "nhsuk-input--width-30"
+        {{ radios({
+          "idPrefix": "add-another",
+          "name": "add-another",
+          "items": [
+            {
+              "value": "My partner",
+              "text": "My partner"
+            },
+            {
+              "value": "My child",
+              "text": "My child"
+            }
+          ]
         }) }}
-
 
         {% endcall %}
 
@@ -56,8 +65,8 @@
 
       </form>
 
-     {{ backLink({
-        "href": "address-list",
+      {{ backLink({
+        "href": "eligible",
         "text": "Change my previous answer"
       }) }}
 

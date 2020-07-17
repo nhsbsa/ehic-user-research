@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your email address?
+  Who are you applying for?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,29 +26,36 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="phone-number" method="post">
+      
+      <form action="whoFor" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your email address?",
+            text: "Who are you applying for?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>This is where we will send confirmation of your application.</p>
-
-        {{ input({
-          "label": {
-            "text": "Enter your email address"
-          },
-          "id": "input-width-30",
-          "name": "test-width-30",
-          "classes": "nhsuk-input--width-30"
+        {{ radios({
+          "idPrefix": "who-for",
+          "name": "who-for",
+          "items": [
+            {
+              "value": "Myself and members of my family",
+              "text": "Myself and members of my family"
+            },
+            {
+              "value": "Just myself",
+              "text": "Just myself"
+            }
+          ]
         }) }}
 
-
         {% endcall %}
+
+              <p><a href="#">I need to apply on behalf of someone else</a></p>
+
 
         {{ button({
           "text": "Continue"
@@ -56,10 +63,11 @@
 
       </form>
 
-     {{ backLink({
-        "href": "address-list",
-        "text": "Change my previous answer"
-      }) }}
+
+     <!--  {{ backLink({
+        "href": "/docs/how-tos",
+        "text": "Back to How to guides"
+      }) }} -->
 
     </div>
   </div>

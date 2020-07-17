@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your email address?
+  Do you have UK settled status?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,27 +26,31 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="phone-number" method="post">
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
+      <form action="euStudentUkSettled" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your email address?",
+            text: "Do you have UK settled or pre-settled status?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>This is where we will send confirmation of your application.</p>
-
-        {{ input({
-          "label": {
-            "text": "Enter your email address"
-          },
-          "id": "input-width-30",
-          "name": "test-width-30",
-          "classes": "nhsuk-input--width-30"
+        {{ radios({
+          "idPrefix": "eu-uk-settled",
+          "name": "eu-uk-settled",
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No"
+            }
+          ]
         }) }}
-
 
         {% endcall %}
 
@@ -56,10 +60,10 @@
 
       </form>
 
-     {{ backLink({
-        "href": "address-list",
-        "text": "Change my previous answer"
-      }) }}
+     <!--  {{ backLink({
+        "href": "/docs/how-tos",
+        "text": "Back to How to guides"
+      }) }} -->
 
     </div>
   </div>
