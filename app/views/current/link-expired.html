@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Invitation link has expired
+{% endblock %}
+
+{% block beforeContent %}
+
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+          This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        Invitation link has expired
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        The link has expired because you have not used it. The link expires after 14 days and can only be used once.
+      </p>
+
+      <p>If you would still like to pre-apply, <a href="mailto: abc@example.com">email us</a>.</p>
+
+     <!--  <h3>Apply for an EHIC using the current website</h3>
+      <p>If you’re still eligible, you can <a href="https://www.nhs.uk/using-the-nhs/healthcare-abroad/apply-for-a-free-ehic-european-health-insurance-card">apply for an EHIC using the current EHIC website</a>.</p>
+ -->
+
+    </div>  
+
+  </div>
+{% endblock %}
