@@ -23,6 +23,7 @@ router.post('/whereDoYouLive', function (req, res) {
     res.redirect('born-in-uk-1')
   }
   else if (whereDoYouLive == "EU"){
+    // res.redirect('eu-retired')
     res.redirect('eu-retired')
   }
   else {
@@ -30,14 +31,14 @@ router.post('/whereDoYouLive', function (req, res) {
   }
 })
 
-// Were you born in the UK? (living in the UK)
+// Are you a UK national? (living in the UK)
 router.post('/bornInUk', function (req, res) {
   var bornInUk = req.session.data['born-in-uk']
   if (bornInUk == "Yes"){
     res.redirect('student')
   }
   else {
-    res.redirect('settled-status')
+    res.redirect('cannot-apply')
   }
 })
 
@@ -45,11 +46,10 @@ router.post('/bornInUk', function (req, res) {
 router.post('/student', function (req, res) {
   var student = req.session.data['student']
   if (student == "Yes"){
-    // res.redirect('application-student/evidence-student')
-    res.redirect('cannot-apply')
+    res.redirect('application-student/evidence-student')
   }
   else {
-    res.redirect('application/full-name')
+    res.redirect('cannot-apply')
   }
 })
 
@@ -98,18 +98,6 @@ router.post('/euUkSettled', function (req, res) {
   }
 })
 
-// Do you have UK settled status? (if STUDYING and living in the EU)
-// router.post('/euStudentUkSettled', function (req, res) {
-//   var euUkSettled = req.session.data['eu-uk-settled']
-//   if (euUkSettled == "Yes"){
-//     res.redirect('application-student-ss/full-name')
-//   }
-//   else {
-//     res.redirect('ineligible')
-//   }
-// })
-
-
 // Are you retired and living in the EU?
 router.post('/euRetired', function (req, res) {
   var euRetired = req.session.data['eu-retired']
@@ -131,7 +119,6 @@ router.post('/euStudying', function (req, res) {
     res.redirect('eu-irish')
   }
 })
-
 
 
 module.exports = router
