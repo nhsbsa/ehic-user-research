@@ -55,13 +55,13 @@ router.post('/euWorking', function (req, res) {
 })
 
 // Posted worker form type
-router.post('/pwFormType', function (req, res) {
+router.post('/application-pw/pwFormType', function (req, res) {
   var pwFormType = req.session.data['form-type']
   if (pwFormType == "A1"){
-    res.redirect('evidence-pw')
+    res.redirect('country-a1')
   }
   else {
-    res.redirect('student')
+    res.redirect('name')
   }
 })
 
