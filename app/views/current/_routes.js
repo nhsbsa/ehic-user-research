@@ -58,10 +58,10 @@ router.post('/euWorking', function (req, res) {
 router.post('/application-pw/pwFormType', function (req, res) {
   var pwFormType = req.session.data['form-type']
   if (pwFormType == "A1"){
-    res.redirect('country-a1')
+    res.redirect('a1-country')
   }
   else {
-    res.redirect('name')
+    res.redirect('s1-full-name')
   }
 })
 
