@@ -20,11 +20,11 @@ router.post('/ehicBeforeJan', function (req, res) {
 router.post('/whereDoYouLive', function (req, res) {
   var whereDoYouLive = req.session.data['where-do-you-live']
   if (whereDoYouLive == "UK"){
-    res.redirect('born-in-uk-1')
+    res.redirect('cannot-apply')
   }
   else if (whereDoYouLive == "EU"){
     // res.redirect('eu-retired')
-    res.redirect('eu-retired')
+    res.redirect('born-in-uk-1')
   }
   else {
     res.redirect('ineligible')
@@ -35,10 +35,33 @@ router.post('/whereDoYouLive', function (req, res) {
 router.post('/bornInUk', function (req, res) {
   var bornInUk = req.session.data['born-in-uk']
   if (bornInUk == "Yes"){
-    res.redirect('student')
+    // res.redirect('student')
+    res.redirect('eu-working')
   }
   else {
     res.redirect('cannot-apply')
+  }
+})
+
+// Are you working in the EU, EEA or Switzerland?
+router.post('/euWorking', function (req, res) {
+  var student = req.session.data['eu-working']
+  if (student == "Yes"){
+    res.redirect('application-pw/evidence-pw')
+  }
+  else {
+    res.redirect('student')
+  }
+})
+
+// Posted worker form type
+router.post('/pwFormType', function (req, res) {
+  var pwFormType = req.session.data['form-type']
+  if (pwFormType == "A1"){
+    res.redirect('evidence-pw')
+  }
+  else {
+    res.redirect('student')
   }
 })
 
