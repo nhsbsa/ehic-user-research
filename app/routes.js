@@ -33,6 +33,9 @@ router.use('/sprint6', require('./views/sprint6/_routes'));
 
 router.use('/sprint7', require('./views/sprint7/_routes'));
 
+router.use('/sprint8/prereg', require('./views/sprint8/prereg/_routes'));
+router.use('/sprint8/postjan', require('./views/sprint8/postjan/_routes'));
+
 // current sprint, remember to add older sprint when adding a new folder!
 router.use('/current/prereg', require('./views/current/prereg/_routes'));
 router.use('/current/postjan', require('./views/current/postjan/_routes'));

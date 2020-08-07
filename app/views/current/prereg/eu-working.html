@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Are you working in the EU, EEA or Switzerland?
+  Are you a posted worker working in the EU, EEA or Switzerland?
 {% endblock %}
 
 {% block beforeContent %}
@@ -31,7 +31,7 @@
 
         {% call fieldset({
           legend: {
-            text: "Are you working in the EU, EEA or Switzerland?",
+            text: "Are you a posted worker working in the EU, EEA or Switzerland?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -53,6 +53,20 @@
         }) }}
 
         {% endcall %}
+
+        {{ details({
+          "text": "What is a posted worker?",
+          "HTML": "
+          <p>Posted workers</p>
+            <!-- <p>You can find your NHS number by logging in to a GP online service or on any document the NHS has sent you, such as your:</p> -->
+            <ul>
+                <li>example</li>
+                <li>example</li>
+                <li>example</li>
+            </ul>
+            <!-- <p>Ask your GP surgery for help if you can't find your NHS number.</p> -->
+          "
+        }) }}
 
         {{ button({
           "text": "Continue"

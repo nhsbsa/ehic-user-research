@@ -5,31 +5,57 @@ const router = express.Router()
 
 
 // Do you need an EHIC before 1 January 2021?
-router.post('/ehicBeforeJan', function (req, res) {
-  var ehicBeforeJan = req.session.data['ehic-before-jan']
-  if (ehicBeforeJan == "Yes"){
-    res.redirect('use-current-ehic')
-  }
-  else {
+// router.post('/ehicBeforeJan', function (req, res) {
+//   var ehicBeforeJan = req.session.data['ehic-before-jan']
+//   if (ehicBeforeJan == "Yes"){
+//     res.redirect('use-current-ehic')
+//   }
+//   else {
+//     res.redirect('where-do-you-live')
+//   }
+// })
+
+// What is your nationality?
+router.post('/nationality', function (req, res) {
+  var nationality = req.session.data['nationality']
+  if (nationality == "British"){
     res.redirect('where-do-you-live')
   }
-})
-
-
-// Where do you live?
-router.post('/whereDoYouLive', function (req, res) {
-  var whereDoYouLive = req.session.data['where-do-you-live']
-  if (whereDoYouLive == "UK"){
-    res.redirect('cannot-apply')
-  }
-  else if (whereDoYouLive == "EU"){
-    // res.redirect('eu-retired')
-    res.redirect('born-in-uk-1')
+  else if (nationality == "EU, EEA or Swiss"){
+    // res.redirect('born-in-uk-1')
+    res.redirect('')
   }
   else {
     res.redirect('ineligible')
   }
 })
+
+// Where will you be living?
+router.post('/whereDoYouLive', function (req, res) {
+  var whereDoYouLive = req.session.data['where-do-you-live']
+  if (whereDoYouLive == "UK"){
+    res.redirect('')
+  }
+  else if (whereDoYouLive == "EU"){
+    res.redirect('exp-ben')
+  }
+  else {
+    res.redirect('ineligible')
+  }
+})
+
+// Receiving exportable benefits
+router.post('/expBen', function (req, res) {
+  var expBen = req.session.data['expBen']
+  if (expBen == "Yes"){
+    res.redirect('application-s1/country')
+  }
+  else {
+    res.redirect('eu-studying')
+  }
+})
+
+
 
 // Are you a UK national? (living in the UK)
 router.post('/bornInUk', function (req, res) {
@@ -50,7 +76,7 @@ router.post('/euWorking', function (req, res) {
     res.redirect('application-pw/evidence-pw')
   }
   else {
-    res.redirect('student')
+    res.redirect('cannot-apply')
   }
 })
 
@@ -132,14 +158,14 @@ router.post('/euRetired', function (req, res) {
   }
 })
 
-// Are you a UK national studying in the EU?
+// Will you be studying in the EU, EEA or Switzerland before 1 January 2021?
 router.post('/euStudying', function (req, res) {
   var euStudent = req.session.data['eu-studying']
   if (euStudent == "Yes"){
-    res.redirect('born-in-uk-study')
+    res.redirect('application-student/evidence-student')
   }
   else {
-    res.redirect('eu-irish')
+    res.redirect('eu-working')
   }
 })
 
