@@ -36,42 +36,62 @@
           }
         }) %}
 
-        <!-- <h3>Postcode</h3>
-        <p>SW1A 1AA</p> -->
-        <h3>Select an address</h3>
-
-        {{ select({
-          "id": "select-1",
-          "name": "select-1",
+        {{ input({
           "label": {
+          "text": "Building and street"
           },
-          "items": [
-            {
-              "value": 1,
-              "text": "1 address found",
-              "selected": true
-            },
-            {
-              "value": 2,
-              "text": "73 Roman Rd, Leeds LS2 5ZN"
-            }
-          ]
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
+        }) }}
+
+        {{ input({
+          "label": {
+          "text": ""
+          },
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
+        }) }}
+
+        {{ input({
+          "label": {
+            "text": "Town or city"
+          },
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
+        }) }}
+
+        {{ input({
+          "label": {
+            "text": "County"
+          },
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
+        }) }}
+
+        {{ input({
+          "label": {
+            "text": "Postcode"
+          },
+          "id": "input-width-10",
+          "name": "test-width-10",
+          "classes": "nhsuk-input--width-10"
         }) }}
 
 
         {% endcall %}
 
-
-
         {{ button({
           "text": "Continue"
         }) }}
-        <p><a href="address-manual">I can't find my address in the list</a></p>
 
       </form>
 
      {{ backLink({
-        "href": "address-lookup",
+        "href": "address-list",
         "text": "Change my previous answer"
       }) }}
 

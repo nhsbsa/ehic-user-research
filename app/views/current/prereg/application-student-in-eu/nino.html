@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What date did your A1 start in Switzerland?
+  What is your National Insurance number?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,47 +26,31 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="a1-end-date" method="post">
+      <form action="add-another-yn" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What date did your A1 start in Switzerland?",
+            text: "What is your National Insurance number?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>You must have started working in Switzerland before 1 January 2021.</p>
-
-        {{ dateInput({
-      "id": "example",
-      "namePrefix": "example",
-      "fieldset": {
-      "legend": {
-        }
-      },
-      "hint": {
-        "text": " For example, 13 9 2019"
-      },
-      "items": [
-        {
-          "name": "day",
-          "classes": "nhsuk-input--width-2"
-        },
-        {
-          "name": "month",
-          "classes": "nhsuk-input--width-2"
-        },
-        {
-          "name": "year",
-          "classes": "nhsuk-input--width-4"
-        }
-      ]
-    }) }}
-
+        {{ input({
+          "label": {
+            "text": "National Insurance number"
+          },
+          hint: {
+            html: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+          },
+          "id": "input-width-10",
+          "name": "test-width-10",
+          "classes": "nhsuk-input--width-10"
+        }) }}
 
 
         {% endcall %}
+        <p><a href="nhs-number">I don't have a National Insurance number</a></p>
 
         {{ button({
           "text": "Continue"
@@ -75,7 +59,7 @@
       </form>
 
      {{ backLink({
-        "href": "what-you-need",
+        "href": "dob",
         "text": "Change my previous answer"
       }) }}
 

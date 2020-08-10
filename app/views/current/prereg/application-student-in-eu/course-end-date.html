@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What date did your A1 start in Switzerland?
+  What is the end date of your course?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,27 +26,29 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="a1-end-date" method="post">
+      <form action="full-name" method="post">
 
-        {% call fieldset({
+        <!-- {% call fieldset({
           legend: {
-            text: "What date did your A1 start in Switzerland?",
+            text: "When will you be studying?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
-        }) %}
+        }) %} -->
 
-        <p>You must have started working in Switzerland before 1 January 2021.</p>
 
         {{ dateInput({
       "id": "example",
       "namePrefix": "example",
       "fieldset": {
       "legend": {
+      "text": "What is the end date of your course?",
+      "classes": "nhsuk-label--l",
+      "isPageHeading": true
         }
       },
       "hint": {
-        "text": " For example, 13 9 2019"
+        "text": "For example, 13 9 2019"
       },
       "items": [
         {

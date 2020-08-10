@@ -26,7 +26,7 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="s1-app-complete" method="post">
+      <form action="app-complete" method="post">
 
         <h1>Check your answers before sending your application</h1>
 
@@ -37,75 +37,6 @@
             
             {
               key: {
-                text: "Posted worker form type"
-              },
-              value: {
-                html: "S1"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "form-type",
-                    text: "Change",
-                    visuallyHiddenText: "Posted worker form type"
-                  }
-                ]
-              }
-            },
-
-            {
-              key: {
-                text: "Country"
-              },
-              value: {
-                html: "Switzerland"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "s1-country",
-                    text: "Change",
-                    visuallyHiddenText: "Country"
-                  }
-                ]
-              }
-            },
-             {
-              key: {
-                text: "S1 start date"
-              },
-              value: {
-                html: "1 November 2020"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "s1-start-date",
-                    text: "Change",
-                    visuallyHiddenText: "Posting start date"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "S1 end date"
-              },
-              value: {
-                html: "1 March 2021"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "s1-end-date",
-                    text: "Change",
-                    visuallyHiddenText: "Posting end date"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
                 text: "Name"
               },
               value: {
@@ -114,7 +45,7 @@
               actions: {
                 items: [
                   {
-                    href: "s1-full-name",
+                    href: "full-name",
                     text: "Change",
                     visuallyHiddenText: "name"
                   }
@@ -126,32 +57,84 @@
                 text: "Date of birth"
               },
               value: {
-                text: "15 March 1978"
+                text: "15 March 1998"
               },
               actions: {
                 items: [
                   {
-                    href: "s1-dob",
+                    href: "dob",
                     text: "Change",
                     visuallyHiddenText: "date of birth"
                   }
                 ]
               }
             },
+            
             {
               key: {
-                text: "Address"
+                text: "Country of study"
               },
               value: {
-                html: "Rossackerstrasse 115-101<br>
-                      8047<br>
-                      Zürich<br>
-                      Switzerland"
+                html: "Germany"
               },
               actions: {
                 items: [
                   {
-                    href: "s1-address-eu",
+                    href: "course-country",
+                    text: "Change",
+                    visuallyHiddenText: "Country of study"
+                  }
+                ]
+              }
+            },
+             {
+              key: {
+                text: "Course start date"
+              },
+              value: {
+                html: "28 September 2020"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "course-start-date",
+                    text: "Change",
+                    visuallyHiddenText: "Course start date"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Course end date"
+              },
+              value: {
+                html: "30 June 2021"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "course-end-date",
+                    text: "Change",
+                    visuallyHiddenText: "Course end date"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Home address"
+              },
+              value: {
+                html: "
+                      73 Roman Rd<br>
+                      Leeds<br>
+                      LS2 5ZN<br>"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "address-lookup",
                     text: "Change",
                     visuallyHiddenText: "home address"
                   }
@@ -168,7 +151,7 @@
               actions: {
                 items: [
                   {
-                    href: "s1-email-address",
+                    href: "email-address",
                     text: "Change",
                     visuallyHiddenText: "email address"
                   }
@@ -185,9 +168,26 @@
               actions: {
                 items: [
                   {
-                    href: "s1-phone-number",
+                    href: "phone-number",
                     text: "Change",
                     visuallyHiddenText: " Contact telephone number"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Additional children details"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "add-child-1",
+                    text: "Change",
+                    visuallyHiddenText: " Additional children details"
                   }
                 ]
               }
@@ -197,8 +197,53 @@
           ]
         }) }}
 
+        
+
+        <h2>Your children's details</h2>
+        <h3>Child 1</h3>
+
+        {{ summaryList({
+          rows: [
+           
+            {
+              key: {
+                text: "Name"
+              },
+              value: {
+                text: "Millie Francis"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "child-1/full-name",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                text: "2 April 2016"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "child-1/dob",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
         <h2>Now send your application</h2>
-        <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct. We will tell you how to send evidence of your studies on the next page.</p>
+        <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
 
         {{ button({
           "text": "Accept and send"

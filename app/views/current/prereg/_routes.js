@@ -38,13 +38,25 @@ router.post('/willYouBeLiving', function (req, res) {
   var willYouBeLiving = req.session.data['where-will-you-live']
   if (willYouBeLiving == "UK"){
     // res.redirect('application-settled/full-name')
-    res.redirect('application-settled/full-name')
+    res.redirect('settled-status')
   }
   else if (willYouBeLiving == "EU"){
     res.redirect('ineligible')
   }
   else {
     res.redirect('ineligible')
+  }
+})
+
+// Are you a UK national? (living in the UK)
+router.post('/bornInUk', function (req, res) {
+  var bornInUk = req.session.data['born-in-uk']
+  if (bornInUk == "Yes"){
+    res.redirect('student')
+    res.redirect('eu-working')
+  }
+  else {
+    res.redirect('cannot-apply')
   }
 })
 
@@ -89,8 +101,11 @@ router.post('/application-pw/pwFormType', function (req, res) {
   if (pwFormType == "A1"){
     res.redirect('a1-country')
   }
+  else if (pwFormType == "S1"){
+    res.redirect('s1-country')
+  }
   else {
-    res.redirect('s1-full-name')
+    res.redirect('../ineligible')
   }
 })
 
@@ -99,7 +114,7 @@ router.post('/application-pw/pwFormType', function (req, res) {
 router.post('/euStudying', function (req, res) {
   var euStudent = req.session.data['eu-studying']
   if (euStudent == "Yes"){
-    res.redirect('application-student/evidence-student')
+    res.redirect('application-student-in-eu/evidence-student')
   }
   else {
     res.redirect('eu-working')
@@ -110,24 +125,14 @@ router.post('/euStudying', function (req, res) {
 router.post('/ukSettled', function (req, res) {
   var ukSettled = req.session.data['uk-settled']
   if (ukSettled == "Yes"){
-    res.redirect('student-ss')
+    res.redirect('application-settled/full-name')
   }
   else {
     res.redirect('ineligible')
   }
 })
 
-// Are you a UK national? (living in the UK)
-// router.post('/bornInUk', function (req, res) {
-//   var bornInUk = req.session.data['born-in-uk']
-//   if (bornInUk == "Yes"){
-    // res.redirect('student')
-//     res.redirect('eu-working')
-//   }
-//   else {
-//     res.redirect('cannot-apply')
-//   }
-// })
+
 
 
 

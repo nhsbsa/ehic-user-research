@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What date did your A1 start in Switzerland?
+  What is your child's date of birth?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,27 +26,22 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="a1-end-date" method="post">
-
-        {% call fieldset({
-          legend: {
-            text: "What date did your A1 start in Switzerland?",
-            classes: "nhsuk-fieldset__legend--l",
-            isPageHeading: true
-          }
-        }) %}
-
-        <p>You must have started working in Switzerland before 1 January 2021.</p>
+      <!-- <form action="nino" method="post"> -->
+      <form action="../add-another-child-1" method="post">
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
 
         {{ dateInput({
-      "id": "example",
-      "namePrefix": "example",
-      "fieldset": {
-      "legend": {
+  "id": "example",
+  "namePrefix": "example",
+  "fieldset": {
+    "legend": {
+      "text": "What is Millie's date of birth?",
+      "classes": "nhsuk-label--l",
+      "isPageHeading": true
         }
       },
       "hint": {
-        "text": " For example, 13 9 2019"
+        "text": "For example, 15 3 2015"
       },
       "items": [
         {
@@ -64,10 +59,6 @@
       ]
     }) }}
 
-
-
-        {% endcall %}
-
         {{ button({
           "text": "Continue"
         }) }}
@@ -75,7 +66,7 @@
       </form>
 
      {{ backLink({
-        "href": "what-you-need",
+        "href": "email-address",
         "text": "Change my previous answer"
       }) }}
 

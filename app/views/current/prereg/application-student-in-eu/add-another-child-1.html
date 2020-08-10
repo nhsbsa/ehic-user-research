@@ -1,10 +1,20 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What date did your A1 start in Switzerland?
+  Do you want to add another dependant child to your application?
 {% endblock %}
 
 {% block beforeContent %}
+
+<style type="text/css">
+  span {
+    font-weight: bold;
+  }
+  .nhsuk-inset-text {
+    margin: 15px 0 30px 0;
+  }
+</style>
+
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -26,45 +36,39 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="a1-end-date" method="post">
+
+      <form action="noPartnerAddAnotherChild" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What date did your A1 start in Switzerland?",
+            text: "Do you want to add another dependant child to your application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>You must have started working in Switzerland before 1 January 2021.</p>
+        {{ insetText({
+        "HTML": "<p><span>Child 1<br></span>Millie Francis</p>"
+      }) }}
+      
+      <!-- <p>
+        You can add your partner and children.
+      </p> -->
 
-        {{ dateInput({
-      "id": "example",
-      "namePrefix": "example",
-      "fieldset": {
-      "legend": {
-        }
-      },
-      "hint": {
-        "text": " For example, 13 9 2019"
-      },
-      "items": [
-        {
-          "name": "day",
-          "classes": "nhsuk-input--width-2"
-        },
-        {
-          "name": "month",
-          "classes": "nhsuk-input--width-2"
-        },
-        {
-          "name": "year",
-          "classes": "nhsuk-input--width-4"
-        }
-      ]
-    }) }}
-
-
+        {{ radios({
+          "idPrefix": "add-another",
+          "name": "add-another",
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No"
+            }
+          ]
+        }) }}
 
         {% endcall %}
 
@@ -74,8 +78,8 @@
 
       </form>
 
-     {{ backLink({
-        "href": "what-you-need",
+      {{ backLink({
+        "href": "nino",
         "text": "Change my previous answer"
       }) }}
 

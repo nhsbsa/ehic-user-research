@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What date did your A1 start in Switzerland?
+  What is your contact telephone number?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,44 +26,27 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="a1-end-date" method="post">
+      <!-- <form action="add-child-1" method="post"> -->
+      <form action="cya-individual" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What date did your A1 start in Switzerland?",
+            text: "What is your contact telephone number?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>You must have started working in Switzerland before 1 January 2021.</p>
+        <p>We ask for this in case we need to contact you about your application.</p>
 
-        {{ dateInput({
-      "id": "example",
-      "namePrefix": "example",
-      "fieldset": {
-      "legend": {
-        }
-      },
-      "hint": {
-        "text": " For example, 13 9 2019"
-      },
-      "items": [
-        {
-          "name": "day",
-          "classes": "nhsuk-input--width-2"
-        },
-        {
-          "name": "month",
-          "classes": "nhsuk-input--width-2"
-        },
-        {
-          "name": "year",
-          "classes": "nhsuk-input--width-4"
-        }
-      ]
-    }) }}
-
+        {{ input({
+          "label": {
+            "text": "Enter your contact telephone number (optional)"
+          },
+          "id": "input-width-30",
+          "name": "test-width-30",
+          "classes": "nhsuk-input--width-30"
+        }) }}
 
 
         {% endcall %}
@@ -75,7 +58,7 @@
       </form>
 
      {{ backLink({
-        "href": "what-you-need",
+        "href": "address-list",
         "text": "Change my previous answer"
       }) }}
 

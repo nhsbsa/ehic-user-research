@@ -26,7 +26,7 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="s1-app-complete" method="post">
+      <form action="app-complete" method="post">
 
         <h1>Check your answers before sending your application</h1>
 
@@ -37,69 +37,51 @@
             
             {
               key: {
-                text: "Posted worker form type"
+                text: "Country of study"
               },
               value: {
-                html: "S1"
+                html: "Germany"
               },
               actions: {
                 items: [
                   {
-                    href: "form-type",
+                    href: "course-country",
                     text: "Change",
-                    visuallyHiddenText: "Posted worker form type"
-                  }
-                ]
-              }
-            },
-
-            {
-              key: {
-                text: "Country"
-              },
-              value: {
-                html: "Switzerland"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "s1-country",
-                    text: "Change",
-                    visuallyHiddenText: "Country"
+                    visuallyHiddenText: "Country of study"
                   }
                 ]
               }
             },
              {
               key: {
-                text: "S1 start date"
+                text: "Course start date"
               },
               value: {
-                html: "1 November 2020"
+                html: "28 September 2020"
               },
               actions: {
                 items: [
                   {
-                    href: "s1-start-date",
+                    href: "course-start-date",
                     text: "Change",
-                    visuallyHiddenText: "Posting start date"
+                    visuallyHiddenText: "Course start date"
                   }
                 ]
               }
             },
             {
               key: {
-                text: "S1 end date"
+                text: "Course end date"
               },
               value: {
-                html: "1 March 2021"
+                html: "30 June 2021"
               },
               actions: {
                 items: [
                   {
-                    href: "s1-end-date",
+                    href: "course-end-date",
                     text: "Change",
-                    visuallyHiddenText: "Posting end date"
+                    visuallyHiddenText: "Course end date"
                   }
                 ]
               }
@@ -114,7 +96,7 @@
               actions: {
                 items: [
                   {
-                    href: "s1-full-name",
+                    href: "full-name",
                     text: "Change",
                     visuallyHiddenText: "name"
                   }
@@ -126,12 +108,12 @@
                 text: "Date of birth"
               },
               value: {
-                text: "15 March 1978"
+                text: "15 March 1998"
               },
               actions: {
                 items: [
                   {
-                    href: "s1-dob",
+                    href: "dob",
                     text: "Change",
                     visuallyHiddenText: "date of birth"
                   }
@@ -140,18 +122,20 @@
             },
             {
               key: {
-                text: "Address"
+                text: "Home address"
               },
               value: {
-                html: "Rossackerstrasse 115-101<br>
-                      8047<br>
-                      Zürich<br>
-                      Switzerland"
+                html: "
+                        Campus Südseite<br>
+                        Baierbrunner Str. 50<br>
+                        81379<br>
+                        München<br>
+                        Germany"
               },
               actions: {
                 items: [
                   {
-                    href: "s1-address-eu",
+                    href: "address-lookup",
                     text: "Change",
                     visuallyHiddenText: "home address"
                   }
@@ -168,7 +152,7 @@
               actions: {
                 items: [
                   {
-                    href: "s1-email-address",
+                    href: "email-address",
                     text: "Change",
                     visuallyHiddenText: "email address"
                   }
@@ -185,7 +169,7 @@
               actions: {
                 items: [
                   {
-                    href: "s1-phone-number",
+                    href: "phone-number",
                     text: "Change",
                     visuallyHiddenText: " Contact telephone number"
                   }
