@@ -18,6 +18,10 @@ console.log('folder : ' + res.locals.folder + ', subfolder : ' + res.locals.subf
 });
 
 
+// current sprint, remember to add older sprint when adding a new folder!
+router.use('/current/prereg', require('./views/current/prereg/_routes'));
+router.use('/current/postjan', require('./views/current/postjan/_routes'));
+
 // Start folder specific routes
 router.use('/sprint1', require('./views/sprint1/_routes'));
 
@@ -36,9 +40,10 @@ router.use('/sprint7', require('./views/sprint7/_routes'));
 router.use('/sprint8/prereg', require('./views/sprint8/prereg/_routes'));
 router.use('/sprint8/postjan', require('./views/sprint8/postjan/_routes'));
 
-// current sprint, remember to add older sprint when adding a new folder!
-router.use('/current/prereg', require('./views/current/prereg/_routes'));
-router.use('/current/postjan', require('./views/current/postjan/_routes'));
+router.use('/sprint9/prereg', require('./views/sprint9/prereg/_routes'));
+router.use('/sprint9/postjan', require('./views/sprint9/postjan/_routes'));
+
+
 
 
 module.exports = router;
