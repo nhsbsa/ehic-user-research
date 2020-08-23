@@ -4,30 +4,73 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 
 
-// Where do you live?
-router.post('/whereDoYouLive', function (req, res) {
-  var whereDoYouLive = req.session.data['where-do-you-live']
-  if (whereDoYouLive == "UK"){
-    res.redirect('born-in-uk-1')
+// What is your nationality? - nationality.html
+router.post('/nationality', function (req, res) {
+  var nationality = req.session.data['nationality']
+  if (nationality == "British"){
+    res.redirect('where-do-you-live')
   }
-  else if (whereDoYouLive == "EU"){
-    res.redirect('eu-retired')
+  else if (nationality == "EU, EEA or Swiss"){
+    // res.redirect('born-in-uk-1')
+    res.redirect('where-do-you-live-eu-citizen')
   }
   else {
     res.redirect('ineligible')
   }
 })
 
-// Are you a UK national? (living in the UK)
-router.post('/bornInUk', function (req, res) {
-  var bornInUk = req.session.data['born-in-uk']
-  if (bornInUk == "Yes"){
-    res.redirect('student')
+// Where do you live? where-do-you-live.html
+router.post('/whereDoYouLive', function (req, res) {
+  var whereDoYouLive = req.session.data['where-do-you-live']
+  if (whereDoYouLive == "UK"){
+    // res.redirect('eu-studying')
+    res.redirect('application/full-name')
+  }
+  else if (whereDoYouLive == "EU"){
+    res.redirect('exp-ben')
   }
   else {
-    res.redirect('settled-status-uk')
+    res.redirect('ineligible')
   }
 })
+
+// Where do you live? - where-do-you-live-eu-citizen.html
+router.post('/willYouBeLiving', function (req, res) {
+  var willYouBeLiving = req.session.data['where-will-you-live']
+  if (willYouBeLiving == "UK"){
+    // res.redirect('application-settled/full-name')
+    res.redirect('settled-status')
+  }
+  else if (willYouBeLiving == "EU"){
+    res.redirect('ineligible')
+  }
+  else {
+    res.redirect('ineligible')
+  }
+})
+
+// Receiving exportable benefits - exp-ben.html
+router.post('/expBen', function (req, res) {
+  var expBen = req.session.data['expBen']
+  if (expBen == "Yes"){
+    // res.redirect('application-s1/country')
+    res.redirect('application-s1/full-name')
+  }
+  else {
+    res.redirect('eu-studying')
+  }
+})
+
+// Are you a UK national? (living in the UK)
+// router.post('/bornInUk', function (req, res) {
+//   var bornInUk = req.session.data['born-in-uk']
+//   if (bornInUk == "Yes"){
+//     res.redirect('student')
+//   }
+//   else {
+//     res.redirect('settled-status-uk')
+//   }
+// })
 
 // Do you intend to study in the EU, EEA or Switzerland?
 router.post('/student', function (req, res) {
@@ -62,11 +105,14 @@ router.post('/euBornInUk', function (req, res) {
   }
 })
 
-// Do you have UK settled status?
+// Do you have UK settled status? settled-status.html
 router.post('/ukSettled', function (req, res) {
   var ukSettled = req.session.data['uk-settled']
   if (ukSettled == "Yes"){
-    res.redirect('student-ss')
+    res.redirect('application-settled/full-name')
+  }
+  else if (ukSettled == "No"){
+    res.redirect('application-settled/full-name')
   }
   else {
     res.redirect('ineligible')
@@ -96,33 +142,33 @@ router.post('/euStudentUkSettled', function (req, res) {
 })
 
 // Do you have UK settled status? (if WORKING and living in the EU)
-router.post('/euWorkingUkSettled', function (req, res) {
-  var euUkSettled = req.session.data['eu-uk-settled']
-  if (euUkSettled == "Yes"){
-    res.redirect('application-pw-ss/evidence-pw')
-  }
-  else {
-    res.redirect('ineligible')
-  }
-})
+// router.post('/euWorkingUkSettled', function (req, res) {
+//   var euUkSettled = req.session.data['eu-uk-settled']
+//   if (euUkSettled == "Yes"){
+//     res.redirect('application-pw-ss/evidence-pw')
+//   }
+//   else {
+//     res.redirect('ineligible')
+//   }
+// })
 
 
 // Are you retired and living in the EU?
-router.post('/euRetired', function (req, res) {
-  var euRetired = req.session.data['eu-retired']
-  if (euRetired == "Yes"){
-    res.redirect('born-in-uk-s1')
-  }
-  else {
-    res.redirect('eu-studying')
-  }
-})
+// router.post('/euRetired', function (req, res) {
+//   var euRetired = req.session.data['eu-retired']
+//   if (euRetired == "Yes"){
+//     res.redirect('born-in-uk-s1')
+//   }
+//   else {
+//     res.redirect('eu-studying')
+//   }
+// })
 
 // Are you studying in the EU?
 router.post('/euStudying', function (req, res) {
   var euStudent = req.session.data['eu-studying']
   if (euStudent == "Yes"){
-    res.redirect('born-in-uk-study')
+    res.redirect('application-student-in-eu/evidence-student')
   }
   else {
     res.redirect('eu-working')
@@ -143,11 +189,11 @@ router.post('/euStudyingBornInUk', function (req, res) {
 
 
 
-// Are you working in the EU? - Posted Workers
+// Are you working in the EU, EEA or Switzerland? - eu-working.html
 router.post('/euWorking', function (req, res) {
-  var euWorking = req.session.data['eu-working']
-  if (euWorking == "Yes"){
-    res.redirect('born-in-uk-working')
+  var student = req.session.data['eu-working']
+  if (student == "Yes"){
+    res.redirect('application-pw/evidence-pw')
   }
   else {
     res.redirect('ineligible')
@@ -198,6 +244,18 @@ router.post('/application-pw-ss/pwFormType', function (req, res) {
 //   }
 // })
 
+// Do you want to add your PARTNER to your application? (if eligible UK citizen)
+router.post('/application-s1/addPartner', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('partner/full-name')
+  }
+  else {
+    // res.redirect('add-child-1')
+    res.redirect('cya-individual')
+  }
+})
+
 // Does your PARTNER live with you? (if eligible UK citizen)
 // router.post('/application/partner/partnerAddress', function (req, res) {
 //   var addAnother = req.session.data['add-another']
@@ -208,6 +266,17 @@ router.post('/application-pw-ss/pwFormType', function (req, res) {
 //     res.redirect('ineligible')
 //   }
 // })
+
+// Does your PARTNER live with you? (S1 only)
+router.post('/application-s1/partner/partnerAddress', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('email-address')
+  }
+  else {
+    res.redirect('address-eu')
+  }
+})
 
 // Does your CHILD live with you? (if eligible UK citizen with PARTNER)
 // router.post('/application/child-2/childAddress', function (req, res) {

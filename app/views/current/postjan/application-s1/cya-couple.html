@@ -74,7 +74,10 @@
                 text: "Home address"
               },
               value: {
-                html: "73 Roman Rd<br>Leeds<br> LS2 5ZN"
+                html: "Calle San Ignacio, 10-16<br>
+                        11100 San Fernando<br>
+                        Cádiz<br>
+                        Spain"
               },
               actions: {
                 items: [
@@ -123,17 +126,17 @@
 
             {
               key: {
-                text: "Additional children details"
+                text: "Add a partner or spouse"
               },
               value: {
-                text: "No"
+                text: "Yes"
               },
               actions: {
                 items: [
                   {
-                    href: "add-child-1",
+                    href: "add-partner",
                     text: "Change",
-                    visuallyHiddenText: " Additional children details"
+                    visuallyHiddenText: "Add a partner or spouse"
                   }
                 ]
               }
@@ -169,7 +172,7 @@
                 text: "Date of birth"
               },
               value: {
-                text: "27 November 1984"
+                text: "27 November 1950"
               },
               actions: {
                 items: [
@@ -177,6 +180,60 @@
                     href: "partner/dob",
                     text: "Change",
                     visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Home address"
+              },
+              value: {
+                html: "Calle San Ignacio, 10-16<br>
+                        11100 San Fernando<br>
+                        Cádiz<br>
+                        Spain"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "partner/address-eu",
+                    text: "Change",
+                    visuallyHiddenText: "home addressh"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Email address"
+              },
+              value: {
+                html: '<p>mark.francis@example.com</p>'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "partner/email-address",
+                    text: "Change",
+                    visuallyHiddenText: "partner email address"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Contact telephone number"
+              },
+              value: {
+                html: '<p>07123 456 7890</p>'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "partner/phone-number",
+                    text: "Change",
+                    visuallyHiddenText: "partner contact telephone number"
                   }
                 ]
               }

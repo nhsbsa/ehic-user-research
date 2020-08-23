@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  When did you start working in Switzerland?
+  What date did your A1 start in Switzerland?
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,7 +30,7 @@
 
         {% call fieldset({
           legend: {
-            text: "When did you start working in Switzerland?",
+            text: "What date did your A1 start in Switzerland?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -75,7 +75,7 @@
       </form>
 
      {{ backLink({
-        "href": "what-you-need",
+        "href": "a1-country",
         "text": "Change my previous answer"
       }) }}
 

@@ -128,12 +128,32 @@ router.post('/ukSettled', function (req, res) {
     res.redirect('application-settled/full-name')
   }
   else {
-    res.redirect('ineligible')
+    res.redirect('application-settled/full-name')
   }
 })
 
 
+// Do you want to add your PARTNER to your application? (S1 only)
+router.post('/application-s1/addPartner', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('partner/full-name')
+  }
+  else {
+    res.redirect('cya-individual')
+  }
+})
 
+// Does your PARTNER live with you? (S1 only)
+router.post('/application-s1/partner/partnerAddress', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('email-address')
+  }
+  else {
+    res.redirect('address-eu')
+  }
+})
 
 
 // Do you intend to study in the EU, EEA or Switzerland?
