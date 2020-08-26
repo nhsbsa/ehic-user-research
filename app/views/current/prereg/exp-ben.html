@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you receive payments from a UK State Pension or any other exportable benefits?
+  Do you have a registered S1 or E121 certificate?
 {% endblock %}
 
 {% block beforeContent %}
@@ -32,7 +32,7 @@
 
         {% call fieldset({
           legend: {
-            text: "Do you receive payments from a UK State Pension or any other exportable benefits?",
+            text: "Do you have a registered S1 or E121 certificate?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -57,16 +57,12 @@
 
 
         {{ details({
-          "text": "What are exportable benefits?",
+          "text": "What is an S1 or an E121 certificate?",
           "HTML": "
-          <p>The UK has social security agreements with some countries that allow you to claim some benefits while you’re there [content TBD]</p>
-            <!-- <p>You can find your NHS number by logging in to a GP online service or on any document the NHS has sent you, such as your:</p> -->
-            <!-- <ul>
-                <li>example</li>
-                <li>example</li>
-                <li>example</li>
-            </ul> -->
-            <!-- <p>Ask your GP surgery for help if you can't find your NHS number.</p> -->
+          <p>An S1 certificate (formerly known as an E121) entitles you to access state healthcare on the same basis as a citizen in the EEA country (or Switzerland) you are currently residing in (other than the UK).</p>
+          <p>You might be entitled to an S1 certificate if you receive a UK State Pension or certain other benefits. You may also be entitled if you are the family member of someone who has been awarded an S1 certificate.</p>
+          <p>If you have been provided with an S1 or an E121 certificate, you will have been asked to register it with your local health authority.</p>
+          <p>If you have not been provided with an S1 or E121, or you have not registered it yet, answer no.</p>
           "
         }) }}
 
