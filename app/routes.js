@@ -43,7 +43,12 @@ router.use('/sprint8/postjan', require('./views/sprint8/postjan/_routes'));
 router.use('/sprint9/prereg', require('./views/sprint9/prereg/_routes'));
 router.use('/sprint9/postjan', require('./views/sprint9/postjan/_routes'));
 
-
+router.use('/sprint10/prereg', require('./views/sprint10/prereg/_routes'));
+router.use('/sprint10/postjan', require('./views/sprint10/postjan/_routes'));
 
 
 module.exports = router;
+
+
+
+

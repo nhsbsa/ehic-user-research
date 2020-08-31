@@ -1,0 +1,103 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Get healthcare cover for visiting the EU, EEA or Switzerland (EHIC)
+{% endblock %}
+
+{% block beforeContent %}
+
+<!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>Get healthcare cover for visiting the EU, EEA or Switzerland (EHIC)</h1>
+
+      <h2>Use this service to apply for an EHIC (European Health Insurance Card)</h2>
+
+      <p class="nhsuk-lede-text">
+        An EHIC gives you the right to access state-provided healthcare on temporary stays in countries in the European Union (EU), European Economic Area (EEA) and Switzerland.
+      </p>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Countries in the EU and EEA 
+            <!-- (opens a new window) -->
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h5>EU countries</h5>
+          <p>The EU countries are:</p>
+          <p>
+            Austria, Belgium, Bulgaria, Croatia, Republic of Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain and Sweden.
+          </p>
+          <br>
+          <h5>The European Economic Area (EEA)</h5>
+          <p>
+            The EEA includes EU countries and also Iceland, Liechtenstein and Norway. It allows them to be part of the EU’s single market.
+          </p>
+          <p>
+            Switzerland is not an EU or EEA member but is part of the single market. This means Swiss nationals have the same rights to live and work in the UK as other EEA nationals.
+          </p>
+        </div>
+      </details>
+
+      <br>
+
+      <h5>You can get an EHIC if:</h5>
+
+      <ul>
+        <li>you are a UK citizen</li>
+        <li>you are an EU, EEA or Swiss citizen with either settled or pre-settled status in the UK or you have indefinite leave to remain in the UK</li>
+        <li>you are a posted worker living and working in the EU, EEA or Switzerland</li>
+        <li>you are a UK citizen studying in the EU, EEA or Switzerland</li>
+        <li>you receive a UK State Pension or other exportable benefit and are living in the EU, EEA or Switzerland</li>
+        <!-- <li>you are a British-Irish dual national living in the UK</li> -->
+      </ul>
+      <!-- <br>
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            What are exportable benefits?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>Exportable benefits</p>
+          <ul>
+            <li>example</li>
+            <li>example</li>
+            <li>example</li>
+          </ul>
+        </div>
+      </details> -->
+
+      {{ insetText({
+        "HTML": "<p>If you are not a UK citizen, you will need your NHS number to apply. Have this ready before you start your application.</p>"
+      }) }}
+
+      <p>The application takes less than 5 minutes.</p>
+      
+      <a href="nationality" class="nhsuk-button nhsuk-u-margin-bottom-8">
+        Start now
+      </a>
+
+    </div>
+
+  </div>
+{% endblock %}

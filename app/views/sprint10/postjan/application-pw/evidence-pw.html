@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Applying for an EHIC if you're a posted worker
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        Applying for an EHIC if you're a posted worker
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        As part of your application, we need to see evidence of [...].
+      </p>
+
+      <h2>Next steps</h2>
+      <ul>
+        <li>Complete the online application</li>
+        <li>Send us a copy of [...]
+        <!-- any correspondence from your university or college that shows your course start and end dates.  -->
+      We will tell you how to do this</li>        
+      </ul>
+
+      {{ insetText({
+        "HTML": "<p>Your EHIC will only be valid for the duration of your posting.</p>"
+      }) }}
+      
+      <a href="form-type" class="nhsuk-button nhsuk-u-margin-bottom-8">
+        Continue
+      </a>
+
+    </div>  
+
+  </div>
+{% endblock %}

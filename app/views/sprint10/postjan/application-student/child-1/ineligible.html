@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  You aren't eligible for an EHIC
+{% endblock %}
+
+{% block beforeContent %}
+
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        You and your children must live in the same household
+      </h1>
+
+      <!-- <p class="nhsuk-lede-text">
+        Your partner or spouse needs to live in your household to be added to your application. They can still apply as an individual. 
+      </p> -->
+
+      <p class="nhsuk-lede-text">
+        You can continue your application but the parent or guardian your children live with must make a separate application and add them on.
+      </p>
+
+      <!-- <h3>Check if you're eligible for settled status</h3>
+      <p>If you’re an EU, EEA or Swiss citizen, you and your family can apply to the <a href="https://www.gov.uk/settled-status-eu-citizens-families">EU Settlement Scheme</a> to continue living in the UK after 30 June 2021. If your application is successful, you’ll get either settled or pre-settled status.</p> -->
+
+      <form action="../cya-individual" method="post">
+
+      {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+
+      {{ backLink({
+        "href": "add-child-1",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>  
+
+  </div>
+{% endblock %}
