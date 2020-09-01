@@ -133,27 +133,61 @@ router.post('/ukSettled', function (req, res) {
 })
 
 
-// Do you want to add your PARTNER to your application? (S1 only)
-router.post('/application-s1/addPartner', function (req, res) {
+// Do you want to add any children to your application? - add-child-1.html
+router.post('/application-s1/addChild', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('partner/full-name')
+    res.redirect('child-1/child-address')
   }
   else {
     res.redirect('cya-individual')
   }
 })
 
-// Does your PARTNER live with you? (S1 only)
-router.post('/application-s1/partner/partnerAddress', function (req, res) {
+// Does your CHILD live with you? (if RETIRED and living in EU)
+router.post('/application-s1/child-1/childAddress', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('email-address')
+    res.redirect('full-name')
   }
   else {
     res.redirect('address-eu')
   }
 })
+
+// Do you want to add ANOTHER CHILD to your application?
+// (after adding partner and one child) (if eligible-with-settlement)
+router.post('/application-s1/noPartnerAddAnotherChild', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('child-1/child-address')
+  }
+  else {
+    res.redirect('cya-children')
+  }
+})
+
+// Do you want to add your PARTNER to your application? (S1 only)
+// router.post('/application-s1/addPartner', function (req, res) {
+//   var addAnother = req.session.data['add-another']
+//   if (addAnother == "Yes"){
+//     res.redirect('partner/full-name')
+//   }
+//   else {
+//     res.redirect('cya-individual')
+//   }
+// })
+
+// Does your PARTNER live with you? (S1 only)
+// router.post('/application-s1/partner/partnerAddress', function (req, res) {
+//   var addAnother = req.session.data['add-another']
+//   if (addAnother == "Yes"){
+//     res.redirect('email-address')
+//   }
+//   else {
+//     res.redirect('address-eu')
+//   }
+// })
 
 
 // Do you intend to study in the EU, EEA or Switzerland?
