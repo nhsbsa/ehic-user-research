@@ -24,17 +24,11 @@ router.use('/current/postjan', require('./views/current/postjan/_routes'));
 
 // Start folder specific routes
 router.use('/sprint1', require('./views/sprint1/_routes'));
-
 router.use('/sprint2', require('./views/sprint2/_routes'));
-
 router.use('/sprint3', require('./views/sprint3/_routes'));
-
 router.use('/sprint4', require('./views/sprint4/_routes'));
-
 router.use('/sprint5', require('./views/sprint5/_routes'));
-
 router.use('/sprint6', require('./views/sprint6/_routes'));
-
 router.use('/sprint7', require('./views/sprint7/_routes'));
 
 router.use('/sprint8/prereg', require('./views/sprint8/prereg/_routes'));
@@ -45,6 +39,10 @@ router.use('/sprint9/postjan', require('./views/sprint9/postjan/_routes'));
 
 router.use('/sprint10/prereg', require('./views/sprint10/prereg/_routes'));
 router.use('/sprint10/postjan', require('./views/sprint10/postjan/_routes'));
+
+// Experimental tasklist format //
+// router.use('/tasklist/prereg', require('./views/tasklist/prereg/_routes'));
+// router.use('/tasklist/postjan', require('./views/tasklist/postjan/_routes'));
 
 
 module.exports = router;

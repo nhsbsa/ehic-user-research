@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your nationality?
+  Were you resident in the UK before 1 Janaury 2021?
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,35 +27,27 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="nationality" method="post">
+      <form action="residentBeforeJan" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your nationality?",
+            text: "Were you resident in the UK before 1 Janaury 2021?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
         {{ radios({
-          "idPrefix": "nationality",
-          "name": "nationality",
+          "idPrefix": "resident-before-jan",
+          "name": "resident-before-jan",
           "items": [
             {
-              "value": "UK",
-              "text": "UK citizen"
+              "value": "Yes",
+              "text": "Yes"
             },
             {
-              "value": "dual",
-              "text": "Dual national"
-            },
-            {
-              "value": "EU, EEA or Swiss",
-              "text": "EU, EEA or Swiss"
-            },
-            {
-              "value": "Other",
-              "text": "Other"
+              "value": "No",
+              "text": "No"
             }
           ]
         }) }}
@@ -69,7 +61,7 @@
       </form>
 
      {{ backLink({
-        "href": "",
+        "href": "nationality",
         "text": "Change my previous answer"
       }) }}
       

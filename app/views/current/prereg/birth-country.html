@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your nationality?
+  Where were you born?
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,31 +27,27 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="nationality" method="post">
+      <form action="birthCountry" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your nationality?",
+            text: "Where were you born?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
         {{ radios({
-          "idPrefix": "nationality",
-          "name": "nationality",
+          "idPrefix": "birth-country",
+          "name": "birth-country",
           "items": [
             {
               "value": "UK",
-              "text": "UK citizen"
+              "text": "England, Wales or Scotland"
             },
             {
-              "value": "dual",
-              "text": "Dual national"
-            },
-            {
-              "value": "EU, EEA or Swiss",
-              "text": "EU, EEA or Swiss"
+              "value": "NI",
+              "text": "Northern Ireland"
             },
             {
               "value": "Other",

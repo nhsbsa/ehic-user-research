@@ -10,13 +10,47 @@ router.post('/nationality', function (req, res) {
   if (nationality == "UK"){
     res.redirect('where-do-you-live')
   }
+  else if (nationality == "dual"){
+    res.redirect('birth-country')
+  }
   else if (nationality == "EU, EEA or Swiss"){
     // res.redirect('born-in-uk-1')
     // res.redirect('where-do-you-live-eu-citizen')
-    res.redirect('who-for-eu')
+    res.redirect('application-settled/full-name')
   }
   else {
     res.redirect('ineligible')
+  }
+})
+
+// Were you resident in the UK for 1 Janaury 2021? - resident-before-jan.html
+router.post('/residentBeforeJan', function (req, res) {
+  var residentBeforeJan = req.session.data['resident-before-jan']
+  if (residentBeforeJan == "Yes"){
+    res.redirect('nationality')
+  }
+  else if (residentBeforeJan == "No"){
+    res.redirect('ineligible')
+  }
+  else {
+    res.redirect('resident-before-jan')
+  }
+})
+
+// Where were you born? - birth-country.html
+router.post('/birthCountry', function (req, res) {
+  var birthCountry = req.session.data['birth-country']
+  if (birthCountry == "UK"){
+    res.redirect('ineligible')
+  }
+  else if (birthCountry == "NI"){
+    res.redirect('')
+  }
+  else if (birthCountry == "Other"){
+    res.redirect('')
+  }
+  else {
+    res.redirect('birth-country')
   }
 })
 
@@ -38,7 +72,7 @@ router.post('/whoFor', function (req, res) {
 router.post('/whereDoYouLive', function (req, res) {
   var whereDoYouLive = req.session.data['where-do-you-live']
   if (whereDoYouLive == "UK"){
-    res.redirect('nationality')
+    res.redirect('resident-before-jan')
   }
   else if (whereDoYouLive == "EU"){
     res.redirect('exp-ben')
