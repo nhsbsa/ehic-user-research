@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your contact telephone number?
+  Do you intend to live together permanently?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,29 +26,31 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <form action="add-child-1" method="post"> -->
-      <!-- <form action="cya-individual" method="post"> -->
-      <form action="add-partner" method="post">
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
+      <form action="intendLiving" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your contact telephone number?",
+            text: "Do you intend to live together permanently?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>We ask for this in case we need to contact you about your application.</p>
-        
-        {{ input({
-          "label": {
-            "text": "Enter your contact telephone number (optional)"
-          },
-          "id": "input-width-30",
-          "name": "test-width-30",
-          "classes": "nhsuk-input--width-30"
+        {{ radios({
+          "idPrefix": "intend-living",
+          "name": "intend-living",
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No"
+            }
+          ]
         }) }}
-
 
         {% endcall %}
 
@@ -59,7 +61,7 @@
       </form>
 
      {{ backLink({
-        "href": "email-address",
+        "href": "",
         "text": "Change my previous answer"
       }) }}
 

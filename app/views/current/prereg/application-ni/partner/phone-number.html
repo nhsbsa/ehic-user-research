@@ -26,8 +26,6 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <form action="add-child-1" method="post"> -->
-      <!-- <form action="cya-individual" method="post"> -->
       <form action="add-partner" method="post">
 
         {% call fieldset({
@@ -38,11 +36,9 @@
           }
         }) %}
 
-        <p>We ask for this in case we need to contact you about your application.</p>
-        
         {{ input({
           "label": {
-            "text": "Enter your contact telephone number (optional)"
+            "text": "Enter your contact telephone number"
           },
           "id": "input-width-30",
           "name": "test-width-30",
@@ -59,7 +55,7 @@
       </form>
 
      {{ backLink({
-        "href": "email-address",
+        "href": "address-list",
         "text": "Change my previous answer"
       }) }}
 

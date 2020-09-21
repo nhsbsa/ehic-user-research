@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your contact telephone number?
+  Do you want to add someone else to your application?
 {% endblock %}
 
 {% block beforeContent %}
+
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -26,29 +27,35 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <form action="add-child-1" method="post"> -->
-      <!-- <form action="cya-individual" method="post"> -->
-      <form action="add-partner" method="post">
+
+      <form action="addAnother" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your contact telephone number?",
+            text: "Do you want to add someone else to your application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+      
+      <p>
+        You can add your partner and children.
+      </p>
 
-        <p>We ask for this in case we need to contact you about your application.</p>
-        
-        {{ input({
-          "label": {
-            "text": "Enter your contact telephone number (optional)"
-          },
-          "id": "input-width-30",
-          "name": "test-width-30",
-          "classes": "nhsuk-input--width-30"
+        {{ radios({
+          "idPrefix": "add-another",
+          "name": "add-another",
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No"
+            }
+          ]
         }) }}
-
 
         {% endcall %}
 
@@ -58,8 +65,8 @@
 
       </form>
 
-     {{ backLink({
-        "href": "email-address",
+      {{ backLink({
+        "href": "nino",
         "text": "Change my previous answer"
       }) }}
 

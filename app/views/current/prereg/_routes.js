@@ -8,7 +8,7 @@ const router = express.Router()
 router.post('/nationality', function (req, res) {
   var nationality = req.session.data['nationality']
   if (nationality == "UK"){
-    res.redirect('where-do-you-live')
+    res.redirect('application/full-name')
   }
   else if (nationality == "dual"){
     res.redirect('birth-country')
@@ -44,13 +44,27 @@ router.post('/birthCountry', function (req, res) {
     res.redirect('ineligible')
   }
   else if (birthCountry == "NI"){
-    res.redirect('')
+    res.redirect('renounce')
   }
   else if (birthCountry == "Other"){
     res.redirect('')
   }
   else {
     res.redirect('birth-country')
+  }
+})
+
+// Where were you born? - birth-country.html
+router.post('/renounce', function (req, res) {
+  var renounce = req.session.data['renounce']
+  if (renounce == "Yes"){
+    res.redirect('application-ni/full-name')
+  }
+  else if (renounce == "No"){
+    res.redirect('ineligible')
+  }
+  else {
+    res.redirect('renounce')
   }
 })
 
@@ -288,6 +302,18 @@ router.post('/application-s1/addPartner', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
     res.redirect('partner/full-name')
+  }
+  else {
+    res.redirect('cya-individual')
+  }
+})
+
+// Do you want to add your PARTNER to your application? EUSS
+router.post('/application-settled/addPartner', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    // res.redirect('partner/full-name')
+    res.redirect('partner/married')
   }
   else {
     res.redirect('cya-individual')
