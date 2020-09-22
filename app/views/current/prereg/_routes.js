@@ -231,7 +231,7 @@ router.post('/relationship', function (req, res) {
 })
 
 // Are you married to them? - married.html
-router.post('/married', function (req, res) {
+router.post('/application-settled/partner/married', function (req, res) {
   var married = req.session.data['married']
   if (married == "Yes"){
     res.redirect('application-other-settled/full-name')
