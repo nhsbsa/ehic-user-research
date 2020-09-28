@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Does Millie live with you?
+  Are you married to them?
 {% endblock %}
 
 {% block beforeContent %}
-
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -27,25 +26,20 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-
-      <form action="childAddress" method="post">
-        <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
+      <form action="married" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Does Millie live with you?",
+            text: "Are you married to them?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
-      
-      <!-- <p>
-        You can add your partner and children.
-      </p> -->
 
         {{ radios({
-          "idPrefix": "add-another",
-          "name": "add-another",
+          "idPrefix": "married",
+          "name": "married",
           "items": [
             {
               "value": "Yes",
@@ -66,7 +60,7 @@
 
       </form>
 
-      {{ backLink({
+     {{ backLink({
         "href": "",
         "text": "Change my previous answer"
       }) }}

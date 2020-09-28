@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your partner's home address?
+  Do you want to add your parents to your application?
 {% endblock %}
 
 {% block beforeContent %}
+
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -26,37 +27,46 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="address-list" method="post">
+
+      <form action="addParent" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your partner's home address?",
+            text: "Do you want to add your parents to your application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+      
+      <!-- <p>
+        You can add children to your EHIC application if they live with you. They will receive their own EHIC.
+      </p> -->
 
-        {{ input({
-          "label": {
-            "text": "Postcode",
-            "classes": "nhsuk-label--m"
-          },
-          "id": "input-width-10",
-          "name": "test-width-10",
-          "classes": "nhsuk-input--width-10"
+        {{ radios({
+          "idPrefix": "add-parent",
+          "name": "add-parent",
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No"
+            }
+          ]
         }) }}
-
 
         {% endcall %}
 
         {{ button({
-          "text": "Find address"
+          "text": "Continue"
         }) }}
 
       </form>
 
-     {{ backLink({
-        "href": "full-name",
+      {{ backLink({
+        "href": "",
         "text": "Change my previous answer"
       }) }}
 

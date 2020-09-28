@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Does Millie live with you?
+  What is your partner's home address?
 {% endblock %}
 
 {% block beforeContent %}
-
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -27,36 +26,38 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-
-      <form action="childAddress" method="post">
-        <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
+      <form action="full-name" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Does Millie live with you?",
+            text: "What is your partner's home address?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
-      
-      <!-- <p>
-        You can add your partner and children.
-      </p> -->
 
-        {{ radios({
-          "idPrefix": "add-another",
-          "name": "add-another",
+        <!-- <h3>Postcode</h3>
+        <p>SW1A 1AA</p> -->
+        <h3>Select an address</h3>
+
+        {{ select({
+          "id": "select-1",
+          "name": "select-1",
+          "label": {
+          },
           "items": [
             {
-              "value": "Yes",
-              "text": "Yes"
+              "value": 1,
+              "text": "1 address found",
+              "selected": true
             },
             {
-              "value": "No",
-              "text": "No"
+              "value": 2,
+              "text": "73 Roman Rd, Leeds LS2 5ZN"
             }
           ]
         }) }}
+
 
         {% endcall %}
 
@@ -66,8 +67,10 @@
 
       </form>
 
-      {{ backLink({
-        "href": "",
+      <p><a href="address-manual">I can't find my address in the list</a></p>
+
+     {{ backLink({
+        "href": "address-lookup",
         "text": "Change my previous answer"
       }) }}
 

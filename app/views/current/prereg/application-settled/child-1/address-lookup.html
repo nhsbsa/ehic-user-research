@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your child's home address?
+  What is Millie's home address?
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,10 +27,12 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <form action="address-list" method="post">
+                <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
+
 
         {% call fieldset({
           legend: {
-            text: "What is your child's home address?",
+            text: "What is Millie's home address?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -49,14 +51,18 @@
 
         {% endcall %}
 
+
+
         {{ button({
           "text": "Find address"
         }) }}
 
       </form>
 
+      <p><a href="address-manual">Enter address manually</a></p>
+
      {{ backLink({
-        "href": "full-name",
+        "href": "",
         "text": "Change my previous answer"
       }) }}
 

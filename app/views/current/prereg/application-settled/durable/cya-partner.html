@@ -26,7 +26,7 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="../add-child-2" method="post">
+      <form action="../add-child-1" method="post">
 
         <h1>Check your answers</h1>
 
@@ -34,19 +34,20 @@
 
         {{ summaryList({
           rows: [
+
             {
               key: {
-                text: "NHS number"
+                text: "Home address"
               },
               value: {
-                text: "485 777 3456"
+                html: "73 Roman Rd<br>Leeds<br> LS2 5ZN"
               },
               actions: {
                 items: [
                   {
-                    href: "nhs-number",
+                    href: "address-lookup",
                     text: "Change",
-                    visuallyHiddenText: "date of birth"
+                    visuallyHiddenText: "home address"
                   }
                 ]
               }
@@ -87,17 +88,17 @@
             },
             {
               key: {
-                text: "Home address"
+                text: "Nationality"
               },
               value: {
-                html: "73 Roman Rd<br>Leeds<br> LS2 5ZN"
+                html: "EEA or Swiss"
               },
               actions: {
                 items: [
                   {
-                    href: "address-lookup",
+                    href: "nationality",
                     text: "Change",
-                    visuallyHiddenText: "home address"
+                    visuallyHiddenText: "nationality"
                   }
                 ]
               }

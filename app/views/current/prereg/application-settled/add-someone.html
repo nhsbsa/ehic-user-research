@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Does Millie live with you?
+  Do you want to add anyone else to your application?
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,24 +28,23 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-      <form action="childAddress" method="post">
-        <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
+      <form action="addSomeone" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Does Millie live with you?",
+            text: "Do you want to add anyone else to your application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
       
-      <!-- <p>
-        You can add your partner and children.
-      </p> -->
+      <p>
+        You can add your spouse, civil partner or unmarried partner, children, grandchildren, parents and grandparents.
+      </p>
 
         {{ radios({
-          "idPrefix": "add-another",
-          "name": "add-another",
+          "idPrefix": "add-someone",
+          "name": "add-someone",
           "items": [
             {
               "value": "Yes",

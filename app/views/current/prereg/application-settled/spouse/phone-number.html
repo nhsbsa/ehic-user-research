@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your home address?
+  What is your contact telephone number?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,11 +26,11 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="../add-child-2" method="post">
+      <form action="add-partner" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your home address?",
+            text: "What is your contact telephone number?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -38,47 +38,11 @@
 
         {{ input({
           "label": {
-          "text": "Building and street"
+            "text": "Enter your contact telephone number"
           },
-          "id": "input-width-20",
-          "name": "test-width-20",
-          "classes": "nhsuk-input--width-20"
-        }) }}
-
-        {{ input({
-          "label": {
-          "text": ""
-          },
-          "id": "input-width-20",
-          "name": "test-width-20",
-          "classes": "nhsuk-input--width-20"
-        }) }}
-
-        {{ input({
-          "label": {
-            "text": "Town or city"
-          },
-          "id": "input-width-20",
-          "name": "test-width-20",
-          "classes": "nhsuk-input--width-20"
-        }) }}
-
-        {{ input({
-          "label": {
-            "text": "County"
-          },
-          "id": "input-width-20",
-          "name": "test-width-20",
-          "classes": "nhsuk-input--width-20"
-        }) }}
-
-        {{ input({
-          "label": {
-            "text": "Postcode"
-          },
-          "id": "input-width-10",
-          "name": "test-width-10",
-          "classes": "nhsuk-input--width-10"
+          "id": "input-width-30",
+          "name": "test-width-30",
+          "classes": "nhsuk-input--width-30"
         }) }}
 
 

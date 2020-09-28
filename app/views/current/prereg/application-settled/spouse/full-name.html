@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Does Millie live with you?
+  What is your partner's name?
 {% endblock %}
 
 {% block beforeContent %}
-
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -27,36 +26,34 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-
-      <form action="childAddress" method="post">
-        <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
+      <form action="dob" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Does Millie live with you?",
+            text: "What is your partner's name?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
-      
-      <!-- <p>
-        You can add your partner and children.
-      </p> -->
 
-        {{ radios({
-          "idPrefix": "add-another",
-          "name": "add-another",
-          "items": [
-            {
-              "value": "Yes",
-              "text": "Yes"
-            },
-            {
-              "value": "No",
-              "text": "No"
-            }
-          ]
+        {{ input({
+          "label": {
+            "text": "First name"
+          },
+          "id": "input-width-30",
+          "name": "test-width-30",
+          "classes": "nhsuk-input--width-30"
         }) }}
+
+        {{ input({
+          "label": {
+            "text": "Last name"
+          },
+          "id": "input-width-30",
+          "name": "test-width-30",
+          "classes": "nhsuk-input--width-30"
+        }) }}
+
 
         {% endcall %}
 
@@ -66,8 +63,8 @@
 
       </form>
 
-      {{ backLink({
-        "href": "",
+     {{ backLink({
+        "href": "what-you-need",
         "text": "Change my previous answer"
       }) }}
 
