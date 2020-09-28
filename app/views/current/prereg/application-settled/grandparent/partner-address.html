@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to add your parents to your application?
+  Does your partner live with you?
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,23 +28,23 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-      <form action="addParent" method="post">
+      <form action="partnerAddress" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add your parents to your application?",
+            text: "Does your spouse or civil partner live with you?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
       
-      <p>
-        You can add yours and your partner's parents to your EHIC application.
-      </p>
+      <!-- <p>
+        You can add your partner and children.
+      </p> -->
 
         {{ radios({
-          "idPrefix": "add-parent",
-          "name": "add-parent",
+          "idPrefix": "add-another",
+          "name": "add-another",
           "items": [
             {
               "value": "Yes",

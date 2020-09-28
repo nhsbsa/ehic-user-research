@@ -1,10 +1,19 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to add your parents to your application?
+  Do you want to add another grandparent to your application?
 {% endblock %}
 
 {% block beforeContent %}
+
+<style type="text/css">
+  span {
+    font-weight: bold;
+  }
+  .nhsuk-inset-text {
+    margin: 15px 0 30px 0;
+  }
+</style>
 
 
   <!-- Phase banner -->
@@ -28,23 +37,27 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-      <form action="addParent" method="post">
+      <form action="grandparentAddAnother" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add your parents to your application?",
+            text: "Do you want to add another grandparent to your application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+
+        {{ insetText({
+        "HTML": "<p><span>Grandparent 1<br></span>Mary Jones</p>"
+      }) }}
       
-      <p>
-        You can add yours and your partner's parents to your EHIC application.
-      </p>
+      <!-- <p>
+        You can add your partner and children.
+      </p> -->
 
         {{ radios({
-          "idPrefix": "add-parent",
-          "name": "add-parent",
+          "idPrefix": "add-another",
+          "name": "add-another",
           "items": [
             {
               "value": "Yes",
@@ -66,7 +79,7 @@
       </form>
 
       {{ backLink({
-        "href": "",
+        "href": "nino",
         "text": "Change my previous answer"
       }) }}
 

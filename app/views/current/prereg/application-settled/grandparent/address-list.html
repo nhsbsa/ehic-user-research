@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to add your parents to your application?
+  What is your grandparent's home address?
 {% endblock %}
 
 {% block beforeContent %}
-
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -27,35 +26,39 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-
-      <form action="addParent" method="post">
+      <form action="nationality" method="post">
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">Grandparent 1</span>
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add your parents to your application?",
+            text: "What is your grandparent's home address?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
-      
-      <p>
-        You can add yours and your partner's parents to your EHIC application.
-      </p>
 
-        {{ radios({
-          "idPrefix": "add-parent",
-          "name": "add-parent",
+        <!-- <h3>Postcode</h3>
+        <p>SW1A 1AA</p> -->
+        <h3>Select an address</h3>
+
+        {{ select({
+          "id": "select-1",
+          "name": "select-1",
+          "label": {
+          },
           "items": [
             {
-              "value": "Yes",
-              "text": "Yes"
+              "value": 1,
+              "text": "1 address found",
+              "selected": true
             },
             {
-              "value": "No",
-              "text": "No"
+              "value": 2,
+              "text": "22 Second Street, Leeds LS2 5ZN"
             }
           ]
         }) }}
+
 
         {% endcall %}
 
@@ -65,8 +68,10 @@
 
       </form>
 
-      {{ backLink({
-        "href": "",
+      <p><a href="address-manual">I can't find my address in the list</a></p>
+
+     {{ backLink({
+        "href": "address-lookup",
         "text": "Change my previous answer"
       }) }}
 

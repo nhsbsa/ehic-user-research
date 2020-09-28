@@ -364,7 +364,7 @@ router.post('/application-settled/addParent', function (req, res) {
   }
 })
 
-// Do you want to add ANOTHER CHILD to your application? EUSS
+// Do you want to add ANOTHER PARENT to your application? EUSS
 router.post('/application-settled/parentAddAnother', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
@@ -386,14 +386,58 @@ router.post('/application-settled/parent/parentCommence', function (req, res) {
   }
 })
 
+// GRANDPARENTS - Did your relationship commence before 1 January 2021?
+router.post('/application-settled/grandparent/parentCommence', function (req, res) {
+  var parentCommence = req.session.data['parent-commence']
+  if (parentCommence == "Yes"){
+    res.redirect('full-name')
+  }
+  else {
+    res.redirect('ineligible')
+  }
+})
+
 // Do you want to add your GRANDPARENTS to your application?
 router.post('/application-settled/addGrand', function (req, res) {
   var addGrand = req.session.data['add-grand']
   if (addGrand == "Yes"){
-    res.redirect('grandparentparent/full-name')
+    res.redirect('grandparent/commence-date')
   }
   else {
     res.redirect('add-grandchild')
+  }
+})
+
+// Do you want to add ANOTHER GRANDPARENT to your application? EUSS
+router.post('/application-settled/grandparentAddAnother', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('grandparent/commence-date')
+  }
+  else {
+    res.redirect('add-grandchild')
+  }
+})
+
+// Do you want to add your GRANDCHILDREN to your application?
+router.post('/application-settled/grandchild', function (req, res) {
+  var addGrand = req.session.data['add-grandchild']
+  if (addGrand == "Yes"){
+    res.redirect('grandchild/commence-date')
+  }
+  else {
+    res.redirect('add-grandchild')
+  }
+})
+
+// Do you want to add ANOTHER GRANDCHILD to your application? EUSS
+router.post('/application-settled/grandchildAddAnother', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('grandchild/commence-date')
+  }
+  else {
+    res.redirect('')
   }
 })
 

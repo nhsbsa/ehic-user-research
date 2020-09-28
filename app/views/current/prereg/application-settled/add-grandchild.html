@@ -28,10 +28,8 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-      <form action="addGrand" method="post">
-        <p>
-        You can yours and your partner's parents to your EHIC application.
-      </p>
+      <form action="grandchild" method="post">
+        
 
         {% call fieldset({
           legend: {
@@ -46,8 +44,8 @@
       </p> -->
 
         {{ radios({
-          "idPrefix": "add-grand",
-          "name": "add-grand",
+          "idPrefix": "add-grandchild",
+          "name": "add-grandchild",
           "items": [
             {
               "value": "Yes",

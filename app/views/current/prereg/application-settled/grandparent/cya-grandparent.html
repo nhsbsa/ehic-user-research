@@ -26,38 +26,22 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="../add-child-1" method="post">
+      <form action="../add-another-grandparent" method="post">
 
         <h1>Check your answers</h1>
 
-        <h2>Your spouse or civil partner's details</h2>
+        <h2>Your grandparent's details</h2>
 
         {{ summaryList({
           rows: [
 
-            {
-              key: {
-                text: "Home address"
-              },
-              value: {
-                html: "73 Roman Rd<br>Leeds<br> LS2 5ZN"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "address-lookup",
-                    text: "Change",
-                    visuallyHiddenText: "home address"
-                  }
-                ]
-              }
-            },
+            
             {
               key: {
                 text: "Full name"
               },
               value: {
-                text: "Mark Francis"
+                text: "Mary Jones"
               },
               actions: {
                 items: [
@@ -74,7 +58,7 @@
                 text: "Date of birth"
               },
               value: {
-                text: "27 November 1984"
+                text: "27 August 1945"
               },
               actions: {
                 items: [
@@ -82,6 +66,23 @@
                     href: "dob",
                     text: "Change",
                     visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Home address"
+              },
+              value: {
+                html: "22 Second Street<br>Leeds<br> LS2 5ZN"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "address-lookup",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
                   }
                 ]
               }

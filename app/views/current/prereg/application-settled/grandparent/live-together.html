@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to add your parents to your application?
+  Have you lived together for 2 years or more?
 {% endblock %}
 
 {% block beforeContent %}
-
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -27,24 +26,20 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-
-      <form action="addParent" method="post">
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
+      <form action="liveTogether" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add your parents to your application?",
+            text: "Have you lived together for 2 years or more?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
-      
-      <p>
-        You can add yours and your partner's parents to your EHIC application.
-      </p>
 
         {{ radios({
-          "idPrefix": "add-parent",
-          "name": "add-parent",
+          "idPrefix": "live-together",
+          "name": "live-together",
           "items": [
             {
               "value": "Yes",
@@ -65,7 +60,7 @@
 
       </form>
 
-      {{ backLink({
+     {{ backLink({
         "href": "",
         "text": "Change my previous answer"
       }) }}
