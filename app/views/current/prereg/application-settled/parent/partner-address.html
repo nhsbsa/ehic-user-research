@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your nationality?
+  Does your partner live with you?
 {% endblock %}
 
 {% block beforeContent %}
+
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -26,39 +27,32 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <!-- <form action="../add-another-child-1" method="post"> -->
-      <form action="cya-child" method="post">
-      <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
 
+      <form action="partnerAddress" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is Millie's nationality?",
+            text: "Does your spouse or civil partner live with you?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+      
+      <!-- <p>
+        You can add your partner and children.
+      </p> -->
 
         {{ radios({
-          "idPrefix": "nationality",
-          "name": "nationality",
+          "idPrefix": "add-another",
+          "name": "add-another",
           "items": [
             {
-              "value": "UK",
-              "text": "UK citizen"
+              "value": "Yes",
+              "text": "Yes"
             },
             {
-              "value": "dual",
-              "text": "Dual national"
-            },
-            {
-              "value": "EU, EEA or Swiss",
-              "text": "EEA or Swiss"
-            },
-            {
-              "value": "Other",
-              "text": "Other"
+              "value": "No",
+              "text": "No"
             }
           ]
         }) }}
@@ -71,11 +65,11 @@
 
       </form>
 
-     {{ backLink({
+      {{ backLink({
         "href": "",
         "text": "Change my previous answer"
       }) }}
-      
+
     </div>
   </div>
 {% endblock %}

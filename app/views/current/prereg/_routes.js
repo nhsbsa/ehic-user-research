@@ -253,52 +253,52 @@ router.post('/ukOtherSettled', function (req, res) {
 })
 
 // What is their relationship to you? - relationship.html
-router.post('/relationship', function (req, res) {
-  var relationship = req.session.data['relationship']
-  if (relationship == "Spouse or partner"){
-    res.redirect('married')
-  }
-  else if (relationship == "Child"){
-    res.redirect('relationship')
-  }
-  else if (relationship == "Parent"){
-    res.redirect('relationship')
-  }
-  else if (relationship == "Grandparent"){
-    res.redirect('relationship')
-  }
-  else if (relationship == "Other"){
-    res.redirect('ineligible')
-  }
-  else {
-    res.redirect('relationship')
-  }
-})
+// router.post('/relationship', function (req, res) {
+//   var relationship = req.session.data['relationship']
+//   if (relationship == "Spouse or partner"){
+//     res.redirect('married')
+//   }
+//   else if (relationship == "Child"){
+//     res.redirect('relationship')
+//   }
+//   else if (relationship == "Parent"){
+//     res.redirect('relationship')
+//   }
+//   else if (relationship == "Grandparent"){
+//     res.redirect('relationship')
+//   }
+//   else if (relationship == "Other"){
+//     res.redirect('ineligible')
+//   }
+//   else {
+//     res.redirect('relationship')
+//   }
+// })
 
 // Are you married to them? - married.html
-router.post('/application-settled/partner/married', function (req, res) {
-  var married = req.session.data['married']
-  if (married == "Yes"){
-    res.redirect('application-other-settled/full-name')
-  }
-  else {
-    res.redirect('married-other')
-  }
-})
+// router.post('/application-settled/partner/married', function (req, res) {
+//   var married = req.session.data['married']
+//   if (married == "Yes"){
+//     res.redirect('application-other-settled/full-name')
+//   }
+//   else {
+//     res.redirect('married-other')
+//   }
+// })
 
 // Are you married to someone else? - married-other.html
-router.post('/marriedOther', function (req, res) {
-  var married = req.session.data['married-other']
-  if (married == "Yes"){
-    res.redirect('divorced')
-  }
-  else if (married == "No"){
-    res.redirect('live-together')
-  }
-  else {
-    res.redirect('married-other')
-  }
-})
+// router.post('/marriedOther', function (req, res) {
+//   var married = req.session.data['married-other']
+//   if (married == "Yes"){
+//     res.redirect('divorced')
+//   }
+//   else if (married == "No"){
+//     res.redirect('live-together')
+//   }
+//   else {
+//     res.redirect('married-other')
+//   }
+// })
 
 // Have you lived together for 2 years or more? - live-together.html
 router.post('/liveTogether', function (req, res) {
@@ -315,32 +315,32 @@ router.post('/liveTogether', function (req, res) {
 })
 
 // Do you intend to live together permanently? - intend-living.html
-router.post('/intendLiving', function (req, res) {
-  var married = req.session.data['intend-living']
-  if (married == "Yes"){
-    res.redirect('application-other-settled/full-name')
-  }
-  else if (married == "No"){
-    res.redirect('ineligible')
-  }
-  else {
-    res.redirect('intend-living')
-  }
-})
+// router.post('/intendLiving', function (req, res) {
+//   var married = req.session.data['intend-living']
+//   if (married == "Yes"){
+//     res.redirect('application-other-settled/full-name')
+//   }
+//   else if (married == "No"){
+//     res.redirect('ineligible')
+//   }
+//   else {
+//     res.redirect('intend-living')
+//   }
+// })
 
 // Does your spouse need also need an EHIC? - other-ehic.html
-router.post('/application-other-settled/otherEhic', function (req, res) {
-  var otherEhic = req.session.data['other-ehic']
-  if (otherEhic == "Yes"){
-    res.redirect('')
-  }
-  else if (otherEhic == "No"){
-    res.redirect('cya-individual')
-  }
-  else {
-    res.redirect('')
-  }
-})
+// router.post('/application-other-settled/otherEhic', function (req, res) {
+//   var otherEhic = req.session.data['other-ehic']
+//   if (otherEhic == "Yes"){
+//     res.redirect('')
+//   }
+//   else if (otherEhic == "No"){
+//     res.redirect('cya-individual')
+//   }
+//   else {
+//     res.redirect('')
+//   }
+// })
 
 // Do you want to add your PARTNER to your application? (S1 only)
 router.post('/application-s1/addPartner', function (req, res) {
@@ -357,10 +357,32 @@ router.post('/application-s1/addPartner', function (req, res) {
 router.post('/application-settled/addParent', function (req, res) {
   var addParent = req.session.data['add-parent']
   if (addParent == "Yes"){
-    res.redirect('parent/full-name')
+    res.redirect('parent/commence-date')
   }
   else {
     res.redirect('add-grandparent')
+  }
+})
+
+// Do you want to add ANOTHER CHILD to your application? EUSS
+router.post('/application-settled/parentAddAnother', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('parent/commence-date')
+  }
+  else {
+    res.redirect('add-grandparent')
+  }
+})
+
+// PARENTS - Did your relationship commence before 1 January 2021?
+router.post('/application-settled/parent/parentCommence', function (req, res) {
+  var parentCommence = req.session.data['parent-commence']
+  if (parentCommence == "Yes"){
+    res.redirect('full-name')
+  }
+  else {
+    res.redirect('ineligible')
   }
 })
 

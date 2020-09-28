@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your nationality?
+  What is your contact telephone number?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,42 +26,25 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <!-- <form action="../add-another-child-1" method="post"> -->
-      <form action="cya-child" method="post">
-      <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
-
+      <form action="add-partner" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is Millie's nationality?",
+            text: "What is your contact telephone number?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        {{ radios({
-          "idPrefix": "nationality",
-          "name": "nationality",
-          "items": [
-            {
-              "value": "UK",
-              "text": "UK citizen"
-            },
-            {
-              "value": "dual",
-              "text": "Dual national"
-            },
-            {
-              "value": "EU, EEA or Swiss",
-              "text": "EEA or Swiss"
-            },
-            {
-              "value": "Other",
-              "text": "Other"
-            }
-          ]
+        {{ input({
+          "label": {
+            "text": "Enter your contact telephone number"
+          },
+          "id": "input-width-30",
+          "name": "test-width-30",
+          "classes": "nhsuk-input--width-30"
         }) }}
+
 
         {% endcall %}
 
@@ -72,10 +55,10 @@
       </form>
 
      {{ backLink({
-        "href": "",
+        "href": "address-list",
         "text": "Change my previous answer"
       }) }}
-      
+
     </div>
   </div>
 {% endblock %}

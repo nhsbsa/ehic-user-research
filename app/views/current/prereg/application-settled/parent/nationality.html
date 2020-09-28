@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your nationality?
+  What is your spouse or civil partner's nationality?
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,14 +27,12 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <!-- <form action="../add-another-child-1" method="post"> -->
-      <form action="cya-child" method="post">
-      <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
-
+      <form action="cya-parent" method="post">
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">Parent 1</span>
 
         {% call fieldset({
           legend: {
-            text: "What is Millie's nationality?",
+            text: "What is your parent's nationality?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
