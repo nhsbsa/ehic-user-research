@@ -32,7 +32,7 @@
 
         <h2>Your details</h2>
 
-                        {{ summaryList({
+                {{ summaryList({
           rows: [
             
             {
@@ -483,6 +483,85 @@
                 ]
               }
             }
+    
+          ]
+        }) }}
+
+        <h2>Your grandchild's details</h2>
+        <h3>Grandchild 1</h3>
+
+        {{ summaryList({
+          rows: [
+            
+            {
+              key: {
+                text: "Full name"
+              },
+              value: {
+                text: "Freddie Francis"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "grandchild/full-name",
+                    text: "Change",
+                    visuallyHiddenText: "full name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                text: "21 January 2009"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "grandchild/dob",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Home address"
+              },
+              value: {
+                html: " 73 Roman Rd<br>Leeds<br> LS2 5ZN"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "grandchild/address-manual",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Nationality"
+              },
+              value: {
+                text: "EEA or Swiss"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "grandchild/nationality",
+                    text: "Change",
+                    visuallyHiddenText: "nationality"
+                  }
+                ]
+              }
+            }
+    
           ]
         }) }}
 

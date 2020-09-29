@@ -29,21 +29,27 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1>
-        The relationship must have started before 1 January 2021
+        Your grandchild must be dependant on you
       </h1>
 
       <!-- <p class="nhsuk-lede-text">
         Your partner or spouse needs to live in your household to be added to your application. They can still apply as an individual. 
       </p> -->
 
+      <!-- <p class="nhsuk-lede-text">
+        You can continue your application but the parent or guardian your children live with must make a separate application and add them on.
+      </p> -->
+
       <p class="nhsuk-lede-text">
-        You can continue your application but your grandparent must make a separate application if they are eligible.
+        If your grandchild is over the age of 21 and is not dependant on you, they cannot be added to your EHIC application.
+
+        You can continue your application but your grandchild must make a separate application.
       </p>
 
       <!-- <h3>Check if you're eligible for settled status</h3>
       <p>If you’re an EU, EEA or Swiss citizen, you and your family can apply to the <a href="https://www.gov.uk/settled-status-eu-citizens-families">EU Settlement Scheme</a> to continue living in the UK after 30 June 2021. If your application is successful, you’ll get either settled or pre-settled status.</p> -->
 
-      <form action="../add-grandparent" method="post">
+      <form action="../add-grandchild" method="post">
 
       {{ button({
           "text": "Continue"
@@ -53,7 +59,7 @@
 
 
       {{ backLink({
-        "href": "partner-address",
+        "href": "",
         "text": "Change my previous answer"
       }) }}
 

@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to add your grandchildren to your application?
+  What is Freddie's home address?
 {% endblock %}
 
 {% block beforeContent %}
-
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -27,46 +26,42 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
+      <form action="address-list" method="post">
+                <span class="nhsuk-caption-l nhsuk-caption--bottom">Grandchild 1</span>
 
-      <form action="grandchild" method="post">
-        
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add any grandchildren to your application?",
+            text: "What is Freddie's home address?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
-      
-      <!-- <p>
-        You can add children to your EHIC application if they live with you. They will receive their own EHIC.
-      </p> -->
 
-        {{ radios({
-          "idPrefix": "add-grandchild",
-          "name": "add-grandchild",
-          "items": [
-            {
-              "value": "Yes",
-              "text": "Yes"
-            },
-            {
-              "value": "No",
-              "text": "No"
-            }
-          ]
+        {{ input({
+          "label": {
+            "text": "Postcode",
+            "classes": "nhsuk-label--m"
+          },
+          "id": "input-width-10",
+          "name": "test-width-10",
+          "classes": "nhsuk-input--width-10"
         }) }}
+
 
         {% endcall %}
 
+
+
         {{ button({
-          "text": "Continue"
+          "text": "Find address"
         }) }}
 
       </form>
 
-      {{ backLink({
+      <p><a href="address-manual">Enter address manually</a></p>
+
+     {{ backLink({
         "href": "",
         "text": "Change my previous answer"
       }) }}

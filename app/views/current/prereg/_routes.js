@@ -423,10 +423,10 @@ router.post('/application-settled/grandparentAddAnother', function (req, res) {
 router.post('/application-settled/grandchild', function (req, res) {
   var addGrand = req.session.data['add-grandchild']
   if (addGrand == "Yes"){
-    res.redirect('grandchild/commence-date')
+    res.redirect('grandchild/full-name')
   }
   else {
-    res.redirect('add-grandchild')
+    res.redirect('cya-family')
   }
 })
 
@@ -434,10 +434,10 @@ router.post('/application-settled/grandchild', function (req, res) {
 router.post('/application-settled/grandchildAddAnother', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('grandchild/commence-date')
+    res.redirect('grandchild/full-name')
   }
   else {
-    res.redirect('')
+    res.redirect('cya-all')
   }
 })
 
@@ -562,8 +562,22 @@ router.post('/application-settled/addChild', function (req, res) {
   }
 })
 
-// Is Millie dependant on you? 
+// Is Millie dependant on you? CHILD
 router.post('/application-settled/child-1/over21', function (req, res) {
+  var over21 = req.session.data['over-21']
+  if (over21 == "Yes"){
+    res.redirect('child-address')
+  }
+  else if (over21 == "No"){
+    res.redirect('ineligible')
+  }
+  else {
+    res.redirect('over-21')
+  }
+})
+
+// Is Freddie dependant on you? GRANDCHILD
+router.post('/application-settled/grandchild/over21', function (req, res) {
   var over21 = req.session.data['over-21']
   if (over21 == "Yes"){
     res.redirect('child-address')
@@ -578,6 +592,20 @@ router.post('/application-settled/child-1/over21', function (req, res) {
 
 // Does your CHILD live with you? (if eligible UK citizen, NO PARTNER)
 router.post('/application-settled/child-1/childAddress', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('nationality')
+  }
+  else if (addAnother == "No"){
+    res.redirect('address-lookup')
+  }
+  else {
+    res.redirect('ineligible')
+  }
+})
+
+// Does your GRANDCHILD live with you?
+router.post('/application-settled/grandchild/childAddress', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
     res.redirect('nationality')
