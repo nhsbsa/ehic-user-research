@@ -43,9 +43,11 @@ router.use('/sprint10/postjan', require('./views/sprint10/postjan/_routes'));
 router.use('/sprint11/prereg', require('./views/sprint11/prereg/_routes'));
 router.use('/sprint11/postjan', require('./views/sprint11/postjan/_routes'));
 
+
+
 // Experimental tasklist format //
-// router.use('/tasklist/prereg', require('./views/tasklist/prereg/_routes'));
-// router.use('/tasklist/postjan', require('./views/tasklist/postjan/_routes'));
+router.use('/tasklist/prereg', require('./views/tasklist/prereg/_routes'));
+router.use('/tasklist/postjan', require('./views/tasklist/postjan/_routes'));
 
 
 module.exports = router;

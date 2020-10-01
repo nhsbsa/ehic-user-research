@@ -8,7 +8,8 @@ const router = express.Router()
 router.post('/nationality', function (req, res) {
   var nationality = req.session.data['nationality']
   if (nationality == "UK"){
-    res.redirect('application/full-name')
+    // res.redirect('application/full-name')
+    res.redirect('application/tasklist-uk-0')
   }
   else if (nationality == "dual"){
     res.redirect('birth-country-dual')
@@ -627,6 +628,17 @@ router.post('/application-settled/noPartnerAddAnotherChild', function (req, res)
   }
   else {
     res.redirect('add-parent')
+  }
+})
+
+// Do you want to add ANOTHER CHILD to your application?
+router.post('/application/noPartnerAddAnotherChild', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('child-1/full-name')
+  }
+  else {
+    res.redirect('tasklist-uk-4')
   }
 })
 
