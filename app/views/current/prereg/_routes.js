@@ -75,7 +75,7 @@ router.post('/dualBirthCountry', function (req, res) {
     res.redirect('renounce')
   }
   else if (dualBirthCountry == "Other"){
-    res.redirect('')
+    res.redirect('application-settled/full-name')
   }
   else {
     res.redirect('birth-country-dual')
