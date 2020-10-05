@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your contact telephone number?
+  What is the start date of your course?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,26 +26,42 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="cya-individual" method="post">
+      <form action="full-name" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your contact telephone number?",
+            text: "What date did you arrive in Germany?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>We ask for this in case we need to contact you about your application.</p>
+        {{ dateInput({
+      "id": "example",
+      "namePrefix": "example",
+      "fieldset": {
+      "legend": {
+        }
+      },
+      "hint": {
+        "text": " For example, 13 9 2019"
+      },
+      "items": [
+        {
+          "name": "day",
+          "classes": "nhsuk-input--width-2"
+        },
+        {
+          "name": "month",
+          "classes": "nhsuk-input--width-2"
+        },
+        {
+          "name": "year",
+          "classes": "nhsuk-input--width-4"
+        }
+      ]
+    }) }}
 
-        {{ input({
-          "label": {
-            "text": "Enter your contact telephone number (optional)"
-          },
-          "id": "input-width-30",
-          "name": "test-width-30",
-          "classes": "nhsuk-input--width-30"
-        }) }}
 
 
         {% endcall %}
@@ -57,7 +73,7 @@
       </form>
 
      {{ backLink({
-        "href": "",
+        "href": "what-you-need",
         "text": "Change my previous answer"
       }) }}
 
