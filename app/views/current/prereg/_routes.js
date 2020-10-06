@@ -115,6 +115,21 @@ router.post('/renounce', function (req, res) {
   }
 })
 
+
+// Do you know your NHS number? - know-nhs-number.html
+router.post('/application-settled/knowNhsNumber', function (req, res) {
+  var knowNhsNumber = req.session.data['know-nhs-number']
+  if (knowNhsNumber == "Yes"){
+    res.redirect('nhs-number')
+  }
+  else if (knowNhsNumber == "No"){
+    res.redirect('gender')
+  }
+  else {
+    res.redirect('know-nhs-number')
+  }
+})
+
 // Who is the application for? - who-for-eu.html
 router.post('/whoFor', function (req, res) {
   var whoFor = req.session.data['who-for']
