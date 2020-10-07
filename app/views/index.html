@@ -28,61 +28,7 @@
          Enable citizens to check if the UK will pay for their healthcare needs while they’re visiting an EU/EEA country or Switzerland and if eligible, provide them with proof that they are covered.
       </p>
 
-      <div class="nhsuk-expander-group">
-         <details class="nhsuk-details nhsuk-expander">
-            <summary class="nhsuk-details__summary">
-               <span class="nhsuk-details__summary-text">
-               Alpha (Sprint 12) - Pre-registration and application
-               </span>
-               <!-- <p class="current">CURRENT SPRINT</p> -->
-            </summary>
-            <div class="nhsuk-details__text">
-               <p>Sprint commencing: 08/10/2020</p>
-               <h3>Pre-registration journeys</h3>
-               <ul>
-                  <li>EU nationals living in the UK (individual)</li>
-                  <ul>
-                     <li>Spouses and civil partners</li>
-                     <!-- <li>Durable partners</li> -->
-                     <li>Children</li>
-                     <li>Parents</li>
-                     <li>Grandparents</li>
-                     <li>Grandchildren</li>
-                  </ul>
-                  <li>Dual nationals living in the UK (individual)</li>
-                  <li>EU Students (living in UK when applying)</li>
-                  <li>UK Students (living in UK when applying)</li>
-                  <!-- <li>UK nationals living in the UK</li>
-                  <li>UK S1 Pensioners and Exportable benefits (add partner to application)</li>
-                  <li>UK Students (living in UK when applying)</li>
-                  <li>UK Students (living in EU when applying)</li>
-                  <li>UK Posted workers</li> -->
-               </ul>
-               {{ actionLink({
-               "text": "Get healthcare cover for travelling abroad",
-               "href": "/current/prereg/start"
-               }) }}
-
-               <hr>
-
-               <h3>Application journeys</h3>
-               <ul>
-                  <li>EU nationals living in the UK (add children to the application)</li>
-                  <li>UK nationals living in the UK (add children to the application)</li>
-                  <li>UK S1 Pensioners and Exportable benefits (add partner to application)</li>
-                  <!-- <li>UK Students (living in UK when applying)</li> -->
-                  <li>UK Students (living in EU when applying)</li>
-                  <li>UK Posted workers</li>
-               </ul>
-               {{ actionLink({
-               "text": "Get healthcare cover for travelling abroad",
-               "href": "/current/postjan/start"
-               }) }}
-               <hr>
-               <a href="/current/breakdown">Page by page breakdown</a>
-            </div>
-         </details>
-      </div>
+      
 
       <div class="nhsuk-expander-group">
          <details class="nhsuk-details nhsuk-expander">
@@ -96,7 +42,7 @@
                <p>Sprint commencing: 24/09/2020</p>
                <h3>Pre-registration journeys</h3>
                <ul>
-                  <li>EU nationals living in the UK (individual)</li>
+                  <li>EU nationals living in the UK (individual and dependants)</li>
                   <ul>
                      <li>Spouses and civil partners</li>
                      <!-- <li>Durable partners</li> -->
@@ -106,11 +52,11 @@
                      <li>Grandchildren</li>
                   </ul>
                   <li>Dual nationals living in the UK (individual)</li>
-                  <!-- <li>UK nationals living in the UK</li>
-                  <li>UK S1 Pensioners and Exportable benefits (add partner to application)</li>
+                  <li>UK nationals living in the UK</li>
+                  <li>S1 Pensioners and Exportable benefits (individual and partner)</li>
                   <li>UK Students (living in UK when applying)</li>
                   <li>UK Students (living in EU when applying)</li>
-                  <li>UK Posted workers</li> -->
+                  <li>Posted workers</li>
                </ul>
                {{ actionLink({
                "text": "Get healthcare cover for travelling abroad",
@@ -434,7 +380,7 @@
       <h3>Experimental</h3>
 
       <div class="nhsuk-expander-group">
-         <details class="nhsuk-details nhsuk-expander" open>
+         <details class="nhsuk-details nhsuk-expander">
             <summary class="nhsuk-details__summary">
                <span class="nhsuk-details__summary-text">
                Tasklist
@@ -450,6 +396,9 @@
                      <a href="/tasklist/prereg/application/tasklist-uk-0">UK nationals</a>
                   </li>
                   <li>
+                     <a href="/tasklist/prereg/tasklist-s1">S1 holders</a>
+                  </li>
+                  <li>
                      <a href="/tasklist/prereg/tasklist-pw">Posted workers</a>
                   </li>
                   <li>
@@ -457,7 +406,7 @@
                   </li>
                </ul>
                {{ actionLink({
-               "text": "Get healthcare cover for visiting the EU (EHIC)",
+               "text": "Get healthcare cover for travelling abroad",
                "href": "/tasklist/prereg/start"
                }) }}
             </div>
