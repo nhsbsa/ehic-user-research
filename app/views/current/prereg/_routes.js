@@ -189,8 +189,8 @@ router.post('/bornInUk', function (req, res) {
 router.post('/expBen', function (req, res) {
   var expBen = req.session.data['expBen']
   if (expBen == "Yes"){
-    // res.redirect('application-s1/country')
-    res.redirect('application-s1/full-name')
+    res.redirect('application-s1/info-s1')
+    // res.redirect('application-s1/full-name')
   }
   else {
     res.redirect('eu-studying')
@@ -268,7 +268,7 @@ router.post('/studyingEuCitizen', function (req, res) {
     res.redirect('application-student-ss/evidence-student')
   }
   else {
-    res.redirect('application-settled/full-name')
+    res.redirect('application-settled/info-eu-national')
   }
 })
 
@@ -386,15 +386,15 @@ router.post('/studyingEuCitizen', function (req, res) {
 // })
 
 // Do you want to add your PARTNER to your application? (S1 only)
-router.post('/application-s1/addPartner', function (req, res) {
-  var addAnother = req.session.data['add-another']
-  if (addAnother == "Yes"){
-    res.redirect('partner/full-name')
-  }
-  else {
-    res.redirect('cya-individual')
-  }
-})
+// router.post('/application-s1/addPartner', function (req, res) {
+//   var addAnother = req.session.data['add-another']
+//   if (addAnother == "Yes"){
+//     res.redirect('partner/full-name')
+//   }
+//   else {
+//     res.redirect('cya-individual')
+//   }
+// })
 
 // Do you want to add your PARENTS to your application?
 router.post('/application-settled/addParent', function (req, res) {
@@ -490,27 +490,59 @@ router.post('/application-settled/addSomeone', function (req, res) {
   if (addAnother == "Yes"){
     // res.redirect('partner/full-name')
     // res.redirect('partner/married')
-    res.redirect('partners')
+    res.redirect('spouses')
   }
   else {
     res.redirect('cya-individual')
   }
 })
 
-// Do you want to add your partner to your application? EUSS
-router.post('/application-settled/partners', function (req, res) {
-  var partners = req.session.data['partners']
-  if (partners == "Spouse"){
+// Do you want to add your spouse or civil partner to your application? EUSS
+router.post('/application-settled/spouses', function (req, res) {
+  var spouses = req.session.data['spouses']
+  if (spouses == "Yes"){
     res.redirect('spouse/partner-address')
   }
   // else if (partners == "Durable"){
-  //   res.redirect('durable/relationship-date')
+  //   res.redirect('durable/full-name')
   // }
+  else if (spouses == "No"){
+    // res.redirect('add-child-1')
+    res.redirect('partners')
+  }
+  else {
+    res.redirect('spouses')
+  }
+})
+
+// Do you want to add your unmarried (durable) partner to your application? EUSS
+router.post('/application-settled/partners', function (req, res) {
+  var partners = req.session.data['partners']
+  if (partners == "Yes"){
+    res.redirect('durable/full-name')
+  }
   else if (partners == "No"){
     res.redirect('add-child-1')
   }
   else {
     res.redirect('partners')
+  }
+})
+
+// What is your partner's nationality? - nationality.html
+router.post('/application-settled/durable/partnerNationality', function (req, res) {
+  var partnerNationality = req.session.data['partnerNationality']
+  if (partnerNationality == "UK"){
+    res.redirect('ineligible')
+  }
+  else if (partnerNationality == "dual"){
+    res.redirect('relationship-date')
+  }
+  else if (partnerNationality == "EU, EEA or Swiss"){
+    res.redirect('relationship-date')
+  }
+  else {
+    res.redirect('relationship-date')
   }
 })
 
@@ -546,27 +578,69 @@ router.post('/application-settled/durable/partnerAddress', function (req, res) {
 router.post('/application-settled/durable/relationshipDate', function (req, res) {
   var addAnother = req.session.data['relationship-date']
   if (addAnother == "Yes"){
-    res.redirect('live-together')
+    res.redirect('relationship-length')
   }
   else if (addAnother == "No"){
-    res.redirect('')
+    res.redirect('ineligible2')
   }
   else {
     res.redirect('relationship-date')
   }
 })
 
-// Have you lived together for 2 years or more? - live-together.html
-router.post('/application-settled/durable/durableLiving', function (req, res) {
-  var durableLiving = req.session.data['durable-living']
-  if (durableLiving == "Yes"){
-    res.redirect('full-name')
+// Has the relationship existed for more than 2 years prior to 1 January 2021?
+router.post('/application-settled/durable/relationshipLength', function (req, res) {
+  var relationshipLength = req.session.data['relationship-length']
+  if (relationshipLength == "Yes"){
+    res.redirect('live-together')
   }
-  else if (durableLiving == "No"){
+  else if (relationshipLength == "No"){
     res.redirect('child-together')
   }
   else {
+    res.redirect('relationship-date')
+  }
+})
+
+// Did you a have a child with your partner before 1 January 2021?
+router.post('/application-settled/durable/childTogether', function (req, res) {
+  var childTogether = req.session.data['child-together']
+  if (childTogether == "Yes"){
+    res.redirect('relationship-length')
+  }
+  else if (childTogether == "No"){
+    res.redirect('ineligible3')
+  }
+  else {
+    res.redirect('child-together')
+  }
+})
+
+// Does your partner live with you? - live-together.html
+router.post('/application-settled/durable/durableLiving', function (req, res) {
+  var durableLiving = req.session.data['durable-living']
+  if (durableLiving == "Yes"){
+    res.redirect('dob')
+  }
+  else if (durableLiving == "No"){
+    res.redirect('address-country')
+  }
+  else {
     res.redirect('live-together')
+  }
+})
+
+// Does your partner live in the UK? - address-country.html
+router.post('/application-settled/durable/partnerCountry', function (req, res) {
+  var partnerCountry = req.session.data['partner-country']
+  if (partnerCountry == "Yes"){
+    res.redirect('address-lookup')
+  }
+  else if (partnerCountry == "No"){
+    res.redirect('ineligible4')
+  }
+  else {
+    res.redirect('address-country')
   }
 })
 

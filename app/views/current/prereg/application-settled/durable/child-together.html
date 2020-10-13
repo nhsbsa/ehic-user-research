@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your partner's home address?
+  Have you lived together for 2 years or more?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,38 +26,31 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="dob" method="post">
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
+      <form action="childTogether" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your partner's home address?",
+            text: "Did you a have a child with your partner before 1 January 2021?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <!-- <h3>Postcode</h3>
-        <p>SW1A 1AA</p> -->
-        <h3>Select an address</h3>
-
-        {{ select({
-          "id": "select-1",
-          "name": "select-1",
-          "label": {
-          },
+        {{ radios({
+          "idPrefix": "child-together",
+          "name": "child-together",
           "items": [
             {
-              "value": 1,
-              "text": "1 address found",
-              "selected": true
+              "value": "Yes",
+              "text": "Yes"
             },
             {
-              "value": 2,
-              "text": "73 Roman Rd, Leeds LS2 5ZN"
+              "value": "No",
+              "text": "No"
             }
           ]
         }) }}
-
 
         {% endcall %}
 
@@ -67,10 +60,8 @@
 
       </form>
 
-      <p><a href="address-manual">I can't find my address in the list</a></p>
-
      {{ backLink({
-        "href": "address-lookup",
+        "href": "",
         "text": "Change my previous answer"
       }) }}
 
