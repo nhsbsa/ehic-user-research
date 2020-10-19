@@ -1,10 +1,20 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your nationality?
+  Do you want to add another parent to your application?
 {% endblock %}
 
 {% block beforeContent %}
+
+<style type="text/css">
+  span {
+    font-weight: bold;
+  }
+  .nhsuk-inset-text {
+    margin: 15px 0 30px 0;
+  }
+</style>
+
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -26,35 +36,32 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <!-- <form action="../add-another-child-1" method="post"> -->
-      <form action="childNationality" method="post">
-      <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
 
+      <form action="parentAddAnother" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is Millie's nationality?",
+            text: "Do you want to add another parent to your application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+      
+      <!-- <p>
+        You can add your partner and children.
+      </p> -->
 
         {{ radios({
-          "idPrefix": "child-nationality",
-          "name": "child-nationality",
+          "idPrefix": "add-another",
+          "name": "add-another",
           "items": [
             {
-              "value": "UK",
-              "text": "UK citizen"
+              "value": "Yes",
+              "text": "Yes"
             },
             {
-              "value": "EU",
-              "text": "EEA or Swiss"
-            },
-            {
-              "value": "Other",
-              "text": "Other"
+              "value": "No",
+              "text": "No"
             }
           ]
         }) }}
@@ -67,17 +74,11 @@
 
       </form>
 
-     {{ backLink({
-        "href": "",
+      {{ backLink({
+        "href": "nino",
         "text": "Change my previous answer"
       }) }}
-      
+
     </div>
   </div>
 {% endblock %}
-
-<!-- 
-{
-              "value": "dual",
-              "text": "Dual national"
-            }, -->

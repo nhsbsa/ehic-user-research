@@ -27,7 +27,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="cya-parent" method="post">
+      <form action="parentNationality" method="post">
         <span class="nhsuk-caption-l nhsuk-caption--bottom">Parent 1</span>
 
         {% call fieldset({
@@ -39,19 +39,16 @@
         }) %}
 
         {{ radios({
-          "idPrefix": "nationality",
-          "name": "nationality",
+          "idPrefix": "parent-nationality",
+          "name": "parent-nationality",
           "items": [
             {
               "value": "UK",
               "text": "UK citizen"
             },
+            
             {
-              "value": "dual",
-              "text": "Dual national"
-            },
-            {
-              "value": "EU, EEA or Swiss",
+              "value": "EU",
               "text": "EEA or Swiss"
             },
             {
@@ -77,3 +74,8 @@
     </div>
   </div>
 {% endblock %}
+
+<!-- {
+              "value": "dual",
+              "text": "Dual national"
+            }, -->

@@ -287,10 +287,27 @@ router.post('/studyingEuCitizen', function (req, res) {
 router.post('/application-settled/addParent', function (req, res) {
   var addParent = req.session.data['add-parent']
   if (addParent == "Yes"){
-    res.redirect('parent/commence-date')
+    res.redirect('parent/full-name')
   }
   else {
     res.redirect('add-grandparent')
+  }
+})
+
+// What is your parent's nationality? - EUSS
+router.post('/application-settled/parent/parentNationality', function (req, res) {
+  var addParent = req.session.data['parent-nationality']
+  if (addParent == "UK"){
+    res.redirect('ineligible2')
+  }
+  else if (addParent == "EU"){
+    res.redirect('arrival')
+  }
+  else if (addParent == "Other"){
+    res.redirect('settled-status')
+  }
+  else {
+    res.redirect('nationality')
   }
 })
 
@@ -309,10 +326,11 @@ router.post('/application-ni/addParent', function (req, res) {
 router.post('/application-settled/parentAddAnother', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
-    res.redirect('parent/commence-date')
+    res.redirect('parent/full-name')
   }
   else {
-    res.redirect('add-grandparent')
+    // res.redirect('add-grandparent')
+    res.redirect('parent/cya-parent')
   }
 })
 
@@ -331,7 +349,7 @@ router.post('/application-ni/parentAddAnother', function (req, res) {
 router.post('/application-settled/parent/parentCommence', function (req, res) {
   var parentCommence = req.session.data['parent-commence']
   if (parentCommence == "Yes"){
-    res.redirect('full-name')
+    res.redirect('address-lookup')
   }
   else {
     res.redirect('ineligible')
@@ -593,7 +611,21 @@ router.post('/application-settled/durable/arrival', function (req, res) {
   }
 })
 
-// Does your partner have UK settled status? - settled-status.html
+// Did your PARENT arrive in the UK before 1 January 2021? - arrival.html
+router.post('/application-settled/parent/arrival', function (req, res) {
+  var arrival = req.session.data['arrival']
+  if (arrival == "Yes"){
+    res.redirect('own-app')
+  }
+  else if (arrival == "No"){
+    res.redirect('ineligible5')
+  }
+  else {
+    res.redirect('arrival')
+  }
+})
+
+// Does your PARTNER have UK settled status? - settled-status.html
 router.post('/application-settled/durable/partnerSettled', function (req, res) {
   var partnerSettled = req.session.data['partner-settled']
   if (partnerSettled == "Yes"){
@@ -601,6 +633,20 @@ router.post('/application-settled/durable/partnerSettled', function (req, res) {
   }
   else if (partnerSettled == "No"){
     res.redirect('relationship-date')
+  }
+  else {
+    res.redirect('settled-status')
+  }
+})
+
+// Does your PARENT have UK settled status? - settled-status.html
+router.post('/application-settled/parent/parentSettled', function (req, res) {
+  var parentSettled = req.session.data['parent-settled']
+  if (parentSettled == "Yes"){
+    res.redirect('address-lookup')
+  }
+  else if (parentSettled == "No"){
+    res.redirect('commence-date')
   }
   else {
     res.redirect('settled-status')
@@ -855,6 +901,23 @@ router.post('/application-settled/addChild', function (req, res) {
   }
 })
 
+// What is Millie's nationality? - EUSS (under 21)
+router.post('/application-settled/child-1/childNationality', function (req, res) {
+  var childNationality = req.session.data['child-nationality']
+  if (childNationality == "UK"){
+    res.redirect('address-manual')
+  }
+  else if (childNationality == "EU"){
+    res.redirect('address-manual')
+  }
+  else if (childNationality == "Other"){
+    res.redirect('address-manual')
+  }
+  else {
+    res.redirect('nationality')
+  }
+})
+
 // Do you want to add your CHILDREN to your application? 
 // NI 
 router.post('/application-ni/addChild', function (req, res) {
@@ -987,7 +1050,8 @@ router.post('/application-settled/noPartnerAddAnotherChild', function (req, res)
     res.redirect('child-1/full-name')
   }
   else {
-    res.redirect('add-parent')
+    // res.redirect('add-parent')
+    res.redirect('child-1/cya-child')
   }
 })
 

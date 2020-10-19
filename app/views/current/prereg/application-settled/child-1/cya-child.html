@@ -26,11 +26,13 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="../add-another-child-1" method="post">
+      <form action="../add-parent" method="post">
 
         <h1>Check your answers</h1>
 
-        <h2>Your child's details</h2>
+        <h2>Your children's details</h2>
+
+        <h3>Child 1</h3>
 
         {{ summaryList({
           rows: [
@@ -66,23 +68,6 @@
                     href: "dob",
                     text: "Change",
                     visuallyHiddenText: "date of birth"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Is Millie dependant on you?"
-              },
-              value: {
-                text: "Yes"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "over-21",
-                    text: "Change",
-                    visuallyHiddenText: ""
                   }
                 ]
               }
@@ -144,3 +129,23 @@
     </div>
   </div>
 {% endblock %}
+
+
+<!-- 
+{
+              key: {
+                text: "Is Millie dependant on you?"
+              },
+              value: {
+                text: "Yes"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "over-21",
+                    text: "Change",
+                    visuallyHiddenText: ""
+                  }
+                ]
+              }
+            }, -->
