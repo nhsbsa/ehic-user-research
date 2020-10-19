@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Did your relationship commence before 1 January 2021?
+  Where does your spouse or civil partner live?
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,27 +27,27 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="relationshipDate" method="post">
+      <form action="addressCountry" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Did your relationship commence before 1 January 2021?",
+            text: "Where does your spouse or civil partner live?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
         {{ radios({
-          "idPrefix": "relationship-date",
-          "name": "relationship-date",
+          "idPrefix": "address-country",
+          "name": "address-country",
           "items": [
             {
-              "value": "Yes",
-              "text": "Yes"
+              "value": "UK",
+              "text": "UK"
             },
             {
-              "value": "No",
-              "text": "No"
+              "value": "EU",
+              "text": "EU"
             }
           ]
         }) }}

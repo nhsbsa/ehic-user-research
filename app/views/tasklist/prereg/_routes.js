@@ -52,7 +52,7 @@ router.post('/nationalOtherEu', function (req, res) {
   }
 })
 
-// Were you resident in the UK for 1 Janaury 2021? - resident-before-jan.html
+// Were you resident in the UK for 1 January 2021? - resident-before-jan.html
 router.post('/residentBeforeJan', function (req, res) {
   var residentBeforeJan = req.session.data['resident-before-jan']
   if (residentBeforeJan == "Yes"){
@@ -500,7 +500,7 @@ router.post('/application-settled/durable/partnerAddress', function (req, res) {
   }
 })
 
-// Did your relationship commence before 1 Janaury 2021? (EUSS)
+// Did your relationship commence before 1 January 2021? (EUSS)
 router.post('/application-settled/durable/relationshipDate', function (req, res) {
   var addAnother = req.session.data['relationship-date']
   if (addAnother == "Yes"){
