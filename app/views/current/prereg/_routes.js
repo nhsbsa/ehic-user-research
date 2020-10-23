@@ -98,7 +98,7 @@ router.post('/birthCountry', function (req, res) {
   }
 })
 
-// Have you renounced your UK citizenship?  - renounce.html
+// RENOUCE UK CITIZENSHIP
 router.post('/renounce', function (req, res) {
   var renounce = req.session.data['renounce']
   if (renounce == "Yes"){
@@ -111,7 +111,6 @@ router.post('/renounce', function (req, res) {
     res.redirect('renounce')
   }
 })
-
 
 // Do you know your NHS number? - know-nhs-number.html
 router.post('/application-settled/knowNhsNumber', function (req, res) {
