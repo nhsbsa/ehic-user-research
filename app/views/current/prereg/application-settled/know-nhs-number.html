@@ -32,14 +32,17 @@
 
         {% call fieldset({
           legend: {
-            text: "Do you know your NHS number?",
+            text: "Do you know your NHS Number?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
       
-        <p>Your NHS number is a 10 digit number. For example, <span class=\"nhsuk-u-nowrap\">485 777 3456</span>.</p>
-        <p>You can find it on any letter the NHS has sent you, on a prescription, or by logging in to a GP practice online service.</p>
+        <!-- <p>Your NHS number is a 10 digit number. For example, <span class=\"nhsuk-u-nowrap\">485 777 3456</span>.</p>
+        <p>You can find it on any letter the NHS has sent you, on a prescription, or by logging in to a GP practice online service.</p> -->
+
+        <p>If you're registered with a GP, you'll have a 10-digit NHS Number unique to you. For example, <span class=\"nhsuk-u-nowrap\">485 777 3456</span>.</p>
+        
 
         {{ radios({
           "idPrefix": "know-nhs-number",
@@ -60,12 +63,19 @@
 
 
 
-        <!-- {{ details({
-          "text": "What is a durable partner?",
+        {{ details({
+          "text": "Where to find your NHS Number",
           "HTML": "
-          <p>Dummy content non sollicitudin dolor. Fusce erat turpis, tempus vitae urna fermentum, rutrum mollis elit. Donec pulvinar massa dolor, eget tempor ligula euismod ac. </p>
+          <p>You can find your NHS Number:</p>
+
+        <ul>
+          <li>on any letter the NHS has sent you</li>
+          <li>on a prescription</li>
+          <li>by logging in to a GP practice online service</li>
+          <li>by downloading and logging into the NHS App on your smartphone or tablet</li>
+        </ul>
           "
-        }) }} -->
+        }) }}
 
         {{ button({
           "text": "Continue"

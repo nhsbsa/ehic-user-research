@@ -17,7 +17,7 @@ router.post('/nationality', function (req, res) {
     res.redirect('uk-citizenship')
   }
   else {
-    res.redirect('ineligible')
+    res.redirect('ineligible-3')
   }
 })
 
@@ -42,7 +42,7 @@ router.post('/nationalOtherEu', function (req, res) {
     res.redirect('birth-country')
   }
   else if (nationalOtherEu == "No"){
-    res.redirect('ineligible')
+    res.redirect('ineligible-4')
   }
   else {
     res.redirect('national-other-eu')
@@ -56,7 +56,7 @@ router.post('/residentBeforeJan', function (req, res) {
     res.redirect('nationality')
   }
   else if (residentBeforeJan == "No"){
-    res.redirect('ineligible')
+    res.redirect('ineligible-2')
   }
   else {
     res.redirect('resident-before-jan')
@@ -67,7 +67,7 @@ router.post('/residentBeforeJan', function (req, res) {
 router.post('/dualBirthCountry', function (req, res) {
   var dualBirthCountry = req.session.data['dual-birth-country']
   if (dualBirthCountry == "UK"){
-    res.redirect('ineligible')
+    res.redirect('ineligible-esw')
   }
   else if (dualBirthCountry == "NI"){
     res.redirect('renounce')
@@ -98,14 +98,14 @@ router.post('/birthCountry', function (req, res) {
   }
 })
 
-// Where were you born? - renounce.html
+// Have you renounced your UK citizenship?  - renounce.html
 router.post('/renounce', function (req, res) {
   var renounce = req.session.data['renounce']
   if (renounce == "Yes"){
     res.redirect('application-ni/full-name')
   }
   else if (renounce == "No"){
-    res.redirect('ineligible')
+    res.redirect('ineligible-ni')
   }
   else {
     res.redirect('renounce')
@@ -165,7 +165,7 @@ router.post('/whereDoYouLive', function (req, res) {
     res.redirect('exp-ben')
   }
   else {
-    res.redirect('ineligible')
+    res.redirect('ineligible-1')
   }
 })
 
@@ -266,7 +266,7 @@ router.post('/studyingUkCitizen', function (req, res) {
     res.redirect('application-student/evidence-student')
   }
   else {
-    res.redirect('ineligible')
+    res.redirect('ineligible-not-studying')
   }
 })
 
@@ -528,6 +528,9 @@ router.post('/application-settled/spouse/addressCountry', function (req, res) {
   }
   else if (addressCountry == "EU"){
     res.redirect('address-eu')
+  }
+  else if (addressCountry == "Other"){
+    res.redirect('ineligible2')
   }
   else {
     res.redirect('address-country')

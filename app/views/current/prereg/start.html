@@ -74,9 +74,19 @@
       <p>You’ll need to answer a series of questions and to register your details. If we need further evidence to support your application, we’ll email you with advice on what to do next.</p>
       <p>Once we receive your application and any evidence we ask for, we’ll process your application and respond to you within 5 working days.</p>
       <p>If you are not entitled to a new UK EHIC, we’ll let you know during the application process or within 5 working days of receiving your application and any requested evidence.</p>
-      <p>Your current EHIC will remain valid up to 31 December 2020.</p>
-      <p>Your EHIC is not a substitute for travel insurance. It may not cover all health costs and never covers repatriation costs.</p>
-      <p>Make sure you have travel insurance as well as an EHIC.</p>
+
+      {{ insetText({
+        "HTML": "<p>Your current EHIC will remain valid up to 31 December 2020.</p>"
+      }) }}
+
+
+      {{ warningCallout({
+        "heading": "Travel insurance",
+        "HTML": "<p>Your EHIC is not a substitute for travel insurance. It may not cover all health costs and never covers repatriation costs.</p><p>Make sure you have travel insurance as well as an EHIC.</p>"
+      }) }}
+      
+     <!--  <p>Your EHIC is not a substitute for travel insurance. It may not cover all health costs and never covers repatriation costs.</p>
+      <p>Make sure you have travel insurance as well as an EHIC.</p> -->
       <p>To process your application, we may share your information (where appropriate) with:</p>
 
       <ul>
