@@ -236,6 +236,8 @@
           ]
         }) }}
 
+        <p><a href="">Remove spouse</a></p><br><br>
+
         <h2>Your children's details</h2>
         <h3>Child 1</h3>
 
@@ -276,23 +278,7 @@
                 ]
               }
             },
-            {
-              key: {
-                text: "Is Millie dependant on you?"
-              },
-              value: {
-                text: "Yes"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "child-1/dob",
-                    text: "Change",
-                    visuallyHiddenText: "over-21"
-                  }
-                ]
-              }
-            },
+
             {
               key: {
                 text: "Home address"
@@ -330,6 +316,88 @@
     
           ]
         }) }}
+
+        <p><a href="">Remove child 1</a></p><br><br>
+
+        <h3>Child 2</h3>
+
+        {{ summaryList({
+          rows: [
+            
+            {
+              key: {
+                text: "Full name"
+              },
+              value: {
+                text: "Bobbie Francis"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "child-1/full-name",
+                    text: "Change",
+                    visuallyHiddenText: "full name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                text: "2 April 2016"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "child-1/dob",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+
+            {
+              key: {
+                text: "Home address"
+              },
+              value: {
+                html: "73 Roman Rd<br>Leeds<br> LS2 5ZN"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "child-1/address-manual",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Nationality"
+              },
+              value: {
+                text: "EU, Icelandic, Liechtensteiner, Norwegian or Swiss"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "child-1/nationality",
+                    text: "Change",
+                    visuallyHiddenText: "nationality"
+                  }
+                ]
+              }
+            }
+    
+          ]
+        }) }}
+
+        <p><a href="">Remove child 2</a></p><br><br>
 
         <h2>Your parent's details</h2>
         <h3>Parent 1</h3>
@@ -409,6 +477,8 @@
           ]
         }) }}
 
+        <p><a href="">Remove parent 1</a></p><br><br>
+
         <h2>Your grandparent's details</h2>
         <h3>Grandparent 1</h3>
 
@@ -487,6 +557,8 @@
           ]
         }) }}
 
+        <p><a href="">Remove grandparent 1</a></p><br><br>
+
         <h2>Your grandchild's details</h2>
         <h3>Grandchild 1</h3>
 
@@ -564,6 +636,8 @@
     
           ]
         }) }}
+
+        <p><a href="">Remove grandchild 1</a></p><br><br>
 
         <h2>Now send your application</h2>
         <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>

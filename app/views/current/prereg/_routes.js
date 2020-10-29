@@ -4,6 +4,41 @@ const router = express.Router()
 // Add your routes here - above the module.exports line
 
 
+// Is the user under 18 or over 18
+// router.post('/application-settled/child-1/user-age-handler', function (req, res) {
+//     const day = req.session.data['example-day']
+//     const month = req.session.data['example-month']
+//     const year =req.session.data['example-year']
+
+//     const fullDOB = year + "-" + month + "-" + day;
+
+//     function userDOB(dob) {
+        
+//         this.dateOfBirth = new Date(dob);
+        
+//         this.calculateAge = function() {
+//           const diff = Date.now() - this.dateOfBirth.getTime(); 
+//           const ageDate = new Date(diff); 
+//           return Math.abs(ageDate.getUTCFullYear() - 1970);
+//         };
+
+//     }
+
+//     const age =new userDOB(fullDOB).calculateAge();
+
+//     if (age >= '18') {
+//         res.redirect('full-name')
+//     } else {
+//         res.redirect('address-lookup');
+//     }
+
+// })
+
+
+
+
+
+
 // What is your nationality? - nationality.html
 router.post('/nationality', function (req, res) {
   var nationality = req.session.data['nationality']
@@ -114,6 +149,20 @@ router.post('/renounce', function (req, res) {
 
 // Do you know your NHS number? - know-nhs-number.html
 router.post('/application-settled/knowNhsNumber', function (req, res) {
+  var knowNhsNumber = req.session.data['know-nhs-number']
+  if (knowNhsNumber == "Yes"){
+    res.redirect('nhs-number')
+  }
+  else if (knowNhsNumber == "No"){
+    res.redirect('gender')
+  }
+  else {
+    res.redirect('know-nhs-number')
+  }
+})
+
+// Do you know your NHS number? - know-nhs-number.html
+router.post('/application-student-ss/knowNhsNumber', function (req, res) {
   var knowNhsNumber = req.session.data['know-nhs-number']
   if (knowNhsNumber == "Yes"){
     res.redirect('nhs-number')

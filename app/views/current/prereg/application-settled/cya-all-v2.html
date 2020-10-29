@@ -158,7 +158,177 @@
           ]
         }) }}
 
-        <h2>Your spouse's details</h2>
+        <h2>Your dependants</h2>
+
+
+
+
+
+
+        {{ summaryList({
+          rows: [
+            
+            {
+              key: {
+                text: "Spouse or civil partner"
+              },
+              value: {
+                html: "Mark Francis"
+
+              },
+              actions: {
+                items: [
+                  {
+                    href: "spouse/address-manual",
+                    text: "Remove",
+                    visuallyHiddenText: "full name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Child"
+              },
+              value: {
+                html: "Millie Francis"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "spouse/full-name",
+                    text: "Remove",
+                    visuallyHiddenText: "full name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Child"
+              },
+              value: {
+                html: "Freddie Francis"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "spouse/full-name",
+                    text: "Remove",
+                    visuallyHiddenText: "full name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Child"
+              },
+              value: {
+                html: "Bobbie Francis"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "spouse/full-name",
+                    text: "Remove",
+                    visuallyHiddenText: "full name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Parent"
+              },
+              value: {
+                text: "Maggie Smith"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "spouse/dob",
+                    text: "Remove",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Grandparent"
+              },
+              value: {
+                html: "David Smith"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "spouse/nationality",
+                    text: "Remove",
+                    visuallyHiddenText: "nationality"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Grandparent"
+              },
+              value: {
+                html: "Jane Smith"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "spouse/nationality",
+                    text: "Remove",
+                    visuallyHiddenText: "nationality"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Grandchild"
+              },
+              value: {
+                text: "Freddie Francis"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "spouse/nationality",
+                    text: "Remove",
+                    visuallyHiddenText: "nationality"
+                  }
+                ]
+              }
+            }
+    
+          ]
+        }) }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <h2>Your spouse's details</h2>
 
         {{ summaryList({
           rows: [
@@ -563,7 +733,7 @@
             }
     
           ]
-        }) }}
+        }) }} -->
 
         <h2>Now send your application</h2>
         <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
