@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to add a spouse or civil partner to your application?
+  Do you know your NHS number?
 {% endblock %}
 
 {% block beforeContent %}
@@ -32,7 +32,7 @@
 
         {% call fieldset({
           legend: {
-            text: "Do you know your NHS Number?",
+            text: "Do you know your NHS number?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -41,7 +41,7 @@
         <!-- <p>Your NHS number is a 10 digit number. For example, <span class=\"nhsuk-u-nowrap\">485 777 3456</span>.</p>
         <p>You can find it on any letter the NHS has sent you, on a prescription, or by logging in to a GP practice online service.</p> -->
 
-        <p>If you're registered with a GP, you'll have a 10-digit NHS Number unique to you. For example, <span class=\"nhsuk-u-nowrap\">485 777 3456</span>.</p>
+        <p>If you're registered with a GP, you'll have a 10-digit NHS number unique to you. For example, <span class=\"nhsuk-u-nowrap\">485 777 3456</span>.</p>
         
 
         {{ radios({
@@ -64,9 +64,9 @@
 
 
         {{ details({
-          "text": "Where to find your NHS Number",
+          "text": "Where to find your NHS number",
           "HTML": "
-          <p>You can find your NHS Number:</p>
+          <p>You can find your NHS number:</p>
 
         <ul>
           <li>on any letter the NHS has sent you</li>

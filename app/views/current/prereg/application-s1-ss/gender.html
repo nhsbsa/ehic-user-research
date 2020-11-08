@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your gender?
+  How is your gender recorded on your NHS record?
 {% endblock %}
 
 {% block beforeContent %}
@@ -31,15 +31,15 @@
 
         {% call fieldset({
           legend: {
-            text: "What is your gender?",
+            text: "How is your gender recorded on your NHS record?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
       
-      <!-- <p>
-        You can add children to your EHIC application if they live with you. They will receive their own EHIC.
-      </p> -->
+      <p>
+        This is the gender on your NHS record. This may not be the gender you currently identify yourself as.
+      </p>
 
         {{ radios({
           "idPrefix": "add-another",
@@ -62,6 +62,13 @@
 
         {% endcall %}
 
+        {{ details({
+          "text": "Why do we ask this question?",
+          "HTML": "
+          <p>We ask for this information, along with your NHS number and your date of birth, as a check to confirm your identity and eligibility for an EHIC. Giving us this information helps speed up your application. If you choose not to give this information, your application may need to go through a different verification process.</p>
+          "
+        }) }}
+
         {{ button({
           "text": "Continue"
         }) }}
@@ -69,7 +76,7 @@
       </form>
 
       {{ backLink({
-        "href": "nino",
+        "href": "",
         "text": "Change my previous answer"
       }) }}
 

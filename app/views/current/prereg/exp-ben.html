@@ -32,7 +32,7 @@
 
         {% call fieldset({
           legend: {
-            text: "Do you have a registered S1 or E121 certificate?",
+            text: "Do you have a registered S1, E121, E106 or E109 form?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -57,12 +57,9 @@
 
 
         {{ details({
-          "text": "What is an S1 or an E121 certificate?",
+          "text": "What is an S1, E121, E106 and E109 form?",
           "HTML": "
-          <p>An S1 certificate (formerly known as an E121) entitles you to access state healthcare on the same basis as a citizen in the EEA country (or Switzerland) you are currently residing in (other than the UK).</p>
-          <p>You might be entitled to an S1 certificate if you receive a UK State Pension or certain other benefits. You may also be entitled if you are the family member of someone who has been awarded an S1 certificate.</p>
-          <p>If you have been provided with an S1 or an E121 certificate, you will have been asked to register it with your local health authority.</p>
-          <p>If you have not been provided with an S1 or E121, or you have not registered it yet, answer no.</p>
+          <p>An S1 form (previously known as an E121, E106 and E109) is a healthcare certificate that entitles the holder and any dependants to healthcare in another EU country, as well as Switzerland, Norway, Iceland and Liechtenstein, on the same basis as a resident of that country.</p>
           "
         }) }}
 

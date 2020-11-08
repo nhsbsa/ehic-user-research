@@ -108,7 +108,8 @@ router.post('/dualBirthCountry', function (req, res) {
     res.redirect('renounce')
   }
   else if (dualBirthCountry == "Other"){
-    res.redirect('application-settled/full-name')
+    res.redirect('application-settled/info-dual')
+    // res.redirect('application-settled/full-name')
   }
   else {
     res.redirect('birth-country-dual')
@@ -119,7 +120,7 @@ router.post('/dualBirthCountry', function (req, res) {
 router.post('/birthCountry', function (req, res) {
   var birthCountry = req.session.data['birth-country']
   if (birthCountry == "UK"){
-    res.redirect('ineligible')
+    res.redirect('ineligible-esw')
   }
   else if (birthCountry == "NI"){
     res.redirect('renounce')
@@ -137,7 +138,7 @@ router.post('/birthCountry', function (req, res) {
 router.post('/renounce', function (req, res) {
   var renounce = req.session.data['renounce']
   if (renounce == "Yes"){
-    res.redirect('application-ni/full-name')
+    res.redirect('application-ni/info-ni')
   }
   else if (renounce == "No"){
     res.redirect('ineligible-ni')
@@ -338,7 +339,8 @@ router.post('/application-settled/addParent', function (req, res) {
     res.redirect('parent/full-name')
   }
   else {
-    res.redirect('add-grandparent')
+    // res.redirect('add-grandparent')
+    res.redirect('cya-family')
   }
 })
 
@@ -948,8 +950,8 @@ router.post('/application-settled/addChild', function (req, res) {
     res.redirect('child-1/full-name')
   }
   else {
-    // res.redirect('add-parent')
-    res.redirect('cya-family')
+    res.redirect('add-parent')
+    // res.redirect('cya-family')
   }
 })
 
