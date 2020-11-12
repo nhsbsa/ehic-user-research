@@ -45,13 +45,14 @@
               "value": "UK",
               "text": "UK citizen"
             },
-            {
-              "value": "dual",
-              "text": "Dual national"
-            },
+            
             {
               "value": "EU, EEA or Swiss",
-              "text": "EU, Icelandic, Liechtensteiner, Norwegian or Swiss"
+              "text": "A national of the EU, Switzerland, Norway, Iceland, or Liechtenstein"
+            },
+            {
+              "value": "dual",
+              "text": "A dual national, including that of a country in the EU, Switzerland, Norway, Iceland, or Liechtenstein"
             },
             {
               "value": "Other",
@@ -62,9 +63,21 @@
 
         {% endcall %}
 
+        {{ details({
+          "text": "More information about dual nationality",
+          "HTML": "
+          <p>You should only choose <strong>Dual national</strong> if you are registered as a national of at least two nations and at least one of them is an EU country, Switzerland, Norway, Iceland, or Liechtenstein.</p>
+          <p>If you have dual nationality involving nationality of the UK and another country not listed, choose <strong>UK citizen</strong>.</p>
+          <p>If you have dual nationality not involving the UK or any of the other countries listed, you should choose <strong>Other</strong></p>
+          "
+        }) }}
+
+
         {{ button({
           "text": "Continue"
         }) }}
+
+
 
       </form>
 
