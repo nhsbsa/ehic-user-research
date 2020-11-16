@@ -26,7 +26,7 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="add-another-yn" method="post">
+      <form action="email-address" method="post">
 
         {% call fieldset({
           legend: {
@@ -38,10 +38,10 @@
 
         {{ input({
           "label": {
-            "text": "National Insurance number"
+            "text": ""
           },
           hint: {
-            html: "It’s on your National Insurance card, benefit letter, payslip or P60. For example, ‘QQ 12 34 56 C’."
+            html: "For example, ‘QQ 12 34 56 C’."
           },
           "id": "input-width-10",
           "name": "test-width-10",
@@ -50,7 +50,7 @@
 
 
         {% endcall %}
-        <p><a href="nhs-number">I don't have a National Insurance number</a></p>
+        <!-- <p><a href="nhs-number">I don't have a National Insurance number</a></p> -->
 
         {{ button({
           "text": "Continue"

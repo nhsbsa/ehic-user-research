@@ -384,10 +384,24 @@ router.post('/application-s1/addCorres', function (req, res) {
     res.redirect('address-eu-corres')
   }
   else if (addCorres == "No"){
-    res.redirect('email-address')
+    res.redirect('know-nino')
   }
   else {
     res.redirect('corres-address')
+  }
+})
+
+// Do you know your National Insurance number? - know-nino.html
+router.post('/application-s1/knowNino', function (req, res) {
+  var knowNino = req.session.data['knowNino']
+  if (knowNino == "Yes"){
+    res.redirect('nino')
+  }
+  else if (knowNino == "No"){
+    res.redirect('email-address')
+  }
+  else {
+    res.redirect('know-nino')
   }
 })
 
