@@ -377,6 +377,20 @@ router.post('/expBen', function (req, res) {
   }
 })
 
+// Do you want to add another address for correspondence? S1
+router.post('/application-s1/addCorres', function (req, res) {
+  var addCorres = req.session.data['addCorres']
+  if (addCorres == "Yes"){
+    res.redirect('address-eu-corres')
+  }
+  else if (addCorres == "No"){
+    res.redirect('email-address')
+  }
+  else {
+    res.redirect('corres-address')
+  }
+})
+
 // Are you studying, or do you intend to study in the EU, EEA or
 // Switzerland before 1 January 2021? - uk-studying.html
 router.post('/ukStudying', function (req, res) {
