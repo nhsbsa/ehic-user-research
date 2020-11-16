@@ -51,8 +51,32 @@ router.post('/nationality', function (req, res) {
   else if (nationality == "EU, EEA or Swiss"){
     res.redirect('uk-citizenship')
   }
-  else {
+  else if (nationality == "Other"){
     res.redirect('ineligible-3')
+  }
+  else {
+    res.redirect('nationality')
+  }
+
+})
+
+// What is your nationality? - nationality-in-eu.html
+router.post('/inEuNationality', function (req, res) {
+  var inEuNationality = req.session.data['inEuNationality']
+  if (inEuNationality == "UK"){
+    res.redirect('studying-uk-citizen-in-eu')
+  }
+  else if (inEuNationality == "dual"){
+    res.redirect('birth-country-in-eu')
+  }
+  else if (inEuNationality == "EU, EEA or Swiss"){
+    res.redirect('uk-citizenship-in-eu')
+  }
+  else if (inEuNationality == "Other"){
+    res.redirect('studying-uk-citizen-in-eu')
+  }
+  else {
+    res.redirect('nationality-in-eu')
   }
 })
 
@@ -67,6 +91,20 @@ router.post('/ukCitizenship', function (req, res) {
   }
   else {
     res.redirect('uk-citizenship')
+  }
+})
+
+// Have you ever held UK citizenship? - uk-citizenship-in-eu.html
+router.post('/inEuUkCitizenship', function (req, res) {
+  var inEuUkCitizenship = req.session.data['inEuUkCitizenship']
+  if (inEuUkCitizenship == "Yes"){
+    res.redirect('national-other-eu-in-eu')
+  }
+  else if (inEuUkCitizenship == "No"){
+    res.redirect('birth-country-in-eu')
+  }
+  else {
+    res.redirect('uk-citizenship-in-eu')
   }
 })
 
@@ -116,6 +154,43 @@ router.post('/dualBirthCountry', function (req, res) {
   }
 })
 
+// Where were you born? - birth-country-dual-in-eu.html
+router.post('/euDualBirthCountry', function (req, res) {
+  var dualBirthCountry = req.session.data['dual-birth-country']
+  if (dualBirthCountry == "UK"){
+    res.redirect('ineligible-esw')
+  }
+  else if (dualBirthCountry == "NI"){
+    res.redirect('renounce')
+  }
+  else if (dualBirthCountry == "Other"){
+    res.redirect('studying-uk-citizen-in-eu')
+    // res.redirect('application-settled/info-dual')
+    // res.redirect('application-settled/full-name')
+  }
+  else {
+    res.redirect('birth-country-dual-in-eu')
+  }
+})
+
+// Where were you born? - birth-country-in-eu.html
+router.post('/inEuBirthCountry', function (req, res) {
+  var inEuBirthCountry = req.session.data['inEuBirthCountry']
+  if (inEuBirthCountry == "UK"){
+    res.redirect('ineligible-esw')
+  }
+  else if (inEuBirthCountry == "NI"){
+    res.redirect('renounce-in-eu')
+  }
+  else if (inEuBirthCountry == "Other"){
+    // res.redirect('application-settled/full-name')
+    res.redirect('studying-eu-citizen-in-eu')
+  }
+  else {
+    res.redirect('birth-country-dual')
+  }
+})
+
 // Where were you born? - birth-country.html
 router.post('/birthCountry', function (req, res) {
   var birthCountry = req.session.data['birth-country']
@@ -134,7 +209,34 @@ router.post('/birthCountry', function (req, res) {
   }
 })
 
-// RENOUCE UK CITIZENSHIP
+// RENOUNCE UK CITIZENSHIP - renounce
+router.post('/renounce', function (req, res) {
+  var renounce = req.session.data['renounce']
+  if (renounce == "Yes"){
+    res.redirect('application-ni/info-ni')
+  }
+  else if (renounce == "No"){
+    res.redirect('ineligible-ni')
+  }
+  else {
+    res.redirect('renounce')
+  }
+})
+
+// RENOUNCE UK CITIZENSHIP - renounce-in-eu
+router.post('/inEuRenounce', function (req, res) {
+  var inEuRenounce = req.session.data['inEuRenounce']
+  if (inEuRenounce == "Yes"){
+    // res.redirect('application-ni/info-ni')
+    res.redirect('studying-eu-citizen-in-eu')
+  }
+  else if (inEuRenounce == "No"){
+    res.redirect('ineligible-ni')
+  }
+  else {
+    res.redirect('renounce-in-eu')
+  }
+})
 router.post('/renounce', function (req, res) {
   var renounce = req.session.data['renounce']
   if (renounce == "Yes"){
@@ -164,6 +266,20 @@ router.post('/application-settled/knowNhsNumber', function (req, res) {
 
 // Do you know your NHS number? - know-nhs-number.html
 router.post('/application-student-ss/knowNhsNumber', function (req, res) {
+  var knowNhsNumber = req.session.data['know-nhs-number']
+  if (knowNhsNumber == "Yes"){
+    res.redirect('nhs-number')
+  }
+  else if (knowNhsNumber == "No"){
+    res.redirect('gender')
+  }
+  else {
+    res.redirect('know-nhs-number')
+  }
+})
+
+// Do you know your NHS number? - know-nhs-number.html
+router.post('/application-student-ss-in-eu/knowNhsNumber', function (req, res) {
   var knowNhsNumber = req.session.data['know-nhs-number']
   if (knowNhsNumber == "Yes"){
     res.redirect('nhs-number')
@@ -252,8 +368,12 @@ router.post('/expBen', function (req, res) {
     res.redirect('application-s1/info-s1')
     // res.redirect('application-s1/full-name')
   }
+  else if (expBen == "No"){
+    // res.redirect('eu-studying')
+    res.redirect('nationality-in-eu')
+  }
   else {
-    res.redirect('eu-studying')
+    res.redirect('exp-ben')
   }
 })
 
@@ -321,6 +441,19 @@ router.post('/studyingUkCitizen', function (req, res) {
 
 // Are you studying, or do you intend to study in 
 // the EU, EEA or Switzerland before 1 January 2021?
+// studying-uk-citizen.html
+router.post('/inEuStudyingUkCitizen', function (req, res) {
+  var inEuStudyingUkCitizen = req.session.data['inEuStudyingUkCitizen']
+  if (inEuStudyingUkCitizen == "Yes"){
+    res.redirect('application-student-in-eu/evidence-student')
+  }
+  else {
+    res.redirect('ineligible-not-studying')
+  }
+})
+
+// Are you studying, or do you intend to study in 
+// the EU, EEA or Switzerland before 1 January 2021?
 // studying-eu-citizen.html
 router.post('/studyingEuCitizen', function (req, res) {
   var studyingEuCitizen = req.session.data['studying-eu-citizen']
@@ -329,6 +462,22 @@ router.post('/studyingEuCitizen', function (req, res) {
   }
   else {
     res.redirect('application-settled/info-eu-national')
+  }
+})
+
+// Are you studying, or do you intend to study in 
+// the EU, EEA or Switzerland before 1 January 2021?
+// studying-eu-citizen.html
+router.post('/inEuStudyCitizen', function (req, res) {
+  var inEuStudyCitizen = req.session.data['inEuStudyCitizen']
+  if (inEuStudyCitizen == "Yes"){
+    res.redirect('application-student-ss-in-eu/evidence-student')
+  }
+  else if (inEuStudyCitizen == "No"){
+    res.redirect('application-settled-in-eu/info-eu-national')
+  }
+  else {
+    res.redirect('studying-eu-citizen-in-eu')
   }
 })
 
@@ -344,8 +493,37 @@ router.post('/application-settled/addParent', function (req, res) {
   }
 })
 
+// Do you want to add your PARENTS to your application? - EUSS living in EU
+router.post('/application-settled-in-eu/addParent', function (req, res) {
+  var addParent = req.session.data['add-parent']
+  if (addParent == "Yes"){
+    res.redirect('parent/full-name')
+  }
+  else {
+    // res.redirect('add-grandparent')
+    res.redirect('cya-family')
+  }
+})
+
 // What is your parent's nationality? - EUSS
 router.post('/application-settled/parent/parentNationality', function (req, res) {
+  var addParent = req.session.data['parent-nationality']
+  if (addParent == "UK"){
+    res.redirect('ineligible2')
+  }
+  else if (addParent == "EU"){
+    res.redirect('arrival')
+  }
+  else if (addParent == "Other"){
+    res.redirect('settled-status')
+  }
+  else {
+    res.redirect('nationality')
+  }
+})
+
+// What is your parent's nationality? - EUSS living in EU
+router.post('/application-settled-in-eu/parent/parentNationality', function (req, res) {
   var addParent = req.session.data['parent-nationality']
   if (addParent == "UK"){
     res.redirect('ineligible2')
@@ -374,6 +552,18 @@ router.post('/application-ni/addParent', function (req, res) {
 
 // Do you want to add ANOTHER PARENT to your application? EUSS
 router.post('/application-settled/parentAddAnother', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('parent/full-name')
+  }
+  else {
+    // res.redirect('add-grandparent')
+    res.redirect('parent/cya-parent')
+  }
+})
+
+// Do you want to add ANOTHER PARENT to your application? EUSS living in EU
+router.post('/application-settled-in-eu/parentAddAnother', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
     res.redirect('parent/full-name')
@@ -540,6 +730,19 @@ router.post('/application-settled/addSomeone', function (req, res) {
   }
 })
 
+// Do you want to add anyone else to your application? EUSS living in EU
+router.post('/application-settled-in-eu/addSomeone', function (req, res) {
+  var addAnother = req.session.data['add-someone']
+  if (addAnother == "Yes"){
+    // res.redirect('partner/full-name')
+    // res.redirect('partner/married')
+    res.redirect('spouses')
+  }
+  else {
+    res.redirect('cya-individual')
+  }
+})
+
 // Do you want to add anyone else to your application? NI
 router.post('/application-ni/addSomeone', function (req, res) {
   var addAnother = req.session.data['add-someone']
@@ -570,8 +773,42 @@ router.post('/application-settled/spouses', function (req, res) {
   }
 })
 
+// Do you want to add your spouse or civil partner to your application? EUSS
+router.post('/application-settled-in-eu/spouses', function (req, res) {
+  var spouses = req.session.data['spouses']
+  if (spouses == "Yes"){
+    res.redirect('spouse/full-name')
+  }
+  // else if (partners == "Durable"){
+  //   res.redirect('durable/full-name')
+  // }
+  else if (spouses == "No"){
+    res.redirect('partners')
+  }
+  else {
+    res.redirect('spouses')
+  }
+})
+
 // Where does your spouse or civil partner live? - EUSS
 router.post('/application-settled/spouse/addressCountry', function (req, res) {
+  var addressCountry = req.session.data['address-country']
+  if (addressCountry == "UK"){
+    res.redirect('partner-address')
+  }
+  else if (addressCountry == "EU"){
+    res.redirect('address-eu')
+  }
+  else if (addressCountry == "Other"){
+    res.redirect('ineligible2')
+  }
+  else {
+    res.redirect('address-country')
+  }
+})
+
+// Where does your spouse or civil partner live? - EUSS living in EU
+router.post('/application-settled-in-eu/spouse/addressCountry', function (req, res) {
   var addressCountry = req.session.data['address-country']
   if (addressCountry == "UK"){
     res.redirect('partner-address')
@@ -619,6 +856,20 @@ router.post('/application-settled/partners', function (req, res) {
   }
 })
 
+// Do you want to add your unmarried (durable) partner to your application? EUSS living in EU
+router.post('/application-settled-in-eu/partners', function (req, res) {
+  var partners = req.session.data['partners']
+  if (partners == "Yes"){
+    res.redirect('durable/full-name')
+  }
+  else if (partners == "No"){
+    res.redirect('add-child-1')
+  }
+  else {
+    res.redirect('partners')
+  }
+})
+
 // Do you want to add your unmarried (durable) partner to your application? NI
 router.post('/application-ni/partners', function (req, res) {
   var partners = req.session.data['partners']
@@ -650,8 +901,39 @@ router.post('/application-settled/durable/partnerNationality', function (req, re
   }
 })
 
+// What is your partner's nationality? - nationality.html
+router.post('/application-settled-in-eu/durable/partnerNationality', function (req, res) {
+  var partnerNationality = req.session.data['partnerNationality']
+  if (partnerNationality == "UK"){
+    res.redirect('ineligible')
+  }
+  // else if (partnerNationality == "dual"){
+  //   res.redirect('relationship-date')
+  // }
+  else if (partnerNationality == "EU, EEA or Swiss"){
+    res.redirect('arrival')
+  }
+  else {
+    res.redirect('settled-status')
+  }
+})
+
 // Did your partner arrive in the UK before 1 January 2021? - arrival.html
 router.post('/application-settled/durable/arrival', function (req, res) {
+  var arrival = req.session.data['arrival']
+  if (arrival == "Yes"){
+    res.redirect('own-app')
+  }
+  else if (arrival == "No"){
+    res.redirect('ineligible5')
+  }
+  else {
+    res.redirect('arrival')
+  }
+})
+
+// Did your partner arrive in the UK before 1 January 2021? - arrival.html
+router.post('/application-settled-in-eu/durable/arrival', function (req, res) {
   var arrival = req.session.data['arrival']
   if (arrival == "Yes"){
     res.redirect('own-app')
@@ -678,8 +960,36 @@ router.post('/application-settled/parent/arrival', function (req, res) {
   }
 })
 
+// Did your PARENT arrive in the UK before 1 January 2021? - arrival.html
+router.post('/application-settled-in-eu/parent/arrival', function (req, res) {
+  var arrival = req.session.data['arrival']
+  if (arrival == "Yes"){
+    res.redirect('own-app')
+  }
+  else if (arrival == "No"){
+    res.redirect('ineligible5')
+  }
+  else {
+    res.redirect('arrival')
+  }
+})
+
 // Does your PARTNER have UK settled status? - settled-status.html
 router.post('/application-settled/durable/partnerSettled', function (req, res) {
+  var partnerSettled = req.session.data['partner-settled']
+  if (partnerSettled == "Yes"){
+    res.redirect('address-lookup')
+  }
+  else if (partnerSettled == "No"){
+    res.redirect('relationship-date')
+  }
+  else {
+    res.redirect('settled-status')
+  }
+})
+
+// Does your PARTNER have UK settled status? - settled-status.html
+router.post('/application-settled-in-eu/durable/partnerSettled', function (req, res) {
   var partnerSettled = req.session.data['partner-settled']
   if (partnerSettled == "Yes"){
     res.redirect('address-lookup')
@@ -725,6 +1035,20 @@ router.post('/application-ni/durable/partnerNationality', function (req, res) {
 
 // Does your spouse or civil partner live with you? (EUSS)
 router.post('/application-settled/spouse/partnerAddress', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('dob')
+  }
+  else if (addAnother == "No"){
+    res.redirect('address-lookup')
+  }
+  else {
+    res.redirect('partner-address')
+  }
+})
+
+// Does your spouse or civil partner live with you? EUSS living in EU
+router.post('/application-settled-in-eu/spouse/partnerAddress', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
     res.redirect('dob')
@@ -793,6 +1117,34 @@ router.post('/application-settled/durable/relationshipDate', function (req, res)
   }
 })
 
+// Did your relationship commence before 1 January 2021? (EUSS)
+router.post('/application-settled-in-eu/durable/relationshipDate', function (req, res) {
+  var addAnother = req.session.data['relationship-date']
+  if (addAnother == "Yes"){
+    res.redirect('live-together')
+  }
+  else if (addAnother == "No"){
+    res.redirect('ineligible2')
+  }
+  else {
+    res.redirect('relationship-date')
+  }
+})
+
+// Did your relationship commence before 1 January 2021? (EUSS living in EU
+router.post('/application-settled-in-eu/durable/relationshipDate', function (req, res) {
+  var addAnother = req.session.data['relationship-date']
+  if (addAnother == "Yes"){
+    res.redirect('live-together')
+  }
+  else if (addAnother == "No"){
+    res.redirect('ineligible2')
+  }
+  else {
+    res.redirect('relationship-date')
+  }
+})
+
 // Did your relationship commence before 1 January 2021? NI
 router.post('/application-ni/durable/relationshipDate', function (req, res) {
   var addAnother = req.session.data['relationship-date']
@@ -849,6 +1201,20 @@ router.post('/application-settled/durable/childTogether', function (req, res) {
   }
 })
 
+// Did you a have a child with your partner before 1 January 2021? EUSS
+router.post('/application-settled-in-eu/durable/childTogether', function (req, res) {
+  var childTogether = req.session.data['child-together']
+  if (childTogether == "Yes"){
+    res.redirect('address-lookup')
+  }
+  else if (childTogether == "No"){
+    res.redirect('ineligible3')
+  }
+  else {
+    res.redirect('child-together')
+  }
+})
+
 // Did you a have a child with your partner before 1 January 2021? NI
 router.post('/application-ni/durable/childTogether', function (req, res) {
   var childTogether = req.session.data['child-together']
@@ -865,6 +1231,20 @@ router.post('/application-ni/durable/childTogether', function (req, res) {
 
 // Has your partner lived with you for 2 years or more? - live-together.html - EUSS
 router.post('/application-settled/durable/durableLiving', function (req, res) {
+  var durableLiving = req.session.data['durable-living']
+  if (durableLiving == "Yes"){
+    res.redirect('address-lookup')
+  }
+  else if (durableLiving == "No"){
+    res.redirect('child-together')
+  }
+  else {
+    res.redirect('live-together')
+  }
+})
+
+// Has your partner lived with you for 2 years or more? - live-together.html - EUSS
+router.post('/application-settled-in-eu/durable/durableLiving', function (req, res) {
   var durableLiving = req.session.data['durable-living']
   if (durableLiving == "Yes"){
     res.redirect('address-lookup')
@@ -942,9 +1322,20 @@ router.post('/application-s1/partner/partnerAddress', function (req, res) {
   }
 })
 
-// Do you want to add your CHILDREN to your application? 
-// EUSS 
+// Do you want to add your CHILDREN to your application? EUSS 
 router.post('/application-settled/addChild', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('child-1/full-name')
+  }
+  else {
+    res.redirect('add-parent')
+    // res.redirect('cya-family')
+  }
+})
+
+// Do you want to add your CHILDREN to your application? EUSS living in EU
+router.post('/application-settled-in-eu/addChild', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
     res.redirect('child-1/full-name')
@@ -957,6 +1348,23 @@ router.post('/application-settled/addChild', function (req, res) {
 
 // What is Millie's nationality? - EUSS (under 21)
 router.post('/application-settled/child-1/childNationality', function (req, res) {
+  var childNationality = req.session.data['child-nationality']
+  if (childNationality == "UK"){
+    res.redirect('address-manual')
+  }
+  else if (childNationality == "EU"){
+    res.redirect('address-manual')
+  }
+  else if (childNationality == "Other"){
+    res.redirect('address-manual')
+  }
+  else {
+    res.redirect('nationality')
+  }
+})
+
+// What is Millie's nationality? - EUSS living in EU (under 21)
+router.post('/application-settled-in-eu/child-1/childNationality', function (req, res) {
   var childNationality = req.session.data['child-nationality']
   if (childNationality == "UK"){
     res.redirect('address-manual')
@@ -1099,6 +1507,19 @@ router.post('/application-ni/grandchild/childAddress', function (req, res) {
 // Do you want to add ANOTHER CHILD to your application?
 // EUSS
 router.post('/application-settled/noPartnerAddAnotherChild', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('child-1/full-name')
+  }
+  else {
+    // res.redirect('add-parent')
+    res.redirect('child-1/cya-child')
+  }
+})
+
+// Do you want to add ANOTHER CHILD to your application?
+// EUSS living in EU
+router.post('/application-settled-in-eu/noPartnerAddAnotherChild', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes"){
     res.redirect('child-1/full-name')
