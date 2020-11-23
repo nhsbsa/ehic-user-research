@@ -1358,8 +1358,8 @@ router.post('/application-settled/addChild', function (req, res) {
     res.redirect('child-1/full-name')
   }
   else {
-    res.redirect('add-parent')
-    // res.redirect('cya-family')
+    // res.redirect('add-parent')
+    res.redirect('cya-family')
   }
 })
 
