@@ -43,7 +43,8 @@ const router = express.Router()
 router.post('/nationality', function (req, res) {
   var nationality = req.session.data['nationality']
   if (nationality == "UK"){
-    res.redirect('studying-uk-citizen')
+    res.redirect('national-other-eu')
+    // res.redirect('studying-uk-citizen')
   }
   else if (nationality == "dual"){
     res.redirect('birth-country-dual')
