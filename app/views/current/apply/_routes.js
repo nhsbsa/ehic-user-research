@@ -128,7 +128,7 @@ router.post('/nationalOtherEu', function (req, res) {
 router.post('/nationalOtherEuUk', function (req, res) {
   var nationalOtherEuUk = req.session.data['national-other-eu-uk']
   if (nationalOtherEuUk == "Yes"){
-    res.redirect('birth-country')
+    res.redirect('birth-country-uk')
   }
   else if (nationalOtherEuUk == "No"){
     // res.redirect('ineligible-4')
@@ -143,6 +143,7 @@ router.post('/nationalOtherEuUk', function (req, res) {
 router.post('/residentBeforeJan', function (req, res) {
   var residentBeforeJan = req.session.data['resident-before-jan']
   if (residentBeforeJan == "Yes"){
+    // res.redirect('authority-s1')
     res.redirect('nationality')
   }
   else if (residentBeforeJan == "No"){
@@ -150,6 +151,20 @@ router.post('/residentBeforeJan', function (req, res) {
   }
   else {
     res.redirect('resident-before-jan')
+  }
+})
+
+// Do you have an authority issued S1? - authority-s1.html
+router.post('/authS1', function (req, res) {
+  var authS1 = req.session.data['auth-s1']
+  if (authS1 == "Yes"){
+    res.redirect('ineligible-temp')
+  }
+  else if (authS1 == "No"){
+    res.redirect('resident-before-jan')
+  }
+  else {
+    res.redirect('authority-s1')
   }
 })
 
@@ -211,8 +226,9 @@ router.post('/inEuBirthCountry', function (req, res) {
 // Where were you born? - birth-country.html
 router.post('/birthCountry', function (req, res) {
   var birthCountry = req.session.data['birth-country']
-  if (birthCountry == "UK"){
-    res.redirect('ineligible-esw')
+  if (birthCountry == "UK"){ 
+    res.redirect('studying-uk-citizen-born-esw')
+    // res.redirect('ineligible-esw')
   }
   else if (birthCountry == "NI"){
     res.redirect('renounce')
@@ -230,7 +246,8 @@ router.post('/birthCountry', function (req, res) {
 router.post('/renounce', function (req, res) {
   var renounce = req.session.data['renounce']
   if (renounce == "Yes"){
-    res.redirect('application-ni/info-ni')
+    res.redirect('studying-renounced')
+    // res.redirect('application-ni/info-ni')
   }
   else if (renounce == "No"){
     res.redirect('ineligible-ni')
@@ -254,18 +271,20 @@ router.post('/inEuRenounce', function (req, res) {
     res.redirect('renounce-in-eu')
   }
 })
-router.post('/renounce', function (req, res) {
-  var renounce = req.session.data['renounce']
-  if (renounce == "Yes"){
-    res.redirect('application-ni/info-ni')
-  }
-  else if (renounce == "No"){
-    res.redirect('ineligible-ni')
-  }
-  else {
-    res.redirect('renounce')
-  }
-})
+
+// router.post('/renounce', function (req, res) {
+//   var renounce = req.session.data['renounce']
+//   if (renounce == "Yes"){
+//     res.redirect('studying-renounced')
+//     res.redirect('application-ni/info-ni')
+//   }
+//   else if (renounce == "No"){
+//     res.redirect('ineligible-ni')
+//   }
+//   else {
+//     res.redirect('renounce')
+//   }
+// })
 
 // Do you know your NHS number? - know-nhs-number.html
 router.post('/application-settled/knowNhsNumber', function (req, res) {
@@ -341,7 +360,8 @@ router.post('/whoFor', function (req, res) {
 router.post('/whereDoYouLive', function (req, res) {
   var whereDoYouLive = req.session.data['where-do-you-live']
   if (whereDoYouLive == "UK"){
-    res.redirect('resident-before-jan')
+    res.redirect('authority-s1')
+    // res.redirect('resident-before-jan')
   }
   else if (whereDoYouLive == "EU"){
     res.redirect('exp-ben')
@@ -468,6 +488,20 @@ router.post('/euStudying', function (req, res) {
   }
   else {
     res.redirect('eu-working')
+  }
+})
+
+// Are you studying, or do you intend to study in 
+// the EU, EEA or Switzerland before 1 January 2021?
+// studying-uk-citizen.html
+router.post('/studyingUkCitizenBornESW', function (req, res) {
+  var studyingUkCitizen = req.session.data['studying-uk-citizen']
+  if (studyingUkCitizen == "Yes"){
+    res.redirect('ineligible-temp')
+  }
+  else {
+    res.redirect('application/info-uk-national')
+    // res.redirect('ineligible-not-studying')
   }
 })
 

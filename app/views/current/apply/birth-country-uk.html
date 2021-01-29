@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Where do you live?
+  Where were you born?
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,27 +27,27 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="whereDoYouLive" method="post">
+      <form action="birthCountry" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Where do you live?",
+            text: "Where were you born?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
         {{ radios({
-          "idPrefix": "where-do-you-live",
-          "name": "where-do-you-live",
+          "idPrefix": "birth-country",
+          "name": "birth-country",
           "items": [
             {
               "value": "UK",
-              "text": "UK"
+              "text": "England, Wales or Scotland"
             },
             {
-              "value": "EU",
-              "text": "EU, Switzerland, Norway, Iceland, or Liechtenstein"
+              "value": "NI",
+              "text": "Northern Ireland"
             },
             {
               "value": "Other",

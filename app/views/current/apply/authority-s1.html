@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Where do you live?
+  Were you resident in the UK before 1 January 2021?
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,31 +27,29 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="whereDoYouLive" method="post">
+      <form action="authS1" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Where do you live?",
+            text: "Do you have an authority issued S1?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in ipsum porta est viverra euismod. Duis sed mauris in risus mollis ornare in vitae nisl. </p>
+
         {{ radios({
-          "idPrefix": "where-do-you-live",
-          "name": "where-do-you-live",
+          "idPrefix": "auth-s1",
+          "name": "auth-s1",
           "items": [
             {
-              "value": "UK",
-              "text": "UK"
+              "value": "Yes",
+              "text": "Yes"
             },
             {
-              "value": "EU",
-              "text": "EU, Switzerland, Norway, Iceland, or Liechtenstein"
-            },
-            {
-              "value": "Other",
-              "text": "Other"
+              "value": "No",
+              "text": "No"
             }
           ]
         }) }}
@@ -65,7 +63,7 @@
       </form>
 
      {{ backLink({
-        "href": "",
+        "href": "nationality",
         "text": "Change my previous answer"
       }) }}
       
