@@ -57,6 +57,9 @@ router.use('/sprint15/prereg', require('./views/sprint15/prereg/_routes'));
 router.use('/sprint15/postjan', require('./views/sprint15/postjan/_routes'));
 
 
+router.use('/sprint19/apply', require('./views/sprint19/apply/_routes'));
+
+
 
 // Experimental tasklist format //
 router.use('/tasklist/prereg', require('./views/tasklist/prereg/_routes'));

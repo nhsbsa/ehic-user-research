@@ -143,14 +143,28 @@ router.post('/nationalOtherEuUk', function (req, res) {
 router.post('/residentBeforeJan', function (req, res) {
   var residentBeforeJan = req.session.data['resident-before-jan']
   if (residentBeforeJan == "Yes"){
-    // res.redirect('authority-s1')
     res.redirect('nationality')
   }
   else if (residentBeforeJan == "No"){
-    res.redirect('ineligible-2')
+    res.redirect('nationality')
+    // res.redirect('ineligible-2')
   }
   else {
     res.redirect('resident-before-jan')
+  }
+})
+
+// Do you plan to emigrate in the next 5 years? - emigrate.html
+router.post('/application/emigrate', function (req, res) {
+  var emigrate = req.session.data['emigrate']
+  if (emigrate == "Yes"){
+    res.redirect('emigration-date')
+  }
+  else if (emigrate == "No"){
+    res.redirect('email-address')
+  }
+  else {
+    res.redirect('emigrate')
   }
 })
 
