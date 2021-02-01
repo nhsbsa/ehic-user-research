@@ -28,7 +28,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="studyingEuCitizen" method="post">
+      <form action="studyingRenounced" method="post">
 
         {% call fieldset({
           legend: {
@@ -39,8 +39,8 @@
         }) %}
 
         {{ radios({
-          "idPrefix": "studying-eu-citizen",
-          "name": "studying-eu-citizen",
+          "idPrefix": "studying-renounced",
+          "name": "studying-renounced",
           "items": [
             {
               "value": "Yes",

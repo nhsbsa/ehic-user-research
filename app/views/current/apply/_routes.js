@@ -168,6 +168,34 @@ router.post('/application/emigrate', function (req, res) {
   }
 })
 
+// Do you plan to emigrate in the next 5 years? - emigrate.html
+router.post('/application-settled/emigrate', function (req, res) {
+  var emigrate = req.session.data['emigrate']
+  if (emigrate == "Yes"){
+    res.redirect('emigration-date')
+  }
+  else if (emigrate == "No"){
+    res.redirect('email-address')
+  }
+  else {
+    res.redirect('emigrate')
+  }
+})
+
+// Do you plan to emigrate in the next 5 years? - emigrate.html
+router.post('/application-ni/emigrate', function (req, res) {
+  var emigrate = req.session.data['emigrate']
+  if (emigrate == "Yes"){
+    res.redirect('emigration-date')
+  }
+  else if (emigrate == "No"){
+    res.redirect('email-address')
+  }
+  else {
+    res.redirect('emigrate')
+  }
+})
+
 // Do you have an authority issued S1? - authority-s1.html
 router.post('/authS1', function (req, res) {
   var authS1 = req.session.data['auth-s1']
@@ -556,6 +584,19 @@ router.post('/studyingEuCitizen', function (req, res) {
   }
   else {
     res.redirect('application-settled/info-eu-national')
+  }
+})
+
+// Are you studying, or do you intend to study in 
+// the EU, EEA or Switzerland before 1 January 2021?
+// studying-renounced.html
+router.post('/studyingRenounced', function (req, res) {
+  var studyingRenounced = req.session.data['studying-renounced']
+  if (studyingRenounced == "Yes"){
+    res.redirect('ineligible-temp')
+  }
+  else {
+    res.redirect('application-ni/info-ni')
   }
 })
 

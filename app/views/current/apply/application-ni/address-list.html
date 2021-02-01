@@ -26,7 +26,8 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="know-nhs-number" method="post">
+      <!-- <form action="know-nhs-number" method="post"> -->
+      <form action="emigrate" method="post">
 
         {% call fieldset({
           legend: {
@@ -135,16 +136,13 @@
           ]
         }) }}
 
-
         {% endcall %}
-
-
 
         {{ button({
           "text": "Continue"
         }) }}
-                <p><a href="address-manual">I can't find my address in the list</a></p>
-
+        
+        <p><a href="address-manual">I can't find my address in the list</a></p>
 
       </form>
 

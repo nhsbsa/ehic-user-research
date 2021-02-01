@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your contact telephone number?
+  What is your date of birth?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,31 +26,36 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <form action="add-child-1" method="post"> -->
-      <!-- <form action="add-someone" method="post"> -->
-      <form action="card-type" method="post">
+      <form action="email-address" method="post">
 
-        {% call fieldset({
-          legend: {
-            text: "What is your contact telephone number?",
-            classes: "nhsuk-fieldset__legend--l",
-            isPageHeading: true
-          }
-        }) %}
-
-        <p>We ask for this in case we need to contact you about your application.</p>
-        
-        {{ input({
-          "label": {
-            "text": "Enter your contact telephone number (optional)"
-          },
-          "id": "input-width-30",
-          "name": "test-width-30",
-          "classes": "nhsuk-input--width-30"
-        }) }}
-
-
-        {% endcall %}
+        {{ dateInput({
+  "id": "example",
+  "namePrefix": "example",
+  "fieldset": {
+    "legend": {
+      "text": "What date do you plan to emigrate?",
+      "classes": "nhsuk-label--l",
+      "isPageHeading": true
+        }
+      },
+      "hint": {
+        "text": "For example, 15 3 2024"
+      },
+      "items": [
+        {
+          "name": "day",
+          "classes": "nhsuk-input--width-2"
+        },
+        {
+          "name": "month",
+          "classes": "nhsuk-input--width-2"
+        },
+        {
+          "name": "year",
+          "classes": "nhsuk-input--width-4"
+        }
+      ]
+    }) }}
 
         {{ button({
           "text": "Continue"
@@ -59,7 +64,7 @@
       </form>
 
      {{ backLink({
-        "href": "address-list",
+        "href": "",
         "text": "Change my previous answer"
       }) }}
 

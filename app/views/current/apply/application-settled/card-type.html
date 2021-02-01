@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  How is your gender recorded on your NHS record?
+  Do you plan to emigrate in the next 5 years?
 {% endblock %}
 
 {% block beforeContent %}
-
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -27,47 +26,33 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="emigrate" method="post">
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
+      <form action="add-someone" method="post">
 
         {% call fieldset({
           legend: {
-            text: "How is your gender recorded on your NHS record?",
+            text: "What type of EHIC do you want?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
-      
-      <p>
-        This is the gender on your NHS record. This may not be the gender you currently identify yourself as.
-      </p>
 
         {{ radios({
-          "idPrefix": "add-another",
-          "name": "add-another",
+          "idPrefix": "card-type",
+          "name": "card-type",
           "items": [
             {
-              "value": "Female",
-              "text": "Female"
+              "value": "UK-EHIC",
+              "text": "UK EHIC"
             },
             {
-              "value": "Male",
-              "text": "Male"
-            },
-            {
-              "value": "Prefer not to say",
-              "text": "Prefer not to say"
+              "value": "GHIC",
+              "text": "GHIC"
             }
           ]
         }) }}
 
         {% endcall %}
-
-        {{ details({
-          "text": "Why do we ask this question?",
-          "HTML": "
-          <p>We ask for this information, along with your NHS number and your date of birth, as a check to confirm your identity and eligibility for an EHIC. Giving us this information helps speed up your application. If you choose not to give this information, your application may need to go through a different verification process.</p>
-          "
-        }) }}
 
         {{ button({
           "text": "Continue"
@@ -75,11 +60,11 @@
 
       </form>
 
-      {{ backLink({
-        "href": "nhs-number",
+     {{ backLink({
+        "href": "where-do-you-live",
         "text": "Change my previous answer"
       }) }}
-
+      
     </div>
   </div>
 {% endblock %}

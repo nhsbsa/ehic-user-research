@@ -88,34 +88,34 @@
             },
             {
               key: {
-                text: "NHS number"
+                text: "Do you plan to emigrate in the next 5 years?"
               },
               value: {
-                text: "485 777 3456"
+                html: '<p>Yes</p>'
               },
               actions: {
                 items: [
                   {
-                    href: "nhs-number",
+                    href: "emigrate",
                     text: "Change",
-                    visuallyHiddenText: "NHS number"
+                    visuallyHiddenText: "Email address"
                   }
                 ]
               }
             },
             {
               key: {
-                text: "Gender"
+                text: "Emigration date"
               },
               value: {
-                text: "Female"
+                html: '<p>1 August 2024</p>'
               },
               actions: {
                 items: [
                   {
-                    href: "gender",
+                    href: "emigration-date",
                     text: "Change",
-                    visuallyHiddenText: "gender"
+                    visuallyHiddenText: "Email address"
                   }
                 ]
               }
@@ -150,6 +150,23 @@
                     href: "phone-number",
                     text: "Change",
                     visuallyHiddenText: " Contact telephone number"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "EHIC type"
+              },
+              value: {
+                html: '<p>GHIC</p>'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "card-type",
+                    text: "Change",
+                    visuallyHiddenText: "Card type"
                   }
                 ]
               }
