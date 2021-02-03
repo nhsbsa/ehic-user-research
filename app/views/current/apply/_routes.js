@@ -54,7 +54,8 @@ router.post('/nationality', function (req, res) {
     res.redirect('uk-citizenship')
   }
   else if (nationality == "Other"){
-    res.redirect('ineligible-3')
+    res.redirect('studying-eu-citizen')
+    // res.redirect('ineligible-3')
   }
   else {
     res.redirect('nationality')
@@ -214,14 +215,15 @@ router.post('/authS1', function (req, res) {
 router.post('/dualBirthCountry', function (req, res) {
   var dualBirthCountry = req.session.data['dual-birth-country']
   if (dualBirthCountry == "UK"){
-    res.redirect('ineligible-esw')
+    res.redirect('studying-dual-esw')
+    //res.redirect('ineligible-esw')
   }
   else if (dualBirthCountry == "NI"){
     res.redirect('renounce')
   }
   else if (dualBirthCountry == "Other"){
-    res.redirect('application-settled/info-dual')
-    // res.redirect('application-settled/full-name')
+    res.redirect('studying-eu-citizen')
+    // res.redirect('application-settled/info-dual')
   }
   else {
     res.redirect('birth-country-dual')
@@ -292,7 +294,8 @@ router.post('/renounce', function (req, res) {
     // res.redirect('application-ni/info-ni')
   }
   else if (renounce == "No"){
-    res.redirect('ineligible-ni')
+    res.redirect('studying-not-renounced')
+    // res.redirect('ineligible-ni')
   }
   else {
     res.redirect('renounce')
@@ -542,7 +545,8 @@ router.post('/studyingUkCitizenBornESW', function (req, res) {
     res.redirect('ineligible-temp')
   }
   else {
-    res.redirect('application/info-uk-national')
+    res.redirect('')
+    // res.redirect('application/info-uk-national')
     // res.redirect('ineligible-not-studying')
   }
 })
@@ -597,6 +601,19 @@ router.post('/studyingRenounced', function (req, res) {
   }
   else {
     res.redirect('application-ni/info-ni')
+  }
+})
+
+// Are you studying, or do you intend to study in 
+// the EU, EEA or Switzerland before 1 January 2021?
+// studying-not-renounced.html
+router.post('/studyingNotRenounced', function (req, res) {
+  var studyingNotRenounced = req.session.data['studying-not-renounced']
+  if (studyingNotRenounced == "Yes"){
+    res.redirect('application-student/evidence-student')
+  }
+  else {
+    res.redirect('ineligible-temp')
   }
 })
 
