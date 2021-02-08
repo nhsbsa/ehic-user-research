@@ -279,7 +279,7 @@ router.post('/birthCountry', function (req, res) {
   }
   else if (birthCountry == "Other"){
     // res.redirect('application-settled/full-name')
-    res.redirect('studying-eu-citizen')
+    res.redirect('studying-eu-citizen-eu-other')
   }
   else {
     res.redirect('birth-country-dual')
@@ -545,7 +545,7 @@ router.post('/studyingUkCitizenBornESW', function (req, res) {
     res.redirect('ineligible-temp')
   }
   else {
-    res.redirect('')
+    res.redirect('application-settled/info-eu-national')
     // res.redirect('application/info-uk-national')
     // res.redirect('ineligible-not-studying')
   }
@@ -585,6 +585,19 @@ router.post('/studyingEuCitizen', function (req, res) {
   var studyingEuCitizen = req.session.data['studying-eu-citizen']
   if (studyingEuCitizen == "Yes"){
     res.redirect('application-student-ss/evidence-student')
+  }
+  else {
+    res.redirect('application-settled/info-eu-national')
+  }
+})
+
+// Are you studying, or do you intend to study in 
+// the EU, EEA or Switzerland before 1 January 2021?
+// studying-eu-citizen-eu-other.html
+router.post('/studyingEuCitizenEuOther', function (req, res) {
+  var studyingEuCitizen = req.session.data['studying-eu-citizen']
+  if (studyingEuCitizen == "Yes"){
+    res.redirect('ineligible-temp')
   }
   else {
     res.redirect('application-settled/info-eu-national')
