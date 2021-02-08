@@ -593,6 +593,19 @@ router.post('/studyingEuCitizen', function (req, res) {
 
 // Are you studying, or do you intend to study in 
 // the EU, EEA or Switzerland before 1 January 2021?
+// studying-dual-esw.html
+router.post('/studyingDualEsw', function (req, res) {
+  var studyingDualEsw = req.session.data['studying-dual-esw']
+  if (studyingDualEsw == "Yes"){
+    res.redirect('ineligible-temp')
+  }
+  else {
+    res.redirect('ineligible-temp')
+  }
+})
+
+// Are you studying, or do you intend to study in 
+// the EU, EEA or Switzerland before 1 January 2021?
 // studying-eu-citizen-eu-other.html
 router.post('/studyingEuCitizenEuOther', function (req, res) {
   var studyingEuCitizen = req.session.data['studying-eu-citizen']

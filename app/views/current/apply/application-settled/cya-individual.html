@@ -35,6 +35,24 @@
         {{ summaryList({
           rows: [
             
+            
+            {
+              key: {
+                text: "EHIC type"
+              },
+              value: {
+                html: '<p>GHIC</p>'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "card-type",
+                    text: "Change",
+                    visuallyHiddenText: "Card type"
+                  }
+                ]
+              }
+            },
             {
               key: {
                 text: "Name"
@@ -184,23 +202,6 @@
                     href: "phone-number",
                     text: "Change",
                     visuallyHiddenText: " Contact telephone number"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "EHIC type"
-              },
-              value: {
-                html: '<p>GHIC</p>'
-              },
-              actions: {
-                items: [
-                  {
-                    href: "card-type",
-                    text: "Change",
-                    visuallyHiddenText: "Card type"
                   }
                 ]
               }
