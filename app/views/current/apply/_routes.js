@@ -36,9 +36,6 @@ const router = express.Router()
 
 
 
-
-
-
 // What is your nationality? - nationality.html
 router.post('/nationality', function (req, res) {
   var nationality = req.session.data['nationality']
@@ -431,17 +428,6 @@ router.post('/willYouBeLiving', function (req, res) {
   }
 })
 
-// Are you a UK national? (living in the UK)
-router.post('/bornInUk', function (req, res) {
-  var bornInUk = req.session.data['born-in-uk']
-  if (bornInUk == "Yes"){
-    res.redirect('student')
-    res.redirect('eu-working')
-  }
-  else {
-    res.redirect('cannot-apply')
-  }
-})
 
 // Receiving exportable benefits - exp-ben.html
 router.post('/expBen', function (req, res) {
