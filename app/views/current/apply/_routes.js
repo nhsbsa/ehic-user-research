@@ -57,7 +57,27 @@ router.post('/nationality', function (req, res) {
   else {
     res.redirect('nationality')
   }
+})
 
+// What is your nationality? - living-eu/nationality.html
+router.post('/living-eu/nationality', function (req, res) {
+  var nationality = req.session.data['nationality']
+  if (nationality == "UK"){
+    res.redirect('national-other-eu-uk')
+  }
+  else if (nationality == "dual"){
+    res.redirect('birth-country-dual')
+  }
+  else if (nationality == "EU, EEA or Swiss"){
+    res.redirect('uk-citizenship')
+  }
+  else if (nationality == "Other"){
+    res.redirect('studying-eu-citizen')
+    // res.redirect('ineligible-3')
+  }
+  else {
+    res.redirect('nationality')
+  }
 })
 
 // What is your nationality? - nationality-in-eu.html
@@ -82,6 +102,20 @@ router.post('/inEuNationality', function (req, res) {
 
 // Have you ever held UK citizenship? - uk-citizenship.html
 router.post('/ukCitizenship', function (req, res) {
+  var ukCitizenship = req.session.data['uk-citizenship']
+  if (ukCitizenship == "Yes"){
+    res.redirect('national-other-eu')
+  }
+  else if (ukCitizenship == "No"){
+    res.redirect('birth-country')
+  }
+  else {
+    res.redirect('uk-citizenship')
+  }
+})
+
+// Have you ever held UK citizenship? - living-eu/uk-citizenship.html
+router.post('/living-eu/ukCitizenship', function (req, res) {
   var ukCitizenship = req.session.data['uk-citizenship']
   if (ukCitizenship == "Yes"){
     res.redirect('national-other-eu')
@@ -122,6 +156,20 @@ router.post('/nationalOtherEu', function (req, res) {
   }
 })
 
+// Are you a national of another EU country? - living-eu/national-other-eu.html
+router.post('/living-eu/nationalOtherEu', function (req, res) {
+  var nationalOtherEu = req.session.data['national-other-eu']
+  if (nationalOtherEu == "Yes"){
+    res.redirect('birth-country')
+  }
+  else if (nationalOtherEu == "No"){
+    res.redirect('ineligible-temp')
+  }
+  else {
+    res.redirect('national-other-eu')
+  }
+})
+
 // Are you a national of another EU country? UK Citizen - national-other-eu-uk.html
 router.post('/nationalOtherEuUk', function (req, res) {
   var nationalOtherEuUk = req.session.data['national-other-eu-uk']
@@ -130,6 +178,20 @@ router.post('/nationalOtherEuUk', function (req, res) {
   }
   else if (nationalOtherEuUk == "No"){
     // res.redirect('ineligible-4')
+    res.redirect('studying-uk-citizen')
+  }
+  else {
+    res.redirect('national-other-eu')
+  }
+})
+
+// Are you a national of another EU country? UK Citizen - living-eu/national-other-eu-uk.html
+router.post('/living-eu/nationalOtherEuUk', function (req, res) {
+  var nationalOtherEuUk = req.session.data['national-other-eu-uk']
+  if (nationalOtherEuUk == "Yes"){
+    res.redirect('birth-country-uk')
+  }
+  else if (nationalOtherEuUk == "No"){
     res.redirect('studying-uk-citizen')
   }
   else {
@@ -227,6 +289,25 @@ router.post('/dualBirthCountry', function (req, res) {
   }
 })
 
+// Where were you born? - living-eu/birth-country-dual.html
+router.post('/living-eu/dualBirthCountry', function (req, res) {
+  var dualBirthCountry = req.session.data['dual-birth-country']
+  if (dualBirthCountry == "UK"){
+    res.redirect('studying-dual-esw')
+    //res.redirect('ineligible-esw')
+  }
+  else if (dualBirthCountry == "NI"){
+    res.redirect('renounce')
+  }
+  else if (dualBirthCountry == "Other"){
+    res.redirect('studying-eu-citizen')
+    // res.redirect('application-settled/info-dual')
+  }
+  else {
+    res.redirect('birth-country-dual')
+  }
+})
+
 // Where were you born? - birth-country-dual-in-eu.html
 router.post('/euDualBirthCountry', function (req, res) {
   var dualBirthCountry = req.session.data['dual-birth-country']
@@ -276,10 +357,27 @@ router.post('/birthCountry', function (req, res) {
   }
   else if (birthCountry == "Other"){
     // res.redirect('application-settled/full-name')
+    res.redirect('studying-eu-citizen')
+  }
+  else {
+    res.redirect('birth-country')
+  }
+})
+
+// Where were you born? - living-eu/birth-country.html
+router.post('/living-eu/birthCountry', function (req, res) {
+  var birthCountry = req.session.data['birth-country']
+  if (birthCountry == "UK"){ 
+    res.redirect('studying-eu-citizen-born-esw')
+  }
+  else if (birthCountry == "NI"){
+    res.redirect('renounce')
+  }
+  else if (birthCountry == "Other"){
     res.redirect('studying-eu-citizen-eu-other')
   }
   else {
-    res.redirect('birth-country-dual')
+    res.redirect('birth-country')
   }
 })
 
@@ -293,6 +391,20 @@ router.post('/renounce', function (req, res) {
   else if (renounce == "No"){
     res.redirect('studying-not-renounced')
     // res.redirect('ineligible-ni')
+  }
+  else {
+    res.redirect('renounce')
+  }
+})
+
+// RENOUNCE UK CITIZENSHIP - renounce
+router.post('/living-eu/renounce', function (req, res) {
+  var renounce = req.session.data['renounce']
+  if (renounce == "Yes"){
+    res.redirect('studying-renounced')
+  }
+  else if (renounce == "No"){
+    res.redirect('studying-not-renounced')
   }
   else {
     res.redirect('renounce')
@@ -384,19 +496,6 @@ router.post('/application-ni/knowNhsNumber', function (req, res) {
   }
 })
 
-// Who is the application for? - who-for-eu.html
-router.post('/whoFor', function (req, res) {
-  var whoFor = req.session.data['who-for']
-  if (whoFor == "Myself and members of my family"){
-    res.redirect('settled-status')
-  }
-  else if (whoFor == "Someone else"){
-    res.redirect('')
-  }
-  else {
-    res.redirect('who-for-eu')
-  }
-})
 
 // Where do you live? - where-do-you-live.html
 router.post('/whereDoYouLive', function (req, res) {
@@ -406,7 +505,7 @@ router.post('/whereDoYouLive', function (req, res) {
     // res.redirect('resident-before-jan')
   }
   else if (whereDoYouLive == "EU"){
-    res.redirect('exp-ben')
+    res.redirect('living-eu/exp-ben')
   }
   else {
     res.redirect('ineligible-1')
@@ -430,7 +529,7 @@ router.post('/willYouBeLiving', function (req, res) {
 
 
 // Receiving exportable benefits - exp-ben.html
-router.post('/expBen', function (req, res) {
+router.post('/living-eu/expBen', function (req, res) {
   var expBen = req.session.data['expBen']
   if (expBen == "Yes"){
     res.redirect('application-s1/info-s1')
@@ -438,7 +537,7 @@ router.post('/expBen', function (req, res) {
   }
   else if (expBen == "No"){
     // res.redirect('eu-studying')
-    res.redirect('nationality-in-eu')
+    res.redirect('nationality')
   }
   else {
     res.redirect('exp-ben')
@@ -532,8 +631,32 @@ router.post('/studyingUkCitizenBornESW', function (req, res) {
   }
   else {
     res.redirect('application-settled/info-eu-national')
-    // res.redirect('application/info-uk-national')
-    // res.redirect('ineligible-not-studying')
+  }
+})
+
+// Are you studying, or do you intend to study in 
+// the EU, EEA or Switzerland before 1 January 2021?
+// living-eu/studying-uk-citizen.html
+router.post('/living-eu/studyingUkCitizenBornESW', function (req, res) {
+  var studyingUkCitizen = req.session.data['studying-uk-citizen']
+  if (studyingUkCitizen == "Yes"){
+    res.redirect('application-student-in-eu/evidence-student')
+  }
+  else {
+    res.redirect('ineligible-temp')
+  }
+})
+
+// Are you studying, or do you intend to study in 
+// the EU, EEA or Switzerland before 1 January 2021?
+// living-eu/studying-uk-citizen.html
+router.post('/living-eu/studyingEuCitizenBornESW', function (req, res) {
+  var studyingEuCitizenBornESW = req.session.data['studying-eu-citizen-born-esw']
+  if (studyingEuCitizenBornESW == "Yes"){
+    res.redirect('ineligible-temp')
+  }
+  else {
+    res.redirect('ineligible-temp')
   }
 })
 
@@ -548,6 +671,19 @@ router.post('/studyingUkCitizen', function (req, res) {
   else {
     res.redirect('application/info-uk-national')
     // res.redirect('ineligible-not-studying')
+  }
+})
+
+// Are you studying, or do you intend to study in 
+// the EU, EEA or Switzerland before 1 January 2021?
+// living-eu/studying-uk-citizen.html
+router.post('/living-eu/studyingUkCitizen', function (req, res) {
+  var studyingUkCitizen = req.session.data['studying-uk-citizen']
+  if (studyingUkCitizen == "Yes"){
+    res.redirect('application-student-in-eu/evidence-student')
+  }
+  else {
+    res.redirect('ineligible-temp')
   }
 })
 
@@ -573,7 +709,21 @@ router.post('/studyingEuCitizen', function (req, res) {
     res.redirect('application-student-ss/evidence-student')
   }
   else {
-    res.redirect('application-settled/info-eu-national')
+    // res.redirect('application-settled/info-eu-national')
+    res.redirect('application/info-uk-national')
+  }
+})
+
+// Are you studying, or do you intend to study in 
+// the EU, EEA or Switzerland before 1 January 2021?
+// living-eu/studying-eu-citizen.html
+router.post('/living-eu/studyingEuCitizen', function (req, res) {
+  var studyingEuCitizen = req.session.data['studying-eu-citizen']
+  if (studyingEuCitizen == "Yes"){
+    res.redirect('application-student-in-eu/evidence-student')
+  }
+  else {
+    res.redirect('ineligible-temp')
   }
 })
 
@@ -581,6 +731,19 @@ router.post('/studyingEuCitizen', function (req, res) {
 // the EU, EEA or Switzerland before 1 January 2021?
 // studying-dual-esw.html
 router.post('/studyingDualEsw', function (req, res) {
+  var studyingDualEsw = req.session.data['studying-dual-esw']
+  if (studyingDualEsw == "Yes"){
+    res.redirect('ineligible-temp')
+  }
+  else {
+    res.redirect('ineligible-temp')
+  }
+})
+
+// Are you studying, or do you intend to study in 
+// the EU, EEA or Switzerland before 1 January 2021?
+// living-eu/studying-dual-esw.html
+router.post('/living-eu/studyingDualEsw', function (req, res) {
   var studyingDualEsw = req.session.data['studying-dual-esw']
   if (studyingDualEsw == "Yes"){
     res.redirect('ineligible-temp')
@@ -605,6 +768,19 @@ router.post('/studyingEuCitizenEuOther', function (req, res) {
 
 // Are you studying, or do you intend to study in 
 // the EU, EEA or Switzerland before 1 January 2021?
+// living-eu/studying-eu-citizen-eu-other.html
+router.post('/living-eu/studyingEuCitizenEuOther', function (req, res) {
+  var studyingEuCitizen = req.session.data['studying-eu-citizen']
+  if (studyingEuCitizen == "Yes"){
+    res.redirect('ineligible-temp')
+  }
+  else {
+    res.redirect('ineligible-temp')
+  }
+})
+
+// Are you studying, or do you intend to study in 
+// the EU, EEA or Switzerland before 1 January 2021?
 // studying-renounced.html
 router.post('/studyingRenounced', function (req, res) {
   var studyingRenounced = req.session.data['studying-renounced']
@@ -618,11 +794,37 @@ router.post('/studyingRenounced', function (req, res) {
 
 // Are you studying, or do you intend to study in 
 // the EU, EEA or Switzerland before 1 January 2021?
+// living-eu/studying-renounced.html
+router.post('/living-eu/studyingRenounced', function (req, res) {
+  var studyingRenounced = req.session.data['studying-renounced']
+  if (studyingRenounced == "Yes"){
+    res.redirect('ineligible-temp')
+  }
+  else {
+    res.redirect('ineligible-temp')
+  }
+})
+
+// Are you studying, or do you intend to study in 
+// the EU, EEA or Switzerland before 1 January 2021?
 // studying-not-renounced.html
 router.post('/studyingNotRenounced', function (req, res) {
   var studyingNotRenounced = req.session.data['studying-not-renounced']
   if (studyingNotRenounced == "Yes"){
     res.redirect('application-student/evidence-student')
+  }
+  else {
+    res.redirect('ineligible-temp')
+  }
+})
+
+// Are you studying, or do you intend to study in 
+// the EU, EEA or Switzerland before 1 January 2021?
+// living-eu/studying-not-renounced.html
+router.post('/living-eu/studyingNotRenounced', function (req, res) {
+  var studyingNotRenounced = req.session.data['studying-not-renounced']
+  if (studyingNotRenounced == "Yes"){
+    res.redirect('application-student-in-eu/evidence-student')
   }
   else {
     res.redirect('ineligible-temp')
