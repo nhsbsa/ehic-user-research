@@ -545,7 +545,7 @@ router.post('/living-eu/expBen', function (req, res) {
 })
 
 // Do you want to add another address for correspondence? S1
-router.post('/application-s1/addCorres', function (req, res) {
+router.post('/living-eu/application-s1/addCorres', function (req, res) {
   var addCorres = req.session.data['addCorres']
   if (addCorres == "Yes"){
     res.redirect('address-eu-corres')
@@ -559,7 +559,7 @@ router.post('/application-s1/addCorres', function (req, res) {
 })
 
 // Do you know your National Insurance number? - know-nino.html
-router.post('/application-s1/knowNino', function (req, res) {
+router.post('/living-eu/application-s1/knowNino', function (req, res) {
   var knowNino = req.session.data['knowNino']
   if (knowNino == "Yes"){
     res.redirect('nino')

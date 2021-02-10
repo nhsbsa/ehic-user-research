@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Were you resident in the UK before 1 January 2021?
+  Do you plan to emigrate in the next 5 years?
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,29 +27,28 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="authS1" method="post">
+      <!-- <form action="add-someone" method="post"> -->
+      <form action="full-name" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Do you have healthcare cover from another country?",
+            text: "What type of EHIC do you want?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>If you have previously lived in another country, your healthcare may be payed for by that country. This is usually covered by an S1 form issued to you by that country.</p>
-
         {{ radios({
-          "idPrefix": "auth-s1",
-          "name": "auth-s1",
+          "idPrefix": "card-type",
+          "name": "card-type",
           "items": [
             {
-              "value": "Yes",
-              "text": "Yes"
+              "value": "UK-EHIC",
+              "text": "UK EHIC"
             },
             {
-              "value": "No",
-              "text": "No"
+              "value": "GHIC",
+              "text": "GHIC"
             }
           ]
         }) }}
@@ -63,7 +62,7 @@
       </form>
 
      {{ backLink({
-        "href": "nationality",
+        "href": "where-do-you-live",
         "text": "Change my previous answer"
       }) }}
       
