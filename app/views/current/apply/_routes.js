@@ -357,7 +357,8 @@ router.post('/birthCountry', function (req, res) {
   }
   else if (birthCountry == "Other"){
     // res.redirect('application-settled/full-name')
-    res.redirect('studying-eu-citizen')
+    //res.redirect('studying-eu-citizen')
+    res.redirect('studying-eu-citizen-eu-other')
   }
   else {
     res.redirect('birth-country')
