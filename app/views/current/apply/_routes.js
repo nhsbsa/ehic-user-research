@@ -214,7 +214,7 @@ router.post('/residentBeforeJan', function (req, res) {
   }
 })
 
-// Do you plan to emigrate in the next 5 years? - emigrate.html
+// Do you plan to permanently move to another country in the next 5 years? - emigrate.html
 router.post('/application/emigrate', function (req, res) {
   var emigrate = req.session.data['emigrate']
   if (emigrate == "Yes"){
@@ -228,7 +228,7 @@ router.post('/application/emigrate', function (req, res) {
   }
 })
 
-// Do you plan to emigrate in the next 5 years? - emigrate.html
+// Do you plan to permanently move to another country in the next 5 years? - emigrate.html
 router.post('/application-settled/emigrate', function (req, res) {
   var emigrate = req.session.data['emigrate']
   if (emigrate == "Yes"){
@@ -242,7 +242,7 @@ router.post('/application-settled/emigrate', function (req, res) {
   }
 })
 
-// Do you plan to emigrate in the next 5 years? - emigrate.html
+// Do you plan to permanently move to another country in the next 5 years? - emigrate.html
 router.post('/application-ni/emigrate', function (req, res) {
   var emigrate = req.session.data['emigrate']
   if (emigrate == "Yes"){

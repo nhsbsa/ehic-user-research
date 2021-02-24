@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you plan to emigrate in the next 5 years?
+  What type of EHIC do you want?
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,9 +30,38 @@
       <!-- <form action="add-someone" method="post"> -->
       <form action="full-name" method="post">
 
+        <h2>Based on the information you have provided you may be entitled to a UK-issued EHIC or GHIC</h2>
+
+        <br>
+
+        <h5 class="nhsuk-heading-xs">A GHIC covers:</h5>
+        <ul class="list list-bullet">
+          <li>
+            state provided healthcare cover for treatment that becomes necessary whilst temporarily staying in an EU country
+          </li>
+        </ul>
+
+        <br>
+
+        <h5 class="nhsuk-heading-xs">A UK-issued EHIC covers:</h5>
+        <ul class="list list-bullet">
+          <li>
+            state provided healthcare cover for treatment that becomes necessary whilst temporarily staying in an EU country
+          </li>
+          <li>
+            state provided healthcare cover for treatment that becomes necessary whilst temporarily staying in Norway, Iceland, Lichtenstein and Switzerland
+          </li>
+        </ul>
+
+        <br>
+
+        <p>
+          In the future, more countries may be added to those accepting a GHIC. A UK-issued EHIC will only cover the countries stated above.
+        </p>
+
         {% call fieldset({
           legend: {
-            text: "What type of EHIC do you want?",
+            text: "What kind of health cover would you like?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -44,7 +73,7 @@
           "items": [
             {
               "value": "UK-EHIC",
-              "text": "UK EHIC"
+              "text": "UK-issued EHIC"
             },
             {
               "value": "GHIC",
@@ -62,7 +91,7 @@
       </form>
 
      {{ backLink({
-        "href": "where-do-you-live",
+        "href": "",
         "text": "Change my previous answer"
       }) }}
       
