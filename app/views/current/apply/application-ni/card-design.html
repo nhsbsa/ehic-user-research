@@ -41,33 +41,33 @@
 
         {% call fieldset({
           legend: {
-            text: "Choose a card design ",
+            text: "What would you like your card to look like?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in ipsum porta est viverra euismod. Duis sed mauris in risus mollis ornare in vitae nisl. </p>
+        <p>Select the design that you would like to have on your card.</p>
 
     <div class="nhsuk-grid-column-two-halves">
       <figure class="nhsuk-image">
         <img class="nhsuk-image__img" src="/images/uk_ghic_border.jpg" alt="A 16:9 image placeholder">
         <figcaption class="nhsuk-image__caption">
-          Plain GHIC
+          Design one
         </figcaption>
       </figure>
 
       <figure class="nhsuk-image">
         <img class="nhsuk-image__img" src="/images/uk_ghic_uj_border.jpg" alt="A 16:9 image placeholder">
         <figcaption class="nhsuk-image__caption">
-          with Union Jack
+          Design two
         </figcaption>
       </figure>
     </div>
 
     <div class="nhsuk-grid-column-three-quarters" style="padding: 0;">
 
-    <h3>Select your GHIC card design</h3>
+    <h3>Select your card design</h3>
         
         {{ radios({
           "idPrefix": "card-design",
