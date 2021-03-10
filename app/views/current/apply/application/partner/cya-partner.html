@@ -34,23 +34,7 @@
 
         {{ summaryList({
           rows: [
-            {
-              key: {
-                text: "NHS number"
-              },
-              value: {
-                text: "485 777 3456"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "nhs-number",
-                    text: "Change",
-                    visuallyHiddenText: "date of birth"
-                  }
-                ]
-              }
-            },
+
             {
               key: {
                 text: "Full name"
@@ -68,23 +52,7 @@
                 ]
               }
             },
-            {
-              key: {
-                text: "Date of birth"
-              },
-              value: {
-                text: "27 November 1984"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "dob",
-                    text: "Change",
-                    visuallyHiddenText: "date of birth"
-                  }
-                ]
-              }
-            },
+           
             {
               key: {
                 text: "Home address"
@@ -101,7 +69,25 @@
                   }
                 ]
               }
+            },
+            
+           {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              text: "27 November 1984"
+            },
+            actions: {
+              items: [
+                {
+                  href: "dob",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
             }
+          }
             
             
           ]

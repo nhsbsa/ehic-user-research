@@ -214,6 +214,10 @@ router.post('/residentBeforeJan', function (req, res) {
   }
 })
 
+
+
+// GHIC
+//
 // Do you plan to permanently move to another country in the next 5 years? - emigrate.html
 router.post('/application/emigrate', function (req, res) {
   var emigrate = req.session.data['emigrate']
@@ -227,6 +231,146 @@ router.post('/application/emigrate', function (req, res) {
     res.redirect('emigrate')
   }
 })
+
+// Do you want to add anyone else to your application? - add-someone.html
+router.post('/application/addSomeone', function (req, res) {
+  var addSomeone = req.session.data['addSomeone']
+  if (addSomeone == "Yes"){
+    res.redirect('add-partner')
+  }
+  else if (addSomeone == "No"){
+    res.redirect('cya-individual')
+  }
+  else {
+    res.redirect('add-someone')
+  }
+})
+
+// Do you want to add a PARTNER / SPOUSE to your application?
+router.post('/application/addPartner', function (req, res) {
+  var addPartner = req.session.data['add-partner']
+  if (addPartner == "Yes"){
+    res.redirect('partner/full-name')
+    // partner/married
+  }
+  else if (addPartner == "No"){
+    res.redirect('add-child-1')
+  }
+  else {
+    res.redirect('add-partner')
+  }
+})
+
+// Does your PARTNER live with you?
+router.post('/application/partner/partnerAddress', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('dob')
+  }
+  else if (addAnother == "No"){
+    res.redirect('partner-address-country')
+  }
+  else {
+    res.redirect('address-eu')
+  }
+})
+
+// Where does your partner live?
+router.post('/application/partner/partnerCountry', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "UK"){
+    res.redirect('partner-ko')
+  }
+  else if (addAnother == "EU"){
+    res.redirect('address-eu')
+  }
+  else {
+    res.redirect('partner-address-country')
+  }
+})
+
+// Do you plan to permanently move to another country in the next 5 years? - emigrate.html
+router.post('/application/emigrate', function (req, res) {
+  var emigrate = req.session.data['emigrate']
+  if (emigrate == "Yes"){
+    res.redirect('emigration-date')
+  }
+  else if (emigrate == "No"){
+    res.redirect('email-address')
+  }
+  else {
+    res.redirect('emigrate')
+  }
+})
+
+// Do you want to add any children to your application? - add-child-2.html
+router.post('/application/addChildAfterPartner', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('child-2/full-name')
+  }
+  else if (addAnother == "No"){
+    // res.redirect('child-2/child-address')
+    res.redirect('cya-couple')
+  }
+  else {
+    res.redirect('add-child-2')
+  }
+})
+
+// Does your child live with you?
+router.post('/application/child-2/childAddress', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('dob')
+  }
+  else if (addAnother == "No"){
+    res.redirect('child-address-country')
+  }
+  else {
+    res.redirect('child-address')
+  }
+})
+
+// Does your child live with you?
+router.post('/application/child-2/childCountry', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('address-eu')
+  }
+  else if (addAnother == "No"){
+    res.redirect('child-ko')
+  }
+  else {
+    res.redirect('child-address-country')
+  }
+})
+
+// Do you want to add ANOTHER CHILD to your application?
+router.post('/application/addAnotherChild', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('child-2/full-name')
+  }
+  else if (addAnother == "No"){
+    res.redirect('child-2/cya-child')
+  }
+  else {
+    res.redirect('add-another-child-2')
+  }
+})
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Do you plan to permanently move to another country in the next 5 years? - emigrate.html
 router.post('/application-settled/emigrate', function (req, res) {
