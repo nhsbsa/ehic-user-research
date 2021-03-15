@@ -39,12 +39,16 @@
         }) %}
       
       <p>
-        You can add your partner, spouse or civil partner and your children. Everyone you apply for will receive their own GHIC.
+          You can add your partner, spouse or civil partner and your children. Everyone you apply for will receive their own GHIC.
       </p>
 
+      <!-- <p>
+        You can add your spouse, civil partner or unmarried partner, children, grandchildren, your parents and grandparents and your partner's parents and grandparents.
+      </p> -->
+
         {{ radios({
-          "idPrefix": "addSomeone",
-          "name": "addSomeone",
+          "idPrefix": "add-someone",
+          "name": "add-someone",
           "items": [
             {
               "value": "Yes",
@@ -66,7 +70,7 @@
       </form>
 
       {{ backLink({
-        "href": "nino",
+        "href": "",
         "text": "Change my previous answer"
       }) }}
 

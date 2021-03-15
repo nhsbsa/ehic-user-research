@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 
 {% block pageTitle %}
-  What you'll need
+  Get in touch
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,27 +28,31 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <h1>
-        What you'll need
+        Get in touch
       </h1>
 
       <p class="nhsuk-lede-text">
-        Get this information before you start your EHIC application.
+       If you've got a question about your application or you have not received your EHIC, get in touch with the EHIC team.
       </p>
 
-      <ul>
-        <!-- <li>A share code to prove your UK settled or pre-settled status</li> -->
-        <li>Your 
-        <!-- National Insurance number or your -->
-         NHS number</li>
-        <li>The 
-        <!-- National Insurance numbers or  -->
-      NHS numbers of everyone you want to add to you application</li>
-      </ul>
+      <h4>Email</h4>
+        <p>Include your reference number in your email.</p>
+        <p>
+          Email: <a href="nhsbsa.ehicenquiries@nhs.net">nhsbsa.ehicenquiries@nhs.net</a> <br>
+          We aim to respond within 2 working days
+        </p>
 
+        <h4>Telephone</h4>
+        <p>Have your reference number when you call us.</p>
+        <p>
+          Telephone: 0300 330 1350 <br>
+          Monday to Saturday, 8am to 6pm (except public holidays)
+        </p>
 
-      <a href="full-name" class="nhsuk-button nhsuk-u-margin-bottom-8">
-        Continue
-      </a>
+        {{ backLink({
+          "href": "app-complete",
+          "text": "Go back"
+        }) }}
 
     </div>  
 

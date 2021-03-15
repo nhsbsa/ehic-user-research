@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to add anyone else to your application?
+  What is your partner's home address?
 {% endblock %}
 
 {% block beforeContent %}
-
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -27,46 +26,37 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-
-      <form action="addSomeone" method="post">
+      <form action="address-list" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add anyone else to your application?",
+            text: "What is your partner's home address?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
-      
-      <p>
-        You can add your partner, spouse or civil partner and your children. Everyone you apply for will receive their own GHIC.
-      </p>
 
-        {{ radios({
-          "idPrefix": "addSomeone",
-          "name": "addSomeone",
-          "items": [
-            {
-              "value": "Yes",
-              "text": "Yes"
-            },
-            {
-              "value": "No",
-              "text": "No"
-            }
-          ]
+        {{ input({
+          "label": {
+            "text": "Postcode",
+            "classes": "nhsuk-label--m"
+          },
+          "id": "input-width-10",
+          "name": "test-width-10",
+          "classes": "nhsuk-input--width-10"
         }) }}
+
 
         {% endcall %}
 
         {{ button({
-          "text": "Continue"
+          "text": "Find address"
         }) }}
 
       </form>
 
-      {{ backLink({
-        "href": "nino",
+     {{ backLink({
+        "href": "full-name",
         "text": "Change my previous answer"
       }) }}
 

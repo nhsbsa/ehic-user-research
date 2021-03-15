@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to add anyone else to your application?
+  Does your child live with you?
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,23 +28,24 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-      <form action="addSomeone" method="post">
+      <form action="childAddress" method="post">
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add anyone else to your application?",
+            text: "Does Millie live with you?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
       
-      <p>
-        You can add your partner, spouse or civil partner and your children. Everyone you apply for will receive their own GHIC.
-      </p>
+      <!-- <p>
+        You can add your partner and children.
+      </p> -->
 
         {{ radios({
-          "idPrefix": "addSomeone",
-          "name": "addSomeone",
+          "idPrefix": "add-another",
+          "name": "add-another",
           "items": [
             {
               "value": "Yes",
@@ -66,7 +67,7 @@
       </form>
 
       {{ backLink({
-        "href": "nino",
+        "href": "",
         "text": "Change my previous answer"
       }) }}
 

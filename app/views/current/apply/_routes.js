@@ -216,7 +216,7 @@ router.post('/residentBeforeJan', function (req, res) {
 
 
 
-// GHIC
+// GHIC - for UK nationals
 //
 // Do you plan to permanently move to another country in the next 5 years? - emigrate.html
 router.post('/application/emigrate', function (req, res) {
@@ -381,7 +381,7 @@ router.post('/application/addChild', function (req, res) {
     res.redirect('child-1/full-name')
   }
   else {
-    res.redirect('cya-children')
+    res.redirect('cya-individual')
   }
 })
 
@@ -409,6 +409,229 @@ router.post('/application/noPartnerAddAnotherChild', function (req, res) {
     res.redirect('child-1/cya-child')
   }
 })
+
+
+
+
+
+
+
+
+
+// GHIC - for EU nationals living in the UK
+//
+// What type of overseas health cover would you like? - card-type.html
+router.post('/application-settled/chooseCover', function (req, res) {
+  var chooseCover = req.session.data['choose-cover']
+  if (chooseCover == "GHIC"){
+    res.redirect('ghic/full-name')
+  }
+  else if (chooseCover == "UK-EHIC"){
+    res.redirect('full-name')
+  }
+  else {
+    res.redirect('card-type')
+  }
+})
+
+// Do you know your NHS number? - know-nhs-number.html
+router.post('/application-settled/ghic/knowNhsNumber', function (req, res) {
+  var knowNhsNumber = req.session.data['know-nhs-number']
+  if (knowNhsNumber == "Yes"){
+    res.redirect('nhs-number')
+  }
+  else if (knowNhsNumber == "No"){
+    res.redirect('gender')
+  }
+  else {
+    res.redirect('know-nhs-number')
+  }
+})
+
+// Do you plan to permanently move to another country in the next 5 years? - emigrate.html
+router.post('/application-settled/ghic/emigrate', function (req, res) {
+  var emigrate = req.session.data['emigrate']
+  if (emigrate == "Yes"){
+    res.redirect('emigration-date')
+  }
+  else if (emigrate == "No"){
+    res.redirect('email-address')
+  }
+  else {
+    res.redirect('emigration')
+  }
+})
+
+// Do you want to add anyone else to your application? EUSS
+router.post('/application-settled/ghic/addSomeone', function (req, res) {
+  var addAnother = req.session.data['add-someone']
+  if (addAnother == "Yes"){
+    // res.redirect('partner/full-name')
+    // res.redirect('partner/married')
+    //res.redirect('spouses')
+    res.redirect('add-partner')
+  }
+  else {
+    res.redirect('cya-individual')
+  }
+})
+
+// Do you want to add a partner, spouse or civil partner to your application?
+router.post('/application-settled/ghic/addPartner', function (req, res) {
+  var addPartner = req.session.data['add-another']
+  if (addPartner == "Yes"){
+    res.redirect('partner/full-name')
+  }
+  else if (addPartner == "No"){
+    res.redirect('add-child-1')
+  }
+  else {
+    res.redirect('add-partner')
+  }
+})
+
+// Does your PARTNER live with you?
+router.post('/application-settled/ghic/partner/partnerAddress', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('dob')
+  }
+  else if (addAnother == "No"){
+    res.redirect('partner-address-country')
+  }
+  else {
+    res.redirect('address-eu')
+  }
+})
+
+// Where does your partner live?
+router.post('/application-settled/ghic/partner/partnerCountry', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "UK"){
+    res.redirect('partner-ko')
+  }
+  else if (addAnother == "EU"){
+    res.redirect('address-eu')
+  }
+  else {
+    res.redirect('partner-address-country')
+  }
+})
+
+
+// Do you want to add any children to your application?
+router.post('/application-settled/ghic/addChild', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('child-1/full-name')
+  }
+  else {
+    res.redirect('cya-individual')
+  }
+})
+
+// Do you want to add any children to your application? - add-child-2.html
+router.post('/application-settled/ghic/addChildAfterPartner', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('child-2/full-name')
+  }
+  else if (addAnother == "No"){
+    // res.redirect('child-2/child-address')
+    res.redirect('cya-couple')
+  }
+  else {
+    res.redirect('add-child-2')
+  }
+})
+
+
+// Does your child live with you?
+router.post('/application-settled/ghic/child-2/childAddress', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('dob')
+  }
+  else if (addAnother == "No"){
+    res.redirect('child-address-country')
+  }
+  else {
+    res.redirect('child-address')
+  }
+})
+
+// Do you want to add ANOTHER CHILD to your application?
+router.post('/application-settled/ghic/addAnotherChild', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('child-2/full-name')
+  }
+  else if (addAnother == "No"){
+    res.redirect('child-2/cya-child')
+  }
+  else {
+    res.redirect('add-another-child-2')
+  }
+})
+
+// Does your child live with you?
+router.post('/application-settled/ghic/child-2/childCountry', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('address-eu')
+  }
+  else if (addAnother == "No"){
+    res.redirect('child-ko')
+  }
+  else {
+    res.redirect('child-address-country')
+  }
+})
+
+// Does your child live with you?
+router.post('/application-settled/ghic/child-1/childCountry', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('address-eu')
+  }
+  else if (addAnother == "No"){
+    res.redirect('child-ko')
+  }
+  else {
+    res.redirect('child-address-country')
+  }
+})
+
+// Does your child live with you?
+router.post('/application-settled/ghic/child-1/childAddress', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('dob')
+  }
+  else if (addAnother == "No"){
+    res.redirect('child-address-country')
+  }
+  else {
+    res.redirect('child-address')
+  }
+})
+
+// Do you want to add another child to your application?
+router.post('/application-settled/ghic/noPartnerAddAnotherChild', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('child-1/full-name')
+  }
+  else {
+    res.redirect('child-1/cya-child')
+  }
+})
+
+
+
+
+
+
 
 
 

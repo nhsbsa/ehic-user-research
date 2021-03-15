@@ -35,13 +35,12 @@
         {{ summaryList({
           rows: [
             
-            
             {
               key: {
                 text: "Type of healthcare cover"
               },
               value: {
-                html: '<p>UK EHIC</p>'
+                html: '<p>UK GHIC</p>'
               },
               actions: {
                 items: [
@@ -55,7 +54,7 @@
             },
             {
               key: {
-                text: "Name"
+                text: "Full name"
               },
               value: {
                 text: "Karen Francis"
@@ -65,7 +64,7 @@
                   {
                     href: "full-name",
                     text: "Change",
-                    visuallyHiddenText: "name"
+                    visuallyHiddenText: "full name"
                   }
                 ]
               }
@@ -116,7 +115,7 @@
                   {
                     href: "nhs-number",
                     text: "Change",
-                    visuallyHiddenText: "NHS number"
+                    visuallyHiddenText: "date of birth"
                   }
                 ]
               }
@@ -205,8 +204,86 @@
                   }
                 ]
               }
+            },
+
+            {
+              key: {
+                text: "Additional children details"
+              },
+              value: {
+                text: "No"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "add-child-1",
+                    text: "Change",
+                    visuallyHiddenText: " Additional children detailsh"
+                  }
+                ]
+              }
             }
-            
+    
+          ]
+        }) }}
+
+        <h2>Your partner's details</h2>
+
+        {{ summaryList({
+          rows: [
+           
+            {
+              key: {
+                text: "Full name"
+              },
+              value: {
+                text: "Mark Francis"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "partner/full-name",
+                 
+                    visuallyHiddenText: "full name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                text: "27 November 1984"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "partner/dob",
+                
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Home address"
+              },
+              value: {
+                html: "73 Roman Rd<br>Leeds<br> LS2 5ZN"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "address-lookup",
+
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            }
+    
           ]
         }) }}
 

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to add anyone else to your application?
+  How is your gender recorded on your NHS record?
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,37 +27,47 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-
-      <form action="addSomeone" method="post">
+      <form action="emigration" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add anyone else to your application?",
+            text: "How is your gender recorded on your NHS record?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
       
       <p>
-        You can add your partner, spouse or civil partner and your children. Everyone you apply for will receive their own GHIC.
+        This is the gender on your NHS record. This may not be the gender you currently identify yourself as.
       </p>
 
         {{ radios({
-          "idPrefix": "addSomeone",
-          "name": "addSomeone",
+          "idPrefix": "add-another",
+          "name": "add-another",
           "items": [
             {
-              "value": "Yes",
-              "text": "Yes"
+              "value": "Female",
+              "text": "Female"
             },
             {
-              "value": "No",
-              "text": "No"
+              "value": "Male",
+              "text": "Male"
+            },
+            {
+              "value": "Prefer not to say",
+              "text": "Prefer not to say"
             }
           ]
         }) }}
 
         {% endcall %}
+
+        {{ details({
+          "text": "Why do we ask this question?",
+          "HTML": "
+          <p>We ask for this information, along with your NHS number and your date of birth, as a check to confirm your identity and eligibility for an EHIC. Giving us this information helps speed up your application. If you choose not to give this information, your application may need to go through a different verification process.</p>
+          "
+        }) }}
 
         {{ button({
           "text": "Continue"
@@ -66,7 +76,7 @@
       </form>
 
       {{ backLink({
-        "href": "nino",
+        "href": "nhs-number",
         "text": "Change my previous answer"
       }) }}
 

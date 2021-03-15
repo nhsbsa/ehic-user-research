@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to add anyone else to your application?
+  What is your child's NHS number?
 {% endblock %}
 
 {% block beforeContent %}
-
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -27,46 +26,39 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-
-      <form action="addSomeone" method="post">
+      <!-- <form action="address-lookup" method="post"> -->
+      <form action="full-name" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add anyone else to your application?",
+            text: "What is your child's NHS number?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
-      
-      <p>
-        You can add your partner, spouse or civil partner and your children. Everyone you apply for will receive their own GHIC.
-      </p>
 
-        {{ radios({
-          "idPrefix": "addSomeone",
-          "name": "addSomeone",
-          "items": [
-            {
-              "value": "Yes",
-              "text": "Yes"
-            },
-            {
-              "value": "No",
-              "text": "No"
-            }
-          ]
+        {{ input({
+          
+          hint: {
+            html: "Your NHS number is a 10 digit number. For example, <span class=\"nhsuk-u-nowrap\">485 777 3456</span>. <p>You can find it on any letter the NHS has sent you, on a prescription, or by logging in to a GP practice online service.</p>"
+          },
+          "id": "input-width-10",
+          "name": "test-width-10",
+          "classes": "nhsuk-input--width-10"
         }) }}
 
-        {% endcall %}
 
+        {% endcall %}
+<!--         <p><a href="address-manual">I don't have a National Insurance number</a></p>
+ -->
         {{ button({
           "text": "Continue"
         }) }}
 
       </form>
 
-      {{ backLink({
-        "href": "nino",
+     {{ backLink({
+        "href": "",
         "text": "Change my previous answer"
       }) }}
 

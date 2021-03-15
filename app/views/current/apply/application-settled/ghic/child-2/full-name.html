@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to add anyone else to your application?
+  What is your child's name?
 {% endblock %}
 
 {% block beforeContent %}
-
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -27,35 +26,35 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-
-      <form action="addSomeone" method="post">
+      <form action="child-address" method="post">
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add anyone else to your application?",
+            text: "What is your child's name?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
-      
-      <p>
-        You can add your partner, spouse or civil partner and your children. Everyone you apply for will receive their own GHIC.
-      </p>
 
-        {{ radios({
-          "idPrefix": "addSomeone",
-          "name": "addSomeone",
-          "items": [
-            {
-              "value": "Yes",
-              "text": "Yes"
-            },
-            {
-              "value": "No",
-              "text": "No"
-            }
-          ]
+        {{ input({
+          "label": {
+            "text": "First name"
+          },
+          "id": "input-width-30",
+          "name": "test-width-30",
+          "classes": "nhsuk-input--width-30"
         }) }}
+
+        {{ input({
+          "label": {
+            "text": "Last name"
+          },
+          "id": "input-width-30",
+          "name": "test-width-30",
+          "classes": "nhsuk-input--width-30"
+        }) }}
+
 
         {% endcall %}
 
@@ -65,8 +64,8 @@
 
       </form>
 
-      {{ backLink({
-        "href": "nino",
+     {{ backLink({
+        "href": "what-you-need",
         "text": "Change my previous answer"
       }) }}
 

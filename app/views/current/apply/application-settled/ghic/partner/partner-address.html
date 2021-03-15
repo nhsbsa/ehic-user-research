@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your EU settled status share code?
+  Does your partner live with you?
 {% endblock %}
 
 {% block beforeContent %}
+
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -26,25 +27,33 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="email-address" method="post">
+
+      <form action="partnerAddress" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your EU settled status share code?",
+            text: "Does your partner live with you?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+      
+      <!-- <p>You and your partner must live in the same household.</p> -->
 
-        {{ input({
-          "label": {
-            "text": "Enter your settled status share code"
-          },
-          "id": "input-width-10",
-          "name": "test-width-10",
-          "classes": "nhsuk-input--width-10"
+        {{ radios({
+          "idPrefix": "add-another",
+          "name": "add-another",
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No"
+            }
+          ]
         }) }}
-
 
         {% endcall %}
 
@@ -54,8 +63,8 @@
 
       </form>
 
-     {{ backLink({
-        "href": "address-list",
+      {{ backLink({
+        "href": "",
         "text": "Change my previous answer"
       }) }}
 

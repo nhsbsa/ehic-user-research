@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to add anyone else to your application?
+  Do you want to add your dependant children to your application?
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,23 +28,23 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-      <form action="addSomeone" method="post">
+      <form action="addChildAfterPartner" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add anyone else to your application?",
+            text: "Do you want to add any children to your application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
       
-      <p>
-        You can add your partner, spouse or civil partner and your children. Everyone you apply for will receive their own GHIC.
-      </p>
+      <!-- <p>
+        You can add children to your EHIC application if they live with you. They will receive their own EHIC.
+      </p> -->
 
         {{ radios({
-          "idPrefix": "addSomeone",
-          "name": "addSomeone",
+          "idPrefix": "add-another",
+          "name": "add-another",
           "items": [
             {
               "value": "Yes",

@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to add anyone else to your application?
+  What is your contact telephone number?
 {% endblock %}
 
 {% block beforeContent %}
-
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -27,35 +26,31 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-
-      <form action="addSomeone" method="post">
+      <!-- <form action="add-child-1" method="post"> -->
+      <!-- <form action="cya-individual" method="post"> -->
+      <!-- <form action="add-partner" method="post"> -->
+      <form action="add-someone" method="post">
+      <!-- <form action="card-type" method="post"> -->
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add anyone else to your application?",
+            text: "What is your contact telephone number?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
-      
-      <p>
-        You can add your partner, spouse or civil partner and your children. Everyone you apply for will receive their own GHIC.
-      </p>
 
-        {{ radios({
-          "idPrefix": "addSomeone",
-          "name": "addSomeone",
-          "items": [
-            {
-              "value": "Yes",
-              "text": "Yes"
-            },
-            {
-              "value": "No",
-              "text": "No"
-            }
-          ]
+        <p>We ask for this in case we need to contact you about your application.</p>
+        
+        {{ input({
+          "label": {
+            "text": "Enter your contact telephone number (optional)"
+          },
+          "id": "input-width-30",
+          "name": "test-width-30",
+          "classes": "nhsuk-input--width-30"
         }) }}
+
 
         {% endcall %}
 
@@ -65,8 +60,8 @@
 
       </form>
 
-      {{ backLink({
-        "href": "nino",
+     {{ backLink({
+        "href": "email-address",
         "text": "Change my previous answer"
       }) }}
 
