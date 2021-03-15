@@ -63,9 +63,6 @@ router.use('/sprint21/apply', require('./views/sprint21/apply/_routes'));
 router.use('/tasklist/prereg', require('./views/tasklist/prereg/_routes'));
 router.use('/tasklist/postjan', require('./views/tasklist/postjan/_routes'));
 
-// New Start page - March 2021
-router.use('/experimental/apply', require('./views/experimental/apply/_routes'));
-
 
 module.exports = router;
 
