@@ -346,6 +346,20 @@ router.post('/application/child-2/childCountry', function (req, res) {
   }
 })
 
+// Does your child live with you?
+router.post('/application/child-1/childCountry', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('address-eu')
+  }
+  else if (addAnother == "No"){
+    res.redirect('child-ko')
+  }
+  else {
+    res.redirect('child-address-country')
+  }
+})
+
 // Do you want to add ANOTHER CHILD to your application?
 router.post('/application/addAnotherChild', function (req, res) {
   var addAnother = req.session.data['add-another']
@@ -360,6 +374,41 @@ router.post('/application/addAnotherChild', function (req, res) {
   }
 })
 
+// Do you want to add any children to your application?
+router.post('/application/addChild', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('child-1/full-name')
+  }
+  else {
+    res.redirect('cya-children')
+  }
+})
+
+// Does your child live with you?
+router.post('/application/child-1/childAddress', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('dob')
+  }
+  else if (addAnother == "No"){
+    res.redirect('child-address-country')
+  }
+  else {
+    res.redirect('child-address')
+  }
+})
+
+// Do you want to add another child to your application?
+router.post('/application/noPartnerAddAnotherChild', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes"){
+    res.redirect('child-1/full-name')
+  }
+  else {
+    res.redirect('child-1/cya-child')
+  }
+})
 
 
 
@@ -905,6 +954,9 @@ router.post('/studyingEuCitizenEuOther', function (req, res) {
   var studyingEuCitizen = req.session.data['studying-eu-citizen']
   if (studyingEuCitizen == "Yes"){
     res.redirect('ineligible-temp')
+  }
+  else if (studyingEuCitizen == "No"){
+    res.redirect('application-settled/card-type')
   }
   else {
     res.redirect('application-settled/info-eu-national')

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to add anyone else to your application?
+  Does your partner live with you?
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,26 +28,23 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-      <form action="addSomeone" method="post">
+      <form action="childCountry" method="post">
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
+
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add anyone else to your application?",
+            text: "Does Millie live in an EU country?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
       
-      <p>
-        You can add your spouse or partner and children. Everyone you apply for will receive their own card.
-      </p>
-      <!-- <p>
-        You can add your spouse, civil partner or unmarried partner, children, grandchildren, your parents and grandparents and your partner's parents and grandparents.
-      </p> -->
+      <!-- <p>You and your partner must live in the same household.</p> -->
 
         {{ radios({
-          "idPrefix": "add-someone",
-          "name": "add-someone",
+          "idPrefix": "add-another",
+          "name": "add-another",
           "items": [
             {
               "value": "Yes",
