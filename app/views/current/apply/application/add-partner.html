@@ -32,19 +32,19 @@
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add a partner or spouse to your application?",
+            text: "Do you want to add a partner, spouse or civil partner to your application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
-      
+
       <!-- <p>
-        You can add your partner and children.
+        You can add your partner, spouse or civil partner to your application.
       </p> -->
 
         {{ radios({
-          "idPrefix": "add-another",
-          "name": "add-another",
+          "idPrefix": "add-partner",
+          "name": "add-partner",
           "items": [
             {
               "value": "Yes",

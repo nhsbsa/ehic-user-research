@@ -32,20 +32,18 @@
 
         {% call fieldset({
           legend: {
-            text: "Do you want to apply for anyone else in your family?",
+            text: "Do you want to add anyone else to your application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
       
       <p>
-        You can add your spouse, civil partner or unmarried partner, children, your parents and your partner's parents.
+        You can add your spouse or partner and children. Everyone you apply for will receive their own card.
       </p>
       <!-- <p>
         You can add your spouse, civil partner or unmarried partner, children, grandchildren, your parents and grandparents and your partner's parents and grandparents.
       </p> -->
-      <p>Everyone you apply for will receive their own EHIC.
-      </p>
 
         {{ radios({
           "idPrefix": "add-someone",
