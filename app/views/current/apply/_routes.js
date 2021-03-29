@@ -949,7 +949,8 @@ router.post('/willYouBeLiving', function (req, res) {
 router.post('/living-eu/expBen', function (req, res) {
   var expBen = req.session.data['expBen']
   if (expBen == "Yes"){
-    res.redirect('application-s1/info-s1')
+    res.redirect('application-s1/card-type')
+    // res.redirect('application-s1/info-s1')
     // res.redirect('application-s1/full-name')
   }
   else if (expBen == "No"){
@@ -1077,19 +1078,54 @@ router.post('/living-eu/studyingEuCitizenBornESW', function (req, res) {
   }
 })
 
+
+
 // Are you studying, or do you intend to study in 
 // the EU, EEA or Switzerland before 1 January 2021?
 // studying-uk-citizen.html
 router.post('/studyingUkCitizen', function (req, res) {
   var studyingUkCitizen = req.session.data['studying-uk-citizen']
   if (studyingUkCitizen == "Yes"){
-    res.redirect('application-student/evidence-student')
+    // res.redirect('application-student/evidence-student')
+    res.redirect('application-student/course-date')
+  }
+  else if (studyingUkCitizen == "No"){
+    res.redirect('application/info-uk-national')
   }
   else {
-    res.redirect('application/info-uk-national')
-    // res.redirect('ineligible-not-studying')
+    res.redirect('studying-uk-citizen')
   }
 })
+
+// Student course dates option (card choice) student-options.html
+// router.post('/application-student/studentOptions', function (req, res) {
+//   var studentOptions = req.session.data['student-options']
+//   if (studentOptions == "before"){
+//     res.redirect('card-type')
+//   }
+//   else if (studentOptions == "after"){
+//     res.redirect('evidence-student')
+//   }
+//   else {
+//     res.redirect('student-options')
+//   }
+// })
+
+// Student course dates option (card choice) student-options.html
+router.post('/application-student/courseDate', function (req, res) {
+  var courseDate = req.session.data['course-date']
+  if (courseDate == "before"){
+    res.redirect('student-options')
+  }
+  else if (courseDate == "after"){
+    res.redirect('evidence-student')
+  }
+  else {
+    res.redirect('course-date')
+  }
+})
+
+
 
 // Are you studying, or do you intend to study in 
 // the EU, EEA or Switzerland before 1 January 2021?
