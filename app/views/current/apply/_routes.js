@@ -697,7 +697,7 @@ router.post('/dualBirthCountry', function (req, res) {
     res.redirect('renounce')
   }
   else if (dualBirthCountry == "Other"){
-    res.redirect('studying-eu-citizen')
+    res.redirect('studying-dual-citizen')
     // res.redirect('application-settled/info-dual')
   }
   else {
@@ -1077,6 +1077,25 @@ router.post('/living-eu/studyingEuCitizenBornESW', function (req, res) {
     res.redirect('ineligible-temp')
   }
 })
+
+
+
+
+
+
+// Are you studying, or do you intend to study in 
+// the EU, EEA or Switzerland before 1 January 2021?
+// studying-dual-Citizen.html
+router.post('/studyingDualCitizen', function (req, res) {
+  var studyingDualCitizen = req.session.data['studying-dual-citizen']
+  if (studyingDualCitizen == "Yes"){
+    res.redirect('application-student-ss/evidence-student')
+  }
+  else {
+    res.redirect('application-settled/card-type')
+  }
+})
+
 
 
 
