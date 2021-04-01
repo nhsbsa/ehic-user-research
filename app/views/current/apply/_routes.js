@@ -1144,6 +1144,20 @@ router.post('/application-student/courseDate', function (req, res) {
   }
 })
 
+// Student course dates option (card choice) student-options.html
+router.post('/living-eu/application-student-in-eu/courseDate', function (req, res) {
+  var courseDate = req.session.data['course-date']
+  if (courseDate == "before"){
+    res.redirect('student-options')
+  }
+  else if (courseDate == "after"){
+    res.redirect('evidence-student')
+  }
+  else {
+    res.redirect('course-date')
+  }
+})
+
 
 
 // Are you studying, or do you intend to study in 
@@ -1152,7 +1166,8 @@ router.post('/application-student/courseDate', function (req, res) {
 router.post('/living-eu/studyingUkCitizen', function (req, res) {
   var studyingUkCitizen = req.session.data['studying-uk-citizen']
   if (studyingUkCitizen == "Yes"){
-    res.redirect('application-student-in-eu/evidence-student')
+    // res.redirect('application-student-in-eu/evidence-student')
+    res.redirect('application-student-in-eu/course-date')
   }
   else {
     res.redirect('ineligible-temp')
