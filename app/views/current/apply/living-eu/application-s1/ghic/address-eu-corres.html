@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What will be your partner's home address from 1 January 2021?
+  What is your correspondence address?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,11 +26,11 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="email-address" method="post">
+      <form action="know-nino" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What will be your partner's home address from 1 January 2021?",
+            text: "What is your correspondence address?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -83,7 +83,7 @@
       </form>
 
      {{ backLink({
-        "href": "partner-address",
+        "href": "dob",
         "text": "Change my previous answer"
       }) }}
 

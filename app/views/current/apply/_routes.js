@@ -949,9 +949,10 @@ router.post('/willYouBeLiving', function (req, res) {
 router.post('/living-eu/expBen', function (req, res) {
   var expBen = req.session.data['expBen']
   if (expBen == "Yes"){
-    res.redirect('application-s1/card-type')
+    // res.redirect('application-s1/card-type')
     // res.redirect('application-s1/info-s1')
     // res.redirect('application-s1/full-name')
+    res.redirect('application-s1/move-date')
   }
   else if (expBen == "No"){
     // res.redirect('eu-studying')
@@ -976,8 +977,36 @@ router.post('/living-eu/application-s1/addCorres', function (req, res) {
   }
 })
 
+// Do you want to add another address for correspondence? S1
+router.post('/living-eu/application-s1/ghic/addCorres', function (req, res) {
+  var addCorres = req.session.data['addCorres']
+  if (addCorres == "Yes"){
+    res.redirect('address-eu-corres')
+  }
+  else if (addCorres == "No"){
+    res.redirect('know-nino')
+  }
+  else {
+    res.redirect('corres-address')
+  }
+})
+
 // Do you know your National Insurance number? - know-nino.html
 router.post('/living-eu/application-s1/knowNino', function (req, res) {
+  var knowNino = req.session.data['knowNino']
+  if (knowNino == "Yes"){
+    res.redirect('nino')
+  }
+  else if (knowNino == "No"){
+    res.redirect('email-address')
+  }
+  else {
+    res.redirect('know-nino')
+  }
+})
+
+// Do you know your National Insurance number? - know-nino.html
+router.post('/living-eu/application-s1/ghic/knowNino', function (req, res) {
   var knowNino = req.session.data['knowNino']
   if (knowNino == "Yes"){
     res.redirect('nino')
@@ -1145,6 +1174,20 @@ router.post('/application-student/courseDate', function (req, res) {
 })
 
 // Student course dates option (card choice) student-options.html
+router.post('/living-eu/application-s1/s1Options', function (req, res) {
+  var s1Options = req.session.data['s1-options']
+  if (s1Options == "GHIC"){
+    res.redirect('ghic/full-name')
+  }
+  else if (s1Options == "EHIC"){
+    res.redirect('full-name')
+  }
+  else {
+    res.redirect('s1-options')
+  }
+})
+
+// Student course dates option (card choice) student-options.html
 router.post('/living-eu/application-student-in-eu/courseDate', function (req, res) {
   var courseDate = req.session.data['course-date']
   if (courseDate == "before"){
@@ -1155,6 +1198,20 @@ router.post('/living-eu/application-student-in-eu/courseDate', function (req, re
   }
   else {
     res.redirect('course-date')
+  }
+})
+
+// Student course dates option (card choice) student-options.html
+router.post('/living-eu/application-s1/moveDate', function (req, res) {
+  var moveDate = req.session.data['move-date']
+  if (moveDate == "before"){
+    res.redirect('s1-options')
+  }
+  else if (moveDate == "after"){
+    res.redirect('ghic/info-s1')
+  }
+  else {
+    res.redirect('move-date')
   }
 })
 

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your child's home address?
+  What type of EHIC do you want?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,40 +26,47 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="address-list" method="post">
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
+      <form action="moveDate" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your child's home address?",
+            text: "When did you move to the EU, Norway, Iceland, Liechtenstein or Switzerland?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        {{ input({
-          "label": {
-            "text": "Postcode",
-            "classes": "nhsuk-label--m"
-          },
-          "id": "input-width-10",
-          "name": "test-width-10",
-          "classes": "nhsuk-input--width-10"
-        }) }}
+        {{ radios({
+          "idPrefix": "move-date",
+          "name": "move-date",
+          "items": [
+            {
+              "value": "before",
+              "text": "On or before 31 December 2020"
 
+            },
+            {
+              "value": "after",
+              "text": "On or after 1 January 2021"
+
+            }
+          ]
+        }) }}
 
         {% endcall %}
 
         {{ button({
-          "text": "Find address"
+          "text": "Continue"
         }) }}
 
       </form>
 
      {{ backLink({
-        "href": "full-name",
+        "href": "",
         "text": "Change my previous answer"
       }) }}
-
+      
     </div>
   </div>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your partner's name?
+  What is your National Insurance number?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,11 +26,11 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="partner-address" method="post">
+      <form action="email-address" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your partner's name?",
+            text: "What is your National Insurance number?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -38,24 +38,19 @@
 
         {{ input({
           "label": {
-            "text": "First name"
+            "text": ""
           },
-          "id": "input-width-30",
-          "name": "test-width-30",
-          "classes": "nhsuk-input--width-30"
-        }) }}
-
-        {{ input({
-          "label": {
-            "text": "Last name"
+          hint: {
+            html: "For example, ‘QQ 12 34 56 C’."
           },
-          "id": "input-width-30",
-          "name": "test-width-30",
-          "classes": "nhsuk-input--width-30"
+          "id": "input-width-10",
+          "name": "test-width-10",
+          "classes": "nhsuk-input--width-10"
         }) }}
 
 
         {% endcall %}
+        <!-- <p><a href="nhs-number">I don't have a National Insurance number</a></p> -->
 
         {{ button({
           "text": "Continue"
@@ -64,7 +59,7 @@
       </form>
 
      {{ backLink({
-        "href": "../add-partner",
+        "href": "dob",
         "text": "Change my previous answer"
       }) }}
 
