@@ -35,6 +35,23 @@
         {{ summaryList({
           rows: [
             
+            {
+              key: {
+                text: "Card type"
+              },
+              value: {
+                text: "EHIC"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "card-type",
+                    text: "Change",
+                    visuallyHiddenText: "card type"
+                  }
+                ]
+              }
+            },
              
             {
               key: {
@@ -90,26 +107,7 @@
                 ]
               }
             },
-            {
-              key: {
-                text: "Correspondence address"
-              },
-              value: {
-                html: "Correos 12344<br>
-                        12500 San Fernando<br>
-                        Cádiz<br>
-                        Spain"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "corres-address",
-                    text: "Change",
-                    visuallyHiddenText: "correspondence address"
-                  }
-                ]
-              }
-            },
+            
             {
               key: {
                 text: "National Insurance number"
@@ -177,17 +175,20 @@
 
       <!-- {
               key: {
-                text: "Card type"
+                text: "Correspondence address"
               },
               value: {
-                text: "GHIC"
+                html: "Correos 12344<br>
+                        12500 San Fernando<br>
+                        Cádiz<br>
+                        Spain"
               },
               actions: {
                 items: [
                   {
-                    href: "card-type",
+                    href: "corres-address",
                     text: "Change",
-                    visuallyHiddenText: "card type"
+                    visuallyHiddenText: "correspondence address"
                   }
                 ]
               }
