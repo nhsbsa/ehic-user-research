@@ -34,6 +34,20 @@ const router = express.Router()
 
 // })
 
+// Do you currently have a valid EHIC? current-ehic.html
+router.post('/planTravel', function (req, res) {
+  var planTravel = req.session.data['plan-travel']
+  if (planTravel == "Yes"){
+    res.redirect('current-ehic')
+  }
+  else if (planTravel == "No"){
+    // res.redirect('plan-travel-ko')
+    res.redirect('current-ehic')
+  }
+  else {
+    res.redirect('plan-travel')
+  }
+})
 
 // Do you currently have a valid EHIC? current-ehic.html
 router.post('/currentEhic', function (req, res) {
@@ -44,8 +58,9 @@ router.post('/currentEhic', function (req, res) {
   else if (currentEhic == "No"){
     res.redirect('where-do-you-live')
   }
-  else if (currentEhic == "Lost"){
-    res.redirect('lost-ehic')
+  else if (currentEhic == "lost"){
+    // res.redirect('lost-ehic')
+    res.redirect('where-do-you-live')
   }
   else {
     res.redirect('current-ehic')

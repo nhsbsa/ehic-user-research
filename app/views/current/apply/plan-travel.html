@@ -28,27 +28,27 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-      <form action="currentEhic" method="post">
+      <form action="planTravel" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Do you currently have a valid European Health Insurance Card (EHIC)?",
+            text: "Do you plan to travel to the EU, Norway, Iceland, Liechtenstein or Switzerland in the next X months?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>If you have a valid EHIC, you can continue to use it until it expires.</p>
+        <!-- <p>If you have a valid EHIC, you can continue to use it until it expires.</p> -->
 
-        {% set lostHtml %}
+        {% set noHtml %}
           {{ hint({
-            "text": "You can apply for a new Global Health Insurance Card (GHIC) or European Health Insurance Card (EHIC)"
+            "text": "If you are not travelling soon you may not need to apply"
           }) }}
         {% endset -%}
 
         {{ radios({
-          "idPrefix": "current-ehic",
-          "name": "current-ehic",
+          "idPrefix": "plan-travel",
+          "name": "plan-travel",
           "items": [
             {
               "value": "Yes",
@@ -56,22 +56,23 @@
             },
             {
               "value": "No",
-              "text": "No"
-            },
-            {
-              "divider": "or"
-            },
-            {
-              "value": "lost",
-              "text": "My EHIC is lost, stolen or damaged",
+              "text": "No",
               "conditional": {
-                "html": lostHtml
+                "html": noHtml
               }
             }
+
           ]
         }) }}
 
 
+        {{ details({
+          "text": "What countries are in the EU?",
+          "HTML": "
+          <p>The EU countries are:</p>
+          <p>Austria, Belgium, Bulgaria, Croatia, Republic of Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain and Sweden.</p>
+          "
+        }) }}
 
 
         {% endcall %}
@@ -82,10 +83,11 @@
 
       </form>
 
-     {{ backLink({
+
+     <!-- {{ backLink({
         "href": "who-for",
         "text": "Change my previous answer"
-      }) }}
+      }) }} -->
 
     </div>
 
