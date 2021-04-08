@@ -35,6 +35,22 @@ const router = express.Router()
 // })
 
 
+// Do you currently have a valid EHIC? current-ehic.html
+router.post('/currentEhic', function (req, res) {
+  var currentEhic = req.session.data['current-ehic']
+  if (currentEhic == "Yes"){
+    res.redirect('current-ehic-ko')
+  }
+  else if (currentEhic == "No"){
+    res.redirect('where-do-you-live')
+  }
+  else if (currentEhic == "Lost"){
+    res.redirect('lost-ehic')
+  }
+  else {
+    res.redirect('current-ehic')
+  }
+})
 
 // What is your nationality? - nationality.html
 router.post('/nationality', function (req, res) {
