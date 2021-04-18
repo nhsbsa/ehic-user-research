@@ -59,14 +59,15 @@ router.use('/sprint15/postjan', require('./views/sprint15/postjan/_routes'));
 router.use('/sprint19-20/apply', require('./views/sprint19-20/apply/_routes'));
 router.use('/sprint21/apply', require('./views/sprint21/apply/_routes'));
 router.use('/sprint22/apply', require('./views/sprint22/apply/_routes'));
+router.use('/sprint23-24/apply', require('./views/sprint23-24/apply/_routes'));
+
+//pulling data through
+
 
 // Experimental //
 // tasklist format //
 router.use('/tasklist/prereg', require('./views/tasklist/prereg/_routes'));
 router.use('/tasklist/postjan', require('./views/tasklist/postjan/_routes'));
-
-//pulling data through
-router.use('/current_v2/apply', require('./views/current_v2/apply/_routes'));
 
 
 

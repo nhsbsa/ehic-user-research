@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your date of birth?
+  What is your home address?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,46 +26,39 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <form action="nino" method="post"> -->
-      <form action="address-lookup" method="post">
+      <form action="address-list" method="post">
 
-        {{ dateInput({
-  "id": "example",
-  "namePrefix": "dob",
-  "fieldset": {
-    "legend": {
-      "text": "What is your date of birth?",
-      "classes": "nhsuk-label--l",
-      "isPageHeading": true
-        }
-      },
-      "hint": {
-        "text": "For example, 15 3 1984"
-      },
-      "items": [
-        {
-          "name": "day",
-          "classes": "nhsuk-input--width-2"
-        },
-        {
-          "name": "month",
-          "classes": "nhsuk-input--width-2"
-        },
-        {
-          "name": "year",
-          "classes": "nhsuk-input--width-4"
-        }
-      ]
-    }) }}
+        {% call fieldset({
+          legend: {
+            text: "What is your home address?",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        {{ input({
+          "label": {
+            "text": "Postcode",
+            "classes": "nhsuk-label--m"
+          },
+          "id": "input-width-10",
+          "name": "test-width-10",
+          "classes": "nhsuk-input--width-10"
+        }) }}
+
+
+        {% endcall %}
 
         {{ button({
-          "text": "Continue"
+          "text": "Find address"
         }) }}
+
+        <p><a href="address-manual">Enter address manually</a></p>
 
       </form>
 
      {{ backLink({
-        "href": "email-address",
+        "href": "full-name",
         "text": "Change my previous answer"
       }) }}
 

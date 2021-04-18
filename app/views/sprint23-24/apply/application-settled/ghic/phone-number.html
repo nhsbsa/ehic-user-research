@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your name?
+  What is your contact telephone number?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,31 +26,28 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="dob" method="post">
+      <!-- <form action="add-child-1" method="post"> -->
+      <!-- <form action="cya-individual" method="post"> -->
+      <!-- <form action="add-partner" method="post"> -->
+      <form action="add-someone" method="post">
+      <!-- <form action="card-type" method="post"> -->
 
         {% call fieldset({
           legend: {
-            text: "What is your name?",
+            text: "What is your contact telephone number?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
+        <p>We ask for this in case we need to contact you about your application.</p>
+        
         {{ input({
           "label": {
-            "text": "First name"
+            "text": "Enter your contact telephone number (optional)"
           },
           "id": "input-width-30",
-          "name": "firstname",
-          "classes": "nhsuk-input--width-30"
-        }) }}
-
-        {{ input({
-          "label": {
-            "text": "Last name"
-          },
-          "id": "input-width-30",
-          "name": "lastname",
+          "name": "test-width-30",
           "classes": "nhsuk-input--width-30"
         }) }}
 
@@ -64,7 +61,7 @@
       </form>
 
      {{ backLink({
-        "href": "what-you-need",
+        "href": "email-address",
         "text": "Change my previous answer"
       }) }}
 

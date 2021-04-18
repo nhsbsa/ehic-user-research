@@ -43,21 +43,21 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="course-country" method="post">
+      <!-- <form action="add-someone" method="post"> -->
+      <!-- <form action="full-name" method="post"> -->
+      <form action="chooseCover" method="post">
 
-        <h2>Based on the information you have provided you may be entitled to a UK GHIC or UK EHIC</h2>
+        <h2>Choose the cover you wish to apply for</h2>
 
-        <!-- <p>You told us that you starting studying in the EU, Norway, Iceland, Liechtenstein or Switzerland on or before 31 December 2020.</p> -->
+        <p>Based on the information you have provided you may be entitled to an UK Global Health Insurance Card (GHIC) or UK European Health Insurance Card (EHIC).</p>
 
-        <br>
+        <!-- <br> -->
 
-        <h3>What is the difference between UK GHIC or UK EHIC?</h3>
+        <h2>What is the difference?</h2>
 
-        <p>Both the UK GHIC and UK EHIC give you state-provided healthcare cover for treatment that becomes necessary whilst temporarily staying in an EU country.</p>
+        <p>Both a UK GHIC and UK EHIC give you the right to access state provided healthcare cover for treatment that becomes necessary whilst temporarily staying in any country in the European Union (EU).</p>
 
-        <p>The UK EHIC also gives you state-provided healthcare cover for treatment that becomes necessary whilst temporarily staying in Norway, Iceland, Liechtenstein and Switzerland.</p>
-
-        <p>The UK GHIC is not accepted in Norway, Iceland, Liechtenstein and Switzerland. If you plan to visit one of these countries, you should organise suitable travel insurance.</p>
+        <p>If you plan to temporarily stay in Norway, Iceland, Liechtenstein and Switzerland you may wish to apply for a UK EHIC as these countries are not currently covered by a UK GHIC.</p>
 
         <p>In the future, more countries may be added to those accepting UK GHIC.</p>
         <!-- <p>Depending on when you started you course, you may be entitled to a GHIC or EHIC</p> -->
@@ -80,7 +80,7 @@
           <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
               <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading"> </span>Countries in the EU (European Union)<br> 
+                <span class="nhsuk-table-responsive__heading"> </span>European Union (EU)<br> 
               </td>
               <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading"></span>
@@ -130,17 +130,47 @@
           </tbody>
         </table>
 
-        {{ details({
-          "text": "What countries are in the EU?",
-          "HTML": "
-          <p>The EU countries are:</p>
-          <p>Austria, Belgium, Bulgaria, Croatia, Republic of Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain and Sweden.</p>
-          "
-        }) }}
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              What countries are in the EU?
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <h5 class="nhsuk-heading-xs">The EU countries are:</h5>
+
+            <p>
+              Austria, Belgium, Bulgaria, Croatia, Republic of Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain and Sweden.
+            </p>
+          </div>
+        </details>
+
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              Information for overseas students 
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <h5 class="nhsuk-heading-xs">If you are a student studying outside of the UK:</h5>
+
+            <ul>
+              <li>
+                a UK EHIC will cover you for state provided healthcare cover within the EU and your country of study. You will not be able to use your card for treatment in Norway, Iceland, Liechtenstein and Switzerland except where you are studying in one of these countries.
+              </li>
+              <li>
+                a UK GHIC will cover you for both your country of study if this is in the EU, as well as any other EU country. You will not be able to use your card for treatment in Norway, Iceland, Liechtenstein and Switzerland.
+              </li>
+            </ul>
+
+          </div>
+        </details>
 
         <br>
 
-        <!-- <h5 class="nhsuk-heading-xs">A UK GHIC covers:</h5>
+<!--         <br>
+
+        <h5 class="nhsuk-heading-xs">A UK GHIC covers:</h5>
         <ul class="list list-bullet">
           <li>
             state-provided healthcare cover for treatment that becomes necessary whilst temporarily staying in an EU country
@@ -154,19 +184,15 @@
         <h5 class="nhsuk-heading-xs">A UK EHIC covers:</h5>
         <ul class="list list-bullet">
           <li>
-            state-provided healthcare cover for treatment that becomes necessary whilst temporarily staying in an EU country, Norway, Iceland, Liechtenstein and Switzerland.
-          </li> -->
-          <!-- <li>
-            state-provided healthcare cover for treatment that becomes necessary whilst temporarily staying in Norway, Iceland, Lichtenstein and Switzerland
-          </li> -->
-        <!-- </ul> -->
+            state-provided healthcare cover for treatment that becomes necessary whilst temporarily staying in an EU country, Norway, Iceland, Liechtenstein and Switzerland
+          </li>
+        </ul>
 
-        <!-- <br> -->
+        <br> -->
 
-
-        <!-- {{ insetText({
-          "HTML": "<p>Depending on when you started you course, you may be entitled to a GHIC or EHIC</p>"
-        }) }} -->
+        <!-- <p>
+          In the future, more countries may be added to those accepting a GHIC. A UK-issued EHIC will only cover the countries stated above.
+        </p> -->
 
         {% call fieldset({
           legend: {
@@ -177,15 +203,16 @@
         }) %}
 
         {{ radios({
-          "idPrefix": "student-options",
-          "name": "student-options",
+          "idPrefix": "choose-cover",
+          "name": "choose-cover",
           "items": [
             {
               "value": "GHIC",
               "text": "UK GHIC"
             },
             {
-              "value": "EHIC",
+              
+              "value": "UK-EHIC",
               "text": "UK EHIC"
             }
           ]
