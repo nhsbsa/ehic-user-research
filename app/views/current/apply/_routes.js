@@ -1342,7 +1342,7 @@ router.post('/studyingEuCitizenEuOther', function (req, res) {
     res.redirect('application-settled/card-type')
   }
   else {
-    res.redirect('application-settled/info-eu-national')
+    res.redirect('studying-eu-citizen-eu-other')
   }
 })
 
@@ -2502,8 +2502,8 @@ router.get('/application-settled/ghic/address-list-handler', function (req, res)
         .then(response => {
           console.log(response.data.addresses);
           var items = response.data.addresses;
-          // res.render('current_v2/apply/application-settled/ghic/address-list');
-          res.render('current_v2/apply/application-settled/ghic/address-list', { items: items });
+          // res.render('current/apply/application-settled/ghic/address-list');
+          res.render('current/apply/application-settled/ghic/address-list', { items: items });
         })
         .catch(error => {
           console.log(error);
