@@ -2488,7 +2488,7 @@ router.post('/application-ni/noPartnerAddAnotherChild', function (req, res) {
   }
 })
 
-// getAddress lookup API
+// getAddress lookup API - Application-settled
 router.get('/application-settled/ghic/address-list-handler', function (req, res) {
 
   const postcode = req.session.data['postcode']
@@ -2507,15 +2507,50 @@ router.get('/application-settled/ghic/address-list-handler', function (req, res)
         })
         .catch(error => {
           console.log(error);
-          res.redirect('/no-address-found')
+          res.redirect('current/apply/application/address-manual')
         });
 
     } else {
-      res.redirect('/find-address')
+      res.redirect('current/apply/application/address-manual')
     }
     
   }
 
+});
+
+// getAddress lookup API - Main Application
+router.get('/application/address-list-handler', function (req, res) {
+
+  const postcode = req.session.data['postcode']
+  const regex = RegExp('^(([gG][iI][rR] {0,}0[aA]{2})|((([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y]?[0-9][0-9]?)|(([a-pr-uwyzA-PR-UWYZ][0-9][a-hjkstuwA-HJKSTUW])|([a-pr-uwyzA-PR-UWYZ][a-hk-yA-HK-Y][0-9][abehmnprv-yABEHMNPRV-Y]))) {0,}[0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2}))$')
+
+  if (regex.test(postcode) === true) {
+
+    if (postcode) {
+
+      axios.get("https://api.getAddress.io/find/" + postcode + "?api-key=" + process.env.POSTCODE_API_KEY)
+        .then(response => {
+          console.log(response.data.addresses);
+          var items = response.data.addresses;
+          // res.render('current/apply/application-settled/ghic/address-list');
+          res.render('current/apply/application/address-list', { items: items });
+        })
+        .catch(error => {
+          console.log(error);
+          res.redirect('current/apply/application/address-manual')
+        });
+
+    } else {
+      res.redirect('current/apply/application/address-manual')
+    }
+    
+  }
+
+});
+
+router.get('/application/address-manual', (req, res) => {
+  delete req.session.data['select-1']
+  res.render('current/apply/application/address-manual')
 });
 
 
