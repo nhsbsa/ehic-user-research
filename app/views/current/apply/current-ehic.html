@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you currently have a valid EHIC?
+  Do you currently have a valid European Health Insurance Card (EHIC)?
 {% endblock %}
 
 {% block beforeContent %}
@@ -38,7 +38,8 @@
           }
         }) %}
 
-        <p>If you have a valid EHIC, you can continue to use it until it expires.</p>
+        <p>If you have a valid EHIC, you can continue to use it until it expires. You can apply for a new 
+card up to 6 months before its expiry date.</p>
 
         {% set lostHtml %}
           {{ hint({
@@ -57,9 +58,6 @@
             {
               "value": "No",
               "text": "No"
-            },
-            {
-              "divider": "or"
             },
             {
               "value": "lost",

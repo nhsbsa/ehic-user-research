@@ -22,6 +22,22 @@
   
 {% endblock %}
 
+<style>
+  td.nhsuk-table__cell:nth-child(1) {
+    /*background-color: red;*/
+    width: 75%;
+  }
+  td.nhsuk-table__cell:nth-child(2),
+  td.nhsuk-table__cell:nth-child(3) {
+    text-align: center;
+   /* width: 15%;*/
+  }
+  th.table-heading:nth-child(2),
+  th.table-heading:nth-child(3) {
+    text-align: center;
+  }
+</style>
+
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
@@ -30,21 +46,27 @@
 
       <!-- <p class="nhsuk-lede-text">Apply now for a new UK European Health Insurance Card (EHIC).</p> -->
         
-        <p>Use this service to find out which card you are entitled to and apply:
-            
-            <ul>
-                <li>UK Global Health Insurance Card (GHIC)</li>
-                <li>UK European Health Insurance Card (EHIC)</li>
-            </ul>
+      <p>Use this service to find out which card you are entitled to and apply for either:
+          
+      <ul>
+          <li>UK Global Health Insurance Card (GHIC)</li>
+          <li>UK European Health Insurance Card (EHIC)</li>
+      </ul>
+
+      <p>If you're a UK resident you’re entitled to a UK GHIC and may also be entitled to a new UK EHIC</p>
+
+      <h2>Where are the cards valid</h2>
         
-        <details class="nhsuk-details nhsuk-expander">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-        Find out which country each card is valid in</span>
-        </summary>
-        <div class="nhsuk-details__text">
-            <p>Both cards cover you for necessary state provided healthcare treatment whilst temporarily staying in an EU country.</p> 
-              <!-- <p>Depending on when you started you course, you may be entitled to a GHIC or EHIC</p> -->
+      <!-- <details class="nhsuk-details nhsuk-expander">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+      Find out which country each card is valid in</span>
+      </summary> -->
+
+      <!-- <div class="nhsuk-details__text"> -->
+
+      <p>Both cards cover you for necessary state provided healthcare treatment whilst temporarily staying in an EU country.</p> 
+      <!-- <p>Depending on when you started you course, you may be entitled to a GHIC or EHIC</p> -->
 
         <table role="table" class="nhsuk-table-responsive">
           <caption class="nhsuk-table__caption">healthcare cover</caption>
@@ -113,13 +135,12 @@
             </tr>
           </tbody>
         </table>
-
         
           <p>The EU countries are:</p>
           <p>Austria, Belgium, Bulgaria, Croatia, Republic of Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain and Sweden.</p>
 
-            </div>
-        </details>
+            <!-- </div>
+        </details> -->
         
         
         <!--
@@ -155,18 +176,20 @@ UK European Health Insurance Card (EHIC)</span>
 </details>
 
 -->
-            
-            <p>If you’re normally resident in the UK you may be able to get cover. This will give you access to state provided healthcare while staying in an EU country for things like: </p>
+        <br>
+        
+        <p>This cover will give you access to state provided healthcare while staying in an EU country for things like:</p>
         
         <ul>
-        <li>emergency treatment </li>
-              <li>visits to A&E</li>
-              <li>routine maternity care, unless you're <a href="">going abroad to give birth</a></li>
+          <li>emergency treatment</li>
+          <li>visits to A&E</li>
+          <li>routine maternity care, unless you're <a href="">going abroad to give birth</a></li>
         </ul>
                     
        <h3>If you have an European Health Insurance Card (EHIC)</h3>
               
-        <p>Your EHIC will be valid until the expiry date on the card. Once it expires, you’ll need to apply for a new card. </p>
+        <p>Your EHIC will be valid until the expiry date on the card. You can apply for a new card up to 6 months before its expiry date.</p>
+        <p>Once it expires, you’ll need to apply for a new card. </p>
          
          <div class="nhsuk-inset-text">
           <span class="nhsuk-u-visually-hidden">Information: </span>
@@ -176,8 +199,8 @@ UK European Health Insurance Card (EHIC)</span>
          <!-- <a href="where-do-you-live" class="nhsuk-button nhsuk-u-margin-bottom-8"> -->
          <!-- <a href="current-ehic" class="nhsuk-button nhsuk-u-margin-bottom-8"> -->
          <a href="plan-travel" class="nhsuk-button nhsuk-u-margin-bottom-8">
-          Apply
-        </a>
+            Apply
+          </a>
         
          <details class="nhsuk-details nhsuk-expander">
           <summary class="nhsuk-details__summary">
@@ -192,8 +215,8 @@ UK European Health Insurance Card (EHIC)</span>
         </details>
         <br>
         
-        <h3> </h3>
-            <p></p>
+        <!-- <h3> </h3>
+            <p></p> -->
                 
     </div>
       
@@ -201,7 +224,7 @@ UK European Health Insurance Card (EHIC)</span>
           
           <div style="border-top:5px solid #005eb8; padding-top:15px;"></div>
           
-          <h3>Related  content</h3>
+          <h3>Related content</h3>
           
           <ul>
             <li><a href="terms">Who is eligible</a></li>
