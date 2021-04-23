@@ -2548,10 +2548,23 @@ router.get('/application/address-list-handler', function (req, res) {
 
 });
 
-router.get('/application/address-manual', (req, res) => {
+router.post('/application/address-manual', (req, res) => {
   delete req.session.data['select-1']
   res.render('current/apply/application/address-manual')
 });
+
+router.post('/application/partner/partner-same-address', (req, res) => {
+  const isSameAddress = req.session.data['partner-same-address']
+
+  if (isSameAddress === "Yes") { 
+    res.redirect('dob')
+  } else if (isSameAddress === "No") {
+    res.redirect('partner-address-country')
+  } else {
+    res.redirect('partner-address');
+  }
+
+})
 
 
 module.exports = router

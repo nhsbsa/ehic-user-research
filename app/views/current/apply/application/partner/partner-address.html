@@ -28,7 +28,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-      <form action="partnerAddress" method="post">
+      <form action="partner-same-address" method="post">
 
 
         {% call fieldset({
@@ -43,7 +43,7 @@
 
         {{ radios({
           "idPrefix": "add-another",
-          "name": "add-another",
+          "name": "partner-same-address",
           "items": [
             {
               "value": "Yes",
