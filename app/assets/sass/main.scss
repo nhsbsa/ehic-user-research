@@ -10,3 +10,26 @@
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below... 
 ///////////////////////////////////////////
+
+.callout {
+    padding: 32px;
+    background-color: #fff;
+  }
+
+.callout--interruption {
+    webkit-box-shadow: 0px 0px 14px 3px #ebebeb;
+    -moz-box-shadow: 0px 0px 14px 3px #ebebeb;
+    box-shadow: 0px 0px 14px 3px #ebebeb;
+    border: 1px solid #cbd6d8;
+    border-radius: 5px;
+  }
+
+.callout--interruption.alt {
+    background-color: #004D97;
+    color: white;
+  }
+
+ .callout p, li {
+ 	font-size: 20px;
+ }
+

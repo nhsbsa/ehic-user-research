@@ -1,0 +1,76 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Before you start
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>Before you start</h1>
+
+        <!-- Get this information before you start your EHIC application. -->
+
+      <p class="nhsuk-lede-text">
+        You'll need:
+      </p>
+
+      <!-- <p>You'll need:
+      </p> -->
+
+      <ul>
+        <li>your NHS number</li>
+        <li>your National Insurance number</li>
+        <li>the National Insurance numbers of any other people you are applying for who are 16 years old or over</li>
+      </ul>
+
+      <h2>If you already have a European Health Insurance Card (EHIC)</h2>
+
+      <p>If your circumstances haven’t changed, such as you have not moved to a different country, you can continue to use your EHIC until it expires. You can apply for a new card up to 6 months before its expiry date.</p>
+
+      <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+              My EHIC is lost or stolen
+            </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <p>
+              If your EHIC is lost or stolen you will need to contact the <a href="">Overseas Healthcare Service</a> to request a replacement.
+            </p>
+          </div>
+        </details>
+
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>You only need to apply for cover if you have plans to travel in the EU, Norway, Iceland, Liechtenstein, or Switzerland.</p>
+        </div> 
+
+      <a href="plan-travel" class="nhsuk-button nhsuk-u-margin-bottom-8">
+        Continue
+      </a>
+
+    </div>  
+
+  </div>
+{% endblock %}
