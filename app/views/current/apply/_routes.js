@@ -258,7 +258,7 @@ router.post('/application/emigrate', function (req, res) {
     res.redirect('emigration-date')
   }
   else if (emigrate == "No") {
-    res.redirect('email-address')
+    res.redirect('nino')
   }
   else {
     res.redirect('emigrate')
@@ -2487,6 +2487,8 @@ router.post('/application-ni/noPartnerAddAnotherChild', function (req, res) {
     res.redirect('add-parent')
   }
 })
+
+
 
 // getAddress lookup API - Application-settled
 router.get('/application-settled/ghic/address-list-handler', function (req, res) {

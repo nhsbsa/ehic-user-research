@@ -27,18 +27,19 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <form action="add-another-yn" method="post"> -->
-       <form action="email-address" method="post">
-
+       <!-- <form action="cya-partner" method="post"> -->
+        <form action="../add-another-child-2" method="post">
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
 
         {% call fieldset({
           legend: {
-            text: "What is your National Insurance number?",
+            text: "What is your Millie's National Insurance number?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>It’s on your National Insurance card, benefit letter, payslip or P60.</p>
+        <p>It’s on your child's National Insurance card, benefit letter, payslip or P60.</p>
 
         {{ input({
           "label": {
@@ -49,7 +50,7 @@
             html: "For example, ‘QQ 12 34 56 C’."
           },
           "id": "input-width-10",
-          "name": "nino",
+          "name": "partner-nino",
           "classes": "nhsuk-input--width-10"
         }) }}
 

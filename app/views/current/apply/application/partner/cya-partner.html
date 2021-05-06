@@ -82,17 +82,14 @@
             {% endif %}
             </dd>
             
-            
               <dd class="nhsuk-summary-list__actions">
-                
                   <a href="partner-address">
                       Change<span class="nhsuk-u-visually-hidden"> home address</span>
                       </a>
-                
               </dd>
-            
           </div>
         
+
           <div class="nhsuk-summary-list__row">
             <dt class="nhsuk-summary-list__key">
               Date of birth
@@ -100,17 +97,26 @@
             <dd class="nhsuk-summary-list__value">
               {{ data['partner-dob-day'] }} / {{ data['partner-dob-month'] }} / {{ data['partner-dob-year'] }}
             </dd>
-            
-              <dd class="nhsuk-summary-list__actions">
-                
-                  <a href="dob">
-                      Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
-                      </a>
-                
-              </dd>
-            
+            <dd class="nhsuk-summary-list__actions">
+              <a href="dob">
+                  Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+                  </a>
+            </dd>
           </div>
-        
+
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              National Insurance number
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {{ data['partner-nino'] }}
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+              <a href="nino">
+                  Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+                  </a>
+            </dd>
+          </div>
       </dl>
 
         <!-- <h2>Now send your application</h2>
