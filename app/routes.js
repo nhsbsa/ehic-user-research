@@ -20,6 +20,7 @@ console.log('folder : ' + res.locals.folder + ', subfolder : ' + res.locals.subf
 
 // current sprint, remember to add older sprint when adding a new folder!
 router.use('/current/apply', require('./views/current/apply/_routes'));
+router.use('/current_v2/apply', require('./views/current_v2/apply/_routes'));
 // router.use('/current/prereg', require('./views/current/prereg/_routes'));
 // router.use('/current/postjan', require('./views/current/postjan/_routes'));
 

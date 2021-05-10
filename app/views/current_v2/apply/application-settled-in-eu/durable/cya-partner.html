@@ -1,0 +1,129 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+      <form action="../add-child-1" method="post">
+
+        <h1>Check your answers</h1>
+
+        <h2>Your partner's details</h2>
+
+        {{ summaryList({
+          rows: [
+
+            {
+              key: {
+                text: "Full name"
+              },
+              value: {
+                text: "Mark Francis"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "full-name",
+                    text: "Change",
+                    visuallyHiddenText: "full name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Nationality"
+              },
+              value: {
+                html: "Other"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "nationality",
+                    text: "Change",
+                    visuallyHiddenText: "nationality"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Home address"
+              },
+              value: {
+                html: "73 Roman Rd<br>Leeds<br> LS2 5ZN"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "address-lookup",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            },
+            
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                text: "27 November 1984"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "dob",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            }
+            
+            
+          ]
+        }) }}
+
+        <!-- <h2>Now send your application</h2>
+        <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p> -->
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+
+      </form>
+
+     <!-- {{ backLink({
+        "href": "add-another-yn",
+        "text": "Change my previous answer"
+      }) }} -->
+
+    </div>
+  </div>
+{% endblock %}

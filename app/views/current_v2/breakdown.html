@@ -1,0 +1,663 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+   Page by page breakdown
+{% endblock %}
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+
+<style>
+  .nhsuk-table__cell:nth-child(1) {
+    width: 20%;
+  }
+
+  .nhsuk-table__cell:nth-child(2) {
+    width: 50%;
+  }
+  .nhsuk-table__cell:nth-child(3) {
+    width: 15%;
+  }
+
+  .nhsuk-table__cell:nth-child(4) {
+    width: 15%;
+  }
+</style>
+
+<div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-full">
+      <h1>
+         Page by page breakdown
+         <span class="nhsuk-caption-xl nhsuk-caption--bottom">Apply for an EHIC</span>
+      </h1>
+
+      <h2>Pre-registration</h2>
+
+      <h3>Start pages</h3>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Page by page breakdown</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Page</th>
+              <th class="nhsuk-table__header" scope="col">Title</th>
+              <th class="nhsuk-table__header" scope="col">URL</th>
+              <th class="nhsuk-table__header" scope="col">JIRA</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/start">Start (S1, PW)</a></td>
+              <td class="nhsuk-table__cell">Get healthcare cover for visiting the EU, EEA or Switzerland (EHIC)</td>
+              <td class="nhsuk-table__cell">/start</td>
+              <td class="nhsuk-table__cell"><a href="https://bsa2468.atlassian.net/browse/CRAT-51">CRAT-51</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Start (S1, PW, Students)</td>
+              <td class="nhsuk-table__cell">Get healthcare cover for visiting the EU, EEA or Switzerland (EHIC)</td>
+              <td class="nhsuk-table__cell">/start</td>
+              <td class="nhsuk-table__cell"><a href="https://bsa2468.atlassian.net/browse/CRAT-51">CRAT-51</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell">Start (S1, PW, Students, EUSS)</td>
+              <td class="nhsuk-table__cell">Get healthcare cover for visiting the EU, EEA or Switzerland (EHIC)</td>
+              <td class="nhsuk-table__cell">/start</td>
+              <td class="nhsuk-table__cell"><a href="https://bsa2468.atlassian.net/browse/CRAT-51">CRAT-51</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/link-expired">Link expired</a></td>
+              <td class="nhsuk-table__cell">Invitation link has expired</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Eligibility questions</h3>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Page by page breakdown</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Page</th>
+              <th class="nhsuk-table__header" scope="col">Title</th>
+              <th class="nhsuk-table__header" scope="col">URL</th>
+              <th class="nhsuk-table__header" scope="col">JIRA</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/nationality">Nationality</a></td>
+              <td class="nhsuk-table__cell">What is your nationality?</td>
+              <td class="nhsuk-table__cell">/nationality</td>
+              <td class="nhsuk-table__cell"><a href="https://bsa2468.atlassian.net/browse/CRAT-7">CRAT-7</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/where-do-you-live">Residence</a></td>
+              <td class="nhsuk-table__cell">Where will you be living from 1 January 2021?</td>
+              <td class="nhsuk-table__cell">/where-will-you-live</td>
+              <td class="nhsuk-table__cell"><a href="https://bsa2468.atlassian.net/browse/CRAT-52">CRAT-52</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/uk-studying">Are you studying</a></td>
+              <td class="nhsuk-table__cell">Are you studying, or do you intend to study in the EU, EEA or Switzerland before 1 January 2021?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/exp-ben">S1 or E121</a></td>
+              <td class="nhsuk-table__cell">Do you have a registered S1 or E121 certificate?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/eu-working">Posted worker</a></td>
+              <td class="nhsuk-table__cell">Are you a posted worker working in the EU, EEA or Switzerland?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/settled-status">Settled status</a></td>
+              <td class="nhsuk-table__cell">Do you have UK settled or pre-settled status?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Kickout screens</h3>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Page by page breakdown</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Page</th>
+              <th class="nhsuk-table__header" scope="col">Title</th>
+              <th class="nhsuk-table__header" scope="col">URL</th>
+              <th class="nhsuk-table__header" scope="col">JIRA</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/ineligible">Ineligible</a></td>
+              <td class="nhsuk-table__cell">You aren't eligible for an EHIC</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="https://bsa2468.atlassian.net/browse/CRAT-61">CRAT-61</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/cannot-apply">Cannot apply</a></td>
+              <td class="nhsuk-table__cell">You cannot use this new service to pre-register for an EHIC</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="https://bsa2468.atlassian.net/browse/CRAT-53">CRAT-53</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Application questions</h3>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Page by page breakdown</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Page</th>
+              <th class="nhsuk-table__header" scope="col">Title</th>
+              <th class="nhsuk-table__header" scope="col">URL</th>
+              <th class="nhsuk-table__header" scope="col">JIRA</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application/full-name">Name</a></td>
+              <td class="nhsuk-table__cell">What is your name?</td>
+              <td class="nhsuk-table__cell">/full-name</td>
+              <td class="nhsuk-table__cell"><a href="https://bsa2468.atlassian.net/browse/CRAT-10">CRAT-10</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application/dob">DOB</a></td>
+              <td class="nhsuk-table__cell">What is your date of birth?</td>
+              <td class="nhsuk-table__cell">/date-of-birth</td>
+              <td class="nhsuk-table__cell"><a href="https://bsa2468.atlassian.net/browse/CRAT-11">CRAT-11</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application/address-lookup">Address lookup</a></td>
+              <td class="nhsuk-table__cell">What is your home address?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application/address-list">Address list</a></td>
+              <td class="nhsuk-table__cell">What is your home address?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application/address-manual">Address - manual</a></td>
+              <td class="nhsuk-table__cell">What is your home address?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-student-in-eu/address-eu">Address - EU format (student, PW)</a></td>
+              <td class="nhsuk-table__cell">What is your address in [country]?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-s1/address-eu">Address - EU format (S1)</a></td>
+              <td class="nhsuk-table__cell">What will be your home address from 1 January 2021?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application/email-address">Email</a></td>
+              <td class="nhsuk-table__cell">What is your email address?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="https://bsa2468.atlassian.net/browse/CRAT-13">CRAT-13</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application/phone-number">Telephone</a></td>
+              <td class="nhsuk-table__cell">What is your contact telephone number?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="https://bsa2468.atlassian.net/browse/CRAT-14">CRAT-14</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-settled/nhs-number">NHS number</a></td>
+              <td class="nhsuk-table__cell">What is your NHS number?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-settled/gender">Gender</a></td>
+              <td class="nhsuk-table__cell">What is your gender?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-pw/form-type">Posted worker form</a></td>
+              <td class="nhsuk-table__cell">What posted worker form do you have?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-pw/a1-country">Country (PW)</a></td>
+              <td class="nhsuk-table__cell">What country are you working in?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-pw/a1-start-date">Start date (PW)</a></td>
+              <td class="nhsuk-table__cell">What date did your A1/S1 start in [country]?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-pw/a1-end-date">End date (PW)</a></td>
+              <td class="nhsuk-table__cell">What date does your A1/S1 end in [country]?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+              <td class="nhsuk-table__cell"><a href="prereg/application-pw/a1-country">Country (student)</a></td>
+              <td class="nhsuk-table__cell">What country are you studying in?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-pw/a1-start-date">Start date (student)</a></td>
+              <td class="nhsuk-table__cell">What is the start date of your period of study in [country]?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-pw/a1-end-date">End date (student)</a></td>
+              <td class="nhsuk-table__cell">What is the end date of your period of study in [country]?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Adding dependants</h3>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Page by page breakdown</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Page</th>
+              <th class="nhsuk-table__header" scope="col">Title</th>
+              <th class="nhsuk-table__header" scope="col">URL</th>
+              <th class="nhsuk-table__header" scope="col">JIRA</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-settled/add-child-1">Add child</a></td>
+              <td class="nhsuk-table__cell">Do you want to add any children to your application?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-settled/add-child-1">Child residence</a></td>
+              <td class="nhsuk-table__cell">Does your child live with you?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application/child-1/full-name">Child name</a></td>
+              <td class="nhsuk-table__cell">What is the child's name?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-settled/child-1/dob">Child DOB</a></td>
+              <td class="nhsuk-table__cell">What is [name]'s date of birth?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application/add-another-child-1">Add another</a></td>
+              <td class="nhsuk-table__cell">Do you want to add another child to your application?</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Information pages</h3>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Page by page breakdown</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Page</th>
+              <th class="nhsuk-table__header" scope="col">Title</th>
+              <th class="nhsuk-table__header" scope="col">URL</th>
+              <th class="nhsuk-table__header" scope="col">JIRA</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-student/evidence-student">Student</a></td>
+              <td class="nhsuk-table__cell">Applying for a Student GHIC</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-pw/evidence-pw">Posted worker</a></td>
+              <td class="nhsuk-table__cell">Applying for an EHIC if you're a posted worker</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <h3>Check your answers</h3>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Page by page breakdown</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Page</th>
+              <th class="nhsuk-table__header" scope="col">Title</th>
+              <th class="nhsuk-table__header" scope="col">URL</th>
+              <th class="nhsuk-table__header" scope="col">JIRA</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application/cya-individual">UK national</a></td>
+              <td class="nhsuk-table__cell">Check your answers before sending your application</td>
+              <td class="nhsuk-table__cell">/check-your-answers</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-settled/cya-individual">EUSS</td> 
+              <td class="nhsuk-table__cell">Check your answers before sending your application</td>
+              <td class="nhsuk-table__cell">/check-your-answers</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-s1/cya-individual">S1</td> 
+              <td class="nhsuk-table__cell">Check your answers before sending your application</td>
+              <td class="nhsuk-table__cell">/check-your-answers</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-pw/a1-cya-individual">Posted worker - A1</a></td>
+              <td class="nhsuk-table__cell">Check your answers before sending your application</td>
+              <td class="nhsuk-table__cell">/check-your-answers</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-pw/S1-cya-individual">Posted worker - S1</a></td>
+              <td class="nhsuk-table__cell">Check your answers before sending your application</td>
+              <td class="nhsuk-table__cell">/check-your-answers</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-student/cya-individual">Student (UK address)</td>
+              <td class="nhsuk-table__cell">Check your answers before sending your application</td>
+              <td class="nhsuk-table__cell">/check-your-answers</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-student-in-eu/cya-individual">Student (EU address)</td>
+              <td class="nhsuk-table__cell">Check your answers before sending your application</td>
+              <td class="nhsuk-table__cell">/check-your-answers</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Application submitted</h3>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Page by page breakdown</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Page</th>
+              <th class="nhsuk-table__header" scope="col">Title</th>
+              <th class="nhsuk-table__header" scope="col">URL</th>
+              <th class="nhsuk-table__header" scope="col">JIRA</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application/app-complete">UK national</a></td>
+              <td class="nhsuk-table__cell">Application submitted</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-settled/app-complete">EUSS</a></td>
+              <td class="nhsuk-table__cell">Application submitted</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-s1/app-complete">S1</a></td>
+              <td class="nhsuk-table__cell">Application submitted</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-pw/a1-app-complete">Posted worker - A1</a></td>
+              <td class="nhsuk-table__cell">Application submitted</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-pw/s1-app-complete">Posted worker - S1</a></td>
+              <td class="nhsuk-table__cell">Application submitted</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-student/app-complete">Student (UK address)</a></td>
+              <td class="nhsuk-table__cell">Application submitted</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"><a href="prereg/application-student-in-eu/app-complete">Student (EU address)</a></td>
+              <td class="nhsuk-table__cell">Application submitted</td>
+              <td class="nhsuk-table__cell">/</td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br>
+
+      <!-- <h2>Application</h2>
+
+      <h3>Start</h3>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Page by page breakdown</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Page</th>
+              <th class="nhsuk-table__header" scope="col">Title</th>
+              <th class="nhsuk-table__header" scope="col">URL</th>
+              <th class="nhsuk-table__header" scope="col">JIRA</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Eligibility questions</h3>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Page by page breakdown</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Page</th>
+              <th class="nhsuk-table__header" scope="col">Title</th>
+              <th class="nhsuk-table__header" scope="col">URL</th>
+              <th class="nhsuk-table__header" scope="col">JIRA</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Check your answers</h3>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Page by page breakdown</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Page</th>
+              <th class="nhsuk-table__header" scope="col">Title</th>
+              <th class="nhsuk-table__header" scope="col">URL</th>
+              <th class="nhsuk-table__header" scope="col">JIRA</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Application submitted</h3>
+
+      <div class="nhsuk-table-responsive">
+        <table class="nhsuk-table">
+          <caption class="nhsuk-table__caption">Page by page breakdown</caption>
+          <thead class="nhsuk-table__head">
+            <tr class="nhsuk-table__row">
+              <th class="nhsuk-table__header" scope="col">Page</th>
+              <th class="nhsuk-table__header" scope="col">Title</th>
+              <th class="nhsuk-table__header" scope="col">URL</th>
+              <th class="nhsuk-table__header" scope="col">JIRA</th>
+            </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+            <tr class="nhsuk-table__row">
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"></td>
+              <td class="nhsuk-table__cell"><a href="">JIRA</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div> -->
+
+
+      <!-- <div class="nhsuk-expander-group">
+         <details class="nhsuk-details nhsuk-expander" >
+            <summary class="nhsuk-details__summary">
+               <span class="nhsuk-details__summary-text">
+               Alpha (Sprint 10) - Pre-registration and application
+               </span>
+            </summary>
+            <div class="nhsuk-details__text">
+               <p>Sprint commencing: 10/09/2020</p>
+               <h3>Pre-registration journeys</h3>
+               <ul>
+                  <li>EU nationals with settled or pre-settled status living in the UK</strong></li>
+                  <li>UK nationals living in the UK</li>
+                  <li>UK S1 Pensioners and Exportable benefits</li>
+                  <li>UK Students (living in UK when applying)</li>
+                  <li>UK Students (living in EU when applying)</li>
+                  <li>UK Posted workers</li>
+               </ul>
+               {{ actionLink({
+               "text": "Get healthcare cover for visiting the EU (EHIC)",
+               "href": "/current/prereg/start"
+               }) }}
+
+               <hr>
+
+               <h3>Application journeys</h3>
+               <ul>
+                  <li>EU nationals living in the UK (Apply as an individual or add a child to the application)</li>
+                  <li>UK nationals living in the UK (Apply as an individual or add a child to the application)</li>
+                  <li>S1 holders - Retired and living in the EU (UK and EU SS nationals)</li>
+                  <li>Students intending to study in the EU, EEA or Switzerland (UK and EU SS nationals)</li>
+                  <li>Posted workers (UK and EU SS nationals)</li>
+               </ul>
+               {{ actionLink({
+               "text": "Get healthcare cover for visiting the EU (EHIC)",
+               "href": "/current/postjan/start"
+               }) }}
+               <hr>
+            </div>
+         </details>
+      </div> -->
+   </div>
+</div>
+{% endblock %}

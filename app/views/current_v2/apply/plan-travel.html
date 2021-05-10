@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Are you applying for cover for a holiday in the EU, Norway, Iceland or Switzerland that you already have planned?
+{% endblock %}
+
+{% block beforeContent %}
+
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <form action="planTravel" method="post">
+
+        {% call fieldset({
+          legend: {
+            text: "Are you applying for cover for a holiday in the EU, Norway, Iceland or Switzerland that you already have planned?",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        <!-- <p>If you have a valid EHIC, you can continue to use it until it expires.</p> -->
+
+        {% set noHtml %}
+          {{ hint({
+            "text": "If you are not travelling soon you may not need to apply"
+          }) }}
+        {% endset -%}
+
+        {{ radios({
+          "idPrefix": "plan-travel",
+          "name": "plan-travel",
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No",
+              "conditional": {
+                "html": noHtml
+              }
+            }
+
+          ]
+        }) }}
+
+
+        {{ details({
+          "text": "What countries are in the EU?",
+          "HTML": "
+          <p>The EU countries are:</p>
+          <p>Austria, Belgium, Bulgaria, Croatia, Republic of Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain and Sweden.</p>
+          "
+        }) }}
+
+
+        {% endcall %}
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+
+     <!-- {{ backLink({
+        "href": "who-for",
+        "text": "Change my previous answer"
+      }) }} -->
+
+    </div>
+
+              
+      </div>
+  </div>
+{% endblock %}
