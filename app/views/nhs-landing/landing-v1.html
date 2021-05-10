@@ -1,18 +1,9 @@
-<!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-nhs-uk.html' %}
-<!-- 
-  In /views/layout.html you can:
-    - change the header and footer 
-    - add custom CSS and JavaScript
--->
 
-<!-- Set the page title inside the pageTitle block -->
 {% block pageTitle %}
   Content page example - NHS.UK prototype kit
 {% endblock %}
 
-<!-- Breadcrumb goes inside the beforeContent block -->
-<!-- More info and code for the breadcrumb can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
 
 <style>
@@ -20,11 +11,24 @@
     background-color: #ffeb3b;
     padding-bottom: 24px;
     padding-top: 24px;
-  }
+}
   .app-global-alert a:hover {
     background-color: #005eb8;
     box-shadow: 0 0 0 4px #005eb8;
     color: #fff;
+}
+  td.nhsuk-table__cell:nth-child(1) {
+    /*background-color: red;*/
+    width: 75%;
+}
+  td.nhsuk-table__cell:nth-child(2),
+  td.nhsuk-table__cell:nth-child(3) {
+    text-align: center;
+   /* width: 15%;*/
+}
+  th.table-heading:nth-child(2),
+  th.table-heading:nth-child(3) {
+    text-align: center;
 }
 </style>
 
@@ -64,7 +68,6 @@
 
 {% endblock %}
 
-<!-- Your page content goes inside the content block -->
 
 {% block content %}
 
@@ -74,7 +77,6 @@
       <p class="nhsuk-lede-text">
         There are two types of cover available, use this service to apply for either a:
       </p>
-
       <ul>
         <li>UK Global Health Insurance Card (GHIC)</li>
         <li>UK European Health Insurance Card (EHIC)</li>
@@ -82,12 +84,10 @@
     </div>
   </div>
 
+  <br>
+
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <!-- <p>
-        For more styles, code snippets and guidance on components visit the
-        <a href="https://service-manual.nhs.uk/design-system">NHS digital service manual</a>.
-      </p> -->
 
       <h2>Who can apply for a UK GHIC</h2>
 
@@ -97,33 +97,343 @@
 
       <ul>
         <li>live in the UK</li>
-        <li>normally live in the UK but are studying in the EUr</li>
+        <li>normally live in the UK but are studying in the EU</li>
         <li>live in the EU and have been issued with a UK S1 or A1 document</li>
-        <li>an eligible family member or dependant of one of the above</li>
+        <li>are an eligible family member or dependant of one of the above</li>
+      </ul>
+
+      <h2>Who can apply for a UK EHIC</h2>
+
+      <p>You can apply for the new UK EHIC if you have rights under the Withdrawal Agreement. You may be able to apply if you are:</p>
+
+      <ul>
+        <li>
+          an EU, Swiss, Norwegian, Icelandic or Liechtenstein citizen, and you've been living in the UK since before 1 January 2021 however you may not be eligible if you are also a UK national or if you were born in the UK
+        </li>
+        <li>
+          a UK State Pensioner or receiving other exportable benefits since before 1 January 2021 and you have a registered S1 form or E121
+        </li>
+        <li>
+          a frontier worker working in one state and living in another, since before 1 January 2021 and you’re eligible for an S1 form or E106
+        </li>
+        <li>
+          a worker posted to work in another EU country, Norway, Iceland, Liechtenstein, or Switzerland by your UK employer, and you've been there since before 1 January 2021, where the country has agreed to let the posting continue
+        </li>
+        <li>
+          an eligible family member or dependant of one of the above
+        </li>
       </ul>
 
 
+      <details class="nhsuk-details nhsuk-expander">
+         <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+            Applying for family members
+            </span>
+         </summary>
+         <div class="nhsuk-details__text">
+          <p>
+            Every family member needs their own card. You can add a spouse, civil partner, durable partner, and children to your application when you apply. You must enter your own details first and apply for any additional cards when prompted.
+          </p>
+          <p>
+             If you’ve already completed your application and wish to add additional family members you will need to <a href="https://www.nhsbsa.nhs.uk/contact-us/overseas-healthcare-services-contact-us">contact the Overseas Healthcare Services</a>.
+          </p>
+         </div>
+      </details>
+
+      <details class="nhsuk-details nhsuk-expander">
+         <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+            Dual nationals
+            </span>
+         </summary>
+         <div class="nhsuk-details__text">
+          <p>
+            If you live in the UK and jointly hold UK and EU, Swiss, Norwegian, Icelandic or Lichtenstein citizenship you will not normally be eligible for a new UK EHIC unless you.
+          </p>
+          <ul>
+            <li>hold British citizenship through naturalisation</li>
+            <li>were a citizen of an EU country, Switzerland, Norway, Iceland, or Liechtenstein before also becoming a British citizen</li>
+            <li>you have kept your nationality of one of those countries</li>
+          </ul>
+
+         </div>
+      </details>
+
+      <details class="nhsuk-details nhsuk-expander">
+         <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+            People born in the UK on or after 1 January 2021
+            </span>
+         </summary>
+         <div class="nhsuk-details__text">
+          <p>
+            If you were born in the UK and have lived in the UK since 1 January 2021, you're not normally eligible for a new UK EHIC even if you're an EU, Swiss, Norwegian, Icelandic or Liechtenstein citizen. This includes people of Northern Ireland who are Irish citizens. 
+          </p>
+          <p>You may be eligible for a UK GHIC</p>
+         </div>
+      </details>
+
+      <details class="nhsuk-details nhsuk-expander">
+         <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+            Students studying in the EU, Norway, Iceland, Liechtenstein, or Switzerland
+            </span>
+         </summary>
+         <div class="nhsuk-details__text">
+          <p>
+            If you normally live in the UK and have been studying in the EU, Switzerland, Norway, Iceland, or Liechtenstein since before 1 January 2021, you may be eligible for a UK EHIC for use in the EU and your country of study.
+          </p>
+          <p>
+            You'll not be able to use this card for treatment in Norway, Iceland, Liechtenstein, or Switzerland unless that is your country of study.
+          </p>
+          <p>
+            If you started your course after 1 January 2021 or are planning to study in an EU country, you’ll need to apply for a UK GHIC.
+          </p>
+          <p>
+            To apply you’ll need a letter from your university or college confirming:
+          </p>
+          <ul>
+            <li>the name and address of the UK educational institution if you’re travelling as part of your course</li>
+            <li>the address of where you're studying in the EU</li>
+            <li>details of the qualification you're studying for</li>
+            <li>the dates your course started and is due to finish</li>
+          </ul>
+          <p>
+            Complete a <a href="https://assets.nhs.uk/nhsuk-cms/documents/ghic-application-form-december-2020.pdf">GHIC application form (PDF, 678kb)</a> and post it along with your university/college letter to:
+          </p>
+          <p>
+            Overseas Healthcare Services <br>
+            NHS Business Services Authority <br>
+            Bridge House <br>
+            152 Pilgrim Street <br>
+            Newcastle upon Tyne <br>
+            NE1 6SN
+          </p>
+         </div>
+      </details>
+
+      <details class="nhsuk-details nhsuk-expander">
+         <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+            Information for people who live in Ireland
+            </span>
+         </summary>
+         <div class="nhsuk-details__text">
+          <p>
+            You may be able to get a new UK EHIC or UK GHIC if you are:
+          </p>
+          <ul>
+            <li>a UK State Pensioner or are receiving some other exportable benefits and you’ve been living in the Republic of Ireland since before 1 January 2021</li>
+            <li>a frontier worker, this means you are working in one country while living in another, and have been such since before 1 January 2021 </li>
+            <li>an eligible family member or dependant of one of the above</li>
+          </ul>
+          <p>
+            If you live in Ireland and think you’re eligible for a UK EHIC, you cannot currently apply online and need to <a href="https://www.nhsbsa.nhs.uk/contact-us/overseas-healthcare-services-contact-us">contact the Overseas Healthcare Services.</a>
+          </p>
+         </div>
+      </details>
+
+      <h2>What can I use my card for</h2>
+
+      <p>You can use a UK GHIC or UK EHIC to get state provided medically necessary healthcare when you’re visiting an EU country.</p> 
+      <p>This includes things like:</p>
+      <ul>
+        <li>emergency treatment and visits to A&E</li>
+        <li>treatment for a long-term, or pre-existing medical conditions</li>
+        <li>routine medical care for pre-existing conditions that need monitoring</li>
+        <li>routine maternity care, as long as you're not going <a href="https://www.nhs.uk/using-the-nhs/healthcare-abroad/going-abroad-for-treatment/giving-birth-outside-the-uk/">abroad to give birth</a></li>
+        <li>oxygen therapy and kidney dialysis</li>
+      </ul>
+
+      <p>Medically necessary healthcare means healthcare which becomes needed during your stay, and you cannot reasonably wait until you come back to UK to receive the treatment.
+      </p> 
+      <p>You’ll need to pre-arrange some treatments with the relevant healthcare provider in the country you are visiting, for example kidney dialysis or chemotherapy.</p>
+      <p>Not all state healthcare is free in the EU and you may have to pay for services that you’d get for free on the NHS.</p>
+
+      <h2>Where can I use my card</h2>
+
+      <p>A UK EHIC covers you whilst temporarily staying in an EU country, Norway, Iceland, Liechtenstein, and Switzerland.</p>
+      <p>A UK GHIC only covers you whilst temporarily staying in an EU country, it doesn’t cover you while staying in Norway, Iceland, Liechtenstein, or Switzerland.</p>
+      <p>The EU countries are:</p>
+      <p>Austria, Belgium, Bulgaria, Croatia, Republic of Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, and Sweden.</p>
+
+
+      <table role="table" class="nhsuk-table-responsive">
+         <caption class="nhsuk-table__caption">healthcare cover</caption>
+         <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+               <th role="columnheader" class="table-heading" scope="col">
+                  Countries
+               </th>
+               <th role="columnheader" class="table-heading" scope="col">
+                  UK GHIC
+               </th>
+               <th role="columnheader" class="table-heading" scope="col">
+                  UK EHIC
+               </th>
+            </tr>
+         </thead>
+         <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+               <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading"> </span>European Union (EU)<br> 
+               </td>
+               <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading"></span>
+                  <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
+               </td>
+               <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading"></span>
+                  <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
+               </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+               <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading"> </span>Norway, Iceland, Liechtenstein and Switzerland
+               </td>
+               <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading"></span>
+                  <svg class="nhsuk-icon nhsuk-icon__cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                     <path d="M17 18.5c-.4 0-.8-.1-1.1-.4l-10-10c-.6-.6-.6-1.6 0-2.1.6-.6 1.5-.6 2.1 0l10 10c.6.6.6 1.5 0 2.1-.3.3-.6.4-1 .4z"></path>
+                     <path d="M7 18.5c-.4 0-.8-.1-1.1-.4-.6-.6-.6-1.5 0-2.1l10-10c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-10 10c-.3.3-.6.4-1 .4z"></path>
+                  </svg>
+               </td>
+               <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading"></span>
+                  <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
+               </td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+               <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading"> </span>In the future, more countries may be added 
+               </td>
+               <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading"></span>
+                  <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12"></path>
+               </td>
+               <td role="cell" class="nhsuk-table__cell">
+                  <span class="nhsuk-table-responsive__heading"></span>
+                  <svg class="nhsuk-icon nhsuk-icon__cross" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                     <path d="M17 18.5c-.4 0-.8-.1-1.1-.4l-10-10c-.6-.6-.6-1.6 0-2.1.6-.6 1.5-.6 2.1 0l10 10c.6.6.6 1.5 0 2.1-.3.3-.6.4-1 .4z"></path>
+                     <path d="M7 18.5c-.4 0-.8-.1-1.1-.4-.6-.6-.6-1.5 0-2.1l10-10c.6-.6 1.5-.6 2.1 0 .6.6.6 1.5 0 2.1l-10 10c-.3.3-.6.4-1 .4z"></path>
+                  </svg>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+
+      {{ warningCallout({
+        "heading": "If you have an EHIC",
+        "HTML": "<p>If you have a European Health Insurance Card (EHIC) issued on or before 31 December 2020, it will remain valid until the expiry date on the card. Once your current card expires, you’ll need to apply for a new card.</p><p>You can apply for a new card up to 6 months before your current card expires. </p>"
+      }) }}
+
+      <p>You may be asked to provide further evidence to support your application. Applying takes around 5 minutes.</p>
+
+      <br>
+
+      <!-- <h2>Which card would you like to apply for?</h2> -->
+
+      {{ radios({
+        "idPrefix": "example-hints",
+        "name": "example-hints",
+        "fieldset": {
+          "legend": {
+            "text": "Which card would you like to apply for?",
+            "classes": "nhsuk-fieldset__legend--l",
+            "isPageHeading": true
+          }
+        },
+        "items": [
+          {
+            "value": "gateway",
+            "text": "UK Global Health Insurance Card (GHIC)",
+            "hint": {
+              "text": "A UK GHIC only covers you whilst temporarily staying in an EU country, it doesn’t cover you while staying in Norway, Iceland, Liechtenstein, or Switzerland."
+            }
+          },
+          {
+            "value": "verify",
+            "text": "UK European Health Insurance Card (EHIC)",
+            "hint": {
+              "text": "A UK EHIC covers you whilst temporarily staying in an EU country, Norway, Iceland, Liechtenstein, and Switzerland."
+            }
+          }
+        ]
+      }) }}
+
+      {{ button({
+        "text": "Apply"
+      }) }}
 
 
 
+      <!-- {{ button({
+        "text": "Apply for a UK GHIC"
+      }) }}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-      <!-- {{ warningCallout({
-        "heading": "School, nursery or work",
-        "HTML": "<p>Stay away from school, nursery or work until all the spots have crusted over. This is usually 5 days after the spots first appeared.</p>"
+      {{ button({
+        "text": "Apply for a UK EHIC"
       }) }} -->
+
+      <hr>
+
+      <p>A UK GHIC or UK EHIC is free of charge. Beware of unofficial websites, they may charge you a fee to apply.</p>
+      <p>It’s currently taking longer than usual to process new UK EHICs due to high demand. We’re working to resolve this and will process all applications as soon as possible.</p>
+
+      <h2>Arrange travel insurance</h2>
+      <p>Your UK EHIC or UK GHIC card is not a substitute for travel insurance. It may not cover all health costs and never covers repatriation costs. Make sure you have travel insurance as well as an UK EHIC or UK GHIC.</p>
+
+      <h2>If you are abroad and do not have your card with you</h2>
+      <p>You can get a Provisional Replacement Certificate (PRC) to prove your entitlement to medically necessary healthcare if you travel to Europe without your UK GHIC or UK EHIC and need treatment during your visit.</p>
+
+      <p>If you need it outside opening hours, you should call as soon as possible the next working day.</p>
+      <p>The PRC will give you the same cover as an UK EHIC or UK GHIC until you return home.</p>
+      <p>When calling for a PRC, you'll need to give:</p>
+
+      <ul>
+        <li>your National Insurance number</li>
+        <li>your name</li>
+        <li>your address</li>
+        <li>your date of birth</li>
+        <li>the name of the treatment facility</li>
+        <li>the email address for the specific department of the organisation providing your treatment</li>
+      </ul>
+
+      <p>To apply for a PRC <a href="https://www.nhsbsa.nhs.uk/contact-us/overseas-healthcare-services-contact-us">contact the Overseas Healthcare Services</a>.</p>
+      <p>Someone else can apply for a PRC on your behalf.</p>
+
+      <h2>Claiming a refund</h2>
+      <p>Depending on the country you visit you may be expected to pay all or part of your bill upfront and then claim a refund afterwards.</p> 
+      <p>Some countries ask patients to pay a contribution towards the cost of their care, such as for prescription costs. This is known as a co-payment or patient share.</p>
+      <p>You can claim back the difference between the total bill and the patient share, but the actual patient share is not refundable.</p>
+      <p>Keep all receipts and any paperwork, you or your insurance company may need them if you're applying for a refund.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
 
       {{ reviewDate({
         "lastReview": "6 May 2021",
