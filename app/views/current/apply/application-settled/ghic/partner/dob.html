@@ -26,38 +26,38 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <form action="nino" method="post"> -->
+      <form action="nino" method="post">
       <!-- <form action="../add-child-2" method="post"> -->
-      <form action="cya-partner" method="post">
+      <!-- <form action="cya-partner" method="post"> -->
 
-        {{ dateInput({
-  "id": "example",
-  "namePrefix": "example",
-  "fieldset": {
-    "legend": {
-      "text": "What is your partner's date of birth?",
-      "classes": "nhsuk-label--l",
-      "isPageHeading": true
-        }
-      },
-      "hint": {
-        "text": "For example, 15 3 1984"
-      },
-      "items": [
-        {
-          "name": "day",
-          "classes": "nhsuk-input--width-2"
-        },
-        {
-          "name": "month",
-          "classes": "nhsuk-input--width-2"
-        },
-        {
-          "name": "year",
-          "classes": "nhsuk-input--width-4"
-        }
-      ]
-    }) }}
+      {{ dateInput({
+        "id": "example",
+        "namePrefix": "partner-dob",
+        "fieldset": {
+          "legend": {
+            "text": "What is your partner's date of birth?",
+            "classes": "nhsuk-label--l",
+            "isPageHeading": true
+              }
+            },
+            "hint": {
+              "text": "For example, 15 3 1984"
+            },
+            "items": [
+              {
+                "name": "day",
+                "classes": "nhsuk-input--width-2"
+              },
+              {
+                "name": "month",
+                "classes": "nhsuk-input--width-2"
+              },
+              {
+                "name": "year",
+                "classes": "nhsuk-input--width-4"
+              }
+            ]
+          }) }}
 
         {{ button({
           "text": "Continue"

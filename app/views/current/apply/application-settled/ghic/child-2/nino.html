@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is the child's name?
+  What is your National Insurance number?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,38 +26,37 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="child-address" method="post">
+      <!-- <form action="add-another-yn" method="post"> -->
+       <!-- <form action="cya-partner" method="post"> -->
+        <form action="../add-another-child-2" method="post">
         <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
 
         {% call fieldset({
           legend: {
-            text: "What is your child's name?",
+            text: "What is your Millie's National Insurance number?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        {{ input({
-          "label": {
-            "text": "First name"
-          },
-          "id": "input-width-30",
-          "name": "child-1-firstname",
-          "classes": "nhsuk-input--width-30"
-        }) }}
-
+        <p>It’s on your child's National Insurance card, benefit letter, payslip or P60.</p>
 
         {{ input({
           "label": {
-            "text": "Last name"
+            "text": ""
           },
-          "id": "input-width-30",
-          "name": "child-1-lastname",
-          "classes": "nhsuk-input--width-30"
+
+          hint: {
+            html: "For example, ‘QQ 12 34 56 C’."
+          },
+          "id": "input-width-10",
+          "name": "child-2-nino",
+          "classes": "nhsuk-input--width-10"
         }) }}
 
 
         {% endcall %}
+        <!-- <p><a href="nhs-number">I don't have a National Insurance number</a></p> -->
 
         {{ button({
           "text": "Continue"
@@ -66,7 +65,7 @@
       </form>
 
      {{ backLink({
-        "href": "",
+        "href": "dob",
         "text": "Change my previous answer"
       }) }}
 
