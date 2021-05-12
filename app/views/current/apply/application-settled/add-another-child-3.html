@@ -1,10 +1,20 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your contact telephone number?
+  Do you want to add another dependant child to your application?
 {% endblock %}
 
 {% block beforeContent %}
+
+<style type="text/css">
+  span {
+    font-weight: bold;
+  }
+  .nhsuk-inset-text {
+    margin: 15px 0 30px 0;
+  }
+</style>
+
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -26,31 +36,43 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <form action="add-child-1" method="post"> -->
-      <!-- <form action="cya-individual" method="post"> -->
-      <!-- <form action="add-partner" method="post"> -->
-      <form action="add-someone" method="post">
-      <!-- <form action="card-type" method="post"> -->
+
+      <form action="spouseAddAnotherChild" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your contact telephone number?",
+            text: "Do you want to add another child to your application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>We ask for this in case we need to contact you about your application.</p>
-        
-        {{ input({
-          "label": {
-            "text": "Enter your contact telephone number (optional)"
-          },
-          "id": "input-width-30",
-          "name": "phone-number",
-          "classes": "nhsuk-input--width-30"
-        }) }}
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>
+            <span>Child 1<br></span>
+            {{ data['child-3-firstname'] }} {{ data['child-3-lastname'] }}
+          </p>
+        </div>
+      
+      <!-- <p>
+        You can add your partner and children.
+      </p> -->
 
+        {{ radios({
+          "idPrefix": "add-another",
+          "name": "add-another",
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No"
+            }
+          ]
+        }) }}
 
         {% endcall %}
 
@@ -60,8 +82,8 @@
 
       </form>
 
-     {{ backLink({
-        "href": "email-address",
+      {{ backLink({
+        "href": "nino",
         "text": "Change my previous answer"
       }) }}
 

@@ -1,10 +1,11 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your contact telephone number?
+  Is Millie dependant on you?
 {% endblock %}
 
 {% block beforeContent %}
+
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -26,31 +27,36 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <form action="add-child-1" method="post"> -->
-      <!-- <form action="cya-individual" method="post"> -->
-      <!-- <form action="add-partner" method="post"> -->
-      <form action="add-someone" method="post">
-      <!-- <form action="card-type" method="post"> -->
+
+      <form action="over21" method="post">
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
 
         {% call fieldset({
           legend: {
-            text: "What is your contact telephone number?",
+            text: "Is Millie dependant on you?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+      
+      <p>
+        [explanatory text]
+      </p>
 
-        <p>We ask for this in case we need to contact you about your application.</p>
-        
-        {{ input({
-          "label": {
-            "text": "Enter your contact telephone number (optional)"
-          },
-          "id": "input-width-30",
-          "name": "phone-number",
-          "classes": "nhsuk-input--width-30"
+        {{ radios({
+          "idPrefix": "over-21",
+          "name": "over-21",
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No"
+            }
+          ]
         }) }}
-
 
         {% endcall %}
 
@@ -60,8 +66,8 @@
 
       </form>
 
-     {{ backLink({
-        "href": "email-address",
+      {{ backLink({
+        "href": "",
         "text": "Change my previous answer"
       }) }}
 

@@ -2268,6 +2268,17 @@ router.post('/application-s1/partner/partnerAddress', function (req, res) {
   }
 })
 
+// Do you want to add your CHILDREN to your application? EUSS with spouse 
+router.post('/application-settled/addChildWithSpouse', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes") {
+    res.redirect('child-3/full-name')
+  }
+  else {
+    res.redirect('cya-spouse')
+  }
+})
+
 // Do you want to add your CHILDREN to your application? EUSS 
 router.post('/application-settled/addChild', function (req, res) {
   var addAnother = req.session.data['add-another']
@@ -2289,6 +2300,23 @@ router.post('/application-settled-in-eu/addChild', function (req, res) {
   else {
     res.redirect('add-parent')
     // res.redirect('cya-family')
+  }
+})
+
+// What is Millie's nationality? - EUSS (under 21)
+router.post('/application-settled/child-3/spouseChildNationality', function (req, res) {
+  var childNationality = req.session.data['child-3-nationality']
+  if (childNationality == "UK citizen") {
+    res.redirect('address-manual')
+  }
+  else if (childNationality == "EU, Norwegian, Icelandic, Liechtensteiner or Swiss") {
+    res.redirect('address-manual')
+  }
+  else if (childNationality == "Other") {
+    res.redirect('address-manual')
+  }
+  else {
+    res.redirect('nationality')
   }
 })
 
@@ -2447,6 +2475,19 @@ router.post('/application-ni/grandchild/childAddress', function (req, res) {
   }
   else {
     res.redirect('ineligible')
+  }
+})
+
+// Do you want to add ANOTHER CHILD to your application?
+// EUSS
+router.post('/application-settled/spouseAddAnotherChild', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes") {
+    res.redirect('child-3/full-name')
+  }
+  else {
+    // res.redirect('add-parent')
+    res.redirect('child-3/cya-child')
   }
 })
 
