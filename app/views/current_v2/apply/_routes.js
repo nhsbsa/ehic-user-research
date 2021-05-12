@@ -258,7 +258,7 @@ router.post('/application/emigrate', function (req, res) {
     res.redirect('emigration-date')
   }
   else if (emigrate == "No") {
-    res.redirect('email-address')
+    res.redirect('nino')
   }
   else {
     res.redirect('emigrate')
@@ -1738,7 +1738,7 @@ router.post('/application-settled-in-eu/spouses', function (req, res) {
 
 // Where does your spouse or civil partner live? - EUSS
 router.post('/application-settled/spouse/addressCountry', function (req, res) {
-  var addressCountry = req.session.data['address-country']
+  var addressCountry = req.session.data['app-settled-spouse-address-country']
   if (addressCountry == "UK") {
     res.redirect('partner-address')
   }
@@ -1981,7 +1981,7 @@ router.post('/application-ni/durable/partnerNationality', function (req, res) {
 
 // Does your spouse or civil partner live with you? (EUSS)
 router.post('/application-settled/spouse/partnerAddress', function (req, res) {
-  var addAnother = req.session.data['add-another']
+  var addAnother = req.session.data['app-settled-spouse-address']
   if (addAnother == "Yes") {
     res.redirect('dob')
   }
@@ -2276,7 +2276,7 @@ router.post('/application-settled/addChild', function (req, res) {
   }
   else {
     // res.redirect('add-parent')
-    res.redirect('cya-family')
+    res.redirect('cya-couple')
   }
 })
 
@@ -2487,6 +2487,8 @@ router.post('/application-ni/noPartnerAddAnotherChild', function (req, res) {
     res.redirect('add-parent')
   }
 })
+
+
 
 // getAddress lookup API - Application-settled
 router.get('/application-settled/ghic/address-list-handler', function (req, res) {

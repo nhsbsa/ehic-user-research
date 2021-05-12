@@ -27,7 +27,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="emigrate" method="post">
+      <form action="emigration-date" method="post">
 
         {% call fieldset({
           legend: {
@@ -42,8 +42,8 @@
         <p>We ask this question so we can assess the length of card we should send you. </p>
 
         {{ radios({
-          "idPrefix": "emigrate",
-          "name": "emigrate",
+          "idPrefix": "app-settled-emigration",
+          "name": "app-settled-emigration",
           "items": [
             {
               "value": "Yes",

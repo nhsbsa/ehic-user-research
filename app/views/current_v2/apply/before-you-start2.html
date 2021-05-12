@@ -26,7 +26,7 @@
 <!-- Interuption Card -->
 <div class="nhsuk-grid-row">
    <div class="nhsuk-grid-column-full">
-      <div class="callout callout--interruption alt">
+      <div class="callout callout--interruption alt" style="background-color: #005eb8;">
          <div class="nhsuk-grid-row">
             <div class="nhsuk-grid-column-two-thirds">
                <h1>Before you start</h1>
@@ -48,17 +48,26 @@
                <p>Depending on your circumstances we may also ask for your NHS number, if you have one.</p>
              </div>
 
+             <!-- <hr> -->
+
               <!-- <br> -->
-               <form action="plan-travel" method="post">
-                  <button class="nhsuk-button nhsuk-button--reverse" type="submit">
-                  Continue
-                  </button>
-               </form>
+               <!-- <form action="plan-travel" method="post"> -->
+               <!-- <form action="current-ehic" method="post"> -->
+               
                <!-- <hr> -->
                <!-- <div class="nhsuk-inset-text" style="border-color: white;">
                   <span class="nhsuk-u-visually-hidden">Information: </span> -->
                   <p>You only need to apply for cover if you have plans to travel in the EU, Norway, Iceland, Liechtenstein, or Switzerland.</p>
                 <!-- </div>  -->
+
+                <br>
+
+                <form action="where-do-you-live" method="post">
+                  <button class="nhsuk-button nhsuk-button--reverse" type="submit">
+                  Continue
+                  </button>
+               </form>
+
                <!-- <p>
                   You only need to apply for cover if you have plans to travel in the EU, Norway, Iceland, Liechtenstein, or Switzerland.
                </p> -->
@@ -85,6 +94,7 @@
    <div class="nhsuk-grid-column-two-thirds">
       <h2>If you already have a European Health Insurance Card (EHIC)</h2>
       <p>If your circumstances haven’t changed, such as you have not moved to a different country, you can continue to use your EHIC until it expires. You can apply for a new card up to 6 months before its expiry date.</p>
+
       <details class="nhsuk-details nhsuk-expander">
          <summary class="nhsuk-details__summary">
             <span class="nhsuk-details__summary-text">
@@ -97,6 +107,7 @@
             </p>
          </div>
       </details>
+      
    </div>
 </div>
 
