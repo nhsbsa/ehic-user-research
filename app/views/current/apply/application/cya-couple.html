@@ -201,51 +201,6 @@ Check your answers
                      {% if (data['country']) %}{{ data['country'] }},<br>{% endif %}
                      {{ data['postcode'] }}
                   </p>
-<<<<<<< HEAD
-              {% endif %}
-            {% endif %}
-            </dd>
-            
-            
-              <dd class="nhsuk-summary-list__actions">
-                
-                  <a href="partner/partner-address">
-                      Change<span class="nhsuk-u-visually-hidden"> home address</span>
-                      </a>
-                
-              </dd>
-            
-          </div>
-        
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Date of birth
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              {{ data['partner-dob-day'] }} / {{ data['partner-dob-month'] }} / {{ data['partner-dob-year'] }}
-            </dd>
-            
-              <dd class="nhsuk-summary-list__actions">
-                
-                  <a href="partner/dob">
-                      Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
-                      </a>
-                
-              </dd>
-            
-          </div>
-        
-      </dl>
-
-        <h2>Now send your application</h2>
-        <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
-
-        {{ button({
-          "text": "Accept and send"
-        }) }}
-
-
-=======
                   {% endif %}
                   {% endif %}
                </dd>
@@ -287,7 +242,6 @@ Check your answers
          {{ button({
          "text": "Accept and send"
          }) }}
->>>>>>> 3499819af4e5f072cc30f25f5d36ca8bca235837
       </form>
       <!-- {{ backLink({
          "href": "add-another-yn",
