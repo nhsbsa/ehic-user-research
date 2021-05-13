@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your contact telephone number?
+  What is your child's NHS number?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,34 +26,31 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <form action="add-child-1" method="post"> -->
-      <!-- <form action="cya-individual" method="post"> -->
-      <!-- <form action="add-partner" method="post"> -->
-      <form action="add-someone" method="post">
-      <!-- <form action="card-type" method="post"> -->
+      <!-- <form action="address-lookup" method="post"> -->
+      <form action="full-name" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your contact telephone number?",
+            text: "What is your child's NHS number?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>We ask for this in case we need to contact you about your application.</p>
-        
         {{ input({
-          "label": {
-            "text": "Enter your contact telephone number (optional)"
+          
+          hint: {
+            html: "Your NHS number is a 10 digit number. For example, <span class=\"nhsuk-u-nowrap\">485 777 3456</span>. <p>You can find it on any letter the NHS has sent you, on a prescription, or by logging in to a GP practice online service.</p>"
           },
-          "id": "input-width-30",
-          "name": "phone-number",
-          "classes": "nhsuk-input--width-30"
+          "id": "input-width-10",
+          "name": "test-width-10",
+          "classes": "nhsuk-input--width-10"
         }) }}
 
 
         {% endcall %}
-
+<!--         <p><a href="address-manual">I don't have a National Insurance number</a></p>
+ -->
         {{ button({
           "text": "Continue"
         }) }}
@@ -61,7 +58,7 @@
       </form>
 
      {{ backLink({
-        "href": "email-address",
+        "href": "",
         "text": "Change my previous answer"
       }) }}
 

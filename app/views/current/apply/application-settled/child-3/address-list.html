@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your contact telephone number?
+  What is MIllie's home address?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,42 +26,56 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <form action="add-child-1" method="post"> -->
-      <!-- <form action="cya-individual" method="post"> -->
-      <!-- <form action="add-partner" method="post"> -->
-      <form action="add-someone" method="post">
-      <!-- <form action="card-type" method="post"> -->
+      <form action="nationality" method="post">
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
+
 
         {% call fieldset({
           legend: {
-            text: "What is your contact telephone number?",
+            text: "What is Millie's home address?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>We ask for this in case we need to contact you about your application.</p>
-        
-        {{ input({
+        <!-- <h3>Postcode</h3>
+        <p>SW1A 1AA</p> -->
+        <h3>Select an address</h3>
+
+        {{ select({
+          "id": "select-1",
+          "name": "select-1",
           "label": {
-            "text": "Enter your contact telephone number (optional)"
           },
-          "id": "input-width-30",
-          "name": "phone-number",
-          "classes": "nhsuk-input--width-30"
+          "items": [
+            {
+              "value": 1,
+              "text": "1 address found",
+              "selected": true
+            },
+            {
+              "value": 2,
+              "text": "73 Roman Rd, Leeds LS2 5ZN"
+            }
+          ]
         }) }}
 
+        
 
         {% endcall %}
+
+
 
         {{ button({
           "text": "Continue"
         }) }}
 
+<p><a href="address-manual">I can't find my address in the list</a></p>
+
       </form>
 
      {{ backLink({
-        "href": "email-address",
+        "href": "address-lookup",
         "text": "Change my previous answer"
       }) }}
 

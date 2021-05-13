@@ -30,16 +30,18 @@
 
       <form action="spouses" method="post">
 
+        <h2>Do you want to add your spouse or civil&nbsp;partner to your application?</h2>
+
         {% call fieldset({
           legend: {
-            text: "Do you want to add your spouse or civil partner to your application?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
       
       <p>
-        Your spouse or civil partner must live in the UK, an EU country, Switzerland, Norway, Iceland, or Liechtenstein.
+        Your spouse or civil partner must live in the UK, an EU country, Norway, Iceland, Liechtenstein or Switzerland.
       </p>
 
         {{ radios({

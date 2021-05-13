@@ -40,7 +40,7 @@
 
           </div>
 
-          <p>A confirmation email has been sent to <strong>karen.francis@example.com</strong></p>
+          <p>A confirmation email has been sent to <strong>{{ data['email-address'] }}</strong></p>
 
           <h2>What happens next</h2>
 
@@ -62,7 +62,7 @@
            
           <p>For information on how we use your data, please refer to our <a href="contact">privacy notice</a>.</p>
 
-          <form action="../apply/start" method="post">
+          <form action="../../../start" method="post">
 
               {{ button({
               "text": "Back to start"

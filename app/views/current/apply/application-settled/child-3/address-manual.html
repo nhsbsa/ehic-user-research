@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your National Insurance number?
+  What is Millie's home address?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,37 +26,66 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <form action="add-another-yn" method="post"> -->
-       <!-- <form action="cya-partner" method="post"> -->
-        <form action="../add-another-child-1" method="post">
+      <form action="../add-another-child-3" method="post">
         <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
+
+        <h2>What is {{ data['child-3-firstname'] }}'s home address?</h2>
 
         {% call fieldset({
           legend: {
-            text: "What is your Millie's National Insurance number?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>It’s on your child's National Insurance card, benefit letter, payslip or P60.</p>
+        {{ input({
+          "label": {
+          "text": "Building and street"
+          },
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
+        }) }}
 
         {{ input({
           "label": {
-            "text": ""
+          "text": ""
           },
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
+        }) }}
 
-          hint: {
-            html: "For example, ‘QQ 12 34 56 C’."
+        {{ input({
+          "label": {
+            "text": "Town or city"
+          },
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
+        }) }}
+
+        {{ input({
+          "label": {
+            "text": "County"
+          },
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
+        }) }}
+
+        {{ input({
+          "label": {
+            "text": "Postcode"
           },
           "id": "input-width-10",
-          "name": "child-1-nino",
+          "name": "test-width-10",
           "classes": "nhsuk-input--width-10"
         }) }}
 
 
         {% endcall %}
-        <!-- <p><a href="nhs-number">I don't have a National Insurance number</a></p> -->
 
         {{ button({
           "text": "Continue"
@@ -65,7 +94,7 @@
       </form>
 
      {{ backLink({
-        "href": "dob",
+        "href": "address-list",
         "text": "Change my previous answer"
       }) }}
 
