@@ -258,7 +258,8 @@ router.post('/application/emigrate', function (req, res) {
     res.redirect('emigration-date')
   }
   else if (emigrate == "No") {
-    res.redirect('email-address')
+    // res.redirect('email-address')
+    res.redirect('nino')
   }
   else {
     res.redirect('emigrate')
