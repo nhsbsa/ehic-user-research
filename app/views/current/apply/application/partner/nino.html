@@ -29,10 +29,12 @@
       <!-- <form action="add-another-yn" method="post"> -->
        <form action="cya-partner" method="post">
 
+        <h2>What is {{ data['partner-firstname'] }}'s National Insurance number?</h2>
+
 
         {% call fieldset({
           legend: {
-            text: "What is your partner's National Insurance number?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

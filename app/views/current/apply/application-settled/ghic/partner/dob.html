@@ -30,12 +30,14 @@
       <!-- <form action="../add-child-2" method="post"> -->
       <!-- <form action="cya-partner" method="post"> -->
 
+        <h2>What is {{ data['partner-firstname'] }}'s date of birth?</h2>
+
       {{ dateInput({
         "id": "example",
         "namePrefix": "partner-dob",
         "fieldset": {
           "legend": {
-            "text": "What is your partner's date of birth?",
+            "text": "",
             "classes": "nhsuk-label--l",
             "isPageHeading": true
               }

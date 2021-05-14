@@ -27,13 +27,14 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-
       <form action="partnerCountry" method="post">
+
+        <h2>Where does {{ data['partner-firstname'] }} live?</h2>
 
 
         {% call fieldset({
           legend: {
-            text: "Where does your partner live?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

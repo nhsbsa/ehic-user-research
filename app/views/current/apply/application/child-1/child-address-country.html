@@ -31,10 +31,11 @@
       <form action="childCountry" method="post">
         <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
 
+        <h2>Does {{ data['child-1-firstname'] }} live in an EU country?</h2>
 
         {% call fieldset({
           legend: {
-            text: "Does Millie live in an EU country?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

@@ -30,10 +30,12 @@
 
       <form action="partner-same-address" method="post">
 
+        <h2>Does {{ data['partner-firstname'] }} live with you?</h2>
+
 
         {% call fieldset({
           legend: {
-            text: "Does your partner live with you?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

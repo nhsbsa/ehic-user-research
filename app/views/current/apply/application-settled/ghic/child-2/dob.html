@@ -31,12 +31,14 @@
       <!-- <form action="../add-another-child-2" method="post"> -->
         <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
 
+        <h2>What is {{ data['child-2-firstname'] }}'s date of birth?</h2>
+
         {{ dateInput({
         "id": "example",
         "namePrefix": "child-2-dob",
         "fieldset": {
           "legend": {
-            "text": "What is Millie's date of birth?",
+            "text": "",
             "classes": "nhsuk-label--l",
             "isPageHeading": true
               }

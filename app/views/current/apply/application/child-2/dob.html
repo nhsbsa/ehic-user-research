@@ -32,34 +32,36 @@
       <form action="nino" method="post">
         <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
 
+        <h2>What is {{ data['child-2-firstname'] }}'s date of birth?</h2>
+
         {{ dateInput({
-  "id": "example",
-  "namePrefix": "child-2-dob",
-  "fieldset": {
-    "legend": {
-      "text": "What is Millie's date of birth?",
-      "classes": "nhsuk-label--l",
-      "isPageHeading": true
-        }
-      },
-      "hint": {
-        "text": "For example, 15 3 2015"
-      },
-      "items": [
-        {
-          "name": "day",
-          "classes": "nhsuk-input--width-2"
-        },
-        {
-          "name": "month",
-          "classes": "nhsuk-input--width-2"
-        },
-        {
-          "name": "year",
-          "classes": "nhsuk-input--width-4"
-        }
-      ]
-    }) }}
+          "id": "example",
+          "namePrefix": "child-2-dob",
+          "fieldset": {
+            "legend": {
+              "text": "",
+              "classes": "nhsuk-label--l",
+              "isPageHeading": true
+                }
+              },
+              "hint": {
+                "text": "For example, 15 3 2015"
+              },
+              "items": [
+                {
+                  "name": "day",
+                  "classes": "nhsuk-input--width-2"
+                },
+                {
+                  "name": "month",
+                  "classes": "nhsuk-input--width-2"
+                },
+                {
+                  "name": "year",
+                  "classes": "nhsuk-input--width-4"
+                }
+              ]
+            }) }}
 
         {{ button({
           "text": "Continue"

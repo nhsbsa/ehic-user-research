@@ -31,9 +31,11 @@
         <form action="../add-another-child-2" method="post">
         <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
 
+        <h2>What is {{ data['child-2-firstname'] }}'s National Insurance number?</h2>
+
         {% call fieldset({
           legend: {
-            text: "What is your Millie's National Insurance number?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
