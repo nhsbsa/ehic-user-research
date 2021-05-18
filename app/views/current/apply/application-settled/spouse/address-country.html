@@ -29,9 +29,11 @@
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
       <form action="addressCountry" method="post">
 
+        <h2>Where does {{ data['spouse-firstname'] }} live?</h2>
+
         {% call fieldset({
           legend: {
-            text: "Where does your spouse or civil partner live?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

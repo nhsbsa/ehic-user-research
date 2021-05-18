@@ -27,12 +27,13 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-
       <form action="partnerAddress" method="post">
+
+        <h2>Does {{ data['spouse-firstname'] }} live with you?</h2>
 
         {% call fieldset({
           legend: {
-            text: "Does your spouse or civil partner live with you?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

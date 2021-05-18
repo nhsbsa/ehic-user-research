@@ -47,9 +47,13 @@
           }
         }) %}
 
-        {{ insetText({
-        "HTML": "<p><span>Child 1<br></span>Millie Francis</p>"
-      }) }}
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>
+            <span>Child 1<br></span>
+            {{ data['child-2-firstname'] }} {{ data['child-2-lastname'] }}
+          </p>
+        </div>
       
       <!-- <p>
         You can add your partner and children.

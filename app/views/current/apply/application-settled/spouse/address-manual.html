@@ -29,9 +29,13 @@
       <!-- <form action="../add-child-2" method="post"> -->
       <form action="dob" method="post">
 
+        <h2>What is {{ data['spouse-firstname'] }}'s home address?
+          
+        </h2>
+
         {% call fieldset({
           legend: {
-            text: "What is your spouse or civil partner's home address?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

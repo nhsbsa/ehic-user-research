@@ -29,9 +29,11 @@
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
       <form action="partnerSettled" method="post">
 
+        <h2>Does {{ data['durable-firstname'] }} have EU settled or pre-settled status?</h2>
+
         {% call fieldset({
           legend: {
-            text: "Does your partner have EU settled or pre-settled status?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

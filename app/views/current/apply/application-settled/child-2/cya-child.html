@@ -26,7 +26,7 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="../cya-spouse-child" method="post">
+      <form action="../cya-family" method="post">
 
         <h1>Check your answers</h1>
 
@@ -40,7 +40,7 @@
                   Full name
                </dt>
                <dd class="nhsuk-summary-list__value">
-                  {{ data['child-3-firstname'] }} {{ data['child-3-lastname'] }}
+                  {{ data['child-2-firstname'] }} {{ data['child-2-lastname'] }}
                </dd>
                <dd class="nhsuk-summary-list__actions">
                   <a href="full-name">
@@ -48,13 +48,13 @@
                   </a>
                </dd>
             </div>
-
+            
             <div class="nhsuk-summary-list__row">
                <dt class="nhsuk-summary-list__key">
                   Date of birth
                </dt>
                <dd class="nhsuk-summary-list__value">
-                  {{ data['child-3-dob-day'] }} / {{ data['child-3-dob-month'] }} / {{ data['child-3-dob-year'] }}
+                  {{ data['child-2-dob-day'] }} / {{ data['child-2-dob-month'] }} / {{ data['child-2-dob-year'] }}
                </dd>
                <dd class="nhsuk-summary-list__actions">
                   <a href="dob">
@@ -68,7 +68,7 @@
                   Nationality
                </dt>
                <dd class="nhsuk-summary-list__value">
-                  {{ data['child-3-nationality'] }}
+                  {{ data['child-2-nationality'] }}
                </dd>
                <dd class="nhsuk-summary-list__actions">
                   <a href="nationality">
@@ -114,7 +114,7 @@
                </dd>
             </div>
             {% endif %}
-            
+          
          </dl>
 
         {{ button({

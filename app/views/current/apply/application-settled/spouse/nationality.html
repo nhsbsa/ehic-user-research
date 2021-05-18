@@ -29,9 +29,11 @@
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
       <form action="cya-partner" method="post">
 
+        <h2>What is {{ data['spouse-firstname'] }}'s nationality?</h2>
+
         {% call fieldset({
           legend: {
-            text: "What is your spouse or civil partner's nationality?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

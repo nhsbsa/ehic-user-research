@@ -30,12 +30,14 @@
       <!-- <form action="../add-child-2" method="post"> -->
       <form action="nationality" method="post">
 
+        <h2>What is {{ data['spouse-firstname'] }}'s date of birth?</h2>
+
         {{ dateInput({
           "id": "example",
           "namePrefix": "spouse-dob",
           "fieldset": {
             "legend": {
-              "text": "What is your spouse or civil partner's date of birth?",
+              "text": "",
               "classes": "nhsuk-label--l",
               "isPageHeading": true
                 }

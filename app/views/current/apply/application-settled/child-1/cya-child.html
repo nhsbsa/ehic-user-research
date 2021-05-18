@@ -26,7 +26,7 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="../cya-family" method="post">
+      <form action="../cya-children" method="post">
 
         <h1>Check your answers</h1>
 
@@ -34,85 +34,88 @@
 
         <h3>Child 1</h3>
 
-        {{ summaryList({
-          rows: [
-
-
-            {
-              key: {
-                text: "Full name"
-              },
-              value: {
-                text: "Millie Francis"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "full-name",
-                    text: "Change",
-                    visuallyHiddenText: "full name"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Date of birth"
-              },
-              value: {
-                text: "2 April 2016"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "dob",
-                    text: "Change",
-                    visuallyHiddenText: "date of birth"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Home address"
-              },
-              value: {
-                html: "73 Roman Rd<br>Leeds<br> LS2 5ZN"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "address-lookup",
-                    text: "Change",
-                    visuallyHiddenText: "home address"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Nationality"
-              },
-              value: {
-                html: "EU, Icelandic, Liechtensteiner, Norwegian or Swiss"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "nationality",
-                    text: "Change",
-                    visuallyHiddenText: "nationality"
-                  }
-                ]
-              }
-            }
+        <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Full name
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['child-1-firstname'] }} {{ data['child-1-lastname'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a href="full-name">
+                  Change<span class="nhsuk-u-visually-hidden"> full name</span>
+                  </a>
+               </dd>
+            </div>
             
-            
-          ]
-        }) }}
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Date of birth
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['child-1-dob-day'] }} / {{ data['child-1-dob-month'] }} / {{ data['child-1-dob-year'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a href="dob">
+                  Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+                  </a>
+               </dd>
+            </div>
 
-        <!-- <h2>Now send your application</h2>
-        <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p> -->
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Nationality
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['child-1-nationality'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a href="nationality">
+                  Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+                  </a>
+               </dd>
+            </div>
+
+            {% if (data['select-1']) %}
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Home address
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {% if (data['select-1']) %}
+                  {{ data['select-1'] | replace(", ", ",<br>") | safe }}
+                  {% endif %}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="address-lookup">
+                  Change <span class="nhsuk-u-visually-hidden">home address</span>
+                  </a>
+               </dd>
+            </div>
+            {% else %}
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Home address
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  <p>
+                     {{ data['building-street'] }},<br>
+                     {% if (data['building-street-2']) %}{{ data['building-street-2'] }},<br>{% endif %}
+                     {{ data['town-city'] }},<br>
+                     {% if (data['country']) %}{{ data['country'] }},<br>{% endif %}
+                     {{ data['postcode'] }}
+                  </p>
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="address-manual">
+                  Change <span class="nhsuk-u-visually-hidden">home address</span>
+                  </a>
+               </dd>
+            </div>
+            {% endif %}
+          
+         </dl>
 
         {{ button({
           "text": "Continue"
@@ -129,23 +132,3 @@
     </div>
   </div>
 {% endblock %}
-
-
-<!-- 
-{
-              key: {
-                text: "Is Millie dependant on you?"
-              },
-              value: {
-                text: "Yes"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "over-21",
-                    text: "Change",
-                    visuallyHiddenText: ""
-                  }
-                ]
-              }
-            }, -->

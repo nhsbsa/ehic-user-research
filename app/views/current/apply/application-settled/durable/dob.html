@@ -30,34 +30,36 @@
       <!-- <form action="../add-child-2" method="post"> -->
       <form action="cya-partner" method="post">
 
+        <h2>What is {{ data['durable-firstname'] }}'s date of birth?</h2>
+
         {{ dateInput({
-  "id": "example",
-  "namePrefix": "example",
-  "fieldset": {
-    "legend": {
-      "text": "What is your partner's date of birth?",
-      "classes": "nhsuk-label--l",
-      "isPageHeading": true
-        }
-      },
-      "hint": {
-        "text": "For example, 15 3 1984"
-      },
-      "items": [
-        {
-          "name": "day",
-          "classes": "nhsuk-input--width-2"
-        },
-        {
-          "name": "month",
-          "classes": "nhsuk-input--width-2"
-        },
-        {
-          "name": "year",
-          "classes": "nhsuk-input--width-4"
-        }
-      ]
-    }) }}
+          "id": "example",
+          "namePrefix": "durable-dob",
+          "fieldset": {
+            "legend": {
+              "text": "",
+              "classes": "nhsuk-label--l",
+              "isPageHeading": true
+                }
+              },
+              "hint": {
+                "text": "For example, 15 3 1984"
+              },
+              "items": [
+                {
+                  "name": "day",
+                  "classes": "nhsuk-input--width-2"
+                },
+                {
+                  "name": "month",
+                  "classes": "nhsuk-input--width-2"
+                },
+                {
+                  "name": "year",
+                  "classes": "nhsuk-input--width-4"
+                }
+              ]
+            }) }}
 
         {{ button({
           "text": "Continue"

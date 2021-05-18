@@ -579,6 +579,21 @@ router.post('/application-settled/ghic/addChildAfterPartner', function (req, res
   }
 })
 
+// Do you want to add any children to your application? - add-child-2.html
+router.post('/application-settled/addChildAfterPartner', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes") {
+    res.redirect('child-2/full-name')
+  }
+  else if (addAnother == "No") {
+    // res.redirect('child-2/child-address')
+    res.redirect('cya-couple')
+  }
+  else {
+    res.redirect('add-child-2')
+  }
+})
+
 
 // Does your child live with you?
 router.post('/application-settled/ghic/child-2/childAddress', function (req, res) {
@@ -596,6 +611,20 @@ router.post('/application-settled/ghic/child-2/childAddress', function (req, res
 
 // Do you want to add ANOTHER CHILD to your application?
 router.post('/application-settled/ghic/addAnotherChild', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes") {
+    res.redirect('child-2/full-name')
+  }
+  else if (addAnother == "No") {
+    res.redirect('child-2/cya-child')
+  }
+  else {
+    res.redirect('add-another-child-2')
+  }
+})
+
+// Do you want to add ANOTHER CHILD to your application?
+router.post('/application-settled/addAnotherChild', function (req, res) {
   var addAnother = req.session.data['add-another']
   if (addAnother == "Yes") {
     res.redirect('child-2/full-name')
@@ -2280,6 +2309,17 @@ router.post('/application-settled/addChildWithSpouse', function (req, res) {
   }
 })
 
+// Do you want to add your CHILDREN to your application? EUSS, no partner 
+router.post('/application-settled/addChildOnly', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes") {
+    res.redirect('child-1/full-name')
+  }
+  else {
+    res.redirect('cya-individual')
+  }
+})
+
 // Do you want to add your CHILDREN to your application? EUSS 
 router.post('/application-settled/addChild', function (req, res) {
   var addAnother = req.session.data['add-another']
@@ -2307,6 +2347,40 @@ router.post('/application-settled-in-eu/addChild', function (req, res) {
 // What is Millie's nationality? - EUSS (under 21)
 router.post('/application-settled/child-3/spouseChildNationality', function (req, res) {
   var childNationality = req.session.data['child-3-nationality']
+  if (childNationality == "UK citizen") {
+    res.redirect('address-manual')
+  }
+  else if (childNationality == "EU, Norwegian, Icelandic, Liechtensteiner or Swiss") {
+    res.redirect('address-manual')
+  }
+  else if (childNationality == "Other") {
+    res.redirect('address-manual')
+  }
+  else {
+    res.redirect('nationality')
+  }
+})
+
+// What is Millie's nationality? - EUSS (under 21)
+router.post('/application-settled/child-2/partnerChildNationality', function (req, res) {
+  var childNationality = req.session.data['child-2-nationality']
+  if (childNationality == "UK citizen") {
+    res.redirect('address-manual')
+  }
+  else if (childNationality == "EU, Norwegian, Icelandic, Liechtensteiner or Swiss") {
+    res.redirect('address-manual')
+  }
+  else if (childNationality == "Other") {
+    res.redirect('address-manual')
+  }
+  else {
+    res.redirect('nationality')
+  }
+})
+
+// What is Millie's nationality? - EUSS (under 21)
+router.post('/application-settled/child-1/partnerChildNationality', function (req, res) {
+  var childNationality = req.session.data['child-1-nationality']
   if (childNationality == "UK citizen") {
     res.redirect('address-manual')
   }

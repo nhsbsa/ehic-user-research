@@ -29,9 +29,11 @@
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
       <form action="durableLiving" method="post">
 
+        <h2>Has {{ data['durable-firstname'] }} lived with you for 2 years or more?</h2>
+
         {% call fieldset({
           legend: {
-            text: "Has your partner lived with you for 2 years or more?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

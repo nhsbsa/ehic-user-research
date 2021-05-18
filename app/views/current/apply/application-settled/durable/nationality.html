@@ -29,9 +29,13 @@
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
       <form action="partnerNationality" method="post">
 
+        <h2>What is {{ data['durable-firstname'] }}'s nationality?
+
+        </h2>
+
         {% call fieldset({
           legend: {
-            text: "What is your partner's nationality?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -39,7 +43,7 @@
 
         {{ radios({
           "idPrefix": "partnerNationality",
-          "name": "partnerNationality",
+          "name": "durable-nationality",
           "items": [
             {
               "value": "UK",

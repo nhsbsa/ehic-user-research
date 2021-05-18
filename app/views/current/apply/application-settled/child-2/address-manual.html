@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your child's home address?
+  What is Millie's home address?
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,10 +27,13 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <form action="../add-another-child-2" method="post">
+        <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
+
+        <h2>What is {{ data['child-2-firstname'] }}'s home address?</h2>
 
         {% call fieldset({
           legend: {
-            text: "What is your child's home address?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

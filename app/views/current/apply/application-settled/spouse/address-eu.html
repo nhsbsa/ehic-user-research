@@ -28,9 +28,11 @@
     <div class="nhsuk-grid-column-three-quarters">
       <form action="dob" method="post">
 
+        <h2>What is {{ data['spouse-firstname'] }}'s address?</h2>
+
         {% call fieldset({
           legend: {
-            text: "What is your spouse or civil partner's address?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

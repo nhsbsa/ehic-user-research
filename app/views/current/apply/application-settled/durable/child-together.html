@@ -29,9 +29,11 @@
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
       <form action="childTogether" method="post">
 
+        <h2>Did you a have a child with {{ data['durable-firstname'] }} before 1 January 2021?</h2>
+        
         {% call fieldset({
           legend: {
-            text: "Did you a have a child with your partner before 1 January 2021?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

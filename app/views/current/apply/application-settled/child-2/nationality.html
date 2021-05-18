@@ -1,11 +1,10 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you want to add your dependant children to your application?
+  What is your nationality?
 {% endblock %}
 
 {% block beforeContent %}
-
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -27,32 +26,36 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
+      <!-- <form action="../add-another-child-1" method="post"> -->
+      <form action="partnerChildNationality" method="post">
+      <span class="nhsuk-caption-l nhsuk-caption--bottom">Child 1</span>
 
-      <form action="addChildOnly" method="post">
+      <h2>What is {{ data['child-2-firstname'] }}'s nationality?</h2>
 
         {% call fieldset({
           legend: {
-            text: "Do you want to add any children to your application?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
-      
-      <!-- <p>
-        You can add children to your EHIC application if they live with you. They will receive their own EHIC.
-      </p> -->
 
         {{ radios({
-          "idPrefix": "add-another",
-          "name": "add-another",
+          "idPrefix": "child-2-nationality",
+          "name": "child-2-nationality",
           "items": [
             {
-              "value": "Yes",
-              "text": "Yes"
+              "value": "UK citizen",
+              "text": "UK citizen"
             },
             {
-              "value": "No",
-              "text": "No"
+              "value": "EU, Norwegian, Icelandic, Liechtensteiner or Swiss",
+              "text": "EU, Norwegian, Icelandic, Liechtensteiner or Swiss"
+            },
+            {
+              "value": "Other",
+              "text": "Other"
             }
           ]
         }) }}
@@ -65,11 +68,17 @@
 
       </form>
 
-      {{ backLink({
-        "href": "nino",
+     {{ backLink({
+        "href": "",
         "text": "Change my previous answer"
       }) }}
-
+      
     </div>
   </div>
 {% endblock %}
+
+<!-- 
+{
+              "value": "dual",
+              "text": "Dual national"
+            }, -->
