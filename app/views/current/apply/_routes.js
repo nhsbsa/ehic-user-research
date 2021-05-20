@@ -1229,7 +1229,7 @@ router.post('/application-student/courseDate', function (req, res) {
     res.redirect('student-options')
   }
   else if (courseDate == "after") {
-    res.redirect('evidence-student')
+    res.redirect('ghic-only/evidence-student')
   }
   else {
     res.redirect('course-date')

@@ -28,6 +28,8 @@
     <div class="nhsuk-grid-column-three-quarters">
       <form action="full-name" method="post">
 
+        <h2>What is the end date of your period of study in {{ data['ghic-course-country'] }}?</h2>
+
         <!-- {% call fieldset({
           legend: {
             text: "When will you be studying?",
@@ -38,34 +40,33 @@
 
 
         {{ dateInput({
-      "id": "example",
-      "namePrefix": "example",
-      "fieldset": {
-      "legend": {
-      "text": "What is the end date of your period of study in Germany?",
-      "classes": "nhsuk-label--l",
-      "isPageHeading": true
-        }
-      },
-      "hint": {
-        "text": "For example, 13 9 2019"
-      },
-      "items": [
-        {
-          "name": "day",
-          "classes": "nhsuk-input--width-2"
-        },
-        {
-          "name": "month",
-          "classes": "nhsuk-input--width-2"
-        },
-        {
-          "name": "year",
-          "classes": "nhsuk-input--width-4"
-        }
-      ]
-    }) }}
-
+          "id": "example",
+          "namePrefix": "ghic-course-end",
+          "fieldset": {
+          "legend": {
+          "text": "",
+          "classes": "nhsuk-label--l",
+          "isPageHeading": true
+            }
+          },
+          "hint": {
+            "text": "For example, 13 9 2019"
+          },
+          "items": [
+            {
+              "name": "day",
+              "classes": "nhsuk-input--width-2"
+            },
+            {
+              "name": "month",
+              "classes": "nhsuk-input--width-2"
+            },
+            {
+              "name": "year",
+              "classes": "nhsuk-input--width-4"
+            }
+          ]
+        }) }}
 
 
         {% endcall %}

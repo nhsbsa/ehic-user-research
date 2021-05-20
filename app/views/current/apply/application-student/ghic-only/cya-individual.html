@@ -34,19 +34,6 @@
 
         <dl class="nhsuk-summary-list">
 
-            <!-- <div class="nhsuk-summary-list__row">
-               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
-                  Type of healthcare cover
-               </dt>
-               <dd class="nhsuk-summary-list__value">
-                  {{ data['student-options'] }}
-               </dd>
-               <dd class="nhsuk-summary-list__actions">
-                  <a class="nhsuk-link" href="student-options">
-                  Change <span class="nhsuk-u-visually-hidden">Type of healthcare cover</span>
-                  </a>
-               </dd>
-            </div> -->
             <div class="nhsuk-summary-list__row">
                <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
                   Country of study
@@ -129,32 +116,6 @@
             </div>
             <div class="nhsuk-summary-list__row">
                <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
-                  NHS number
-               </dt>
-               <dd class="nhsuk-summary-list__value">
-                  {{ data['ghic-student-nhsnumber'] }}
-               </dd>
-               <dd class="nhsuk-summary-list__actions">
-                  <a class="nhsuk-link" href="nhs-number">
-                  Change <span class="nhsuk-u-visually-hidden">nhs number</span>
-                  </a>
-               </dd>
-            </div>
-            <div class="nhsuk-summary-list__row">
-               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
-                  Gender
-               </dt>
-               <dd class="nhsuk-summary-list__value">
-                  {{ data['ghic-student-gender'] }}
-               </dd>
-               <dd class="nhsuk-summary-list__actions">
-                  <a class="nhsuk-link" href="gender">
-                  Change <span class="nhsuk-u-visually-hidden">gender</span>
-                  </a>
-               </dd>
-            </div>
-            <div class="nhsuk-summary-list__row">
-               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
                   Email address
                </dt>
                <dd class="nhsuk-summary-list__value">
@@ -182,9 +143,12 @@
 
           </dl>
 
-        <!-- {{ summaryList({
-          rows: [
+          <!-- <br><br><br><br><br><br>
 
+
+        {{ summaryList({
+          rows: [
+            
             {
               key: {
                 text: "Country of study"
@@ -290,41 +254,6 @@
                 ]
               }
             },
-            {
-              key: {
-                text: "NHS number"
-              },
-              value: {
-                text: "485 777 3456"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "nhs-number",
-                    text: "Change",
-                    visuallyHiddenText: "NHS number"
-                  }
-                ]
-              }
-            },
-            {
-              key: {
-                text: "Gender"
-              },
-              value: {
-                text: "Female"
-              },
-              actions: {
-                items: [
-                  {
-                    href: "gender",
-                    text: "Change",
-                    visuallyHiddenText: "gender"
-                  }
-                ]
-              }
-            },
-           
             {
               key: {
                 text: "Email address"

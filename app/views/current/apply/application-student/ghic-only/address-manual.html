@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your name?
+  What is your home address?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,11 +26,11 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="dob" method="post">
+      <form action="email-address" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your name?",
+            text: "What is your home address?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -38,20 +38,47 @@
 
         {{ input({
           "label": {
-            "text": "First name"
+          "text": "Building and street"
           },
-          "id": "input-width-30",
-          "name": "ghic-student-firstname",
-          "classes": "nhsuk-input--width-30"
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
         }) }}
 
         {{ input({
           "label": {
-            "text": "Last name"
+          "text": ""
           },
-          "id": "input-width-30",
-          "name": "ghic-student-lastname",
-          "classes": "nhsuk-input--width-30"
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
+        }) }}
+
+        {{ input({
+          "label": {
+            "text": "Town or city"
+          },
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
+        }) }}
+
+        {{ input({
+          "label": {
+            "text": "County"
+          },
+          "id": "input-width-20",
+          "name": "test-width-20",
+          "classes": "nhsuk-input--width-20"
+        }) }}
+
+        {{ input({
+          "label": {
+            "text": "Postcode"
+          },
+          "id": "input-width-10",
+          "name": "test-width-10",
+          "classes": "nhsuk-input--width-10"
         }) }}
 
 
@@ -64,7 +91,7 @@
       </form>
 
      {{ backLink({
-        "href": "what-you-need",
+        "href": "address-lookup",
         "text": "Change my previous answer"
       }) }}
 

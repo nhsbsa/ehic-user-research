@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your contact telephone number?
+  What is the start date of your course?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,25 +26,44 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="cya-individual" method="post">
+      <form action="course-end-date" method="post">
+
+        <h2>What is the start date of your period of study in {{ data['ghic-course-country'] }}?</h2>
 
         {% call fieldset({
           legend: {
-            text: "What is your contact telephone number?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>We ask for this in case we need to contact you about your application.</p>
+        <!-- <p>You must start studying in Germany before 1 January 2021.</p> -->
 
-        {{ input({
-          "label": {
-            "text": "Enter your contact telephone number (optional)"
+        {{ dateInput({
+          "id": "example",
+          "namePrefix": "ghic-course-start",
+          "fieldset": {
+          "legend": {
+            }
           },
-          "id": "input-width-30",
-          "name": "ghic-student-phone",
-          "classes": "nhsuk-input--width-30"
+          "hint": {
+            "text": " For example, 13 9 2019"
+          },
+          "items": [
+            {
+              "name": "day",
+              "classes": "nhsuk-input--width-2"
+            },
+            {
+              "name": "month",
+              "classes": "nhsuk-input--width-2"
+            },
+            {
+              "name": "year",
+              "classes": "nhsuk-input--width-4"
+            }
+          ]
         }) }}
 
 
@@ -57,7 +76,7 @@
       </form>
 
      {{ backLink({
-        "href": "",
+        "href": "course-country",
         "text": "Change my previous answer"
       }) }}
 
