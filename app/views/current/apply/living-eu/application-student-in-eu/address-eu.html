@@ -28,9 +28,11 @@
     <div class="nhsuk-grid-column-three-quarters">
       <form action="email-address" method="post">
 
+        <h2>What is your address in {{ data['ghic-course-country'] }}?</h2>
+
         {% call fieldset({
           legend: {
-            text: "What is your address in Germany?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -42,37 +44,37 @@
           <label class="nhsuk-label" for="input-width-20">
             Address line 1
           </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="student-eu-address-line-1" type="text">
         </div>
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="input-width-20">
             Address line 2 (optional)
           </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="student-eu-address-line-2" type="text">
         </div>
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="input-width-20">
             Town or city
           </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="student-eu-address-town" type="text">
         </div>
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="input-width-20">
             State, province or region
           </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="student-eu-address-state" type="text">
         </div>
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="input-width-20">
             Post code (optional)
           </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="student-eu-address-postcode" type="text">
         </div>
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="input-width-20">
             Country
           </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="test-width-20" type="text">
+          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="student-eu-address-country" type="text">
         </div>
 
 

@@ -36,19 +36,6 @@
 
             <div class="nhsuk-summary-list__row">
                <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
-                  Type of healthcare cover
-               </dt>
-               <dd class="nhsuk-summary-list__value">
-                  {{ data['student-options'] }}
-               </dd>
-               <dd class="nhsuk-summary-list__actions">
-                  <a class="nhsuk-link" href="student-options">
-                  Change <span class="nhsuk-u-visually-hidden">Type of healthcare cover</span>
-                  </a>
-               </dd>
-            </div>
-            <div class="nhsuk-summary-list__row">
-               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
                   Country of study
                </dt>
                <dd class="nhsuk-summary-list__value">
@@ -112,26 +99,21 @@
                   </a>
                </dd>
             </div>
-
             <div class="nhsuk-summary-list__row">
-              <dt class="nhsuk-summary-list__key">
-                Address
-              </dt>
-              <dd class="nhsuk-summary-list__value">
-                {{ data['student-eu-address-line-1'] }}<br>
-                {{ data['student-eu-address-line-2'] }}<br>
-                {{ data['student-eu-address-town'] }}<br>
-                {{ data['student-eu-address-state'] }}<br>
-                {{ data['student-eu-address-postcode'] }}<br>
-                {{ data['student-eu-address-county'] }}
-              </dd>
-              <dd class="nhsuk-summary-list__actions">
-                <a href="address-eu">
-                  Change<span class="nhsuk-u-visually-hidden">address</span>
-                </a>
-              </dd>
+               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+                  Home address
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                    73 Roman Rd<br>
+                    Leeds<br>
+                    LS2 5ZN
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="address-manual">
+                  Change <span class="nhsuk-u-visually-hidden">home address</span>
+                  </a>
+               </dd>
             </div>
-            
             <div class="nhsuk-summary-list__row">
                <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
                   Email address
@@ -160,6 +142,156 @@
             </div>
 
           </dl>
+
+          <!-- <br><br><br><br><br><br>
+
+
+        {{ summaryList({
+          rows: [
+            
+            {
+              key: {
+                text: "Country of study"
+              },
+              value: {
+                html: "Germany"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "course-country",
+                    text: "Change",
+                    visuallyHiddenText: "Country of study"
+                  }
+                ]
+              }
+            },
+             {
+              key: {
+                text: "Study start date"
+              },
+              value: {
+                html: "28 September 2020"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "course-start-date",
+                    text: "Change",
+                    visuallyHiddenText: "Study start date"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Study end date"
+              },
+              value: {
+                html: "30 June 2021"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "course-end-date",
+                    text: "Change",
+                    visuallyHiddenText: "Study end date"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Name"
+              },
+              value: {
+                text: "Karen Francis"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "full-name",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                text: "15 March 1998"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "dob",
+                    text: "Change",
+                    visuallyHiddenText: "date of birth"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Home address"
+              },
+              value: {
+                html: "
+                      73 Roman Rd<br>
+                      Leeds<br>
+                      LS2 5ZN<br>"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "address-lookup",
+                    text: "Change",
+                    visuallyHiddenText: "home address"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Email address"
+              },
+              value: {
+                html: '<p>karen.francis@example.com</p>'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "email-address",
+                    text: "Change",
+                    visuallyHiddenText: "email address"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Contact telephone number"
+              },
+              value: {
+                html: '<p>07123 456 7890</p>'
+              },
+              actions: {
+                items: [
+                  {
+                    href: "phone-number",
+                    text: "Change",
+                    visuallyHiddenText: " Contact telephone number"
+                  }
+                ]
+              }
+            }
+            
+            
+          ]
+        }) }} -->
 
         <h2>Now send your application</h2>
         <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct. We will tell you how to send evidence of your studies on the next page.</p>
