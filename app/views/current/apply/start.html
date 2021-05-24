@@ -42,25 +42,42 @@
 <div class="nhsuk-grid-row">
    <div class="nhsuk-grid-column-two-thirds">
       <h1>Get healthcare cover for travelling abroad</h1>
-      <!-- <p class="nhsuk-lede-text">Apply now for a new UK European Health Insurance Card (EHIC).</p> -->
-      <p>Use this service to find out which card you are entitled to and apply for either:
+
+      <!-- <div class="nhsuk-inset-text">
+         <span class="nhsuk-u-visually-hidden">Information: </span>
+         <p>The Global Health Insurance Card (GHIC) is a new initiative brought in by the UK Government</p>
+      </div> -->
+
+      <div class="nhsuk-inset-text">
+         <span class="nhsuk-u-visually-hidden">Information: </span>
+         <h6>The Global Health Insurance Card (GHIC) replaces the European Health Insurance Card (EHIC) for most UK residents. Some people can still get a European Health Insurance Card.</h6>
+      </div>
+
+      <p>Use this service to: 
+      <!-- find out what healthcare cover you are entitled to and apply for either: -->
+    </p>
+      <ul>
+        <li>check if you are eligible</li> 
+        <li>apply for either a UK Global Health Insurance Card (GHIC) or UK European Health Insurance Card (EHIC)</li>
+      </ul>
+
+
+      <!-- <p>Use this service to find out what healthcare cover you are entitled to and apply for either:
       <ul>
          <li>UK Global Health Insurance Card (GHIC)</li>
          <li>UK European Health Insurance Card (EHIC)</li>
-      </ul>
-      <!-- <p>If you're a UK resident you’re entitled to a UK GHIC and may also be entitled to a new UK EHIC</p> -->
+      </ul> -->
+
+      
+
+      <!-- <p> Depending on your circumstances, such as if you're an EU national and normally live in the UK, you may be entitled to a UK European Health Insurance Card (EHIC)</p> -->
 
       <!-- <hr> -->
 
       <h2>Where are the cards valid</h2>
-      <!-- <details class="nhsuk-details nhsuk-expander">
-         <summary class="nhsuk-details__summary">
-           <span class="nhsuk-details__summary-text">
-         Find out which country each card is valid in</span>
-         </summary> -->
-      <!-- <div class="nhsuk-details__text"> -->
-      <p>Both cards cover you for necessary state provided healthcare treatment whilst temporarily staying in an EU country.</p>
-      <!-- <p>Depending on when you started you course, you may be entitled to a GHIC or EHIC</p> -->
+
+      <p>Both cards cover you for necessary state provided healthcare treatment whilst temporarily staying in an EU country. An EHIC also covers treatment in Norway, Iceland, Liechtenstein and Switzerland. You cannot use a GHIC in Norway, Iceland, Liechtenstein and Switzerland. More countries may be added to those accept GHIC in the future.</p>
+
       <table role="table" class="nhsuk-table-responsive">
          <caption class="nhsuk-table__caption">healthcare cover</caption>
          <thead role="rowgroup" class="nhsuk-table__head">
@@ -129,44 +146,33 @@
          </tbody>
       </table>
 
-      <p>The EU countries are:</p>
+      {{ details({
+        "text": " What countries are in the European Union?",
+        "HTML": "
+        <p>The EU countries are:</p>
       <p>Austria, Belgium, Bulgaria, Croatia, Republic of Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain and Sweden.</p>
+        "
+      }) }}
 
-      <!-- </div>
-         </details> -->
-      <!--
-         <details class="nhsuk-details nhsuk-expander">
-         <summary class="nhsuk-details__summary">
-         <span class="nhsuk-details__summary-text">
-         UK Global Health Insurance Card (GHIC)</span>
-         </summary>
-         <div class="nhsuk-details__text">
-         <p>If you're ordinarily resident in the UK and not insured by an EU country, Norway, Iceland, Liechtenstein or Switzerland, you may be entitled to a UK GHIC. </p>
-         <p>A UK GHIC covers:</p>
-         <ul>
-         <li>state-provided healthcare cover for treatment that becomes necessary whilst temporarily staying in an EU country </li>
-         <li>you if you are a student studying outside of the UK, a UK GHIC will cover you for both your country of study if this is in the EU, as well as any other EU country. You will not be able to use your card for treatment in Norway, Iceland, Liechtenstein and Switzerland</li>
-         </ul>
-         </div>
-         </details>
-         
-         <details class="nhsuk-details nhsuk-expander">
-         <summary class="nhsuk-details__summary">
-         <span class="nhsuk-details__summary-text">
-         UK European Health Insurance Card (EHIC)</span>
-         </summary>
-         <div class="nhsuk-details__text">
-         <p>Under the UK’s EU Withdrawal Agreement, certain people are eligible for a new UK EHIC. </p>
-         <p>A UK EHIC covers:</p>
-         <ul>
-         <li>state-provided healthcare cover for treatment that becomes necessary whilst temporarily staying in an EU country, Norway, Iceland, Liechtenstein, and Switzerland</li>
-         <li>you if you are a student studying outside of the UK, a UK EHIC will only cover you for state-provided healthcare cover within the EU and your country of study. You will not be able to use your card for treatment in Norway, Iceland, Liechtenstein and Switzerland except where you are studying in one of these countries </li>
-         </ul>
-         </div>
-         </details>
-         
-         -->
       <br>
+
+      <!-- <details class="nhsuk-details nhsuk-expander">
+         <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+            What countries are in the European Union?</span>
+         </summary>
+         <div class="nhsuk-details__text">
+            <p>The EU countries are:</p>
+      <p>Austria, Belgium, Bulgaria, Croatia, Republic of Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain and Sweden.</p>
+         </div>
+      </details> -->
+
+      
+
+      <!-- <p>The EU countries are:</p>
+      <p>Austria, Belgium, Bulgaria, Croatia, Republic of Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hungary, Ireland, Italy, Latvia, Lithuania, Luxembourg, Malta, Netherlands, Poland, Portugal, Romania, Slovakia, Slovenia, Spain and Sweden.</p> -->
+
+      <!-- <br> -->
       <p>This cover will give you access to state provided healthcare while staying in an EU country for things like:</p>
       <ul>
          <li>emergency treatment</li>
@@ -174,7 +180,10 @@
          <li>routine maternity care, unless you're <a href="">going abroad to give birth</a></li>
       </ul>
 
-      <hr>
+      
+
+
+      <!-- <hr> -->
 
       {% from 'warning-callout/macro.njk' import warningCallout %}
 
@@ -184,20 +193,14 @@
       <p>Once your current card expires, you’ll need to apply for a new card. </p>"
       }) }}
 
-      <!-- <h3>If you have a European Health Insurance Card (EHIC)</h3>
-      <p>Your EHIC will be valid until the expiry date on the card. You can apply for a new card up to 6 months before its expiry date.</p>
-      <p>Once it expires, you’ll need to apply for a new card. </p> -->
 
       <div class="nhsuk-inset-text">
          <span class="nhsuk-u-visually-hidden">Information: </span>
          <p>Applying takes around 5 minutes.</p>
       </div>
-      <!-- <a href="where-do-you-live" class="nhsuk-button nhsuk-u-margin-bottom-8"> -->
-      <!-- <a href="current-ehic" class="nhsuk-button nhsuk-u-margin-bottom-8"> -->
-      <!-- <a href="plan-travel" class="nhsuk-button nhsuk-u-margin-bottom-8"> -->
 
       <a href="before-you-start2" class="nhsuk-button nhsuk-u-margin-bottom-8">
-        Apply
+        Check eligibility and apply
       </a>
 
       <details class="nhsuk-details nhsuk-expander">
@@ -215,9 +218,9 @@
    </div>
    <div class="nhsuk-grid-column-one-third">
       <div style="border-top:5px solid #005eb8; padding-top:15px;"></div>
-      <h3>Related content</h3>
+      <h3>Important information</h3>
       <ul>
-         <li><a href="terms">Who is eligible</a></li>
+         <li><a href="terms">Who can get an EHIC or GHIC</a></li>
          <!-- <li><a href="lost-ehic">I've lost my EHIC</a></li> -->
       </ul>
    </div>

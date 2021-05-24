@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What date did your A1 start in Switzerland?
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+      <form action="a1-end-date" method="post">
+
+        {% call fieldset({
+          legend: {
+            text: "What date did your A1 start in Switzerland?",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        <p>You must have started working in Switzerland before 1 January 2021.</p>
+
+        {{ dateInput({
+      "id": "example",
+      "namePrefix": "example",
+      "fieldset": {
+      "legend": {
+        }
+      },
+      "hint": {
+        "text": " For example, 13 9 2019"
+      },
+      "items": [
+        {
+          "name": "day",
+          "classes": "nhsuk-input--width-2"
+        },
+        {
+          "name": "month",
+          "classes": "nhsuk-input--width-2"
+        },
+        {
+          "name": "year",
+          "classes": "nhsuk-input--width-4"
+        }
+      ]
+    }) }}
+
+
+
+        {% endcall %}
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+     {{ backLink({
+        "href": "a1-country",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

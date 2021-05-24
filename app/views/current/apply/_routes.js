@@ -752,14 +752,14 @@ router.post('/authS1', function (req, res) {
 // Where were you born? - birth-country-dual.html
 router.post('/dualBirthCountry', function (req, res) {
   var dualBirthCountry = req.session.data['dual-birth-country']
-  if (dualBirthCountry == "UK") {
+  if (dualBirthCountry == "Yes") {
     res.redirect('studying-dual-esw')
     //res.redirect('ineligible-esw')
   }
-  else if (dualBirthCountry == "NI") {
-    res.redirect('renounce')
-  }
-  else if (dualBirthCountry == "Other") {
+  // else if (dualBirthCountry == "NI") {
+  //   res.redirect('renounce')
+  // }
+  else if (dualBirthCountry == "No") {
     res.redirect('studying-dual-citizen')
     // res.redirect('application-settled/info-dual')
   }
@@ -771,14 +771,14 @@ router.post('/dualBirthCountry', function (req, res) {
 // Where were you born? - living-eu/birth-country-dual.html
 router.post('/living-eu/dualBirthCountry', function (req, res) {
   var dualBirthCountry = req.session.data['dual-birth-country']
-  if (dualBirthCountry == "UK") {
+  if (dualBirthCountry == "Yes") {
     res.redirect('studying-dual-esw')
     //res.redirect('ineligible-esw')
   }
-  else if (dualBirthCountry == "NI") {
-    res.redirect('renounce')
-  }
-  else if (dualBirthCountry == "Other") {
+  // else if (dualBirthCountry == "NI") {
+  //   res.redirect('renounce')
+  // }
+  else if (dualBirthCountry == "No") {
     res.redirect('studying-eu-citizen')
     // res.redirect('application-settled/info-dual')
   }
@@ -790,13 +790,13 @@ router.post('/living-eu/dualBirthCountry', function (req, res) {
 // Where were you born? - birth-country-dual-in-eu.html
 router.post('/euDualBirthCountry', function (req, res) {
   var dualBirthCountry = req.session.data['dual-birth-country']
-  if (dualBirthCountry == "UK") {
+  if (dualBirthCountry == "Yes") {
     res.redirect('ineligible-esw')
   }
-  else if (dualBirthCountry == "NI") {
-    res.redirect('renounce')
-  }
-  else if (dualBirthCountry == "Other") {
+  // else if (dualBirthCountry == "NI") {
+  //   res.redirect('renounce')
+  // }
+  else if (dualBirthCountry == "No") {
     res.redirect('studying-uk-citizen-in-eu')
     // res.redirect('application-settled/info-dual')
     // res.redirect('application-settled/full-name')
@@ -809,13 +809,13 @@ router.post('/euDualBirthCountry', function (req, res) {
 // Where were you born? - birth-country-in-eu.html
 router.post('/inEuBirthCountry', function (req, res) {
   var inEuBirthCountry = req.session.data['inEuBirthCountry']
-  if (inEuBirthCountry == "UK") {
+  if (inEuBirthCountry == "Yes") {
     res.redirect('ineligible-esw')
   }
-  else if (inEuBirthCountry == "NI") {
-    res.redirect('renounce-in-eu')
-  }
-  else if (inEuBirthCountry == "Other") {
+  // else if (inEuBirthCountry == "NI") {
+  //   res.redirect('renounce-in-eu')
+  // }
+  else if (inEuBirthCountry == "No") {
     // res.redirect('application-settled/full-name')
     res.redirect('studying-eu-citizen-in-eu')
   }
@@ -824,17 +824,17 @@ router.post('/inEuBirthCountry', function (req, res) {
   }
 })
 
-// Where were you born? - birth-country.html
+// Where were you born?
+// Were you born in the UK? - birth-country.html
 router.post('/birthCountry', function (req, res) {
   var birthCountry = req.session.data['birth-country']
-  if (birthCountry == "UK") {
+  if (birthCountry == "Yes") {
     res.redirect('studying-uk-citizen-born-esw')
-    // res.redirect('ineligible-esw')
   }
-  else if (birthCountry == "NI") {
-    res.redirect('renounce')
-  }
-  else if (birthCountry == "Other") {
+  // else if (birthCountry == "NI") {
+  //   res.redirect('renounce')
+  // }
+  else if (birthCountry == "No") {
     // res.redirect('application-settled/full-name')
     //res.redirect('studying-eu-citizen')
     res.redirect('studying-eu-citizen-eu-other')
@@ -847,17 +847,17 @@ router.post('/birthCountry', function (req, res) {
 // Where were you born? - living-eu/birth-country.html
 router.post('/living-eu/birthCountry', function (req, res) {
   var birthCountry = req.session.data['birth-country']
-  if (birthCountry == "UK") {
+  if (birthCountry == "Yes") {
     res.redirect('studying-eu-citizen-born-esw')
   }
-  else if (birthCountry == "NI") {
-    res.redirect('renounce')
-  }
-  else if (birthCountry == "Other") {
+  // else if (birthCountry == "NI") {
+  //   res.redirect('renounce')
+  // }
+  else if (birthCountry == "No") {
     res.redirect('studying-eu-citizen-eu-other')
   }
   else {
-    res.redirect('birth-country')
+    res.redirect('birth-country-uk')
   }
 })
 
@@ -1140,7 +1140,7 @@ router.post('/studyingUkCitizenBornESW', function (req, res) {
     res.redirect('ineligible-temp')
   }
   else {
-    res.redirect('application-settled/info-eu-national')
+    res.redirect('application-settled/card-type')
   }
 })
 

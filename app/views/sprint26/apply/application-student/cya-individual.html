@@ -1,0 +1,176 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+      <form action="app-complete" method="post">
+
+        <h1>Check your answers before sending your application</h1>
+
+        <h2>Your details</h2>
+
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+                  Type of healthcare cover
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['student-options'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="student-options">
+                  Change <span class="nhsuk-u-visually-hidden">Type of healthcare cover</span>
+                  </a>
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+                  Country of study
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['ghic-course-country'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="course-country">
+                  Change <span class="nhsuk-u-visually-hidden">Country of study</span>
+                  </a>
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+                  Study start date
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['ghic-course-start-day'] }} / {{ data['ghic-course-start-month'] }} / {{ data['ghic-course-start-year'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="course-start-date">
+                  Change <span class="nhsuk-u-visually-hidden">Study start date</span>
+                  </a>
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+                  Study end date
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                {{ data['ghic-course-end-day'] }} / {{ data['ghic-course-end-month'] }} / {{ data['ghic-course-end-year'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="course-end-date">
+                  Change <span class="nhsuk-u-visually-hidden">Study end date</span>
+                  </a>
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+                  Name
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['ghic-student-firstname'] }} {{ data['ghic-student-lastname'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="full-name">
+                  Change <span class="nhsuk-u-visually-hidden">name</span>
+                  </a>
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+                  Date of birth
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['ghic-student-dob-day'] }} / {{ data['ghic-student-dob-month'] }} / {{ data['ghic-student-dob-year'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="dob">
+                  Change <span class="nhsuk-u-visually-hidden">Date of birth</span>
+                  </a>
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+                  Home address
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                    73 Roman Rd<br>
+                    Leeds<br>
+                    LS2 5ZN
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="address-manual">
+                  Change <span class="nhsuk-u-visually-hidden">home address</span>
+                  </a>
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+                  Email address
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['ghic-student-email'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="email-address">
+                  Change <span class="nhsuk-u-visually-hidden">email address</span>
+                  </a>
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+                  Contact telephone number
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['ghic-student-phone'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="phone-number">
+                  Change <span class="nhsuk-u-visually-hidden">Contact telephone number</span>
+                  </a>
+               </dd>
+            </div>
+
+          </dl>
+
+        <h2>Now send your application</h2>
+        <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct. We will tell you how to send evidence of your studies on the next page.</p>
+
+        {{ button({
+          "text": "Accept and send"
+        }) }}
+
+
+      </form>
+
+     <!-- {{ backLink({
+        "href": "add-another-yn",
+        "text": "Change my previous answer"
+      }) }} -->
+
+    </div>
+  </div>
+{% endblock %}
