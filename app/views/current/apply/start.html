@@ -44,27 +44,45 @@
       <h1>Get healthcare cover for travelling abroad</h1>
 
       <!-- <div class="nhsuk-inset-text">
-         <span class="nhsuk-u-visually-hidden">Information: </span> -->
+         <span class="nhsuk-u-visually-hidden">Information: </span> --  >
 
          <!-- <p>For most people making a new application, the UK Global Health Insurance Card (GHIC) will replace a European Health Insurance Card (EHIC) if it was issued before the UK left the European Union (EU).</p> -->
 
-         <p>For most new applications, the UK Global Health Insurance Card (GHIC) will replace the European Health Insurance Card (EHIC). EHICs were issued before the UK left the European Union (EU) and during the Transition Period.</p>
+         <p>Use this service to check if you are eligible and apply for cover.</p>
 
-        <p>Some people may be eligible for a new UK European Health Insurance Card (EHIC) if they are covered by the Withdrawal Agreement.</p>
+        <!-- <p>Some people may be eligible for a new UK European Health Insurance Card (EHIC) if they are covered by the Withdrawal Agreement.</p> -->
       <!-- </div> -->
 
       <div class="nhsuk-inset-text">
          <span class="nhsuk-u-visually-hidden">Information: </span>
-         <p>You only need to apply if you plan to visit the EU, Norway, Iceland, Liechtenstein, or Switzerland.</p>
+         <p>You only need to apply if you plan to visit the EU, Norway, Iceland, Lichtenstein, or Switzerland.</p>
        </div>
 
-      {% from 'warning-callout/macro.njk' import warningCallout %}
 
-      {{ warningCallout({
-        "heading": "If you already have a card",
-        "HTML": "<p>If you already have an EHIC, UK EHIC or UK GHIC, you can still use it until the expiry date shown on the card. You can apply for a new card up to 6 months before your current card expires.</p>
-        <p>If you have moved to another country to live or work since receiving your current card, you may no longer be covered and we will need to check your eligibility again.</p>"
-      }) }}
+      <p>If you’re eligible, you’ll receive a card that can be used to get emergency treatment.</p>
+      <p>Depending on your circumstances this will be either a:</p>
+      <ul>
+         <li>UK Global Health Insurance Card (GHIC</li>
+         <li>UK European Health Insurance Card (EHIC)</li>
+      </ul>
+      <p>During your application we’ll let you know what you’re entitled to. Both cards provide the same level of cover but are valid in different countries.</p>
+
+
+      <details class="nhsuk-details nhsuk-expander">
+         <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+            Where the cards are valid and what they cover</span>
+         </summary>
+         <div class="nhsuk-details__text">
+            <p>A UK GHIC or existing EHIC covers you when visiting an EU country. A UK GHIC may become valid in more countries in the future.</p>
+            <p>A new UK EHIC covers you when visiting an EU country, Norway, Iceland, Liechtenstein, or Switzerland.</p>
+         </div>
+      </details>
+
+
+
+
+<!--       
 
       <p>Use this service to:</p>
       <ul>
@@ -72,31 +90,15 @@
         <li>apply for either a UK Global Health Insurance Card (GHIC) or UK European Health Insurance Card (EHIC)</li>
       </ul>
 
-      <p><a href="terms">Who can apply using this service</a></p>
+      
 
 
       <h2>Where the cards are valid</h2>
 
       <p>A UK GHIC or existing EHIC covers you when visiting an EU country. A UK GHIC may become valid in more countries in the future.</p>
-      <p>A new UK EHIC covers you when visiting an EU country, Norway, Iceland, Liechtenstein or Switzerland.</p>
+      <p>A new UK EHIC covers you when visiting an EU country, Norway, Iceland, Liechtenstein or Switzerland.</p> -->
 
-      <!-- <p>A UK GHIC or existing EHIC covers you when visiting:</p>
-
-      <ul>
-        <li>an EU country</li>
-      </ul>
-
-      <p>A UK GHIC may become valid in more countries in the future.</p>
-
-      <p>A new UK EHIC covers you when visiting:</p>
-
-      <ul>
-        <li>an EU country</li>
-        <li>Norway</li>
-        <li>Iceland</li>
-        <li>Liechtenstein</li>
-        <li>Switzerland</li>
-      </ul> -->
+      
 
       <table role="table" class="nhsuk-table-responsive">
          <caption class="nhsuk-table__caption">healthcare cover</caption>
@@ -176,12 +178,20 @@
 
       <br>
 
-      <p>This cover will give you access to state provided healthcare while staying in an EU country for things like:</p>
+      <p>Both cards give you access to state provided healthcare while staying in an EU country for things like:</p>
       <ul>
          <li>emergency treatment</li>
          <li>visits to A&E</li>
          <li>routine maternity care, unless you're <a href="">going abroad to give birth</a></li>
       </ul>
+
+      {% from 'warning-callout/macro.njk' import warningCallout %}
+
+      {{ warningCallout({
+        "heading": "If you already have a card",
+        "HTML": "<p>If you already have a card, you can still use it until the expiry date shown on the card. You can apply for a new card up to 6 months before your current card expires.</p>
+        <p>If you have moved to another country to live or work since receiving your current card, you may no longer be covered and we will need to check your eligibility again.</p>"
+      }) }}
 
       <!-- <hr> -->
 
@@ -231,7 +241,22 @@
          </div>
       </details>
 
-      <br>
+      <details class="nhsuk-details nhsuk-expander">
+         <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+            How we use your information</span>
+         </summary>
+         <div class="nhsuk-details__text">
+            <p>To process your application, we may share your information (where appropriate) with:</p>
+            <ul>
+               <li>Indesser and LexisNexis, third party data providers acting on our behalf who will make a UK residency check</li>
+               <li>NHS Digital to validate EU Settlement Scheme status</li>
+            </ul>
+            <p>For more information about how we use your information please read our privacy notice.</p>
+         </div>
+      </details>
+
+      <p><a href="terms">Who can apply using this service</a></p>
 
    </div>
    <!-- <div class="nhsuk-grid-column-one-third">

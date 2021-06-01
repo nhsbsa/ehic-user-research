@@ -62,6 +62,7 @@ router.use('/sprint21/apply', require('./views/sprint21/apply/_routes'));
 router.use('/sprint22/apply', require('./views/sprint22/apply/_routes'));
 router.use('/sprint23-24/apply', require('./views/sprint23-24/apply/_routes'));
 router.use('/sprint26/apply', require('./views/sprint26/apply/_routes'));
+router.use('/sprint27/apply', require('./views/sprint27/apply/_routes'));
 
 //pulling data through
 
