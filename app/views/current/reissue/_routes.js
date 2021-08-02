@@ -38,15 +38,15 @@ router.post('/reissueType', function (req, res) {
 
 // Do you know your GHIC reference number? - reissue-ghic/know-ohs-number.html
 router.post('zebra', function (req, res) {
-  var zebra = req.session.data['zebra']
-  if (zebra == "yes") {
+  var knowOhsNumber = req.session.data['know-ohs-number']
+  if (knowOhsNumber == "yes") {
     res.redirect('ohs-number')
   }
-  else if (zebra == "no") {
+  else if (knowOhsNumber == "no") {
     res.redirect('cya-individual')
   }
   else {
-    res.redirect('ineligible-1')
+    res.redirect('know-ohs-number')
   }
 })
 
