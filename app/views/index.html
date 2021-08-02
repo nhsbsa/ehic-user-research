@@ -16,6 +16,12 @@
       padding: 10px 0;
       /*font-weight: bold;*/
    }
+
+   .nhsuk-inset-text{ 
+      border-color: #d5281b;
+      color: #d5281b;
+      font-weight: bold;
+   }
    
 </style>
 
@@ -30,32 +36,42 @@
          Enable citizens to check if the UK will pay for their healthcare needs while they’re visiting an EU/EEA country or Switzerland and if eligible, provide them with proof that they are covered.
       </p>
 
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>Don't use any of this prototype code on production services, it doesn't adhere to development standards and is hacked together quickly and roughly.</p>
+      </div>
+
       <hr>
 
-      <h3>User journeys</h3>
+      <h3>Project phases</h3>
 
       {{ actionLink({
-        "text": "Beta phase",
+        "text": "Live",
+        "href": "live"
+      }) }}
+
+      {{ actionLink({
+        "text": "Beta",
         "href": "beta"
       }) }}
 
-
       {{ actionLink({
-        "text": "Alpha phase",
+        "text": "Alpha",
         "href": "alpha"
       }) }}
 
       <hr>
 
-      <h3>Experimental designs</h3>
+      <h3>Experimental work</h3>
 
-      <ul>
+      <!-- <ul>
          <li>NHS.UK landing page</li>
          <li>Tasklist</li>
-      </ul>
+      </ul> -->
 
       {{ actionLink({
-        "text": "Experimental designs",
+        "text": "Experimental work",
         "href": "experimental"
       }) }}
 

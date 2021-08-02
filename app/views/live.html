@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+
+   Get healthcare cover for travelling abroad
+
+{% endblock %}
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+
+<style type="text/css">
+
+   p.current {
+      float: right; 
+      color: black; 
+      padding: 10px 0;
+      /*font-weight: bold;*/
+   }
+
+   .nhsuk-tag--green {
+    background-color: #cce5d8;
+    border: 1px solid #004c23;
+    color: #004c23;
+    margin-left: 10px;
+}
+
+   .nhsuk-tag--grey {
+    background-color: #dbe0e3;
+    border: 1px solid #354550;
+    color: #354550;
+    margin-left: 10px;
+}
+   
+</style>
+
+<div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-full">
+      <h1>
+         Overseas Healthcare Services
+         <!-- <span class="nhsuk-caption-xl nhsuk-caption--bottom">Apply for an EHIC</span> -->
+         <span class="nhsuk-caption-xl nhsuk-caption--bottom">Get healthcare cover for travelling abroad</span>
+      </h1>
+      <h3>Live</h3>
+      <p>June 2021 - </p>
+      <!-- <p>GDS Live assessment - 15 June 2021
+         <strong class="nhsuk-tag nhsuk-tag--grey">
+           Awaiting result
+         </strong>
+      </p> -->
+      <!-- <p class="nhsuk-lede-text">
+         Enable citizens to check if the UK will pay for their healthcare needs while they’re visiting an EU/EEA country or Switzerland and if eligible, provide them with proof that they are covered.
+      </p> -->
+
+      <hr>
+
+      <div class="nhsuk-expander-group">
+         <details class="nhsuk-details nhsuk-expander">
+            <summary class="nhsuk-details__summary">
+               <span class="nhsuk-details__summary-text">
+               Live (Sprint 32)
+               </span>
+               <p class="current">CURRENT SPRINT</p>
+            </summary>
+            <div class="nhsuk-details__text">
+               <p>Sprint commencing: 29 July 2021</p>
+               <h3>User journeys</h3>
+               <ul>
+                  <li>Reissue a GHIC or EHIC</li>
+               </ul>
+
+               {{ actionLink({
+               "text": "Get healthcare cover for travelling abroad",
+               "href": "/current/apply/start"
+               }) }}
+
+               <!-- <hr>
+               <a href="/current/breakdown">Page by page breakdown</a> -->
+            </div>
+         </details>
+      </div>
+
+   </div>
+</div>
+{% endblock %}

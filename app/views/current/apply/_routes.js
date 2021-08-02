@@ -3,6 +3,13 @@ const router = express.Router()
 
 const axios = require('axios');
 
+// ------------------------------------------
+// ------------------------------------------
+// USE /reissue/_routes.js FOR REISSUE ROUTES !!!
+// ------------------------------------------
+// ------------------------------------------
+
+
 // Add your routes here - above the module.exports line
 
 
@@ -35,6 +42,19 @@ const axios = require('axios');
 //     }
 
 // })
+
+
+// Are you applying for a new card or a reissue? - new-application.html
+router.post('/newApplication', function (req, res) {
+  var newApplication = req.session.data['new-application']
+  if (newApplication == "new") {
+    res.redirect('where-do-you-live')
+  }
+  else if (newApplication == "reissue") {
+    // res.redirect('living-eu/exp-ben')
+    res.redirect('../reissue/card-type')
+  }
+})
 
 // Do you currently have a valid EHIC? current-ehic.html
 router.post('/planTravel', function (req, res) {
