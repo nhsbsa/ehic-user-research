@@ -37,16 +37,33 @@ router.post('/reissueType', function (req, res) {
 })
 
 // Do you know your GHIC reference number? - reissue-ghic/know-ohs-number.html
-router.post('zebra', function (req, res) {
+router.post('/reissue-ghic/knowOhsNumber', function (req, res) {
   var knowOhsNumber = req.session.data['know-ohs-number']
   if (knowOhsNumber == "yes") {
     res.redirect('ohs-number')
   }
   else if (knowOhsNumber == "no") {
-    res.redirect('cya-individual')
+    res.redirect('reissue-reason')
   }
   else {
     res.redirect('know-ohs-number')
+  }
+})
+
+// What is the reason for the replacement? - reissue-ghic/reissue-reason.html
+router.post('/reissue-ghic/reissueReason', function (req, res) {
+  var reissueReason = req.session.data['reissue-reason']
+  if (reissueReason == "Lost") {
+    res.redirect('cya-individual')
+  }
+  else if (reissueReason == "Damaged") {
+    res.redirect('cya-individual')
+  }
+  else if (reissueReason == "Stolen") {
+    res.redirect('cya-individual')
+  }
+  else {
+    res.redirect('reissue-reason')
   }
 })
 

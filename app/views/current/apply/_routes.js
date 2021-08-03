@@ -44,13 +44,13 @@ const axios = require('axios');
 // })
 
 
-// Are you applying for a new card or a reissue? - new-application.html
+// Are you applying for a new card or a replacement? - new-application.html
 router.post('/newApplication', function (req, res) {
   var newApplication = req.session.data['new-application']
   if (newApplication == "new") {
     res.redirect('where-do-you-live')
   }
-  else if (newApplication == "reissue") {
+  else if (newApplication == "replacement") {
     // res.redirect('living-eu/exp-ben')
     res.redirect('../reissue/card-type')
   }

@@ -28,6 +28,9 @@ Check your answers
          <!-- <h2 class="nhsuk-heading-m">
             Your details
          </h2> -->
+         <h2 class="nhsuk-heading-m">
+            GHIC replacement
+         </h2>
          <dl class="nhsuk-summary-list">
             <div class="nhsuk-summary-list__row">
                <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
@@ -130,7 +133,20 @@ Check your answers
                </dd>
                <dd class="nhsuk-summary-list__actions">
                   <a class="nhsuk-link" href="ohs-number">
-                  Change <span class="nhsuk-u-visually-hidden">National Insurance number</span>
+                  Change <span class="nhsuk-u-visually-hidden">GHIC reference number</span>
+                  </a>
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Reason for replacement
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['reissue-reason'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="reissue-reason">
+                  Change <span class="nhsuk-u-visually-hidden">Reason for replacement</span>
                   </a>
                </dd>
             </div>

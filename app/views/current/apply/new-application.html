@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Are you applying for a new card or a reissue?
+  Are you applying for a new card or a replacement?
 {% endblock %}
 
 {% block beforeContent %}
@@ -31,7 +31,7 @@
 
         {% call fieldset({
           legend: {
-            text: "Are you applying for a new card or a reissue?",
+            text: "Are you applying for a new card or a replacement?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -46,8 +46,8 @@
               "text": "New application"
             },
             {
-              "value": "reissue",
-              "text": "Reissue"
+              "value": "replacement",
+              "text": "Replacement"
             }
           ]
         }) }}

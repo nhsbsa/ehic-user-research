@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you know your GHIC reference number?
+  What is the reason for the replacement?
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,29 +27,33 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="knowOhsNumber" method="post">
+      <form action="reissueReason" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Do you know your GHIC reference number?",
+            text: "What is the reason for the replacement?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>Your GHIC reference number is an 8 digit number. It will be on the email we sent to you when you applied for your GHIC.</p>
+        <!-- <p>It will be on the email we sent to you when you applied for your GHIC.</p> -->
 
         {{ radios({
-          "idPrefix": "know-ohs-number",
-          "name": "know-ohs-number",
+          "idPrefix": "reissue-reason",
+          "name": "reissue-reason",
           "items": [
             {
-              "value": "yes",
-              "text": "Yes"
+              "value": "Lost",
+              "text": "Lost"
             },
             {
-              "value": "no",
-              "text": "No"
+              "value": "Stolen",
+              "text": "Stolen"
+            },
+            {
+              "value": "Damaged",
+              "text": "Damaged"
             }
           ]
         }) }}
