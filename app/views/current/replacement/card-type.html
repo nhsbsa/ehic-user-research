@@ -27,7 +27,7 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="reissueType" method="post">
+      <form action="replacementType" method="post">
 
         {% call fieldset({
           legend: {
@@ -38,8 +38,8 @@
         }) %}
 
         {{ radios({
-          "idPrefix": "reissue-type",
-          "name": "reissue-type",
+          "idPrefix": "replacement-type",
+          "name": "replacement-type",
           "items": [
             {
               "value": "ghic",

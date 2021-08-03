@@ -22,48 +22,47 @@ const axios = require('axios');
 // })
 
 // Which card do you have? - card-type.html
-router.post('/reissueType', function (req, res) {
-  var reissueType = req.session.data['reissue-type']
-  if (reissueType == "ghic") {
-    res.redirect('reissue-ghic/full-name')
+router.post('/replacementType', function (req, res) {
+  var replacementType = req.session.data['replacement-type']
+  if (replacementType == "ghic") {
+    res.redirect('replacement-ghic/full-name')
   }
-  else if (reissueType == "ehic") {
-    // res.redirect('living-eu/exp-ben')
-    res.redirect('new-application')
+  else if (replacementType == "ehic") {
+    res.redirect('replacement-ehic/full-name')
   }
   else {
     res.redirect('ineligible-1')
   }
 })
 
-// Do you know your GHIC reference number? - reissue-ghic/know-ohs-number.html
-router.post('/reissue-ghic/knowOhsNumber', function (req, res) {
+// Do you know your GHIC reference number? - replacement-ghic/know-ohs-number.html
+router.post('/replacement-ghic/knowOhsNumber', function (req, res) {
   var knowOhsNumber = req.session.data['know-ohs-number']
   if (knowOhsNumber == "yes") {
     res.redirect('ohs-number')
   }
   else if (knowOhsNumber == "no") {
-    res.redirect('reissue-reason')
+    res.redirect('replacement-reason')
   }
   else {
     res.redirect('know-ohs-number')
   }
 })
 
-// What is the reason for the replacement? - reissue-ghic/reissue-reason.html
-router.post('/reissue-ghic/reissueReason', function (req, res) {
-  var reissueReason = req.session.data['reissue-reason']
-  if (reissueReason == "Lost") {
+// What is the reason for the replacement? - replacement-ghic/replacement-reason.html
+router.post('/replacement-ghic/replacementReason', function (req, res) {
+  var replacementReason = req.session.data['replacement-reason']
+  if (replacementReason == "Lost") {
     res.redirect('cya-individual')
   }
-  else if (reissueReason == "Damaged") {
+  else if (replacementReason == "Damaged") {
     res.redirect('cya-individual')
   }
-  else if (reissueReason == "Stolen") {
+  else if (replacementReason == "Stolen") {
     res.redirect('cya-individual')
   }
   else {
-    res.redirect('reissue-reason')
+    res.redirect('replacement-reason')
   }
 })
 
