@@ -31,7 +31,7 @@
 
         {% call fieldset({
           legend: {
-            text: "Are you applying for a new card or a replacement?",
+            text: "What do you want to do?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -43,11 +43,15 @@
           "items": [
             {
               "value": "new",
-              "text": "New application"
+              "text": "Apply for a new UK GHIC or UK EHIC"
             },
             {
               "value": "replacement",
-              "text": "Replacement"
+              "text": "Replace a lost or stolen UK GHIC of UK EHIC"
+            },
+            {
+              "value": "renew",
+              "text": "Renew an expired UK GHIC or UK EHIC"
             }
           ]
         }) }}

@@ -52,7 +52,13 @@ router.post('/newApplication', function (req, res) {
   }
   else if (newApplication == "replacement") {
     // res.redirect('living-eu/exp-ben')
-    res.redirect('../reissue/card-type')
+    res.redirect('../replacement/card-type')
+  }
+  else if (newApplication == "renew") {
+    res.redirect('../renew/card-type')
+  }
+  else {
+    res.redirect('new-application')
   }
 })
 
