@@ -30,6 +30,13 @@
     color: #354550;
     margin-left: 10px;
 }
+
+   .nhsuk-tag--orange {
+    background-color: #ffdc8e;
+    border: 1px solid #4d3708;
+    color: #4d3708;
+    margin-left: 10px;
+}
    
 </style>
 
@@ -43,13 +50,21 @@
       <h3>Beta</h3>
       <p>October 2020 - June 2021</p>
       <p>GDS Beta assessment - 15 June 2021
-         <strong class="nhsuk-tag nhsuk-tag--grey">
-           Awaiting result
+         <strong class="nhsuk-tag nhsuk-tag--orange">
+           Criteria not met
          </strong>
       </p>
-      <!-- <p class="nhsuk-lede-text">
-         Enable citizens to check if the UK will pay for their healthcare needs while they’re visiting an EU/EEA country or Switzerland and if eligible, provide them with proof that they are covered.
-      </p> -->
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Why didn't we pass assessment?
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>The panel was not completely satisfied that the service team conducted user research with a diverse enough range of participants. Due to the Covid-19 pandemic we were restricted to testing user journeys remotely with people who were comfortable using technology. It was not possible to recruit participants and conduct user testing 'in real life' with users who may have a lower level of digital literacy.</p>
+        </div>
+      </details>
 
       <hr>
 
@@ -281,7 +296,7 @@
          </details>
       </div>
 
-      <hr>
+      <!-- <hr> -->
 
       <!-- <h3>May - November 2020</h3> -->
 
@@ -289,7 +304,7 @@
          <details class="nhsuk-details nhsuk-expander">
             <summary class="nhsuk-details__summary">
                <span class="nhsuk-details__summary-text">
-               Beta (Sprint 15)
+               Beta (Sprints 15, 16, 17, 18)
                </span>
             </summary>
             <div class="nhsuk-details__text">
