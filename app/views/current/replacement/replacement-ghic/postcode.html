@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your home address?
+  What is your postcode?
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,7 +30,7 @@
 
         {% call fieldset({
           legend: {
-            text: "What is your home address?",
+            text: "What is your postcode?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -38,46 +38,10 @@
 
         {{ input({
           "label": {
-          "text": "Building and street"
-          },
-          "id": "input-width-20",
-          "name": "building-street",
-          "classes": "nhsuk-input--width-20"
-        }) }}
-
-        {{ input({
-          "label": {
-          "text": ""
-          },
-          "id": "input-width-20",
-          "name": "building-street-2",
-          "classes": "nhsuk-input--width-20"
-        }) }}
-
-        {{ input({
-          "label": {
-            "text": "Town or city"
-          },
-          "id": "input-width-20",
-          "name": "town-city",
-          "classes": "nhsuk-input--width-20"
-        }) }}
-
-        {{ input({
-          "label": {
-            "text": "County"
-          },
-          "id": "input-width-20",
-          "name": "country",
-          "classes": "nhsuk-input--width-20"
-        }) }}
-
-        {{ input({
-          "label": {
             "text": "Postcode"
           },
           "id": "input-width-10",
-          "name": "postcode",
+          "name": "replace-postcode",
           "classes": "nhsuk-input--width-10"
         }) }}
 
@@ -91,7 +55,7 @@
       </form>
 
      {{ backLink({
-        "href": "address-list",
+        "href": "uk-address",
         "text": "Change my previous answer"
       }) }}
 

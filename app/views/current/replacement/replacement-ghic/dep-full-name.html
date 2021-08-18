@@ -26,11 +26,11 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="dob" method="post">
+      <form action="dep-dob" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your name?",
+            text: "What is their name?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -41,7 +41,7 @@
             "text": "First name"
           },
           "id": "input-width-30",
-          "name": "replace-firstname",
+          "name": "replace-dep-firstname",
           "classes": "nhsuk-input--width-30"
         }) }}
 
@@ -50,7 +50,7 @@
             "text": "Last name"
           },
           "id": "input-width-30",
-          "name": "replace-lastname",
+          "name": "replace-dep-lastname",
           "classes": "nhsuk-input--width-30"
         }) }}
 

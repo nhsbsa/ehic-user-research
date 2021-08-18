@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your name?
+  What is their postcode?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,11 +26,11 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="dob" method="post">
+      <form action="dep-latency" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your name?",
+            text: "What is their postcode?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -38,20 +38,11 @@
 
         {{ input({
           "label": {
-            "text": "First name"
+            "text": "Postcode"
           },
-          "id": "input-width-30",
-          "name": "replace-firstname",
-          "classes": "nhsuk-input--width-30"
-        }) }}
-
-        {{ input({
-          "label": {
-            "text": "Last name"
-          },
-          "id": "input-width-30",
-          "name": "replace-lastname",
-          "classes": "nhsuk-input--width-30"
+          "id": "input-width-10",
+          "name": "replace-postcode",
+          "classes": "nhsuk-input--width-10"
         }) }}
 
 
@@ -64,7 +55,7 @@
       </form>
 
      {{ backLink({
-        "href": "../card-type",
+        "href": "uk-address",
         "text": "Change my previous answer"
       }) }}
 

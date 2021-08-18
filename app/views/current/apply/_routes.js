@@ -45,22 +45,22 @@ const axios = require('axios');
 
 
 // Are you applying for a new card or a replacement? - new-application.html
-router.post('/newApplication', function (req, res) {
-  var newApplication = req.session.data['new-application']
-  if (newApplication == "new") {
-    res.redirect('where-do-you-live')
-  }
-  else if (newApplication == "replacement") {
-    // res.redirect('living-eu/exp-ben')
-    res.redirect('../replacement/card-type')
-  }
-  else if (newApplication == "renew") {
-    res.redirect('../renew/card-type')
-  }
-  else {
-    res.redirect('new-application')
-  }
-})
+// router.post('/newApplication', function (req, res) {
+//   var newApplication = req.session.data['new-application']
+//   if (newApplication == "new") {
+//     res.redirect('where-do-you-live')
+//   }
+//   else if (newApplication == "replacement") {
+//     // res.redirect('living-eu/exp-ben')
+//     res.redirect('../replacement/card-type')
+//   }
+//   else if (newApplication == "renew") {
+//     res.redirect('../renew/card-type')
+//   }
+//   else {
+//     res.redirect('new-application')
+//   }
+// })
 
 // Do you currently have a valid EHIC? current-ehic.html
 router.post('/planTravel', function (req, res) {

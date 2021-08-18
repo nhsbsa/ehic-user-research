@@ -6,6 +6,8 @@
 
 {% block beforeContent %}
 
+
+
   <!-- Phase banner -->
   <div class="app-phase-banner">
     <div class="nhsuk-width-container app-phase-banner__container">
@@ -27,7 +29,8 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <form action="add-another-yn" method="post"> -->
-       <form action="know-ohs-number" method="post">
+       <!-- <form action="know-ohs-number" method="post"> -->
+       <form action="latency" method="post">
 
 
         {% call fieldset({
@@ -49,7 +52,7 @@
             html: "For example, ‘QQ 12 34 56 C’."
           },
           "id": "input-width-10",
-          "name": "nino",
+          "name": "replace-nino",
           "classes": "nhsuk-input--width-10"
         }) }}
 
@@ -64,7 +67,7 @@
       </form>
 
      {{ backLink({
-        "href": "dob",
+        "href": "uk-address",
         "text": "Change my previous answer"
       }) }}
 

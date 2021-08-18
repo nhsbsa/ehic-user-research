@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you have healthcare cover from another country besides the UK, such as having an S1, E121, E106 or E109?
+  Do you live in the UK?
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,29 +27,30 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="authS1" method="post">
+      <form action="depUkAddress" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Do you have healthcare cover from another country besides the UK, such as having an S1, E121, E106 or E109?",
+            text: "Do they live in the UK?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
         <!-- <p>If you have previously lived in another country, they may have given you an S1 form that entitles you to healthcare cover in the UK. For example, if you're receiving state pension or benefits from that country.</p> -->
-        <p>If you have previously lived in another country, they may have given you a certificate that entitles you to healthcare cover in the UK. For example, if you're receiving state pension or benefits from that country.</p>
+
+        <!-- <p>If you have previously lived in another country, they may have given you a certificate that entitles you to healthcare cover in the UK. For example, if you're receiving state pension or benefits from that country.</p> -->
 
         {{ radios({
-          "idPrefix": "auth-s1",
-          "name": "auth-s1",
+          "idPrefix": "dep-uk-address",
+          "name": "dep-uk-address",
           "items": [
             {
-              "value": "Yes",
+              "value": "yes",
               "text": "Yes"
             },
             {
-              "value": "No",
+              "value": "no",
               "text": "No"
             }
           ]
@@ -58,7 +59,7 @@
         {% endcall %}
 
 
-        {{ details({
+ <!--        {{ details({
           "text": "What is an S1, E121, E106 or E109?",
           "HTML": "
           <p>An S1, E121, E106 or E109 certificate issued by an EU country, Norway, Iceland, Liechtenstein or Switzerland for a person living in the UK entitles them to NHS cover on the same basis as a resident of the UK. You may be entitled to one of these documents if you:</p>
@@ -72,7 +73,7 @@
         <p>If you have been provided with an S1, E121, E106 or E109 certificate that you have not yet registered with the NHS, you should also answer yes. However, you must ensure the certificate is forwarded to Cost Recovery, Overseas Healthcare Services, NHSBSA, Bridge House, 152 Pilgrim Street, Newcastle upon Tyne, NE1 6SN, UK.
 </p>
           "
-        }) }}
+        }) }} -->
 
 
         {{ button({
@@ -84,7 +85,7 @@
 
 
      {{ backLink({
-        "href": "where-do-you-live",
+        "href": "dob",
         "text": "Change my previous answer"
       }) }}
       

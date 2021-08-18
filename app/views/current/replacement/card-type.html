@@ -42,17 +42,31 @@
           "name": "replacement-type",
           "items": [
             {
-              "value": "ghic",
-              "text": "UK GHIC"
+              "value": "UK GHIC",
+              "text": "UK GHIC",
+              "hint":{
+                "text" : "this is a hint"
+              }
             },
             {
-              "value": "ehic",
-              "text": "UK EHIC"
+              "value": "UK EHIC",
+              "text": "UK EHIC",
+              "hint":{
+                "text" : "this is a hint"
+              }
             }
           ]
         }) }}
 
         {% endcall %}
+
+
+        {{ details({
+          "text": "I don't know which card I have",
+          "HTML": "
+          <p>Quisque bibendum aliquam turpis, ut suscipit eros vehicula sed. Curabitur at tortor eu lorem scelerisque eleifend. Vestibulum sit amet quam quam. In cursus volutpat varius.</p>
+          "
+        }) }}
 
         {{ button({
           "text": "Continue"
@@ -60,10 +74,10 @@
 
       </form>
 
-     <!-- {{ backLink({
-        "href": "",
+     {{ backLink({
+        "href": "who-for",
         "text": "Change my previous answer"
-      }) }} -->
+      }) }}
       
     </div>
   </div>

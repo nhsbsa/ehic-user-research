@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your name?
+  Is the replacement for you?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,34 +26,41 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="dob" method="post">
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
+      <form action="whoFor" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is your name?",
+            text: "Is the replacement for you?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        {{ input({
-          "label": {
-            "text": "First name"
-          },
-          "id": "input-width-30",
-          "name": "replace-firstname",
-          "classes": "nhsuk-input--width-30"
+        {{ radios({
+          "idPrefix": "who-for",
+          "name": "who-for",
+          "items": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "someone-else",
+              "text": "No, it's for someone else on my application"
+            },
+            {
+              "divider": "or"
+            },
+            {
+              "value": "more",
+              "text": "I need to replace more than one card",
+              "hint":  {
+                "text": "Get a replacement card for yourself and anyone else on you application"
+              }
+            }
+          ]
         }) }}
-
-        {{ input({
-          "label": {
-            "text": "Last name"
-          },
-          "id": "input-width-30",
-          "name": "replace-lastname",
-          "classes": "nhsuk-input--width-30"
-        }) }}
-
 
         {% endcall %}
 
@@ -64,10 +71,10 @@
       </form>
 
      {{ backLink({
-        "href": "../card-type",
+        "href": "../new-application",
         "text": "Change my previous answer"
       }) }}
-
+      
     </div>
   </div>
 {% endblock %}

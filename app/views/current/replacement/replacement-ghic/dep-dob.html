@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your date of birth?
+  What is their date of birth?
 {% endblock %}
 
 {% block beforeContent %}
@@ -28,14 +28,14 @@
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <form action="nino" method="post"> -->
       <!-- <form action="address-lookup" method="post"> -->
-      <form action="uk-address" method="post">
+      <form action="dep-uk-address" method="post">
 
         {{ dateInput({
         "id": "example",
-        "namePrefix": "replace-dob",
+        "namePrefix": "replace-dep-dob",
         "fieldset": {
           "legend": {
-            "text": "What is your date of birth?",
+            "text": "What is their date of birth?",
             "classes": "nhsuk-label--l",
             "isPageHeading": true
               }
