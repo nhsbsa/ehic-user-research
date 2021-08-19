@@ -10,7 +10,8 @@ const axios = require('axios');
 router.post('/whoFor', function (req, res) {
   var whoFor = req.session.data['who-for']
   if (whoFor == "yes") {
-    res.redirect('card-type')
+    // res.redirect('card-type')
+    res.redirect('replacement-ghic/full-name')
   }
   else if (whoFor == "someone-else") {
     res.redirect('info')
@@ -75,7 +76,7 @@ router.post('/replacement-ghic/ukAddress', function (req, res) {
 
 
 
-// What is the reason for the replacement? - replacement-ghic/replacement-reason.html
+// Do you need to get a replacement card for anyone else? - replacement-ghic/add-another.html
 router.post('/replacement-ghic/addDependant', function (req, res) {
   var addDependant = req.session.data['add-dependant']
   if (addDependant == "Yes") {
@@ -85,9 +86,25 @@ router.post('/replacement-ghic/addDependant', function (req, res) {
     res.redirect('replacement-reason')
   }
   else {
-    res.redirect('')
+    res.redirect('add-dependant')
   }
 })
+
+// Do you need to get a replacement card for anyone else? - replacement-ghic/add-another.html
+router.post('/replacement-ghic/addAnother', function (req, res) {
+  var addAnother = req.session.data['add-another']
+  if (addAnother == "Yes") {
+    res.redirect('dep-full-name')
+  }
+  else if (addAnother == "No") {
+    res.redirect('dep-replacement-reason')
+  }
+  else {
+    res.redirect('add-another')
+  }
+})
+
+
 
 
 // Do they live in the UK? - dep-uk-address.html
@@ -106,21 +123,21 @@ router.post('/replacement-ghic/depUkAddress', function (req, res) {
 
 
 // What is the reason for the replacement? - replacement-ghic/replacement-reason.html
-router.post('/replacement-ghic/replacementReason', function (req, res) {
-  var replacementReason = req.session.data['replacement-reason']
-  if (replacementReason == "Lost") {
-    res.redirect('cya-individual')
-  }
-  else if (replacementReason == "Damaged") {
-    res.redirect('cya-individual')
-  }
-  else if (replacementReason == "Stolen") {
-    res.redirect('cya-individual')
-  }
-  else {
-    res.redirect('replacement-reason')
-  }
-})
+// router.post('/replacement-ghic/replacementReason', function (req, res) {
+//   var replacementReason = req.session.data['replacement-reason']
+//   if (replacementReason == "Lost") {
+//     res.redirect('cya-individual')
+//   }
+//   else if (replacementReason == "Damaged") {
+//     res.redirect('cya-individual')
+//   }
+//   else if (replacementReason == "Stolen") {
+//     res.redirect('cya-individual')
+//   }
+//   else {
+//     res.redirect('replacement-reason')
+//   }
+// })
 
 
 module.exports = router
