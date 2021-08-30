@@ -13,11 +13,12 @@ router.post('/newApplication', function (req, res) {
     res.redirect('apply/where-do-you-live')
   }
   else if (newApplication == "renew") {
-    res.redirect('renew/card-type')
+    // res.redirect('renew/card-type')
+    res.redirect('apply/where-do-you-live')
   }
   else if (newApplication == "replacement") {
     // res.redirect('living-eu/exp-ben')
-    res.redirect('replacement/who-for')
+    res.redirect('replacement/applicant-type')
   }
   else {
     res.redirect('new-application')

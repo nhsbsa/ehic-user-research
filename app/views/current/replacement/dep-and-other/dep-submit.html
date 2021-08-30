@@ -1,0 +1,178 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Which card do you have?
+{% endblock %}
+
+{% block beforeContent %}
+
+<style type="text/css">
+  
+  .nhsuk-summary-list__key {
+    width: 50%;
+  }
+</style>
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+      <!-- <form action="card-type" method="post"> -->
+        <form action="latency-submit" method="post">
+
+      <h1>Submit your application</h1>
+
+      <h3>{{ data['replace-firstname'] }} {{ data['replace-lastname'] }}</h3>
+
+      <dl class="nhsuk-summary-list">
+
+            <!-- <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Name
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replace-firstname'] }} {{ data['replace-lastname'] }}
+               </dd>
+            </div> -->
+
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Date of birth
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replace-dob-day'] }} / {{ data['replace-dob-month'] }} / {{ data['replace-dob-year'] }}
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Postcode
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replace-postcode'] }} 
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  National Insurance number
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replace-nino'] }} 
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  UK GHIC expiry date
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  25 July 2026
+               </dd>
+            </div>
+
+            <!-- <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Reason for replacement
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replacement-reason'] }} 
+               </dd>
+            </div> -->
+            
+          </dl>
+
+          <h3>{{ data['replace-dep-firstname'] }} {{ data['replace-dep-lastname'] }}</h3>
+
+      <dl class="nhsuk-summary-list">
+            <!-- <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Name
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replace-dep-firstname'] }} {{ data['replace-dep-lastname'] }}
+               </dd>
+            </div> -->
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Date of birth
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replace-dep-dob-day'] }} / {{ data['replace-dep-dob-month'] }} / {{ data['replace-dep-dob-year'] }}
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Postcode
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replace-dep-postcode'] }} 
+               </dd>
+            </div>
+           <!--  <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  National Insurance number
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replace-nino'] }} 
+               </dd>
+            </div> -->
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  UK GHIC expiry date
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  25 July 2026
+               </dd>
+            </div>
+            <!-- <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Reason for replacement
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replacement-dep-reason'] }} 
+               </dd>
+            </div> -->
+          </dl>
+
+          <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Reason for replacement
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replacement-dep-reason'] }} 
+               </dd>
+            </div>
+         </dl>
+
+          {{ insetText({
+            "HTML": "<p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>"
+          }) }}
+
+         {{ button({
+         "text": "Submit"
+         }) }}
+      </form>
+
+     {{ backLink({
+        "href": "dep-replacement-reason",
+        "text": "Change my previous answer"
+      }) }}
+      
+    </div>
+  </div>
+{% endblock %}

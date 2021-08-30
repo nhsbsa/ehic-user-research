@@ -1,0 +1,170 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Application complete
+{% endblock %}
+
+{% block beforeContent %}
+
+<style type="text/css">
+  
+  .nhsuk-summary-list__key {
+    width: 50%;
+  }
+</style>
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+          <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-bottom-4">
+            <h1 class="nhsuk-panel__title">
+                <!-- Application for replacement {{ data['replacement-type'] }} submitted -->
+                {{ data['replace-firstname'] }} currently has a<br>
+                UK GHIC 
+              </h1>
+              <div class="nhsuk-panel__body">
+                Expires on 25 July 2026
+                <!-- <br>
+                <strong>25002123</strong> -->
+              </div>
+            </div>
+
+
+            <!-- <h2 class="nhsuk-heading-m">
+            Your details
+         </h2> -->
+
+         <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Name
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replace-firstname'] }} {{ data['replace-lastname'] }}
+               </dd>
+               <!-- <dd class="nhsuk-summary-list__actions"> -->
+                  <!-- <a class="nhsuk-link" href="full-name">
+                  Change <span class="nhsuk-u-visually-hidden">name</span>
+                  </a> -->
+               <!-- </dd> -->
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Date of birth
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replace-dob-day'] }} / {{ data['replace-dob-month'] }} / {{ data['replace-dob-year'] }}
+               </dd>
+               <!-- <dd class="nhsuk-summary-list__actions"> -->
+                  <!-- <a class="nhsuk-link" href="dob">
+                  Change <span class="nhsuk-u-visually-hidden">date of birth</span>
+                  </a> -->
+               <!-- </dd> -->
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Postcode
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replace-postcode'] }} 
+               </dd>
+               <!-- <dd class="nhsuk-summary-list__actions"> -->
+                  <!-- <a class="nhsuk-link" href="nino">
+                  Change <span class="nhsuk-u-visually-hidden">National Insurance number</span>
+                  </a> -->
+               <!-- </dd> -->
+            </div>
+      
+  
+          <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  National Insurance number
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replace-nino'] }} 
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <!-- <a class="nhsuk-link" href="nino">
+                  Change <span class="nhsuk-u-visually-hidden">National Insurance number</span>
+                  </a> -->
+               </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  UK GHIC expiry date
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  25 July 2026
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <!-- <a class="nhsuk-link" href="nino">
+                  Change <span class="nhsuk-u-visually-hidden">National Insurance number</span>
+                  </a> -->
+               </dd>
+            </div>
+          </dl>
+
+
+
+          <!-- <h3>Get a replacement</h3>
+          <p>
+             If your card is lost or stolen you can apply for a replacement card using this service.
+          </p>
+
+          <h3>If you have plans to travel</h3>
+          <p>
+             If you need emergency treatment while you’re visiting another country and haven’t received your card, you can apply for a Provisional Replacement Certificate (PRC)
+          </p>
+
+          <h3>If you've recently moved or changed your name</h3>
+          <p>
+             If you’ve recently moved or changed your name, you’ll need to use our service to re-check your eligibility and apply for a new card. 
+          </p> -->
+
+          <h3>What happens next</h3>
+
+          <p>We will ask you to provide details of anyone else on your application that needs a replacement card.</p>
+
+
+
+
+
+            <!-- <p>A confirmation email has been sent to <strong>{{ data['email-address'] }}</strong></p> -->
+
+          <!-- <h2>What happens next</h2> -->
+
+          <!-- <a href="add-dependant" class="nhsuk-button nhsuk-u-margin-bottom-8"> -->
+          <a href="dep-full-name" class="nhsuk-button nhsuk-u-margin-bottom-8">
+            Continue
+          </a>
+
+            <!-- <form action="../../start" method="post">
+
+              {{ button({
+              "text": "Finish"
+            }) }}
+
+          </form> -->
+            
+        </div>
+      </div>
+{% endblock %}

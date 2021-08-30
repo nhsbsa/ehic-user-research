@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Which service you would like to use?
+  What is your postcode?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,35 +26,27 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="newApplication" method="post">
+      <form action="dep-latency" method="post">
+
+        <h2>What is  {{ data['replace-firstname'] }}'s postcode?</h2>
 
         {% call fieldset({
           legend: {
-            text: "Which service you would like to use?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        {{ radios({
-          "idPrefix": "new-application",
-          "name": "new-application",
-          "items": [
-            {
-              "value": "new",
-              "text": "Check your eligibility and apply for healthcare cover abroad"
-            },
-            {
-              "value": "renew",
-              "text": "Renew your healthcare cover"
-            },
-            {
-              "value": "replacement",
-              "text": "Replace a lost or stolen card"
-            }
-          ]
+        {{ input({
+          "label": {
+            "text": "Postcode"
+          },
+          "id": "input-width-10",
+          "name": "replace-dep-postcode",
+          "classes": "nhsuk-input--width-10"
         }) }}
+
 
         {% endcall %}
 
@@ -64,17 +56,11 @@
 
       </form>
 
-     <!-- {{ backLink({
-        "href": "",
+     {{ backLink({
+        "href": "dep-uk-address",
         "text": "Change my previous answer"
-      }) }} -->
-      
+      }) }}
+
     </div>
   </div>
 {% endblock %}
-
-
-
-         <!--  "hint":  {
-                "text": "this is a hint"
-              } -->
