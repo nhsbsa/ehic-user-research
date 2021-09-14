@@ -17,14 +17,27 @@ router.post('/newApplication', function (req, res) {
     res.redirect('apply/where-do-you-live')
   }
   else if (newApplication == "replacement") {
-    // res.redirect('living-eu/exp-ben')
-    res.redirect('replacement/applicant-type')
+    res.redirect('coc')
+    // res.redirect('replacement/applicant-type')
   }
   else {
     res.redirect('new-application')
   }
 })
 
+// Change of circumstance - coc.html
+router.post('/changeCircs', function (req, res) {
+  var changeCircs = req.session.data['change-circs']
+  if (changeCircs == "new") {
+    res.redirect('apply/where-do-you-live')
+  }
+  else if (changeCircs == "replacement") {
+    res.redirect('replacement/applicant-type')
+  }
+  else {
+    res.redirect('coc')
+  }
+})
 
 
 
