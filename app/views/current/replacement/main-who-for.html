@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Is the replacement for you?
+  Who needs a replacement card?
 {% endblock %}
 
 {% block beforeContent %}
@@ -45,23 +45,16 @@
           "items": [
             {
               "value": "Myself",
-              "text": "Myself"
+              "text": "Myself and someone else on my application",
+              "hint":  {
+                "text": "Get a replacement card for yourself and anyone else on your application"
+              }
             },
             {
               "value": "Someone",
               "text": "Someone else on my application",
               "hint":  {
                 "text": "Get a replacement card for anyone on your application"
-              }
-            },
-            {
-              "divider": "or"
-            },
-            {
-              "value": "Myself-and-someone",
-              "text": "Myself and someone else on my application ",
-              "hint":  {
-                "text": "Get a replacement card for yourself and anyone else on your application"
               }
             }
           ]
@@ -85,6 +78,19 @@
 {% endblock %}
 
 
+
+<!-- ,
+            {
+              "divider": "or"
+            },
+            {
+              "value": "Myself-and-someone",
+              "text": "Myself and someone else on my application",
+              "hint":  {
+                "text": "Get a replacement card for yourself and anyone else on your application"
+              }
+            } -->
+            
 <!-- One or more other people on my application 
 I need to replace more than one card
 -->

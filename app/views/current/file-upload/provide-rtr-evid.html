@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Does anyone else on your application need a replacement card?
+  Do you need to provide evidence of your right to reside in the UK?
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,7 +14,7 @@
           Prototype
         </strong>
         <span class="app-phase-banner__text">
-          This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
         </span>
       </p>
     </div>
@@ -27,36 +27,27 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="addAnother" method="post">
+      <form action="provideRTR" method="post">
 
         {% call fieldset({
           legend: {
-            text: "Does anyone else on your application need a replacement card?",
+            text: "Do you need to provide evidence of your right to reside in the UK?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <!-- <p>This can be anyone else that you applied for when you mae your original application.</p> -->
-
-        <!-- <div class="nhsuk-inset-text">
-          <p>You are applying for a replacement UK GHIC for:</p>
-          <p>
-            {{ data['replace-firstname'] }} {{ data['replace-lastname'] }} <br>
-            {{ data['replace-dep-firstname'] }} {{ data['replace-dep-lastname'] }}
-          </p>
-        </div> -->
 
         {{ radios({
-          "idPrefix": "add-another",
-          "name": "add-another",
+          "idPrefix": "provide-RTR",
+          "name": "provide-RTR",
           "items": [
             {
-              "value": "Yes",
+              "value": "yes",
               "text": "Yes"
             },
             {
-              "value": "No",
+              "value": "no",
               "text": "No"
             }
           ]

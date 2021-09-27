@@ -25,14 +25,16 @@ router.post('/newApplication', function (req, res) {
   }
 })
 
-// Change of circumstance - coc.html
+// Has anything changed since you last applied? - coc.html
 router.post('/changeCircs', function (req, res) {
   var changeCircs = req.session.data['change-circs']
   if (changeCircs == "new") {
-    res.redirect('apply/where-do-you-live')
+    // res.redirect('apply/where-do-you-live')
+    res.redirect('contact-us')
   }
   else if (changeCircs == "replacement") {
-    res.redirect('replacement/applicant-type')
+    // res.redirect('replacement/applicant-type')
+    res.redirect('replacement/main-who-for')
   }
   else {
     res.redirect('coc')

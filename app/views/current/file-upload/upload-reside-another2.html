@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Evidence uploaded
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Step 1</span> -->
+      <form action="addEvidRight" method="post">
+
+        {% call fieldset({
+          legend: {
+            text: "Evidence uploaded",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+ <br>
+        <h3>Files added</h3>
+
+
+        <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            <!-- Passport -->
+            {{ data['file-type-1'] }}
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <a href="">example_file_name_01.jpg</a>, 2MB
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="#">
+              Delete<span class="nhsuk-u-visually-hidden"> </span>
+            </a>
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            <!-- Birth certificate -->
+            {{ data['file-type-2'] }}
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            <a href="">example_file_name_02.jpg</a>, 2MB
+          </dd>
+          <dd class="nhsuk-summary-list__actions">
+            <a href="upload-reside-another-deleted">
+              Delete<span class="nhsuk-u-visually-hidden"> </span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+        <h3>Do you need to add more evidence of your right to reside in the UK?</h3>
+
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras neque purus, ullamcorper et iaculis ut, egestas ornare leo.</p> -->
+
+        {{ radios({
+          "idPrefix": "add-evid-right",
+          "name": "add-evid-right",
+          "classes": "nhsuk-radios--inline",
+          "items": [
+            {
+              "value": "Yes",
+              "text": "Yes"
+            },
+            {
+              "value": "No",
+              "text": "No"
+            }
+          ]
+        }) }}
+
+        {% endcall %}
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+     {{ backLink({
+        "href": "upload-reside-file-type2",
+        "text": "Change my previous answer"
+      }) }}
+      
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,114 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Upload your evidence of UK residency
+{% endblock %}
+
+{% block beforeContent %}
+
+<style>
+.nhsuk-file-upload {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.31579;
+}
+</style>
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+      <!-- <form action="add-another-yn" method="post"> -->
+       <!-- <form action="upload-reside-another" method="post"> -->
+       <form action="upload-res-uk-file-type" method="post">
+        <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Step 2</span> -->
+
+
+        {% call fieldset({
+          legend: {
+            text: "Upload your evidence of UK residency",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+         {% endcall %}
+
+        <p>You can upload your evidence as scanned copies or photos of the originals. This can be a:</p>
+        <ul>
+          <li>utility bill</li>
+          <li>Council Tax bill</li>
+          <li>tenancy information</li>
+          <li>benefit letter</li>
+          <li>HMRC letter</li>
+          <li>NHS or GP letter</li>
+          <li>bank statement</li>
+          <li>mortgage letter</li>
+          <!-- <li>Other</li> -->
+        </ul>
+
+        <h3>Upload a file</h3>
+
+       <div class="nhsuk-form-group">
+          <!-- <label class="nhsuk-label" for="file-upload-1">
+            Upload a file
+          </label> -->
+
+         <!--  <button class="nhsuk-button nhsuk-button--secondary" id="file-upload-1" name="file-upload-1" type="file">
+            Choose files
+          </button> -->
+
+          <input class="nhsuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+        </div>
+
+       
+
+         <!-- <br><br> -->
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+       
+
+        {{ details({
+          "text": "I don't have evidence",
+          "HTML": "
+          <!-- <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
+            <p>You can find your NHS number by logging in to a GP online service or on any document the NHS has sent you, such as your:</p>
+            <ul>
+                <li>prescriptions</li>
+            </ul> -->
+          "
+        }) }}
+        
+
+        
+
+      </form>
+
+     {{ backLink({
+        "href": "provide-res-uk-evid",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
+
