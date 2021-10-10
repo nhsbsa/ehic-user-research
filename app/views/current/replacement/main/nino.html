@@ -32,16 +32,17 @@
        <!-- <form action="know-ohs-number" method="post"> -->
        <form action="latency" method="post">
 
+        <h2>What is {{ data['replace-firstname'] }}'s National Insurance number?</h2>
 
         {% call fieldset({
           legend: {
-            text: "What is your National Insurance number?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>It’s on your National Insurance card, benefit letter, payslip or P60.</p>
+        <p>It’s on their National Insurance card, benefit letter, payslip or P60.</p>
 
         {{ input({
           "label": {
@@ -67,7 +68,7 @@
       </form>
 
      {{ backLink({
-        "href": "dob",
+        "href": "uk-address",
         "text": "Change my previous answer"
       }) }}
 

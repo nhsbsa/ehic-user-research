@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Evidence uploaded
+  Proof of residency in the UK evidence uploaded
 {% endblock %}
 
 {% block beforeContent %}
@@ -31,11 +31,15 @@
 
         {% call fieldset({
           legend: {
-            text: "Evidence uploaded",
+            text: "Proof of residency in the UK evidence uploaded",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+
+        <p>We need 2 of the documents we asked for in the email we sent you as proof of residency in the UK. If you cannot provide 2 of the documents listed, upload all alternative evidence that you have available.</p>
+
+        <p>You’ll get a chance tell us why you couldn’t provide the documents we asked for.</p>
         
         <br>
 
@@ -74,9 +78,9 @@
         </div>
       </dl>
 
-        <h3>Do you need to add more evidence of your UK residency?</h3>
+      <h3>Do you need to add more evidence of your residency in the UK?</h3>
 
-        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras neque purus, ullamcorper et iaculis ut, egestas ornare leo.</p> -->
+        <p>You must upload 2 documents as proof of residency in the UK.</p>
 
         {{ radios({
           "idPrefix": "add-evid-res-uk",
@@ -103,7 +107,7 @@
       </form>
 
      {{ backLink({
-        "href": "upload-res-uk-file-type2",
+        "href": "upload-res-uk2",
         "text": "Change my previous answer"
       }) }}
       

@@ -82,7 +82,7 @@ router.post('/main/ukAddress', function (req, res) {
     res.redirect('postcode')
   }
   else if (ukAddress == "no") {
-    res.redirect('nino')
+    res.redirect('country')
   }
   else {
     res.redirect('uk-address')
@@ -159,11 +159,6 @@ router.post('/dep-and-other/ukAddress', function (req, res) {
 //     res.redirect('know-ohs-number')
 //   }
 // })
-
-
-
-
-
 
 
 // Do you need to get a replacement card for anyone else? - main/add-another.html

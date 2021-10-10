@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Evidence uploaded
+  Right to reside in the UK evidence uploaded
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,11 +29,9 @@
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Step 1</span> -->
       <form action="addEvidRight" method="post">
 
-
-
         {% call fieldset({
           legend: {
-            text: "Evidence uploaded",
+            text: "Right to reside in the UK evidence uploaded",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
@@ -61,7 +59,8 @@
         </div>
       </dl>
 
-        <h3>Do you need to add more evidence of your right to reside in the UK?</h3>
+        <h3>Do you need to add more evidence of {{ data['replace-firstname'] }}'s right to reside in the UK?</h3>
+        <p>If you have provided all your evidence for your right to reside in the UK, select no.</p>
 
         <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras neque purus, ullamcorper et iaculis ut, egestas ornare leo.</p> -->
 

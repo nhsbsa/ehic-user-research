@@ -7,6 +7,12 @@
 
 {% block beforeContent %}
 
+<style>
+  #dropdown {
+    display: none;
+  }
+</style>
+
   <!-- Phase banner -->
   <div class="app-phase-banner">
     <div class="nhsuk-width-container app-phase-banner__container">
@@ -40,6 +46,18 @@
 
         <p>You can replace the card of anyone else on your application.</p>
 
+        {% set yesHint %}
+          {{ input({
+            id: "dropdown",
+            name: "dropdown",
+            classes: "nhsuk-u-width-two-thirds",
+            label: {
+              text: "You will be asked for their details one person at a time"
+            }
+          }) }}
+        {% endset -%}
+
+
         <!-- <div class="nhsuk-inset-text">
           <p>You are applying for a replacement UK GHIC for:</p>
           <p>
@@ -53,7 +71,10 @@
           "items": [
             {
               "value": "Yes",
-              "text": "Yes"
+              "text": "Yes",
+              "conditional": {
+                "html": yesHint
+              }
             },
             {
               "value": "No",

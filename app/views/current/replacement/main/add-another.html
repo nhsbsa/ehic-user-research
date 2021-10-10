@@ -29,23 +29,56 @@
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
       <form action="addAnother" method="post">
 
+        <h2>{{ data['replace-dep-firstname'] }} added</h2>
+
         {% call fieldset({
           legend: {
-            text: "Does anyone else on your application need a replacement card?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <!-- <p>This can be anyone else that you applied for when you mae your original application.</p> -->
+        
 
-        <!-- <div class="nhsuk-inset-text">
-          <p>You are applying for a replacement UK GHIC for:</p>
-          <p>
-            {{ data['replace-firstname'] }} {{ data['replace-lastname'] }} <br>
-            {{ data['replace-dep-firstname'] }} {{ data['replace-dep-lastname'] }}
-          </p>
-        </div> -->
+        {% endcall %}
+
+        
+
+      <h3>Applicants getting a replacement card</h3>
+
+      <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+               <!-- <dt class="nhsuk-summary-list__key">
+                  Name
+               </dt> -->
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replace-firstname'] }} {{ data['replace-lastname'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a href="#">
+                    Remove<span class="nhsuk-u-visually-hidden"> </span>
+                  </a>
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <!-- <dt class="nhsuk-summary-list__key">
+                  Name
+               </dt> -->
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replace-dep-firstname'] }} {{ data['replace-dep-lastname'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a href="#">
+                    Remove<span class="nhsuk-u-visually-hidden"> </span>
+                  </a>
+               </dd>
+            </div>
+          </dl>
+
+          <h3>Does anyone else on your application need a replacement card?</h3>
+
+          <p>This can be anyone else that you applied for when you made your original application.</p>
 
         {{ radios({
           "idPrefix": "add-another",
@@ -62,18 +95,16 @@
           ]
         }) }}
 
-        {% endcall %}
-
         {{ button({
           "text": "Continue"
         }) }}
 
       </form>
 
-     <!-- {{ backLink({
-        "href": "",
+     {{ backLink({
+        "href": "main-app-replace",
         "text": "Change my previous answer"
-      }) }} -->
+      }) }}
       
     </div>
   </div>

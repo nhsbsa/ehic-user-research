@@ -38,17 +38,19 @@
 
       <h1>Submit your application</h1>
 
-      <h3>{{ data['replace-firstname'] }} {{ data['replace-lastname'] }}</h3>
+      <h3>Main applicant's details</h3>
 
       <dl class="nhsuk-summary-list">
-            <!-- <div class="nhsuk-summary-list__row">
+            <div class="nhsuk-summary-list__row">
                <dt class="nhsuk-summary-list__key">
                   Name
                </dt>
                <dd class="nhsuk-summary-list__value">
                   {{ data['replace-firstname'] }} {{ data['replace-lastname'] }}
                </dd>
-            </div> -->
+               <dd class="nhsuk-summary-list__actions">
+               </dd>
+            </div>
             <div class="nhsuk-summary-list__row">
                <dt class="nhsuk-summary-list__key">
                   Date of birth
@@ -56,8 +58,19 @@
                <dd class="nhsuk-summary-list__value">
                   {{ data['replace-dob-day'] }} / {{ data['replace-dob-month'] }} / {{ data['replace-dob-year'] }}
                </dd>
+               <dd class="nhsuk-summary-list__actions">
+               </dd>
             </div>
-
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Postcode
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replace-postcode'] }} 
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+               </dd>
+            </div>
             <div class="nhsuk-summary-list__row">
                <dt class="nhsuk-summary-list__key">
                   National Insurance number
@@ -65,21 +78,31 @@
                <dd class="nhsuk-summary-list__value">
                   {{ data['replace-nino'] }} 
                </dd>
+               <dd class="nhsuk-summary-list__actions">
+               </dd>
             </div>
-            <div class="nhsuk-summary-list__row">
+            <!-- <div class="nhsuk-summary-list__row">
                <dt class="nhsuk-summary-list__key">
                   UK GHIC expiry date
                </dt>
                <dd class="nhsuk-summary-list__value">
                   25 July 2026
                </dd>
-            </div>
+               <dd class="nhsuk-summary-list__actions">
+               </dd>
+            </div> -->
+
             <div class="nhsuk-summary-list__row">
                <dt class="nhsuk-summary-list__key">
                   Reason for replacement
                </dt>
                <dd class="nhsuk-summary-list__value">
-                  {{ data['replacement-reason'] }} 
+                  {{ data['replacement-reason'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a href="replacement-reason">
+                    Change<span class="nhsuk-u-visually-hidden"> </span>
+                  </a>
                </dd>
             </div>
             <div class="nhsuk-summary-list__row">
@@ -89,8 +112,32 @@
                <dd class="nhsuk-summary-list__value">
                   {{ data['email-address'] }} 
                </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a href="email-address">
+                    Change<span class="nhsuk-u-visually-hidden"> </span>
+                  </a>
+               </dd>
             </div>
           </dl>
+
+          <h3>Applicants getting a replacement card</h3>
+
+      <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Name
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['replace-firstname'] }} {{ data['replace-lastname'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a href="#">
+                    Remove<span class="nhsuk-u-visually-hidden"> </span>
+                  </a>
+               </dd>
+            </div>
+         </dl>
+
 
           {{ insetText({
             "HTML": "<p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>"

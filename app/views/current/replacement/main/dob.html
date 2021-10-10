@@ -30,12 +30,16 @@
       <!-- <form action="address-lookup" method="post"> -->
       <form action="uk-address" method="post">
 
+        <h2>What is {{ data['replace-firstname'] }}'s date of birth?</h2>
+
+        <p>The person who made the original application must be over 16 years old.</p>
+
         {{ dateInput({
         "id": "example",
         "namePrefix": "replace-dob",
         "fieldset": {
           "legend": {
-            "text": "What is your date of birth?",
+            "text": "",
             "classes": "nhsuk-label--l",
             "isPageHeading": true
               }

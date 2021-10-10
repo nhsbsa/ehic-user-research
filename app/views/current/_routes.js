@@ -12,13 +12,8 @@ router.post('/newApplication', function (req, res) {
   if (newApplication == "new") {
     res.redirect('apply/where-do-you-live')
   }
-  else if (newApplication == "renew") {
-    // res.redirect('renew/card-type')
-    res.redirect('apply/where-do-you-live')
-  }
   else if (newApplication == "replacement") {
-    res.redirect('coc')
-    // res.redirect('replacement/applicant-type')
+    res.redirect('replacement/next-steps')
   }
   else {
     res.redirect('new-application')

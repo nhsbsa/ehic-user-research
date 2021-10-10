@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is their name?
+  What type of evidence are you providing?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,34 +26,37 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <form action="dep-dob" method="post">
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
+      <form action="evidenceType" method="post">
 
         {% call fieldset({
           legend: {
-            text: "What is their name?",
+            text: "What type of evidence are you providing?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        {{ input({
-          "label": {
-            "text": "First name"
-          },
-          "id": "input-width-30",
-          "name": "replace-dep-firstname",
-          "classes": "nhsuk-input--width-30"
+        {{ radios({
+          "idPrefix": "evidence-type",
+          "name": "evidence-type",
+          "items": [
+            {
+              "value": "sharecode",
+              "text": "EU settled status share code",
+              "hint": {
+                "text": "You can get your EU settled status share code from the gov.uk website if your right to reside in the UK is based on you having EU settled status"
+              }
+            },
+            {
+              "value": "document",
+              "text": "Document",
+              "hint": {
+                "text": "The documents we can consider are listed in the email we have sent you"
+              }
+            }
+          ]
         }) }}
-
-        {{ input({
-          "label": {
-            "text": "Last name"
-          },
-          "id": "input-width-30",
-          "name": "replace-dep-lastname",
-          "classes": "nhsuk-input--width-30"
-        }) }}
-
 
         {% endcall %}
 
@@ -63,11 +66,11 @@
 
       </form>
 
-     {{ backLink({
+     <!-- {{ backLink({
         "href": "",
         "text": "Change my previous answer"
-      }) }}
-
+      }) }} -->
+      
     </div>
   </div>
 {% endblock %}

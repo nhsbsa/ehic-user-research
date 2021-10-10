@@ -1,10 +1,16 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Which service you would like to use?
+  Which service would you would like to use?
 {% endblock %}
 
 {% block beforeContent %}
+
+<style>
+  #dropdown {
+    display: none;
+  }
+</style>
 
   <!-- Phase banner -->
   <div class="app-phase-banner">
@@ -31,11 +37,24 @@
 
         {% call fieldset({
           legend: {
-            text: "Which service you would like to use?",
+            text: "Which service would you would like to use?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+
+        <p>If your card has expired you will need to apply again for healthcare cover abroad.</p>
+
+        {% set replaceCard %}
+          {{ input({
+            id: "dropdown",
+            name: "dropdown",
+            classes: "nhsuk-u-width-two-thirds",
+            label: {
+              text: "If you have an existing European Health Insurance Card (EHIC) or applied for a UK Global Health Insurance Card (GHIC) prior to 29 June 2021 and need a replacement, you will need to apply again."
+            }
+          }) }}
+        {% endset -%}
 
         {{ radios({
           "idPrefix": "new-application",
@@ -43,15 +62,14 @@
           "items": [
             {
               "value": "new",
-              "text": "Check your eligibility and apply for healthcare cover abroad"
-            },
-            {
-              "value": "renew",
-              "text": "Renew your healthcare cover"
+              "text": "Apply for healthcare cover abroad"
             },
             {
               "value": "replacement",
-              "text": "Replace a lost or stolen card"
+              "text": "Replace a lost, stolen, or damaged card",
+              "conditional": {
+                "html": replaceCard
+              }
             }
           ]
         }) }}

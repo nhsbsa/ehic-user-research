@@ -1,32 +1,45 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Upload your evidence of your right to reside in the UK
+  What evidence are you uploading for {{ data['upload-firstname'] }}’s right to reside in the UK?
 {% endblock %}
 
 {% block beforeContent %}
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script>
+   const chooseFile = document.getElementById('choose-file');
+   const fileChosen = document.getElementById('file-chosen');
+    chooseFile.addEventListener('change', 
+      function(){
+      fileChosen.textContent = this.files[0].name
+    })
+
+</script>
+
 <style>
-.nhsuk-file-upload {
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.31579;
-}
+    #file-chosen {
+      margin: 0 10px;
+      position: relative;
+      top: 16px;
+      font-size: 18px;
+    }
 </style>
 
-  <!-- Phase banner -->
-  <div class="app-phase-banner">
-    <div class="nhsuk-width-container app-phase-banner__container">
-      <p class="app-phase-banner__content">
-        <strong class="nhsuk-tag app-phase-banner__tag">
-          Prototype
-        </strong>
-        <span class="app-phase-banner__text">
-        This is a prototype - your <a href="#">feedback</a> will help us improve it.
-        </span>
-      </p>
-    </div>
+<!-- Phase banner -->
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+    <p class="app-phase-banner__content">
+      <strong class="nhsuk-tag app-phase-banner__tag">
+        Prototype
+      </strong>
+      <span class="app-phase-banner__text">
+      This is a prototype - your <a href="#">feedback</a> will help us improve it.
+      </span>
+    </p>
   </div>
+</div>
   
 {% endblock %}
 
@@ -34,79 +47,97 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <form action="add-another-yn" method="post"> -->
-       <!-- <form action="upload-reside-another2" method="post"> -->
-       <form action="upload-reside-file-type2" method="post">
+       <!-- <form action="upload-reside-file-type" method="post"> -->
+       <form action="upload-reside-another2" method="post">
         <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Step 1</span> -->
 
+        <h2>What evidence are you uploading for {{ data['upload-firstname'] }}’s right to reside in the UK?</h2>
 
         {% call fieldset({
           legend: {
-            text: "Upload your evidence of your right to reside in the UK",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
+        {{ radios({
+          "idPrefix": "file-type-2",
+          "name": "file-type-2",
+          "items": [
+            {
+              "value": "Passport",
+              "text": "Passport"
+            },
+            {
+              "value": "Residence certificate or biometric permit",
+              "text": "Residence certificate or biometric permit"
+            },
+            {
+              "value": "Certificate of Naturalization",
+              "text": "Certificate of Naturalization"
+            },
+            {
+              "value": "Birth Certificate",
+              "text": "Birth Certificate"
+            },
+            {
+              "value": "National identification card",
+              "text": "National identification card"
+            },
+            {
+              "value": "Other",
+              "text": "Other"
+            }
+          ]
+        }) }}
+
          {% endcall %}
 
-        <p>You can upload your evidence as scanned copies or photos of the originals. This can be a:</p>
+         <br>
+
+        <!-- <p>Evidence should be a scanned copy, photo or screenshot of the original documents.</p>
+        <p>Uploaded attachments must be:</p>
         <ul>
-          <li>Passport</li>
-          <li>Residence certificate</li>
-          <li>Biometric residence permit</li>
-          <li>Certificate of Naturalization</li>
-          <li>Birth Certificate</li>
-          <li>National ID card</li>
-          <!-- <li>Other</li> -->
-        </ul>
+          <li>jpg, jpeg, bmp, png or pdf</li>
+          <li>no larger than 10MB in size</li>
+        </ul> -->
 
         <h3>Upload a file</h3>
 
        <div class="nhsuk-form-group">
-          <!-- <label class="nhsuk-label" for="file-upload-1">
-            Upload a file
-          </label> -->
 
-         <!--  <button class="nhsuk-button nhsuk-button--secondary" id="file-upload-1" name="file-upload-1" type="file">
-            Choose files
-          </button> -->
+        <p>The file must be in jpeg, jpg, png, or pdf format and must not be bigger than 10MB.</p>
 
-          <input class="nhsuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+
+
+          <div>
+            <label for="choose-file" class="nhsuk-button nhsuk-button--secondary">Choose file</label>
+            <input id="choose-file" style="display:none;" type="file">
+            <span id="file-chosen">No file chosen</span>
+          </div>
+
         </div>
-
-       
-
-         <!-- <br><br> -->
 
         {{ button({
           "text": "Continue"
         }) }}
 
-       
+       <!--  <br><br>
 
         {{ details({
           "text": "I don't have evidence",
           "HTML": "
-          <!-- <p>An NHS number is a 10 digit number, like 485 777 3456.</p>
-            <p>You can find your NHS number by logging in to a GP online service or on any document the NHS has sent you, such as your:</p>
-            <ul>
-                <li>prescriptions</li>
-            </ul> -->
           "
-        }) }}
-        
-
-        
+        }) }} -->
 
       </form>
 
      {{ backLink({
-        "href": "upload-reside-another",
+        "href": "provide-rtr-evid",
         "text": "Change my previous answer"
       }) }}
 
     </div>
   </div>
 {% endblock %}
-

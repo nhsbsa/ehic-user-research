@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your application reference number?
+  What is the OHS reference number of the person you are providing evidence for?
 {% endblock %}
 
 {% block beforeContent %}
@@ -32,13 +32,13 @@
 
         {% call fieldset({
           legend: {
-            text: "What is your application reference number?",
+            text: "What is the OHS reference number of the person you are providing evidence for?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>Your application reference number is an 8 digit number. It will be on the email we sent to you when you applied for your card.</p>
+        <p>You can find their OHS reference number on the email we have sent you</p>
 
         {{ input({
           "label": {

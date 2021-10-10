@@ -24,13 +24,28 @@ router.post('/ukAddress', function (req, res) {
 router.post('/provideRTR', function (req, res) {
   var provideRTR = req.session.data['provide-RTR']
   if (provideRTR == "yes") {
-    res.redirect('upload-reside')
+    // res.redirect('upload-reside')
+    res.redirect('evidence-type')
   }
   else if (provideRTR == "no") {
     res.redirect('provide-res-uk-evid')
   }
   else {
     res.redirect('provide-rtr-evid')
+  }
+})
+
+// What kind of evidence would you like to provide? - evidence-type.html
+router.post('/evidenceType', function (req, res) {
+  var evidenceType = req.session.data['evidence-type']
+  if (evidenceType == "sharecode") {
+    res.redirect('share-code')
+  }
+  else if (evidenceType == "document") {
+    res.redirect('upload-reside')
+  }
+  else {
+    res.redirect('evidence-type')
   }
 })
 

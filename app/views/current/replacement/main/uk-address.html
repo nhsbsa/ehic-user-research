@@ -29,9 +29,13 @@
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
       <form action="ukAddress" method="post">
 
+        <h2>Does {{ data['replace-firstname'] }} live in the UK?</h2>
+
+        <p>If the person who made the original application lives in the UK, select yes.</p>
+
         {% call fieldset({
           legend: {
-            text: "Do you live in the UK?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }

@@ -30,12 +30,14 @@
       <!-- <form action="address-lookup" method="post"> -->
       <form action="uk-address" method="post">
 
+        <h2>What is {{ data['upload-firstname'] }}'s date of birth?</h2>
+
         {{ dateInput({
         "id": "example",
         "namePrefix": "replace-dob",
         "fieldset": {
           "legend": {
-            "text": "What is your date of birth?",
+            "text": "",
             "classes": "nhsuk-label--l",
             "isPageHeading": true
               }

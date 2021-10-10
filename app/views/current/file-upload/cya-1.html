@@ -1,6 +1,8 @@
 {% extends "layout.html" %}
 {% block pageTitle %}
-Check your answers
+
+   Check your details are correct
+
 {% endblock %}
 {% block beforeContent %}
 <!-- Phase banner -->
@@ -22,8 +24,7 @@ Check your answers
    <div class="nhsuk-grid-column-three-quarters">
       <form action="app-complete" method="post">
          <h1 class="nhsuk-heading-l">
-            Check your answers 
-            <!-- before sending your application -->
+            Check your details are correct
          </h1>
          <h2 class="nhsuk-heading-m">
             Your details
@@ -32,7 +33,7 @@ Check your answers
          <dl class="nhsuk-summary-list">
             <div class="nhsuk-summary-list__row">
                <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
-                  Reference number
+                  OHS reference number
                </dt>
                <dd class="nhsuk-summary-list__value">
                   00123456
@@ -132,14 +133,14 @@ Check your answers
          </dl>
 
          <h2 class="nhsuk-heading-m">
-            Additional information
+            Alternative evidence
          </h2>
 
          <dl class="nhsuk-summary-list">
 
             <div class="nhsuk-summary-list__row">
                <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
-                  Additonal information
+                  Reason for alternative evidence
                </dt>
                <dd class="nhsuk-summary-list__value">
                   {{ data['additional-info'] }}
@@ -152,10 +153,13 @@ Check your answers
 
          </dl>
 
-         <h2>Now send your application</h2>
-         <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+         <h2>Before you submit your evidence</h2>
+         <p>By submitting your evidence, you are confirming that the information you’ve given us is correct. If you knowingly provide incorrect information, you could be prosecuted or face civil proceedings.</p>
+
+         <p>You can <a href="https://www.nhsbsa.nhs.uk/our-policies/privacy" target="_blank">find out more about how we use your information on our website</a>.</p>
+         
          {{ button({
-         "text": "Accept and send"
+         "text": "Agree and send"
          }) }}
       </form>
 

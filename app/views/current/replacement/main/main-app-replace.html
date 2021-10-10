@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Does anyone else on your application need a replacement card?
+  Does {{ data['replace-firstname'] }} need a replacement card?
 {% endblock %}
 
 {% block beforeContent %}
@@ -27,17 +27,21 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
-      <form action="addAnother" method="post">
+      <form action="add-dependant" method="post">
+
+        <h2>Does {{ data['replace-firstname'] }} need a replacement card?</h2>
+
+        <p>You’ll get be able to request replacement cards for anyone else on the application when you select continue.</p>
 
         {% call fieldset({
           legend: {
-            text: "Does anyone else on your application need a replacement card?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <!-- <p>This can be anyone else that you applied for when you mae your original application.</p> -->
+        <!-- <p>This can be anyone else that you applied for when you made your original application.</p> -->
 
         <!-- <div class="nhsuk-inset-text">
           <p>You are applying for a replacement UK GHIC for:</p>

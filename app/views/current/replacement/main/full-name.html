@@ -30,11 +30,13 @@
 
         {% call fieldset({
           legend: {
-            text: "What is your name?",
+            text: "Who made the original application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+
+        <p>For example, if you were added to your partners application when they applied, this is their name. If you made the application, this is your name.</p>
 
         {{ input({
           "label": {
@@ -64,7 +66,7 @@
       </form>
 
      {{ backLink({
-        "href": "../main-who-for",
+        "href": "../next-steps",
         "text": "Change my previous answer"
       }) }}
 

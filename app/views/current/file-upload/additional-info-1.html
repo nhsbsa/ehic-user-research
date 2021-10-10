@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your name?
+  If you cannot provide the evidence we asked for, tell us why
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,11 +30,13 @@
 
         {% call fieldset({
           legend: {
-            text: "Can you provide more details?",
+            text: "If you cannot provide the evidence we asked for, tell us why",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+
+        <p>If you have provided all the requested evidence, select continue.</p>
 
 
         {{ textarea({
@@ -44,7 +46,7 @@
             "text": ""
           },
           "hint": {
-            "text": "Do not include personal or financial information, for example, your National Insurance number or credit card details."
+            "text": ""
           }
         }) }}
 

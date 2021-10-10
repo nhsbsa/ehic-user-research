@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Do you need to provide evidence of your right to reside in the UK?
+  Has {{ data['upload-firstname'] }} been asked to provide evidence for their right to reside in the UK?
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,13 +29,17 @@
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
       <form action="provideRTR" method="post">
 
+        <h2>Has {{ data['upload-firstname'] }} been asked to provide evidence for their right to reside in the UK?</h2>
+
         {% call fieldset({
           legend: {
-            text: "Do you need to provide evidence of your right to reside in the UK?",
+            text: "",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+
+        <p>If the email we have sent you asks for this evidence, select yes.</p>
 
 
         {{ radios({

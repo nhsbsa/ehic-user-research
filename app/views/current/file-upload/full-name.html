@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your name?
+  Who are you uploading evidence for?
 {% endblock %}
 
 {% block beforeContent %}
@@ -30,18 +30,20 @@
 
         {% call fieldset({
           legend: {
-            text: "What is your name?",
+            text: "Who are you uploading evidence for?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
+
+        <p>If you’re uploading evidence for yourself, this is your name.</p>
 
         {{ input({
           "label": {
             "text": "First name"
           },
           "id": "input-width-30",
-          "name": "replace-firstname",
+          "name": "upload-firstname",
           "classes": "nhsuk-input--width-30"
         }) }}
 
