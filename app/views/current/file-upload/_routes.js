@@ -56,10 +56,27 @@ router.post('/provideUkRes', function (req, res) {
     res.redirect('upload-res-uk')
   }
   else if (provideUkRes == "no") {
-    res.redirect('additional-info-1')
+    // res.redirect('additional-info-1')
+    res.redirect('provide-student')
   }
   else {
     res.redirect('provide-res-uk-evid')
+  }
+})
+
+
+
+// Has [Name] been asked to provide evidence of their studies abroad? - provide-student.html
+router.post('/provideStudent', function (req, res) {
+  var provideStudent = req.session.data['provide-student']
+  if (provideStudent == "yes") {
+    res.redirect('upload-student')
+  }
+  else if (provideStudent == "no") {
+    res.redirect('additional-info-1')
+  }
+  else {
+    res.redirect('provide-student')
   }
 })
 
@@ -89,12 +106,28 @@ router.post('/addEvidResUK', function (req, res) {
   }
   else if (addEvidResUK == "No") {
     // res.redirect('cya')
-    res.redirect('additional-info')
+    // res.redirect('additional-info')
+    res.redirect('provide-student')
   }
   else {
     res.redirect('upload-res-uk-another')
   }
 })
 
+// Do you need to add more evidence for 's study period abroad? 
+// - upload-student-another.html, upload-student-another.html
+router.post('/addEvidStudent', function (req, res) {
+  var addEvidStudent = req.session.data['add-evid-student']
+  if (addEvidStudent == "Yes") {
+    res.redirect('upload-student2')
+  }
+  else if (addEvidStudent == "No") {
+    // res.redirect('cya')
+    res.redirect('additional-info')
+  }
+  else {
+    res.redirect('upload-student-another')
+  }
+})
 
 module.exports = router
