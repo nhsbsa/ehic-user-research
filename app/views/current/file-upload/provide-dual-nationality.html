@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your EU Settled Status share code?
+  Has {{ data['upload-firstname'] }} been asked to provide further information about their dual nationality?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,11 +26,10 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <form action="add-another-yn" method="post"> -->
-       <!-- <form action="provide-res-uk-evid" method="post"> -->
-       <form action="provide-dual-nationality" method="post">
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
+      <form action="provideDual" method="post">
 
-        <h2>What is {{ data['upload-firstname'] }}'s EU settled status share code?</h2>
+        <h2>Has {{ data['upload-firstname'] }} been asked to provide further information about their dual nationality?</h2>
 
         {% call fieldset({
           legend: {
@@ -40,20 +39,24 @@
           }
         }) %}
 
-        <p>You can get your EU settled status share code from the gov.uk website if your right to reside in the UK is based on you having EU settled status.</p>
+        <p>If they have a UK nationality, as well as being a national of an EU country, Switzerland, Norway, Iceland, or Liechtenstein, select yes.</p>
 
-        {{ input({
-          "label": {
-            "text": ""
-          },
-          "id": "input-width-10",
-          "name": "sharecode",
-          "classes": "nhsuk-input--width-10"
+        {{ radios({
+          "idPrefix": "provide-dual",
+          "name": "provide-dual",
+          "items": [
+            {
+              "value": "yes",
+              "text": "Yes"
+            },
+            {
+              "value": "no",
+              "text": "No"
+            }
+          ]
         }) }}
 
-
         {% endcall %}
-        <!-- <p><a href="nhs-number">I don't have a National Insurance number</a></p> -->
 
         {{ button({
           "text": "Continue"
@@ -62,16 +65,10 @@
       </form>
 
      {{ backLink({
-        "href": "evidence-type",
+        "href": "provide-rtr-evid",
         "text": "Change my previous answer"
       }) }}
-
+      
     </div>
   </div>
 {% endblock %}
-
-
-<!-- 
- hint: {
-            html: "For example, ‘1’."
-          }, -->

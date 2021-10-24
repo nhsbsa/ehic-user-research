@@ -90,6 +90,34 @@ router.post('/main/ukAddress', function (req, res) {
 })
 
 // Do you live in the UK? - uk-address.html
+router.post('/not-found/ukAddress', function (req, res) {
+  var ukAddress = req.session.data['uk-address']
+  if (ukAddress == "yes") {
+    res.redirect('postcode')
+  }
+  else if (ukAddress == "no") {
+    res.redirect('country')
+  }
+  else {
+    res.redirect('uk-address')
+  }
+})
+
+// Do you live in the UK? - uk-address.html
+router.post('/multiple-records/ukAddress', function (req, res) {
+  var ukAddress = req.session.data['uk-address']
+  if (ukAddress == "yes") {
+    res.redirect('postcode')
+  }
+  else if (ukAddress == "no") {
+    res.redirect('country')
+  }
+  else {
+    res.redirect('uk-address')
+  }
+})
+
+// Do you live in the UK? - uk-address.html
 router.post('/main-other/ukAddress', function (req, res) {
   var ukAddress = req.session.data['uk-address']
   if (ukAddress == "yes") {

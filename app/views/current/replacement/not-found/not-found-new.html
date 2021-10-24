@@ -1,0 +1,183 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  We cannot find your record
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
+      <!-- <form action="full-name" method="post"> -->
+
+         <h1>We cannot find your record</h1>
+
+        {% call fieldset({
+          legend: {
+            text: "",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        <p>
+           Based on the information you have provided we cannot find a record for your entitlement. 
+        </p>
+
+        <h2 class="nhsuk-heading-m">
+           The details you gave:
+         </h2>
+
+         <dl class="nhsuk-summary-list">
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+                  Name
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['nf-firstname'] }} {{ data['nf-lastname'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="full-name">
+                  Change <span class="nhsuk-u-visually-hidden"></span>
+                  </a>
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+                  Date of birth
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['nf-dob-day'] }} / {{ data['nf-dob-month'] }} / {{ data['nf-dob-year'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="dob">
+                  Change <span class="nhsuk-u-visually-hidden"></span>
+                  </a>
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+                  Postcode
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['nf-postcode'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="postcode">
+                  Change <span class="nhsuk-u-visually-hidden"></span>
+                  </a>
+               </dd>
+            </div>
+            <!-- <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+                  Country
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['nf-country'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="country">
+                  Change <span class="nhsuk-u-visually-hidden"></span>
+                  </a>
+               </dd>
+            </div> -->
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+                  National Insurance number
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['nf-nino'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a class="nhsuk-link" href="nino">
+                  Change <span class="nhsuk-u-visually-hidden"></span>
+                  </a>
+               </dd>
+            </div>
+         </dl>
+
+         <p>
+            If you have applied for a card and have not received it, your EHIC or GHIC application may still be being processed.
+         </p>
+
+         <h2> We could not find you for one of these reasons:</h2>
+
+         <!-- {% from 'details/macro.njk' import details %} -->
+
+         {{ details({
+           "text": "The details you gave do not match our records",
+           "HTML": "
+           <p>Check your details and try again.</p>
+           "
+         }) }}
+
+         {{ details({
+           "text": "You are trying to replace an old EHIC",
+           "HTML": "
+           <p>If you have an existing European Health Insurance Card (EHIC) or applied for a UK Global Health Insurance Card (GHIC) prior to 29 June 2021 and need a replacement, you will need to apply for healthcare cover abroad.</p>
+           "
+         }) }}
+
+         {{ details({
+           "text": "Your details have changed",
+           "HTML": "
+           <p>If you’ve recently moved or changed your name, you’ll need to use our service to re-check your eligibility and apply for a new card.</p>
+           "
+         }) }}
+
+         <h2>Apply for a new UK GHIC or UK EHIC</h2>
+
+        <!-- {{ insetText({
+          "HTML": "<p>If you have an existing European Health Insurance Card (EHIC) or applied for a UK Global Health Insurance Card (GHIC) prior to 29 June 2021 and need a replacement, you will need to apply for healthcare cover abroad.</p>"
+        }) }} -->
+
+<!--         {{ details({
+          "text": "If your name, address, or the country you live in has changed",
+          "HTML": "
+          <p><a href=\"https://www.nhsbsa.nhs.uk/contact-us/overseas-healthcare-services-contact-us\" target=\"_blank\">Contact the NHS Overseas Healthcare Service</a> if your name, address, or the country that you live in has changed since you last applied. </p>
+          "
+        }) }} -->
+
+        <form action="../../apply/where-do-you-live" method="post">
+           <button class="nhsuk-button" type="submit">
+              Apply for a new card
+            </button>
+         </form>
+
+
+
+        {% endcall %}
+      
+        <!-- {{ button({
+          "text": "Continue"
+        }) }} -->
+
+      <!-- </form> -->
+
+     {{ backLink({
+        "href": "nino",
+        "text": "Change my previous answer"
+      }) }}
+      
+    </div>
+  </div>
+{% endblock %}

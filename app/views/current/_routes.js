@@ -20,6 +20,36 @@ router.post('/newApplication', function (req, res) {
   }
 })
 
+
+// What do you want to do? - new-application-not-found.html
+router.post('/newAppNotFound', function (req, res) {
+  var newAppNotFound = req.session.data['new-application-not-found']
+  if (newAppNotFound == "new") {
+    res.redirect('')
+  }
+  else if (newAppNotFound == "replacement") {
+    res.redirect('replacement/not-found/next-steps')
+  }
+  else {
+    res.redirect('new-application-not-found')
+  }
+})
+
+// What do you want to do? - new-application-muliple-records.html
+router.post('/newAppMultRecords', function (req, res) {
+  var newAppMultRecords = req.session.data['new-application-multiple-records']
+  if (newAppMultRecords == "new") {
+    res.redirect('')
+  }
+  else if (newAppMultRecords == "replacement") {
+    res.redirect('replacement/multiple-records/next-steps')
+  }
+  else {
+    res.redirect('new-application-multiple-records')
+  }
+})
+
+
 // Has anything changed since you last applied? - coc.html
 router.post('/changeCircs', function (req, res) {
   var changeCircs = req.session.data['change-circs']

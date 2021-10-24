@@ -37,19 +37,73 @@
 
       <hr>
 
-      <p><strong>Sprint 36</strong></p>
+      <!-- <p><strong>Sprint 37</strong></p> -->
 
-      <!-- <p>Get a replacement GHIC</p> -->
+      <h3>Sprint 37</h3>
 
       {{ actionLink({
-       "text": "Get healthcare cover for travelling abroad",
+       "text": "1. Get healthcare cover for travelling abroad (new application and card replacement)",
        "href": "/current/start"
        }) }}
 
        {{ actionLink({
-       "text": "Sending evidence (file upload)",
+       "text": "2. Get healthcare cover for travelling abroad (card replacement - record not found)",
+       "href": "/current/start-not-found"
+       }) }}
+
+       {{ actionLink({
+       "text": "3. Get healthcare cover for travelling abroad (card replacement - multiple records found)",
+       "href": "/current/start-multiple-records"
+       }) }}
+
+       {{ actionLink({
+       "text": "4. Sending evidence (file upload)",
        "href": "/current/file-upload/example-email"
        }) }}
+
+       <hr>
+
+       <h3>Different screen designs</h3>
+
+<!--     </div>
+ </div>
+
+ <div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-three-quarters"> -->
+
+      <dl class="nhsuk-summary-list">
+         
+         <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+               Get a replacement - 'Record not found'
+            </dt>
+            <dd class="nhsuk-summary-list__actions">
+               <a class="nhsuk-link" href="current/replacement/not-found/not-found">
+               Version 1<span class="nhsuk-u-visually-hidden"></span>
+               </a>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+               <a class="nhsuk-link" href="current/replacement/not-found/not-found-new">
+               Version 2<span class="nhsuk-u-visually-hidden"></span>
+               </a>
+            </dd>
+         </div>
+         <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+               File upload - Dual nationality question
+            </dt>
+            <dd class="nhsuk-summary-list__actions">
+               <a class="nhsuk-link" href="current/file-upload/dual-nationality-info">
+               Version 1 (free text) <span class="nhsuk-u-visually-hidden"></span>
+               </a>
+            </dd>
+            <dd class="nhsuk-summary-list__actions">
+               <a class="nhsuk-link" href="current/file-upload/dual-nationality-info-checkbox">
+               Version 2 (checkboxes) <span class="nhsuk-u-visually-hidden"></span>
+               </a>
+            </dd>
+         </div>
+      </dl>
 
    </div>
 </div>

@@ -49,6 +49,20 @@ router.post('/evidenceType', function (req, res) {
   }
 })
 
+// Do you need to provide evidence of your right to reside in the UK? - provide-rtr-evid.html
+router.post('/provideDual', function (req, res) {
+  var provideDual = req.session.data['provide-dual']
+  if (provideDual == "yes") {
+    res.redirect('dual-nationality-info')
+  }
+  else if (provideDual == "no") {
+    res.redirect('provide-res-uk-evid')
+  }
+  else {
+    res.redirect('provide-dual-nationality')
+  }
+})
+
 // Do you need to provide evidence of your UK residency? - provide-res-uk-evid.html
 router.post('/provideUkRes', function (req, res) {
   var provideUkRes = req.session.data['provide-uk-res']
@@ -90,7 +104,8 @@ router.post('/addEvidRight', function (req, res) {
   }
   else if (addEvidRight == "No") {
     // res.redirect('upload-res-uk')
-    res.redirect('provide-res-uk-evid')
+    // res.redirect('provide-res-uk-evid')
+    res.redirect('provide-dual-nationality')
   }
   else {
     res.redirect('upload-reside-another')

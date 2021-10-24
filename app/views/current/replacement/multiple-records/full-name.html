@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What is your EU Settled Status share code?
+  What is your name?
 {% endblock %}
 
 {% block beforeContent %}
@@ -26,34 +26,38 @@
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
-      <!-- <form action="add-another-yn" method="post"> -->
-       <!-- <form action="provide-res-uk-evid" method="post"> -->
-       <form action="provide-dual-nationality" method="post">
-
-        <h2>What is {{ data['upload-firstname'] }}'s EU settled status share code?</h2>
+      <form action="dob" method="post">
 
         {% call fieldset({
           legend: {
-            text: "",
+            text: "Who made the original application?",
             classes: "nhsuk-fieldset__legend--l",
             isPageHeading: true
           }
         }) %}
 
-        <p>You can get your EU settled status share code from the gov.uk website if your right to reside in the UK is based on you having EU settled status.</p>
+        <p>For example, if you were added to your partners application when they applied, this is their name. If you made the application, this is your name.</p>
 
         {{ input({
           "label": {
-            "text": ""
+            "text": "First name"
           },
-          "id": "input-width-10",
-          "name": "sharecode",
-          "classes": "nhsuk-input--width-10"
+          "id": "input-width-30",
+          "name": "nf-firstname",
+          "classes": "nhsuk-input--width-30"
+        }) }}
+
+        {{ input({
+          "label": {
+            "text": "Last name"
+          },
+          "id": "input-width-30",
+          "name": "nf-lastname",
+          "classes": "nhsuk-input--width-30"
         }) }}
 
 
         {% endcall %}
-        <!-- <p><a href="nhs-number">I don't have a National Insurance number</a></p> -->
 
         {{ button({
           "text": "Continue"
@@ -62,16 +66,10 @@
       </form>
 
      {{ backLink({
-        "href": "evidence-type",
+        "href": "../next-steps",
         "text": "Change my previous answer"
       }) }}
 
     </div>
   </div>
 {% endblock %}
-
-
-<!-- 
- hint: {
-            html: "For example, ‘1’."
-          }, -->
