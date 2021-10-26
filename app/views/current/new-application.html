@@ -45,7 +45,7 @@
 
         <p>If your card has expired you will need to apply again for healthcare cover abroad.</p>
 
-        {% set replaceCard %}
+        <!-- {% set replaceCard %}
           {{ input({
             id: "dropdown",
             name: "dropdown",
@@ -54,7 +54,7 @@
               text: "If you have an existing European Health Insurance Card (EHIC) or applied for a UK Global Health Insurance Card (GHIC) prior to 29 June 2021 and need a replacement, you will need to apply again."
             }
           }) }}
-        {% endset -%}
+        {% endset -%} -->
 
         {{ radios({
           "idPrefix": "new-application",
@@ -66,10 +66,7 @@
             },
             {
               "value": "replacement",
-              "text": "Replace a lost, stolen, or damaged card",
-              "conditional": {
-                "html": replaceCard
-              }
+              "text": "Replace a lost, stolen, or damaged card"
             }
           ]
         }) }}
@@ -90,6 +87,12 @@
     </div>
   </div>
 {% endblock %}
+
+<!-- conditional drop down snippet -->
+<!-- ,
+              "conditional": {
+                "html": replaceCard
+              } -->
 
 
 
