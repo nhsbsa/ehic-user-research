@@ -70,7 +70,7 @@ router.post('/provideUkRes', function (req, res) {
     res.redirect('upload-res-uk')
   }
   else if (provideUkRes == "no") {
-    // res.redirect('additional-info-1')
+    // res.redirect('additional-info')
     res.redirect('provide-student')
   }
   else {
@@ -87,7 +87,7 @@ router.post('/provideStudent', function (req, res) {
     res.redirect('upload-student')
   }
   else if (provideStudent == "no") {
-    res.redirect('additional-info-1')
+    res.redirect('additional-info')
   }
   else {
     res.redirect('provide-student')
@@ -120,8 +120,6 @@ router.post('/addEvidResUK', function (req, res) {
     res.redirect('upload-res-uk2')
   }
   else if (addEvidResUK == "No") {
-    // res.redirect('cya')
-    // res.redirect('additional-info')
     res.redirect('provide-student')
   }
   else {
@@ -137,7 +135,6 @@ router.post('/addEvidStudent', function (req, res) {
     res.redirect('upload-student2')
   }
   else if (addEvidStudent == "No") {
-    // res.redirect('cya')
     res.redirect('additional-info')
   }
   else {
