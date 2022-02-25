@@ -58,6 +58,7 @@
 
     <script src="/nhsuk-frontend/nhsuk.min.js" defer></script>
 
+  
     {% block headIcons %}
     <link rel="shortcut icon" href="/nhsuk-frontend/assets/favicons/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/nhsuk-frontend/assets/favicons/apple-touch-icon-180x180.png">
@@ -74,7 +75,445 @@
 
   <body class="{{ bodyClasses }}">
 
-    <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+
+      
+    </script>
+
+    <script>
+      document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+
+      //// Select Countries List (ADD / REMOVE NEW SELECT tags for each conditional checkbox input) ////
+
+      /// EU
+
+      // Better to define an array of countries to pull into the select rather than redefining in HTML each time
+      // accessibleAutocomplete using 'source' can be used to pass the below array as an example
+
+      var euCountries = [
+        "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia (Czech Republic)",
+        "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary",
+        "Iceland", "Ireland", "Italy", "Latvia", "Liechtenstein", "Lithuania", "Luxemburg",
+        "Malta", "Netherlands", "Norway", "Poland", "Portugal",
+        "Romania", "Slovakia", "Slovenia",
+        "Spain", "Sweden", "Switzerland"
+      ]
+
+      function addInputEU(el){
+        var newFieldEU = document.createElement('div');
+
+        // Count current amount of inputs in section
+        var inputCountEU = el.closest('div').getElementsByTagName('select').length;
+        console.log(inputCountEU);
+
+        // Create ID for new select we're going to add
+        var newSelectIDEU = `${el.previousElementSibling.className}-${inputCountEU}`;
+
+        newFieldEU.innerHTML = `<br><label class='nhsuk-label' for='${newSelectIDEU}'>Country name</label><select id='${newSelectIDEU}' name='myInputsEU[]' type='text'><option value=''></option></select></div><a href='#' type='button' value='-' onClick='return removeInputEU(this);'>- Remove nationality</a>`;
+        document.getElementById('appendableEU').appendChild(newFieldEU);
+
+        // Use ID of new select to initilise autcomplete for our new select
+        accessibleAutocomplete.enhanceSelectElement({
+          selectElement: document.querySelector(`#${newSelectIDEU}`),
+          source: euCountries
+        })
+
+        return false;
+      }
+
+      function removeInputEU(btn){
+        btn.parentNode.remove();
+        return false;
+      }
+
+      //For Living EU Form
+
+      function addInputLivingEU(el){
+        var newFieldLivingEU = document.createElement('div');
+
+        // Count current amount of inputs in section
+        var inputCountLivingEU = el.closest('div').getElementsByTagName('select').length;
+        console.log(inputCountLivingEU);
+
+        // Create ID for new select we're going to add
+        var newSelectIDLivingEU = `${el.previousElementSibling.className}-${inputCountLivingEU}`;
+
+        newFieldLivingEU.innerHTML = `<br><label class='nhsuk-label' for='${newSelectIDLivingEU}'>Country name</label><select id='${newSelectIDLivingEU}' name='myInputsLivingEU[]' type='text'><option value=''></option></select></div><a href='#' type='button' value='-' onClick='return removeInputLivingEU(this);'>- Remove nationality</a>`;
+        document.getElementById('appendableLivingEU').appendChild(newFieldLivingEU);
+
+        // Use ID of new select to initilise autcomplete for our new select
+        accessibleAutocomplete.enhanceSelectElement({
+          selectElement: document.querySelector(`#${newSelectIDLivingEU}`),
+          source: euCountries
+        })
+
+        return false;
+      }
+
+      function removeInputLivingEU(btn){
+        btn.parentNode.remove();
+        return false;
+      }
+
+      /// EU & UK
+
+      // Better to define an array of countries to pull into the select rather than redefining in HTML each time
+      // accessibleAutocomplete using 'source' can be used to pass the below array as an example
+
+      var ukEuCountries = [
+        "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia (Czech Republic)",
+        "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary",
+        "Iceland", "Ireland", "Italy", "Latvia", "Liechtenstein", "Lithuania", "Luxemburg",
+        "Malta", "Netherlands", "Norway", "Poland", "Portugal",
+        "Romania", "Slovakia", "Slovenia",
+        "Spain", "Sweden", "Switzerland", "United Kingdom"
+      ]
+
+      function addInputUKEU(el){
+        var newFieldUKEU = document.createElement('div');
+
+        // Count current amount of inputs in section
+        var inputCountUKEU = el.closest('div').getElementsByTagName('select').length;
+        console.log(inputCountUKEU);
+
+        // Create ID for new select we're going to add
+        var newSelectIDUKEU = `${el.previousElementSibling.className}-${inputCountUKEU}`;
+
+        newFieldUKEU.innerHTML = `<br><label class='nhsuk-label' for='${newSelectIDUKEU}'>Country name</label><select id='${newSelectIDUKEU}' name='myInputsUKEU[]' type='text'><option value=''></option></select></div><a href='#' type='button' value='-' onClick='return removeInputUKEU(this);'>- Remove nationality</a>`;
+        document.getElementById('appendableUKEU').appendChild(newFieldUKEU);
+
+        // Use ID of new select to initilise autcomplete for our new select
+        accessibleAutocomplete.enhanceSelectElement({
+          selectElement: document.querySelector(`#${newSelectIDUKEU}`),
+          source: ukEuCountries
+        })
+
+        return false;
+      }
+
+      function removeInputUKEU(btn){
+        btn.parentNode.remove();
+        return false;
+      }
+
+      /// EU & UK Living in EU
+
+      // Better to define an array of countries to pull into the select rather than redefining in HTML each time
+      // accessibleAutocomplete using 'source' can be used to pass the below array as an example
+
+      var ukLivingEuCountries = [
+        "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia (Czech Republic)",
+        "Denmark", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary",
+        "Iceland", "Ireland", "Italy", "Latvia", "Liechtenstein", "Lithuania", "Luxemburg",
+        "Malta", "Netherlands", "Norway", "Poland", "Portugal",
+        "Romania", "Slovakia", "Slovenia",
+        "Spain", "Sweden", "Switzerland", "United Kingdom"
+      ]
+
+      function addInputLivingUKEU(el){
+        var newFieldLivingUKEU = document.createElement('div');
+
+        // Count current amount of inputs in section
+        var inputCountLivingUKEU = el.closest('div').getElementsByTagName('select').length;
+        console.log(inputCountLivingUKEU);
+
+        // Create ID for new select we're going to add
+        var newSelectIDLivingUKEU = `${el.previousElementSibling.className}-${inputCountLivingUKEU}`;
+
+        newFieldLivingUKEU.innerHTML = `<br><label class='nhsuk-label' for='${newSelectIDLivingUKEU}'>Country name</label><select id='${newSelectIDLivingUKEU}' name='myInputsLivingUKEU[]' type='text'><option value=''></option></select></div><a href='#' type='button' value='-' onClick='return removeInputLivingUKEU(this);'>- Remove nationality</a>`;
+        document.getElementById('appendableLivingUKEU').appendChild(newFieldLivingUKEU);
+
+        // Use ID of new select to initilise autcomplete for our new select
+        accessibleAutocomplete.enhanceSelectElement({
+          selectElement: document.querySelector(`#${newSelectIDLivingUKEU}`),
+          source: ukLivingEuCountries
+        })
+
+        return false;
+      }
+
+      function removeInputLivingUKEU(btn){
+        btn.parentNode.remove();
+        return false;
+      }
+
+      /// UK & Other
+
+      var otherUkCountries = [
+        "Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra",
+        "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba",
+        "Australia", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados",
+        "Belarus", "Belize", "Benin", "Bermuda",
+        "Bhutan", "Bolivia (Plurinational State of)", "Bonaire, Sint Eustatius and Saba",
+        "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil",
+        "British Indian Ocean Territory", "Brunei Darussalam",
+        "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada",
+        "Cayman Islands", "Central African Republic", "Chad", "Chile", "China",
+        "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo",
+        "Congo (Democratic Republic of the)", "Cook Islands", "Costa Rica", "Cote d'Ivoire",
+        "Cuba", "Curacao", "Djibouti",
+        "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
+        "Eritrea", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands",
+        "Fiji", "French Guiana", "French Polynesia",
+        "French Southern Territories", "Gabon", "Gambia", "Georgia", "Ghana",
+        "Gibraltar", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala",
+        "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti",
+        "Heard Island and McDonald Islands", "Holy See", "Honduras", "Hong Kong",
+        "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq",
+        "Isle of Man", "Israel", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan",
+        "Kenya", "Kiribati", "Korea (Democratic People's Republic of)",
+        "Korea (Republic of)", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic",
+        "Lebanon", "Lesotho", "Liberia", "Libya", "Macao", 
+        "Macedonia (the former Yugoslav Republic of)",
+        "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Marshall Islands",
+        "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico",
+        "Micronesia (Federated States of)", "Moldova (Republic of)", "Monaco", "Mongolia",
+        "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru",
+        "Nepal", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria",
+        "Niue", "Norfolk Island", "Northern Mariana Islands", "Oman", "Pakistan",
+        "Palau", "Palestine, State of", "Panama", "Papua New Guinea", "Paraguay", "Peru",
+        "Philippines", "Pitcairn", "Puerto Rico", "Qatar", "Reunion", "Russian Federation", "Rwanda", "Saint Barthelemy",
+        "Saint Helena, Ascension and Tristan da Cunha", "Saint Kitts and Nevis", "Saint Lucia",
+        "Saint Martin (French part)", "Saint Pierre and Miquelon",
+        "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe",
+        "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore",
+        "Sint Maarten (Dutch part)", "Solomon Islands", "Somalia", "South Africa", 
+        "South Georgia and the South Sandwich Islands", "South Sudan",
+        "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Swaziland",
+        "Syrian Arab Republic", "Taiwan, Province of China[a]", "Tajikistan",
+        "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga",
+        "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands",
+        "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom",
+        "United States of America", "United States Minor Outlying Islands",
+        "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela (Bolivarian Republic of)", "Viet Nam",
+        "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna",
+        "Western Sahara", "Yemen", "Zambia", "Zimbabwe"
+      ]
+
+      function addInputOtherUK(el){
+        var newFieldOtherUK = document.createElement('div');
+
+        // Count current amount of inputs in section
+        var inputCountOtherUK = el.closest('div').getElementsByTagName('select').length;
+        console.log(inputCountOtherUK);
+
+        // Create ID for new select we're going to add
+        var newSelectIDUK = `${el.previousElementSibling.className}-${inputCountOtherUK}`;
+
+        newFieldOtherUK.innerHTML = `<br><label class='nhsuk-label' for='${newSelectIDUK}'>Country name</label><select id='${newSelectIDUK}' name='myInputsOtherUK[]' type='text'><option value=''></option></select></div><a href='#' type='button' value='-' onClick='return removeInputOtherUK(this);'>- Remove nationality</a>`;
+        document.getElementById('appendableOtherUK').appendChild(newFieldOtherUK);
+
+        // Use ID of new select to initilise autcomplete for our new select
+        accessibleAutocomplete.enhanceSelectElement({
+          selectElement: document.querySelector(`#${newSelectIDUK}`),
+          source: otherUkCountries
+        })
+
+        return false;
+
+      }
+
+      function removeInputOtherUK(btn){
+        btn.parentNode.remove();
+        return false;
+      }
+
+      //For Living EU Form
+
+      var otherLivingUkCountries = [
+        "Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra",
+        "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba",
+        "Australia", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados",
+        "Belarus", "Belize", "Benin", "Bermuda",
+        "Bhutan", "Bolivia (Plurinational State of)", "Bonaire, Sint Eustatius and Saba",
+        "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil",
+        "British Indian Ocean Territory", "Brunei Darussalam",
+        "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada",
+        "Cayman Islands", "Central African Republic", "Chad", "Chile", "China",
+        "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo",
+        "Congo (Democratic Republic of the)", "Cook Islands", "Costa Rica", "Cote d'Ivoire",
+        "Cuba", "Curacao", "Djibouti",
+        "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
+        "Eritrea", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands",
+        "Fiji", "French Guiana", "French Polynesia",
+        "French Southern Territories", "Gabon", "Gambia", "Georgia", "Ghana",
+        "Gibraltar", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala",
+        "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti",
+        "Heard Island and McDonald Islands", "Holy See", "Honduras", "Hong Kong",
+        "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq",
+        "Isle of Man", "Israel", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan",
+        "Kenya", "Kiribati", "Korea (Democratic People's Republic of)",
+        "Korea (Republic of)", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic",
+        "Lebanon", "Lesotho", "Liberia", "Libya", "Macao", 
+        "Macedonia (the former Yugoslav Republic of)",
+        "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Marshall Islands",
+        "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico",
+        "Micronesia (Federated States of)", "Moldova (Republic of)", "Monaco", "Mongolia",
+        "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru",
+        "Nepal", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria",
+        "Niue", "Norfolk Island", "Northern Mariana Islands", "Oman", "Pakistan",
+        "Palau", "Palestine, State of", "Panama", "Papua New Guinea", "Paraguay", "Peru",
+        "Philippines", "Pitcairn", "Puerto Rico", "Qatar", "Reunion", "Russian Federation", "Rwanda", "Saint Barthelemy",
+        "Saint Helena, Ascension and Tristan da Cunha", "Saint Kitts and Nevis", "Saint Lucia",
+        "Saint Martin (French part)", "Saint Pierre and Miquelon",
+        "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe",
+        "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore",
+        "Sint Maarten (Dutch part)", "Solomon Islands", "Somalia", "South Africa", 
+        "South Georgia and the South Sandwich Islands", "South Sudan",
+        "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Swaziland",
+        "Syrian Arab Republic", "Taiwan, Province of China[a]", "Tajikistan",
+        "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga",
+        "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands",
+        "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom",
+        "United States of America", "United States Minor Outlying Islands",
+        "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela (Bolivarian Republic of)", "Viet Nam",
+        "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna",
+        "Western Sahara", "Yemen", "Zambia", "Zimbabwe"
+      ]
+
+      function addInputLivingOtherUK(el){
+        var newFieldLivingOtherUK = document.createElement('div');
+
+        // Count current amount of inputs in section
+        var inputCountLivingOtherUK = el.closest('div').getElementsByTagName('select').length;
+        console.log(inputCountLivingOtherUK);
+
+        // Create ID for new select we're going to add
+        var newSelectIDLivingOtherUK = `${el.previousElementSibling.className}-${inputCountLivingOtherUK}`;
+
+        newFieldLivingOtherUK.innerHTML = `<br><label class='nhsuk-label' for='${newSelectIDLivingOtherUK}'>Country name</label><select id='${newSelectIDLivingOtherUK}' name='myInputsLivingOtherUK[]' type='text'><option value=''></option></select></div><a href='#' type='button' value='-' onClick='return removeInputLivingOtherUK(this);'>- Remove nationality</a>`;
+        document.getElementById('appendableLivingOtherUK').appendChild(newFieldLivingOtherUK);
+
+        // Use ID of new select to initilise autcomplete for our new select
+        accessibleAutocomplete.enhanceSelectElement({
+          selectElement: document.querySelector(`#${newSelectIDLivingOtherUK}`),
+          source: otherLivingUkCountries
+        })
+
+        return false;
+
+      }
+
+      function removeInputLivingOtherUK(btn){
+        btn.parentNode.remove();
+        return false;
+      }
+
+      /// Other
+
+      var worldCountries = [
+        "Afghanistan", "Aland Islands", "Albania", "Algeria", "American Samoa", "Andorra",
+        "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba",
+        "Australia", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados",
+        "Belarus", "Belize", "Benin", "Bermuda",
+        "Bhutan", "Bolivia (Plurinational State of)", "Bonaire, Sint Eustatius and Saba",
+        "Bosnia and Herzegovina", "Botswana", "Bouvet Island", "Brazil",
+        "British Indian Ocean Territory", "Brunei Darussalam",
+        "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada",
+        "Cayman Islands", "Central African Republic", "Chad", "Chile", "China",
+        "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo",
+        "Congo (Democratic Republic of the)", "Cook Islands", "Costa Rica", "Cote d'Ivoire",
+        "Cuba", "Curacao", "Djibouti",
+        "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea",
+        "Eritrea", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands",
+        "Fiji", "French Guiana", "French Polynesia",
+        "French Southern Territories", "Gabon", "Gambia", "Georgia", "Ghana",
+        "Gibraltar", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala",
+        "Guernsey", "Guinea", "Guinea-Bissau", "Guyana", "Haiti",
+        "Heard Island and McDonald Islands", "Holy See", "Honduras", "Hong Kong",
+        "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq",
+        "Isle of Man", "Israel", "Jamaica", "Japan", "Jersey", "Jordan", "Kazakhstan",
+        "Kenya", "Kiribati", "Korea (Democratic People's Republic of)",
+        "Korea (Republic of)", "Kuwait", "Kyrgyzstan", "Lao People's Democratic Republic",
+        "Lebanon", "Lesotho", "Liberia", "Libya", "Macao", 
+        "Macedonia (the former Yugoslav Republic of)",
+        "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Marshall Islands",
+        "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico",
+        "Micronesia (Federated States of)", "Moldova (Republic of)", "Monaco", "Mongolia",
+        "Montenegro", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru",
+        "Nepal", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria",
+        "Niue", "Norfolk Island", "Northern Mariana Islands", "Oman", "Pakistan",
+        "Palau", "Palestine, State of", "Panama", "Papua New Guinea", "Paraguay", "Peru",
+        "Philippines", "Pitcairn", "Puerto Rico", "Qatar", "Reunion", "Russian Federation", "Rwanda", "Saint Barthelemy",
+        "Saint Helena, Ascension and Tristan da Cunha", "Saint Kitts and Nevis", "Saint Lucia",
+        "Saint Martin (French part)", "Saint Pierre and Miquelon",
+        "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe",
+        "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore",
+        "Sint Maarten (Dutch part)", "Solomon Islands", "Somalia", "South Africa", 
+        "South Georgia and the South Sandwich Islands", "South Sudan",
+        "Sri Lanka", "Sudan", "Suriname", "Svalbard and Jan Mayen", "Swaziland",
+        "Syrian Arab Republic", "Taiwan, Province of China[a]", "Tajikistan",
+        "Tanzania, United Republic of", "Thailand", "Timor-Leste", "Togo", "Tokelau", "Tonga",
+        "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands",
+        "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates",
+        "United States of America", "United States Minor Outlying Islands",
+        "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela (Bolivarian Republic of)", "Viet Nam",
+        "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna",
+        "Western Sahara", "Yemen", "Zambia", "Zimbabwe"
+      ]
+
+      function addInputOther(el){
+        var newFieldOther = document.createElement('div');
+
+        // Count current amount of inputs in section
+        var inputCountOther = el.closest('div').getElementsByTagName('select').length;
+        console.log(inputCountOther);
+
+        // Create ID for new select we're going to add
+        var newSelectID = `${el.previousElementSibling.className}-${inputCountOther}`;
+
+        newFieldOther.innerHTML = `<br><label class='nhsuk-label' for='${newSelectID}'>Country name</label><select id='${newSelectID}' name='myInputsOther[]' type='text'><option value=''></option></select></div><a href='#' type='button' value='-' onClick='return removeInputOther(this);'>- Remove nationality</a>`;
+        document.getElementById('appendableOther').appendChild(newFieldOther);
+
+        // Use ID of new select to initilise autcomplete for our new select
+        accessibleAutocomplete.enhanceSelectElement({
+          selectElement: document.querySelector(`#${newSelectID}`),
+          source: worldCountries
+        })
+
+        return false;
+
+      }
+
+      function removeInputOther(btn){
+        btn.parentNode.remove();
+        return false;
+      }
+
+      //For Living EU Form
+
+      function addInputLivingOther(el){
+        var newFieldLivingOther = document.createElement('div');
+
+        // Count current amount of inputs in section
+        var inputCountLivingOther = el.closest('div').getElementsByTagName('select').length;
+        console.log(inputCountLivingOther);
+
+        // Create ID for new select we're going to add
+        var newSelectLivingID = `${el.previousElementSibling.className}-${inputCountLivingOther}`;
+
+        newFieldLivingOther.innerHTML = `<br><label class='nhsuk-label' for='${newSelectLivingID}'>Country name</label><select id='${newSelectLivingID}' name='myInputsLivingOther[]' type='text'><option value=''></option></select></div><a href='#' type='button' value='-' onClick='return removeInputLivingOther(this);'>- Remove nationality</a>`;
+        document.getElementById('appendableLivingOther').appendChild(newFieldLivingOther);
+
+        // Use ID of new select to initilise autcomplete for our new select
+        accessibleAutocomplete.enhanceSelectElement({
+          selectElement: document.querySelector(`#${newSelectLivingID}`),
+          source: worldCountries
+        })
+
+        return false;
+
+      }
+
+      function removeInputLivingOther(btn){
+        btn.parentNode.remove();
+        return false;
+      }
+
+      //// END ///
+
+    </script>
+
     {% block bodyStart %}{% endblock %}
 
       {% block skipLink %}

@@ -24,6 +24,14 @@ router.use('/current/apply', require('./views/current/apply/_routes'));
 router.use('/current/replacement', require('./views/current/replacement/_routes'));
 router.use('/current/file-upload', require('./views/current/file-upload/_routes'));
 
+router.use('/current-01', require('./views/current-01/_routes'));
+router.use('/current-01/apply', require('./views/current-01/apply/_routes'));
+router.use('/current-01/replacement', require('./views/current-01/replacement/_routes'));
+router.use('/current-01/file-upload', require('./views/current-01/file-upload/_routes'));
+
+router.use('/nationality', require('./views/nationality/_routes'));
+router.use('/nationality/apply', require('./views/nationality/apply/_routes'));
+
 // Start folder specific routes
 
 // router.use('/sprint1', require('./views/sprint1/_routes'));

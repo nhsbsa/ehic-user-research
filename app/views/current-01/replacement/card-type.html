@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Which card do you have?
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
+      <form action="replacementType" method="post">
+
+        {% call fieldset({
+          legend: {
+            text: "Which card do you have?",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        {{ radios({
+          "idPrefix": "replacement-type",
+          "name": "replacement-type",
+          "items": [
+            {
+              "value": "UK GHIC",
+              "text": "UK GHIC",
+              "hint":{
+                "text" : "this is a hint"
+              }
+            },
+            {
+              "value": "UK EHIC",
+              "text": "UK EHIC",
+              "hint":{
+                "text" : "this is a hint"
+              }
+            }
+          ]
+        }) }}
+
+        {% endcall %}
+
+
+        {{ details({
+          "text": "I don't know which card I have",
+          "HTML": "
+          <p>Quisque bibendum aliquam turpis, ut suscipit eros vehicula sed. Curabitur at tortor eu lorem scelerisque eleifend. Vestibulum sit amet quam quam. In cursus volutpat varius.</p>
+          "
+        }) }}
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+     {{ backLink({
+        "href": "who-for",
+        "text": "Change my previous answer"
+      }) }}
+      
+    </div>
+  </div>
+{% endblock %}

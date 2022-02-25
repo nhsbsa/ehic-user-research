@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Choose a card design (with/without Union Jack)
+{% endblock %}
+
+{% block beforeContent %}
+
+
+<style>
+  .nhsuk-image {
+    width: 45%;
+    margin: 0 30px 30px 0;
+    display: inline-block;
+  }
+
+  .nhsuk-radios__item:nth-child(2) {
+    /*background: red;*/
+    margin-right: 15px;
+    float: right;
+  }
+</style>
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+    <!-- <div class="nhsuk-grid-column-two-thirds"> -->
+      <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
+      <form action="cardDesign" method="post">
+
+        {% call fieldset({
+          legend: {
+            text: "What would you like your card to look like?",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        <p>Select the design that you would like to have on your card.</p>
+
+    <div class="nhsuk-grid-column-two-halves">
+      <figure class="nhsuk-image">
+        <img class="nhsuk-image__img" src="/images/uk_ghic_uj_border_sample.jpg" alt="Image of blank UK GHIC card with UK Union flag background design">
+        <figcaption class="nhsuk-image__caption">
+          Design one
+        </figcaption>
+      </figure>
+
+      <figure class="nhsuk-image">
+        <img class="nhsuk-image__img" src="/images/uk_ghic_border_sample.jpg" alt="Image of blank UK GHIC card with 2-tone blue background design">
+        <figcaption class="nhsuk-image__caption">
+          Design two
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="nhsuk-grid-column-three-quarters" style="padding: 0;">
+
+    <!-- <h3>Select your card design</h3> -->
+        
+        {{ radios({
+          "idPrefix": "card-design",
+          "name": "card-design",
+          "classes": "nhsuk-radios--inline",
+          "fieldset": {
+            "legend": {
+
+              "classes": "nhsuk-fieldset__legend--l",
+              "isPageHeading": true
+            }
+          },
+          "items": [
+            {
+              "value": "Yes",
+              "label": "UK GHIC card with UK Union flag background design",
+              "text": "Design one"
+            },
+            {
+              "value": "No",
+              "label": "UK GHIC card with 2-tone blue background design",
+              "text": "Design two"
+            }
+          ]
+        }) }}
+
+        {% endcall %}
+
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+     {{ backLink({
+        "href": "",
+        "text": "Change my previous answer"
+      }) }}
+      
+    </div>
+
+  </div>
+{% endblock %}

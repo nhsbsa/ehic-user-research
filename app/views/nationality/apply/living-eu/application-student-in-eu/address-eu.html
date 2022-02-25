@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What is your address in Germany?
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+      <form action="email-address" method="post">
+
+        <h2>What is your address in {{ data['ghic-course-country'] }}?</h2>
+
+        {% call fieldset({
+          legend: {
+            text: "",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        <!-- <p>This is where we will send your EHIC. If you have already moved to the country you will be studying in, put your term time address.</p> -->
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="input-width-20">
+            Address line 1
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="student-eu-address-line-1" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="input-width-20">
+            Address line 2 (optional)
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="student-eu-address-line-2" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="input-width-20">
+            Town or city
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="student-eu-address-town" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="input-width-20">
+            State, province or region
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="student-eu-address-state" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="input-width-20">
+            Post code (optional)
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="student-eu-address-postcode" type="text">
+        </div>
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="input-width-20">
+            Country
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-20" id="input-width-20" name="student-eu-address-country" type="text">
+        </div>
+
+
+        {% endcall %}
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+     {{ backLink({
+        "href": "dob",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
