@@ -37,22 +37,44 @@
         </div>
       </div>
 
-      <p>Thank you for submitting your application for a <strong>UK European Health Insurance Card (EHIC)</strong>.</p>
+      <p>Thank you for submitting your application for a <strong>[card type]</strong>.</p>
 
-      <p>We have sent a confirmation email to <strong>{{ data['email-address'] }}</strong> to let you know that we have received your application. It can take a few minutes for the email to arrive. If it does not arrive in 24 hours, check your spam or junk folder.
+      <p>We have sent a confirmation email to <strong>[applicant's email address]</strong> to let you know that we have received your application. It can take a few minutes for the email to arrive. If it doesn't arrive in 24 hours, check your spam or junk folder.
 
       <h2>What happens next</h2>
 
+      <!-- <h3>Your application</h3> -->
+
       <ul>
-        <li>We will check your residency in the UK and check your eligibility. This is not a credit check and will not affect your credit score in any way.</li>
+        <!-- <li>If you told us that you live in the UK, we will confirm your residency in the UK. This is not a credit check and will not affect your credit score in any way</li> -->
         <!-- <li>As you told us that you are an EU national or a national of Norway, Iceland, Liechtenstein or Switzerland, we will confirm your eligibility (?)</li> -->
-        <li>If we need additional information to process your application, we will contact you again by email.</li>
-        <li>We will email you again when your application has been processed.</li>
+        <li>We will email you again when your application has been processed / card has been posted</li>
+        <li>Because you live overseas, your card make taker longer to arrive. Please allow [time frame] for your card to arrive before contacting us</li>
       </ul>
 
-      <!-- {{ insetText({
+      <h3>Other people you added to your application</h3>
+
+      <p>You and everyone who you added to your <strong>[card type]</strong> application will receive their own card.</p>
+
+      <!-- <ul>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+      </ul> -->
+
+      <!-- <h3>Other people you added to your application</h3>
+
+      <p>You and everyone who you added to your <strong>[card type]</strong> application will receive their own card.</p>
+
+      <ul>
+        <li>...</li>
+        <li>...</li>
+        <li>...</li>
+      </ul> -->
+
+      {{ insetText({
         "HTML": "<p>If we need additional information to process your application, we will contact you again by email.</p>"
-      }) }} -->
+      }) }}
 
 
       {{ warningCallout({
@@ -66,8 +88,7 @@
       <p>Your comments are extremely helpful and will help us to provide a better service.</p>
 
       <p>
-        <a href="#">Give feedback</a> 
-        <!-- (Takes 30 seconds) -->
+        <a href="#">Give feedback</a> (Takes 30 seconds)
       </p>
 
 

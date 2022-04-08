@@ -28,7 +28,7 @@
     <div class="nhsuk-grid-column-three-quarters">
       <!-- <span class="nhsuk-caption-l nhsuk-caption--bottom">Check your eligibility</span> -->
 
-        <!-- Version 2: Checkboxes -->
+        <!-- Version 2: Checkboxes (Round 2) -->
 
         <form action="nationality" method="post">
 
@@ -42,7 +42,7 @@
               </legend>
         
               <div class="nhsuk-hint" id="nationality-hint">
-                If you have dual nationality, select all options that apply to you.
+                If you have dual or multiple nationality, select all options that apply and then tell us what non-UK countries you are a national of.
               </div>
         
               <div class="nhsuk-checkboxes">
@@ -50,8 +50,11 @@
                 <div class="nhsuk-checkboxes__item">
                   <input class="nhsuk-checkboxes__input" id="nationality-1" name="nationality" type="checkbox" value="UK" aria-describedby="nationality-1-item-hint">
                   <label class="nhsuk-label nhsuk-checkboxes__label" for="nationality-1">
-                    English, Scottish, Welsh or Northern Irish
+                    United Kingdom (UK) national
                   </label>
+                  <div class="nhsuk-hint nhsuk-radios__hint">
+                    This includes English, Scottish, Welsh or Northern Irish
+                  </div>
                 </div>
 
 
@@ -60,18 +63,18 @@
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="eu-nationality" name="nationality" type="checkbox" value="EU, EEA or Swiss" aria-describedby="nationality-3-item-hint" aria-controls="conditional-nationality-3" aria-expanded="false">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="eu-nationality">
-                      National of an EU country, Norway, Iceland, Liechtenstein or Switzerland
+                      An EU citizen, or a national of Switzerland, Norway, Iceland, or Liechtenstein
                     </label>
                   </div>
           
                   <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-nationality-3">
           
-                    <div class="nhsuk-form-group" id="appendableEU">
+                    <div class="nhsuk-form-group" id="appendableEURT">
                       
                         <label class="nhsuk-label" for="eu-nationality">
                           Country name
                         </label>
-                        <select id="eu-location-picker" class="eu-nationality" name="myInputsEU[]" type="text">
+                        <select id="eu-location-picker" class="eu-nationality" name="myInputsEURT[]" type="text">
                           <option value=""></option>
                           <option value="at">Austria</option>
                           <option value="be">Belgium</option>
@@ -105,9 +108,11 @@
                           <option value="se">Sweden</option>
                           <option value="cf">Switzerland</option>
                         </select>
-                        <a href="#" type="button" value="+" onClick="return addInputEU(this)">+ Add another country</a>
-
                     </div>
+
+                    <a style="margin-top: 1.5rem;" class="nhsuk-button nhsuk-button--secondary" onClick="return addInputEURT(this)">
+                      Add additional country
+                    </a>
                   </div>
 
                 </div>
@@ -117,18 +122,18 @@
                   <div class="nhsuk-checkboxes__item">
                     <input class="nhsuk-checkboxes__input" id="other-nationality" name="nationality" type="checkbox" value="Other" aria-controls="conditional-nationality-4" aria-expanded="false">
                     <label class="nhsuk-label nhsuk-checkboxes__label" for="other-nationality">
-                      Other nationality not listed
+                      Any other nationality not listed
                     </label>
                   </div>
           
                   <div class="nhsuk-checkboxes__conditional nhsuk-checkboxes__conditional--hidden" id="conditional-nationality-4">
           
-                    <div class="nhsuk-form-group" id="appendableOther">
+                    <div class="nhsuk-form-group" id="appendableOtherRT">
 
                       <label class="nhsuk-label" for="other-nationality">
                         Country name
                       </label>
-                      <select id="other-location-picker" class="other-nationality" name="myInputsOther[]" type="text">
+                      <select id="other-location-picker" class="other-nationality" name="myInputsOtherRT[]" type="text">
                         <option value=""></option>
                         <option value="af">Afghanistan</option>
                         <option value="al">Albania</option>
@@ -346,9 +351,11 @@
                         <option value="zw">Zimbabwe</option>
                         <option value="ax">Åland Islands</option>
                       </select>
-                      <a href='#' type="button" value="+" onClick="return addInputOther(this)">+ Add another country</a>
-
                     </div>
+                    
+                    <a style="margin-top: 1.5rem;" class="nhsuk-button nhsuk-button--secondary" onClick="return addInputOtherRT(this)">
+                      Add additional country
+                    </a>
                   </div>
 
                 </div>
@@ -362,10 +369,15 @@
         {{ details({
           "text": "More information about dual nationality",
           "HTML": "
-          <p>You should check <strong>National of an EU country, Norway, Iceland, Liechtenstein or Switzerland</strong> if you are registered as a national of at least one of the stated countries.</p>
-          <p>If you have dual or muliple nationalities involving nationality of the UK and another country not listed, check <strong>English, Scottish, Welsh or Northern Irish</strong> then <strong>Other nationality not listed</strong>.</p>
-          <p>If you have dual or multiple nationalities not involving the UK or any of the other countries listed, you should check <strong>Other nationality not listed</strong>.</p>
-          <p>Please type and select all the country names that apply to your nationality.</p>
+          <p>If you are a national of at least one EU country, or any of the other European countries 
+            listed, you should select <strong>EU citizen or a national of Switzerland, Norway, Iceland, or 
+              Liechtenstein</strong> and tell us which countries.</p>
+          <p>If you are also a UK national, select <strong>United Kingdom (UK) national</strong> as well.</p>
+          <p>If you have dual or multiple nationalities involving nationality of the UK and another 
+            country not listed, select <strong>United Kingdom (UK) national</strong>, then select <strong>Any other nationality 
+            not listed</strong> and tell us which countries.</p>
+          <p>If you have dual or multiple nationalities not involving the UK, the EU or any of the other 
+            European countries listed, select <strong>Any other nationality not listed</strong> and add each country in turn.</p>
           "
         }) }}
 

@@ -38,7 +38,7 @@
                 Type of healthcare cover
               </dt>
               <dd class="nhsuk-summary-list__value">
-                UK GHIC
+                UK Global Health Insurance Card (GHIC)
               </dd>
               <dd class="nhsuk-summary-list__actions">
                 <a class="nhsuk-link" href="../card-type">
@@ -72,43 +72,21 @@
                   </a>
                </dd>
             </div>
-            {% if (data['select-1']) %}
             <div class="nhsuk-summary-list__row">
-               <dt class="nhsuk-summary-list__key">
+                <dt class="nhsuk-summary-list__key">
                   Home address
-               </dt>
-               <dd class="nhsuk-summary-list__value">
-                  {% if (data['select-1']) %}
-                  {{ data['select-1'] | replace(", ", ",<br>") | safe }}
-                  {% endif %}
-               </dd>
-               <dd class="nhsuk-summary-list__actions">
-                  <a class="nhsuk-link" href="address-lookup">
-                  Change <span class="nhsuk-u-visually-hidden">home address</span>
-                  </a>
-               </dd>
-            </div>
-            {% else %}
-            <div class="nhsuk-summary-list__row">
-               <dt class="nhsuk-summary-list__key">
-                  Home address
-               </dt>
-               <dd class="nhsuk-summary-list__value">
+                </dt>
+                <dd class="nhsuk-summary-list__value">
                   <p>
-                     {{ data['building-street'] }},<br>
-                     {% if (data['building-street-2']) %}{{ data['building-street-2'] }},<br>{% endif %}
-                     {{ data['town-city'] }},<br>
-                     {{ data['country'] }},<br>
-                     {{ data['postcode'] }}
+                    73 Roman Rd<br>Leeds<br> LS2 5ZN
                   </p>
-               </dd>
-               <dd class="nhsuk-summary-list__actions">
+                </dd>
+                <dd class="nhsuk-summary-list__actions">
                   <a class="nhsuk-link" href="address-manual">
-                  Change <span class="nhsuk-u-visually-hidden">home address</span>
+                    Change <span class="nhsuk-u-visually-hidden">home address</span>
                   </a>
-               </dd>
-            </div>
-            {% endif %}
+                </dd>
+              </div>
             <div class="nhsuk-summary-list__row">
                <dt class="nhsuk-summary-list__key">
                   NHS number

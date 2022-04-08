@@ -143,25 +143,25 @@ router.post('/living-eu/nationality', function (req, res) {
   var nationality = req.session.data['nationality']
 
   if (arraysContainSame(nationality, ['UK', 'Other']) == true) {
-    res.redirect('../studying-uk-citizen')
+    res.redirect('studying-uk-citizen')
   }
   else if (nationality == 'UK') {
-    res.redirect('../studying-uk-citizen')
+    res.redirect('studying-uk-citizen')
   }
   else if (arraysContainSame(nationality, ['UK', 'EU, EEA or Swiss', 'Other']) == true) {
-    res.redirect('../birth-country-uk')
+    res.redirect('birth-country-uk')
   }
   else if (arraysContainSame(nationality, ['EU, EEA or Swiss', 'Other']) == true) {
-    res.redirect('../uk-citizenship')
+    res.redirect('uk-citizenship')
   }
   else if (nationality == 'EU, EEA or Swiss') {
-    res.redirect('../uk-citizenship')
+    res.redirect('uk-citizenship')
   }
   else if (nationality == 'Other') {
-    res.redirect('../uk-citizenship')
+    res.redirect('uk-citizenship')
   }
   else if (arraysContainSame(nationality, ['UK', 'EU, EEA or Swiss']) == true) {
-    res.redirect('../birth-country-uk')
+    res.redirect('birth-country-uk')
   }
   else {
     res.redirect('nationality')
@@ -207,7 +207,7 @@ router.post('/ukCitizenship', function (req, res) {
 router.post('/living-eu/ukCitizenship', function (req, res) {
   var ukCitizenship = req.session.data['uk-citizenship']
   if (ukCitizenship == "Yes") {
-    res.redirect('national-other-eu')
+    res.redirect('birth-country')
   }
   else if (ukCitizenship == "No") {
     res.redirect('birth-country')
@@ -1219,7 +1219,7 @@ router.post('/living-eu/studyingUkCitizenBornESW', function (req, res) {
 router.post('/living-eu/studyingEuCitizenBornESW', function (req, res) {
   var studyingEuCitizenBornESW = req.session.data['studying-eu-citizen-born-esw']
   if (studyingEuCitizenBornESW == "Yes") {
-    res.redirect('ineligible-temp')
+    res.redirect('application-student-in-eu/evidence-student')
   }
   else {
     res.redirect('ineligible-temp')
@@ -1295,10 +1295,10 @@ router.post('/application-student/courseDate', function (req, res) {
 // Student course dates option (card choice) student-options.html
 router.post('/living-eu/application-s1/s1Options', function (req, res) {
   var s1Options = req.session.data['s1-options']
-  if (s1Options == "GHIC") {
+  if (s1Options == "UK Global Health Insurance Card (GHIC)") {
     res.redirect('ghic/full-name')
   }
-  else if (s1Options == "EHIC") {
+  else if (s1Options == "UK European Health Insurance Card (EHIC)") {
     res.redirect('full-name')
   }
   else {

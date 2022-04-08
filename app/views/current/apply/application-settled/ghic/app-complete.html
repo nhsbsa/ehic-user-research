@@ -24,54 +24,77 @@
 {% block content %}
 
   <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-two-thirds">
 
-          <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-bottom-4">
-
-            <h1 class="nhsuk-panel__title">
-                Application submitted
-              </h1>
-
-              <div class="nhsuk-panel__body">
-                Your reference number is
-                <br>
-                <strong>25002123</strong>
-              </div>
-
-          </div>
-
-          <p>A confirmation email has been sent to <strong>{{ data['email-address'] }}</strong></p>
-
-          <h2>What happens next</h2>
-
-          <p>We will now review your application.</p>
-
-          <p>To check your eligibility for a new UK GHIC, we need to check your EU settled or pre-settled status, as well as your UK residency. This is not a credit check and will not affect your credit score in any way.</p>
-           
-          <p>If you added any dependants to your application, we will also make the necessary checks to confirm they are eligible.</p>
-           
-          <p>Once we have done this, we will process your application.</p>
-           
-          <p>
-          <!-- If you gave us an email address, w -->
-          We will email you and let you know if your application has been successful or not. If we require any further information, both for yourself and any dependants you have added, we will contact you and let you know what we need.</p>
-             
-          <!-- <p>If you did not give us an email address, we will contact you by post.</p> -->
-           
-          <!-- <p>Once all the information we need has been accepted, most customers receive their GHIC within 15 working days.</p> -->
-           
-          <p>For information on how we use your data, please refer to our <a href="contact">privacy notice</a>.</p>
-
-          <form action="../../start" method="post">
-
-              {{ button({
-              "text": "Back to start"
-            }) }}
-
-          </form>
-
-          
-
+      <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-bottom-4">
+        <h1 class="nhsuk-panel__title">
+          Application submitted
+        </h1>
+        <div class="nhsuk-panel__body">
+          Your OHS reference number is
+          <br>
+          <strong>25002123</strong>
         </div>
       </div>
+
+      <p>Thank you for submitting your application for a <strong>UK Global Health Insurance Card (GHIC)</strong>.</p>
+
+      <p>We have sent a confirmation email to <strong>{{ data['email-address'] }}</strong> to let you know that we have received your application. It can take a few minutes for the email to arrive. If it does not arrive in 24 hours, check your spam or junk folder.
+
+      <h2>What happens next</h2>
+
+      <ul>
+        <li>We will check your residency in the UK and check your eligibility. This is not a credit check and will not affect your credit score in any way.</li>
+        <!-- <li>As you told us that you are an EU national or a national of Norway, Iceland, Liechtenstein or Switzerland, we will confirm your eligibility (?)</li> -->
+        <li>If we need additional information to process your application, we will contact you again by email.</li>
+        <li>We will email you again when your application has been processed.</li>
+      </ul>
+
+      <!-- {{ insetText({
+        "HTML": "<p>If we need additional information to process your application, we will contact you again by email.</p>"
+      }) }} -->
+
+
+      {{ warningCallout({
+        "heading": "Travel insurance",
+        "HTML": "<p>Your EHIC or GHIC is not a substitute for travel insurance. It may not cover all health costs and never covers repatriation costs. Make sure you have travel insurance as well as your card.</p>"
+      }) }}
+
+
+      <h3>What did you think of this service?</h3>
+
+      <p>Your comments are extremely helpful and will help us to provide a better service.</p>
+
+      <p>
+        <a href="#">Give feedback</a> 
+        <!-- (Takes 30 seconds) -->
+      </p>
+
+
+
+
+
+
+      <!-- <p>We will now review your application.</p>
+
+      <p>To check your eligibility for a GHIC, we need to check your UK residency. This is not a credit check and will not affect your credit score in any way.</p>
+       
+       
+      <p>Once we have done this, we will process your application.</p>
+       
+      <p>
+      We will email you and let you know if your application has been successful or not. If we require any further information we will contact you and let you know what we need.</p>
+                
+      <p>For information on how we use your data, please refer to our <a href="contact">privacy notice</a>.</p>
+
+        <form action="../start" method="post">
+
+          {{ button({
+          "text": "Finish"
+        }) }}
+
+      </form> -->
+      
+    </div>
+  </div>
 {% endblock %}
