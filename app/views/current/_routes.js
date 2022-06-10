@@ -6,66 +6,48 @@ const axios = require('axios');
 // Add your routes here - above the module.exports line
 
 
-// What do you want to do? - new-application.html
-router.post('/newApplication', function (req, res) {
-  var newApplication = req.session.data['new-application']
-  if (newApplication == "new") {
-    res.redirect('apply/where-do-you-live')
+// Who are you applying for? 
+router.post('/applyFor', function (req, res) {
+  var applyFor = req.session.data['who-apply-for']
+  if (applyFor == "Myself") {
+    // res.redirect('apply/receiving-treatment')
+    res.redirect('apply-self/treatment-country')
   }
-  else if (newApplication == "replacement") {
-    res.redirect('replacement/next-steps')
+  else if (applyFor == "Someone else") {
+    res.redirect('apply-for-child')
   }
   else {
-    res.redirect('new-application')
+    res.redirect('who-apply-for')
   }
 })
 
-
-// What do you want to do? - new-application-not-found.html
-router.post('/newAppNotFound', function (req, res) {
-  var newAppNotFound = req.session.data['new-application-not-found']
-  if (newAppNotFound == "new") {
-    res.redirect('')
+// Are you applying for a child under the age of 18? 
+router.post('/applyForChild', function (req, res) {
+  var applyForChild = req.session.data['apply-for-child']
+  if (applyForChild == "Yes") {
+    res.redirect('parent-guardian')
   }
-  else if (newAppNotFound == "replacement") {
-    res.redirect('replacement/not-found/next-steps')
+  else if (applyForChild == "No") {
+    res.redirect('apply-third-party/treatment-country')
   }
   else {
-    res.redirect('new-application-not-found')
+    res.redirect('apply-for-child')
   }
 })
 
-// What do you want to do? - new-application-muliple-records.html
-router.post('/newAppMultRecords', function (req, res) {
-  var newAppMultRecords = req.session.data['new-application-multiple-records']
-  if (newAppMultRecords == "new") {
-    res.redirect('')
+// Are you the parent or legal guardian of the child?
+router.post('/parentGuardian', function (req, res) {
+  var parentGuardian = req.session.data['parent-guardian']
+  if (parentGuardian == "Yes") {
+    res.redirect('apply-parent/treatment-country')
   }
-  else if (newAppMultRecords == "replacement") {
-    res.redirect('replacement/multiple-records/next-steps')
-  }
-  else {
-    res.redirect('new-application-multiple-records')
-  }
-})
-
-
-// Has anything changed since you last applied? - coc.html
-router.post('/changeCircs', function (req, res) {
-  var changeCircs = req.session.data['change-circs']
-  if (changeCircs == "new") {
-    // res.redirect('apply/where-do-you-live')
-    res.redirect('contact-us')
-  }
-  else if (changeCircs == "replacement") {
-    // res.redirect('replacement/applicant-type')
-    res.redirect('replacement/main-who-for')
+  else if (parentGuardian == "No") {
+    res.redirect('apply-third-party/treatment-country')
   }
   else {
-    res.redirect('coc')
+    res.redirect('parent-guardian')
   }
 })
-
 
 
 module.exports = router

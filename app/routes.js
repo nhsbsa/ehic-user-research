@@ -20,9 +20,9 @@ console.log('folder : ' + res.locals.folder + ', subfolder : ' + res.locals.subf
 
 // current sprint, remember to add older sprint when adding a new folder!
 router.use('/current', require('./views/current/_routes'));
-router.use('/current/apply', require('./views/current/apply/_routes'));
-router.use('/current/replacement', require('./views/current/replacement/_routes'));
-router.use('/current/file-upload', require('./views/current/file-upload/_routes'));
+router.use('/current/apply-self', require('./views/current/apply-self/_routes'));
+router.use('/current/apply-parent', require('./views/current/apply-parent/_routes'));
+router.use('/current/apply-third-party', require('./views/current/apply-third-party/_routes'));
 
 // Start folder specific routes
 
