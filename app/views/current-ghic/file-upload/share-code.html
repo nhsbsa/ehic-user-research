@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What is your EU Settled Status share code?
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+      <!-- <form action="add-another-yn" method="post"> -->
+       <!-- <form action="provide-res-uk-evid" method="post"> -->
+       <form action="provide-dual-nationality" method="post">
+
+        <h2>What is {{ data['upload-firstname'] }}'s EU settled status share code?</h2>
+
+        {% call fieldset({
+          legend: {
+            text: "",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        <p>You can get your EU settled status share code from the gov.uk website if your right to reside in the UK is based on you having EU settled status.</p>
+
+        {{ input({
+          "label": {
+            "text": ""
+          },
+          "id": "input-width-10",
+          "name": "sharecode",
+          "classes": "nhsuk-input--width-10"
+        }) }}
+
+
+        {% endcall %}
+        <!-- <p><a href="nhs-number">I don't have a National Insurance number</a></p> -->
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+     {{ backLink({
+        "href": "evidence-type",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
+
+
+<!-- 
+ hint: {
+            html: "For example, ‘1’."
+          }, -->

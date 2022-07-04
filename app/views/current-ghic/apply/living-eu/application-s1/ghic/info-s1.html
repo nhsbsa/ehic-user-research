@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Applying for a UK GHIC
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        Apply for your UK Global Health Insurance Card (GHIC)
+      </h1>
+
+      <!-- <p class="nhsuk-lede-text">
+        You are eligible for a UK-issued EHIC
+      </p> -->
+
+      <p>
+        You are eligible for a UK GHIC as you've told us that you:
+      </p>
+      <ul class="list list-bullet">
+        <li>live in the EU, Norway, Iceland, Liechtenstein or Switzerland</li>
+        <li>have a registered S1, E121, E106 or E109 form</li>
+        <li>moved abroad on or after 1 January 2021</li>
+      </ul>
+
+      <h2>Next steps</h2>
+      <ul>
+        <li>Complete the online application</li>
+        <!-- <li>We will confirm your UK residency using the information you provide</li>         -->
+      </ul>
+
+      <p>We will email you if your application is successful or if we require further information</p>
+
+      <!-- {{ insetText({
+        "HTML": "<p>You can use your EHIC to access healthcare in the country you live in.</p>"
+      }) }} -->
+
+      
+      <a href="full-name" class="nhsuk-button nhsuk-u-margin-bottom-8">
+        Continue
+      </a>
+
+    </div>  
+
+  </div>
+{% endblock %}

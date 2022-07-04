@@ -1,0 +1,56 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  What you'll need
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>
+        What you'll need
+      </h1>
+
+      <p class="nhsuk-lede-text">
+        Get this information before you start your EHIC application.
+      </p>
+
+      <ul>
+        <!-- <li>A share code to prove your UK settled or pre-settled status</li> -->
+        <li>Your 
+        <!-- National Insurance number or your -->
+         NHS number</li>
+        <li>The 
+        <!-- National Insurance numbers or  -->
+      NHS numbers of everyone you want to add to you application</li>
+      </ul>
+
+
+      <a href="full-name" class="nhsuk-button nhsuk-u-margin-bottom-8">
+        Continue
+      </a>
+
+    </div>  
+
+  </div>
+{% endblock %}

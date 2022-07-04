@@ -1,0 +1,120 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Sending evidence
+{% endblock %}
+
+{% block beforeContent %}
+
+<style>
+
+  .nhsuk-details__summary:before {
+    border-left-color: white;
+}
+
+
+
+</style>
+
+<!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<!-- Interuption Card -->
+<div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-full">
+      <div class="callout callout--interruption alt" style="background-color: #005eb8;">
+         <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+               <h1>Sending evidence</h1>
+               <p>We need to see evidence of:</p>
+               <ul>                  
+                  <li>your right to reside in the UK</li>
+                  <li>your residency in the UK</li>
+                  <!-- <li>your university course details</li> -->
+               </ul>
+
+               <div class="nhsuk-inset-text" style="border-color: white;">
+                  <span class="nhsuk-u-visually-hidden">Information: </span>
+                  <p>We will tell you what documents we need to see and how to send them.</p>
+                </div>
+
+                <form action="upload-reside" method="post">
+                  <button class="nhsuk-button nhsuk-button--reverse" type="submit">
+                  Continue
+                  </button>
+               </form>
+
+               <!-- <details class="nhsuk-details" style="color: white;">
+                <summary class="nhsuk-details__summary">
+                  <span class="nhsuk-details__summary-text" style="color: white;">
+                    My EHIC is lost or stolen
+                  </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                  <p>If your EHIC is lost or stolen you will need to contact the <a href="">Overseas Healthcare Service</a> to request a replacement.</p>
+                </div>
+              </details> -->
+
+
+
+               <!-- <p>
+                  You only need to apply for cover if you have plans to travel in the EU, Norway, Iceland, Liechtenstein, or Switzerland.
+               </p> -->
+               <!-- <hr>
+               <h3>If you already have a European Health Insurance Card (EHIC)</h3>
+               <p>
+                  If your circumstances haven’t changed, such as you have not moved to a different country, you can continue to use your EHIC until it expires. You can apply for a new card up to 6 months before its expiry date.
+               </p>
+               <p>
+                  If your EHIC is lost or stolen you will need to contact the Overseas Healthcare Serviceto request a replacement.
+               </p>
+               <p>
+                  <a href="" style="color: white;">Request a replacement EHIC</a> (opens in new window).
+               </p> -->
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<br>
+
+<!-- <div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-two-thirds">
+      <h2>If you already have a European Health Insurance Card (EHIC)</h2>
+      <p>If your circumstances haven’t changed, such as you have not moved to a different country, you can continue to use your EHIC until it expires. You can apply for a new card up to 6 months before its expiry date.</p>
+
+      <details class="nhsuk-details nhsuk-expander">
+         <summary class="nhsuk-details__summary">
+            <span class="nhsuk-details__summary-text">
+            My EHIC is lost or stolen
+            </span>
+         </summary>
+         <div class="nhsuk-details__text">
+            <p>
+               If your EHIC is lost or stolen you will need to contact the <a href="">Overseas Healthcare Service</a> to request a replacement.
+            </p>
+         </div>
+      </details>
+      
+   </div>
+</div> -->
+
+
+
+
+{% endblock %}

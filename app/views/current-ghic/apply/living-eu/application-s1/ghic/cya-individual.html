@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Check your answers
+{% endblock %}
+{% block beforeContent %}
+<!-- Phase banner -->
+<div class="app-phase-banner">
+   <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+         <strong class="nhsuk-tag app-phase-banner__tag">
+         Prototype
+         </strong>
+         <span class="app-phase-banner__text">
+         This is a prototype - your <a href="#">feedback</a> will help us improve it.
+         </span>
+      </p>
+   </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="nhsuk-grid-row">
+   <div class="nhsuk-grid-column-three-quarters">
+      <form action="app-complete" method="post">
+         <h1>Check your answers before sending your application</h1>
+         <h2>Your details</h2>
+         <dl class="nhsuk-summary-list">
+
+         {% if (data['s1-options']) %}
+            <div class="nhsuk-summary-list__row">
+              <dt class="nhsuk-summary-list__key nhsuk-!-width-one-third">
+                Type of healthcare cover
+              </dt>
+              <dd class="nhsuk-summary-list__value">
+                {{ data['s1-options'] }}
+              </dd>
+              <dd class="nhsuk-summary-list__actions">
+                <a class="nhsuk-link" href="../s1-options">
+                  Change <span class="nhsuk-u-visually-hidden">name</span>
+                </a>
+              </dd> 
+            </div>
+         {% endif %}
+            
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Name
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['firstname'] }} {{ data['lastname'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a href="full-name"/>
+                  Change<span class="nhsuk-u-visually-hidden"> name</span>
+                  </a>
+               </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Date of birth
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['dob-day'] }} / {{ data['dob-month'] }} / {{ data['dob-year'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a href="dob">
+                  Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+                  </a>
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Home Address
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['address-line-1'] }}<br>
+                  {{ data['address-line-2'] }}<br>
+                  {{ data['address-town'] }}<br>
+                  {{ data['address-state'] }}<br>
+                  {{ data['postcode'] }}<br>
+                  {{ data['county'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a href="address-eu">
+                  Change<span class="nhsuk-u-visually-hidden"> home address</span>
+                  </a>
+               </dd>
+            </div>
+
+            {% if (data['knowNino']) === 'Yes' %}
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  National Insurance Number
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['nino'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a href="nino">
+                  Change<span class="nhsuk-u-visually-hidden"> national insurance number</span>
+                  </a>
+               </dd>
+            </div>
+            {% endif %}
+            
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Email Address
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['email-address'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a href="email-address">
+                  Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+                  </a>
+               </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+               <dt class="nhsuk-summary-list__key">
+                  Contact Telephone Number
+               </dt>
+               <dd class="nhsuk-summary-list__value">
+                  {{ data['phone-number'] }}
+               </dd>
+               <dd class="nhsuk-summary-list__actions">
+                  <a href="phone-number">
+                  Change<span class="nhsuk-u-visually-hidden"> contact telephone number</span>
+                  </a>
+               </dd>
+            </div>
+         </dl>
+         <h2>Now send your application</h2>
+         <p>By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+         {{ button({
+          "text": "Accept and send"
+         }) }}
+      </form>
+      <!-- {
+         key: {
+           text: "Correspondence address"
+         },
+         value: {
+           html: "Correos 12344<br>
+                   12500 San Fernando<br>
+                   Cádiz<br>
+                   Spain"
+         },
+         actions: {
+           items: [
+             {
+               href: "corres-address",
+               text: "Change",
+               visuallyHiddenText: "correspondence address"
+             }
+           ]
+         }
+         }, -->
+      <!-- {{ backLink({
+         "href": "add-another-yn",
+         "text": "Change my previous answer"
+         }) }} -->
+   </div>
+</div>
+{% endblock %}

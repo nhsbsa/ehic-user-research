@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  We need more information about {{ data['upload-firstname'] }}’s dual nationality
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+  
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+      <form action="provide-res-uk-evid" method="post">
+
+        <h2>We need more information about {{ data['upload-firstname'] }}’s dual nationality</h2>
+
+        {% call fieldset({
+          legend: {
+            text: "",
+            classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        }) %}
+
+        <p>Tell us: </p>
+        <ul>
+          <li>if they have acquired British citizenship through naturalization</li>
+          <li>if they were a citizen of an EU country, Switzerland, Norway, Iceland, or Liechtenstein prior to also becoming a British citizen</li>
+          <li>if they have retained the nationality of one of these countries, if so which one</li>
+        </ul>
+
+        {{ textarea({
+          "name": "dual-nat-info",
+          "id": "example",
+          "label": {
+            "text": ""
+          },
+          "hint": {
+            "text": ""
+          }
+        }) }}
+
+        <!-- Explain any missing documents or  -->
+
+
+        
+
+
+        {% endcall %}
+
+
+        {{ button({
+          "text": "Continue"
+        }) }}
+
+      </form>
+
+     {{ backLink({
+        "href": "upload-res-uk-another",
+        "text": "Change my previous answer"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}

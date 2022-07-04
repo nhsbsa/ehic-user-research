@@ -19,10 +19,17 @@ console.log('folder : ' + res.locals.folder + ', subfolder : ' + res.locals.subf
 
 
 // current sprint, remember to add older sprint when adding a new folder!
-router.use('/current', require('./views/current/_routes'));
-router.use('/current/apply-self', require('./views/current/apply-self/_routes'));
-router.use('/current/apply-parent', require('./views/current/apply-parent/_routes'));
-router.use('/current/apply-third-party', require('./views/current/apply-third-party/_routes'));
+router.use('/current-prc', require('./views/current-prc/_routes'));
+router.use('/current-prc/apply-self', require('./views/current-prc/apply-self/_routes'));
+router.use('/current-prc/apply-parent', require('./views/current-prc/apply-parent/_routes'));
+router.use('/current-prc/apply-third-party', require('./views/current-prc/apply-third-party/_routes'));
+router.use('/current-prc/file-upload', require('./views/current-prc/file-upload/_routes'));
+
+router.use('/current-ghic', require('./views/current-ghic/_routes'));
+router.use('/current-ghic/apply', require('./views/current-ghic/apply/_routes'));
+router.use('/current-ghic/file-upload', require('./views/current-ghic/file-upload/_routes'));
+router.use('/current-ghic/replacement', require('./views/current-ghic/replacement/_routes'));
+
 
 // Start folder specific routes
 

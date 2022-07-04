@@ -1,0 +1,100 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Application submitted
+{% endblock %}
+
+{% block beforeContent %}
+
+  <!-- Phase banner -->
+  <div class="app-phase-banner">
+    <div class="nhsuk-width-container app-phase-banner__container">
+      <p class="app-phase-banner__content">
+        <strong class="nhsuk-tag app-phase-banner__tag">
+          Prototype
+        </strong>
+        <span class="app-phase-banner__text">
+        This is a prototype - your <a href="#">feedback</a> will help us improve it.
+        </span>
+      </p>
+    </div>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-bottom-4">
+        <h1 class="nhsuk-panel__title">
+          Application submitted
+        </h1>
+        <div class="nhsuk-panel__body">
+          Your OHS reference number is
+          <br>
+          <strong>25002123</strong>
+        </div>
+      </div>
+
+      <p>Thank you for submitting your application for a <strong>[card type]</strong>.</p>
+
+      <p>We have sent a confirmation email to <strong>[applicant's email address]</strong> to let you know that we have received your application. It can take a few minutes for the email to arrive. If it does not arrive in 24 hours, check your spam or junk folder.
+
+      <h2>What happens next</h2>
+
+      <ul>
+        <li>We will check your residency in the UK and check your eligibility. This is not a credit check and will not affect your credit score in any way.</li>
+        <!-- <li>As you told us that you are an EU national or a national of Norway, Iceland, Liechtenstein or Switzerland, we will confirm your eligibility (?)</li> -->
+        <li>If we need additional information to process your application, we will contact you again by email.</li>
+        <li>We will email you again when your application has been processed.</li>
+      </ul>
+
+      <!-- {{ insetText({
+        "HTML": "<p>If we need additional information to process your application, we will contact you again by email.</p>"
+      }) }} -->
+
+
+      {{ warningCallout({
+        "heading": "Travel insurance",
+        "HTML": "<p>Your EHIC or GHIC is not a substitute for travel insurance. It may not cover all health costs and never covers repatriation costs. Make sure you have travel insurance as well as your card.</p>"
+      }) }}
+
+
+      <h3>What did you think of this service?</h3>
+
+      <p>Your comments are extremely helpful and will help us to provide a better service.</p>
+
+      <p>
+        <a href="#">Give feedback</a> 
+        <!-- (Takes 30 seconds) -->
+      </p>
+
+
+
+
+
+
+      <!-- <p>We will now review your application.</p>
+
+      <p>To check your eligibility for a GHIC, we need to check your UK residency. This is not a credit check and will not affect your credit score in any way.</p>
+       
+       
+      <p>Once we have done this, we will process your application.</p>
+       
+      <p>
+      We will email you and let you know if your application has been successful or not. If we require any further information we will contact you and let you know what we need.</p>
+                
+      <p>For information on how we use your data, please refer to our <a href="contact">privacy notice</a>.</p>
+
+        <form action="../start" method="post">
+
+          {{ button({
+          "text": "Finish"
+        }) }}
+
+      </form> -->
+      
+    </div>
+  </div>
+{% endblock %}
