@@ -1,0 +1,96 @@
+{% extends 'layout.html' %}
+{% block pageTitle %}
+
+  Download your S1 certificate
+
+{% endblock %}
+{% block beforeContent %}
+
+<style type="text/css">
+
+  a.download {
+    padding-left: 2em;
+    background-image: url(/images/document-black.png);
+    background-repeat: no-repeat;
+    background-position: 0px;
+    background-size: 30px 30px;
+  }
+  
+</style>
+
+<!-- Phase banner -->
+<div class="app-phase-banner">
+  <div class="nhsuk-width-container app-phase-banner__container">
+    <p class="app-phase-banner__content">
+      <strong class="nhsuk-tag app-phase-banner__tag">
+        Prototype
+      </strong>
+      <span class="app-phase-banner__text">
+      This is a prototype - your <a href="#">feedback</a> will help us improve it.
+      </span>
+    </p>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-panel nhsuk-panel--confirmation nhsuk-u-margin-bottom-4">
+      <h1 class="nhsuk-panel__title">
+        <!-- Download your <nobr>S1 certificate</nobr> and covering letter -->
+        Download your <nobr>S1 certificate</nobr>
+      </h1>
+    </div>
+
+    <!-- <h2>Download your S1 certificate and covering letter</h2> -->
+
+    <p>You can download your S1 certificate and covering letter as a PDF document.</p>
+    <p>This may open in a new window or tab or save to your download folder, depending on the browser or device you’re using.</p>
+
+    <p>
+      <a class="download" href="/images/s1-doc-and-letter.pdf" download>
+        Download your S1 certificate (PDF, 233KB)
+      </a>
+    </p>
+
+    <!-- <p>
+      <a class="download" href="/images/s1-letter.pdf" download>
+        Download your covering letter (PDF, 8KB)
+      </a>
+    </p> -->
+    
+    <h2>What happens next</h2>
+
+    <p>Your covering letter will give you more information about your S1, as well as any next steps you may need to take.</p>
+
+    <p>You may need to print a copy of your S1 if you need to show it to local authorities. If you do, we recommend using a colour printer.</p>
+
+    <p>If you’ve asked for a copy to be sent by post, you can use this when you receive it.</p>
+
+    <!-- {{ warningCallout({
+      "heading": "Important",
+      "HTML": "<p>We recommend you get private medical insurance to help with any treatment costs before your S1 is registered. Do not wait until you need treatment as you may be charged costs that cannot be refunded.</p>"
+    }) }} -->
+
+    <!-- <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p> Telephone: 0191 218 1999 </p>
+      <p>Telephone from outside UK: +44 191 218 1999</p>
+      <p>Monday to Friday, 8am to 6pm.</p>
+    </div> -->
+
+    <!-- <p>For information on how we use your data, please refer to our <a href="https://www.nhsbsa.nhs.uk/our-policies/privacy">privacy notice</a>.</p> -->
+
+    <!-- <h3>What did you think of this service?</h3>
+
+    <p>Your comments are extremely helpful and will help us to provide a better service.</p>
+    <p>
+      <a href="#">Give feedback</a> (Takes 30 seconds)
+    </p> -->
+
+  </div>
+</div>
+{% endblock %}
